@@ -1,0 +1,88 @@
+---
+title: "Migration Amazon Connect : Guide de survie"
+excerpt: "Pourquoi 40% des migrations échouent techniquement et comment sécuriser votre flux d'appels."
+date: "2025-12-03"
+category: "Migration CCaaS"
+tags: ["Migration CCaaS", "AWS Connect", "Migration"]
+author: "ONEX Technology"
+readTime: "10 min"
+image: "/images/blog/migration-connect.jpg"
+ogImage: "/images/blog/migration-connect.jpg"
+published: true
+featured: false
+---
+
+# Migration Amazon Connect : Guide de survie
+
+Amazon Connect s'impose comme une référence CCaaS, mais la migration depuis une plateforme legacy reste un exercice périlleux. 40% des projets rencontrent des incidents critiques lors du Go-Live. Voici comment les éviter.
+
+## Les 5 Pièges Techniques Majeurs
+
+### 1. Sous-Estimation de la Complexité des IVR
+**Erreur courante** : Conversion directe des flux existants sans repenser l'architecture.
+
+**Notre recommandation** :
+- Cartographie complète des call flows actuels
+- Simplification des arborescences (règle des 3 niveaux max)
+- Tests unitaires de chaque module Contact Flow
+
+### 2. Intégrations CRM Mal Préparées
+**Symptôme** : Les agents perdent l'accès aux données client au moment de la bascule.
+
+**Solution** :
+- API Gateway AWS pour centraliser les appels
+- Tests de charge réalistes (3x le volume peak)
+- Plan de rollback avec données de fallback
+
+### 3. Problèmes de Téléphonie (SIP/PSTN)
+**Point critique** : La portabilité des numéros peut prendre 15-30 jours.
+
+**Checklist essentielle** :
+- Commande de portage 45 jours avant le Go-Live
+- Tests SIP trunk avec votre opérateur
+- Numéros de secours activés en parallèle
+
+### 4. Formation des Agents Insuffisante
+**Réalité terrain** : Un agent non formé = 30% de temps de traitement en plus.
+
+**Programme recommandé** :
+- 2 jours de formation théorique
+- 1 semaine d'environnement sandbox
+- Binôme avec agents expérimentés pendant 2 semaines
+
+### 5. Absence de Plan de Repli
+**Statistique alarmante** : Seulement 30% des migrations ont un vrai plan B.
+
+**Notre framework** :
+- Bascule progressive par équipe (10% / jour)
+- Dual-running de l'ancienne plateforme pendant 7 jours
+- Équipe technique en hotline 24/7 la première semaine
+
+## La Méthode ONEX : Migration Zero-Downtime
+
+Nous avons développé une approche en 7 phases :
+
+1. **Audit Technique** (Semaine 1-2)
+2. **Proof of Concept** (Semaine 3-4)
+3. **Architecture Cloud** (Semaine 5-8)
+4. **Migration des Données** (Semaine 9-10)
+5. **Tests Intensifs** (Semaine 11-12)
+6. **Formation** (Semaine 13-14)
+7. **Go-Live Progressif** (Semaine 15-16)
+
+## Cas Client : Assurance au Maroc
+
+**Contexte** : Assureur marocain, 200 agents, plateforme on-premise vieillissante.
+
+**Challenge** : Migration sans interruption de service pendant la saison des sinistres.
+
+**Résultat** :
+- 0 downtime critique
+- 15% de réduction AHT après 3 mois
+- ROI positif en 8 mois
+
+## Conclusion
+
+Une migration Amazon Connect réussie nécessite 3 mois de préparation minimum. Les entreprises qui échouent sont celles qui veulent aller trop vite. Prenez le temps de bien faire les choses, ou préparez-vous à gérer des crises.
+
+**Besoin d'accompagnement pour votre migration ?** Nos architectes AWS certifiés sont là pour vous aider.

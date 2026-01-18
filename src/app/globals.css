@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* FIX: Activer dark mode avec classe .dark (requis pour next-themes) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Variables CSS personnalisées */
+:root {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  /* Palette Premium Dark - Contraste maximal */
+  --color-dark-bg: #0a0c10;
+  --color-dark-surface: #11141a;
+  --color-dark-border: rgba(255, 255, 255, 0.05);
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+}
+
+/* Amélioration de la hiérarchie typographique */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Titres Playfair plus aérés */
+.font-serif {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+/* Espacements supplémentaires pour les grands titres */
+h1.font-serif {
+  margin-bottom: 1.5rem;
+}
+
+h2.font-serif {
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+/* Styles de base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style pour les liens */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Style pour les boutons */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Style pour les inputs */
+input,
+textarea,
+select {
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Animations personnalisées */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Smooth scroll personnalisé */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Styles pour dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Effets Premium Dark - Glow et profondeur */
+.dark .card-glow {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
+              0 4px 20px -2px rgba(0, 0, 0, 0.3);
+}
+
+.dark .card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2),
+              0 8px 30px -4px rgba(212, 175, 55, 0.15),
+              0 0 40px -8px rgba(212, 175, 55, 0.1);
+}
+
+/* Animations au scroll - Respecter les préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

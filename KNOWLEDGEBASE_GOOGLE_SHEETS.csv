@@ -1,0 +1,263 @@
+ID,Catégorie,Sous-Catégorie,Question,Réponse,Mots-Clés,URL,Priorité
+1,FAQ,Prix,Combien coûte une migration CCaaS vers Genesys Cloud ou AWS Connect au Maroc ?,"Le coût d'une migration CCaaS dépend de plusieurs facteurs : nombre d'agents (20-500+), complexité des intégrations CRM (Salesforce, Dynamics, custom), et plateforme cible (Genesys Cloud, AWS Connect, Avaya).
+
+**Ordre de grandeur :**
+- Audit CCaaS complet : 15 000 MAD HT (déduit si projet signé)
+- Migration 20-50 agents : À partir de 150 000 MAD HT (forfait projet)
+- Migration 50-200 agents : 300 000 à 800 000 MAD HT
+- Migration 200-500+ agents : Sur devis (architecture complexe)
+
+**Inclus :** Architecture cloud, configuration plateforme, intégrations CRM, migration progressive, formation agents, support post go-live 30 jours.
+
+**Bon à savoir :** Nous facturons au forfait projet (pas de régie), avec ROI positif dès le 8e mois en moyenne grâce aux économies télécoms (-20 à -40%).","prix,tarif,coût,migration,genesys,aws,connect,budget",https://onex-technology.com/#offres,Haute
+2,FAQ,Délais,Combien de temps prend une migration de centre de contact vers le cloud ?,"La durée de migration varie selon la taille de votre centre et la complexité technique :
+
+**Timeline typique :**
+- Phase 1 - Audit & Architecture : 2 semaines
+- Phase 2 - Configuration & Tests : 3-4 semaines
+- Phase 3 - Migration Progressive : 2-4 semaines (10% agents/vague)
+- Phase 4 - Optimisation & Support : 1 mois post go-live
+
+**Durée totale : 8 à 12 semaines** (2-3 mois) de l'audit au go-live complet.
+
+**Facteurs d'accélération :**
+- Infrastructure cloud existante (AWS/Azure déjà en place)
+- Intégrations CRM standardisées (Salesforce/Dynamics)
+- Équipe IT disponible pour tests
+
+**Engagement ONEX :** Roadmap semaine par semaine dès l'audit. Pas de retard sauf demande de changement de votre part.","délai,durée,temps,timeline,planning,migration,rapidité",https://onex-technology.com/#approche,Haute
+3,FAQ,Risques,Peut-on migrer vers Genesys Cloud ou AWS Connect sans interrompre le service client ?,"**Oui, c'est possible et c'est notre méthode standard.**
+
+**Notre approche ""Zero Downtime"" :**
+1. Migration progressive par vagues : 10% des agents par jour (pas de ""big bang"")
+2. Dual-running temporaire : Ancienne et nouvelle plateforme en parallèle pendant la transition
+3. Tests de charge réels : Simulation 120% du trafic habituel avant bascule
+4. Plan de rollback documenté : Retour arrière possible en < 30 min si problème critique
+5. Support 24/7 première semaine : Équipe dédiée post go-live
+
+**Résultat :** Sur 15 migrations réalisées au Maroc, 0 incident majeur, SLA 99,95%+ respecté.
+
+**Garantie ONEX :** Si downtime non planifié > 1h, pénalités contractuelles appliquées (remboursement partiel).","downtime,interruption,risque,disponibilité,sla,zero downtime,continuité",https://onex-technology.com/#approche,Haute
+4,FAQ,Choix Plateforme,Genesys Cloud AWS Connect ou Avaya Cloud : quelle plateforme CCaaS choisir ?,"**Le ""meilleur"" CCaaS n'existe pas. Le bon choix dépend de VOS contraintes.**
+
+**Comparaison rapide :**
+- Genesys Cloud : Grandes entreprises (200+ agents), omnicanal avancé, IA puissante. Prix : 150-200€/agent/mois.
+- AWS Connect : Startups tech, intégrations AWS natives, coût optimisé. Prix : 80-120€/agent/mois.
+- Avaya Cloud : Migration depuis Avaya on-prem, transition douce. Prix : 100-150€/agent/mois.
+
+**Notre recommandation selon profil :**
+- Vous avez 50-200 agents + besoin omnicanal fort → Genesys Cloud
+- Vous êtes déjà sur AWS + équipe tech forte → AWS Connect
+- Vous migrez depuis Avaya on-premise → Avaya Cloud
+
+**Service ONEX :** Diagnostic gratuit 30 min pour comparer les 3 selon VOS critères (budget, nb agents, CRM, timeline). Recommandation objective, on ne touche pas de commission éditeur.","comparaison,choix,genesys,aws,avaya,plateforme,quelle,meilleur",https://onex-technology.com/#expertises,Haute
+5,FAQ,Expertise Locale,Pourquoi choisir un cabinet CCaaS local au Maroc plutôt qu'un intégrateur international ?,"**3 raisons concrètes :**
+
+**1. Réactivité & Disponibilité**
+- Cabinet local (ONEX) : Équipe à Casablanca, interventions sur site sous 48h, support en français/arabe, même fuseau horaire
+- Intégrateur international : Consultants basés à Paris/Londres, déplacements coûteux, décalage horaire, disponibilité limitée
+
+**2. Coûts Maîtrisés**
+- Cabinet local : TJM 5 000 - 8 000 MAD (500-800€), pas de frais de déplacement
+- Intégrateur international : TJM 1 500 - 2 500€, + frais mission (avion, hôtel) → Coût total x2 à x3
+
+**3. Connaissance Contexte Maroc**
+- Réglementation ANRT (télécom)
+- Spécificités bancaires/assurances locales
+- Pratiques RH centres de contact marocains
+- Écosystème fournisseurs locaux (connectivité, SIP trunking)
+
+**Notre positionnement :** Expertise internationale (formés sur gros projets France/Europe) + delivery local Maroc = meilleur des deux mondes.","maroc,local,casablanca,cabinet,intégrateur,pourquoi,expertise locale",https://onex-technology.com/#a-propos,Moyenne
+6,Services,Migration CCaaS,Migration Genesys / AWS Connect / Avaya Cloud,"Votre plateforme on-premise est obsolète. Vos coûts télécoms explosent. Vos agents rament sur une interface des années 2010. On migre vers le cloud en 8 à 12 semaines, sans couper une seule ligne.
+
+**Nos services incluent :**
+- Migration sans interruption (bascule progressive agents par agents)
+- Architecture omnicanale (voix + WhatsApp + chat + email unifiés)
+- Intégrations CRM prêtes (Salesforce, Dynamics, SAP C4C, solutions custom)
+- Formation opérationnelle terrain (pas juste des slides PowerPoint)
+
+**Résultats mesurés :**
+- Coûts télécoms : -20 à -40% (SIP trunk cloud vs PSTN legacy)
+- Time-to-market nouvelles features : divisé par 4
+- Disponibilité SLA : 99,95% garanti (vs 95% on-prem moyen)","migration,genesys,aws connect,avaya,ccaas,cloud,service",https://onex-technology.com/#expertises,Haute
+7,Services,Optimisation CX,Réduire Friction Client = Augmenter Conversion,"Vos clients appellent 3 fois pour le même problème. Votre NPS stagne. Votre taux d'abandon web-to-call est à 40%. On diagnostique les points de friction, on refond les parcours, on mesure l'impact. Méthodologie éprouvée.
+
+**Nos services incluent :**
+- Audit omnicanal complet (tous touchpoints clients cartographiés)
+- Refonte parcours basée data (pas intuition, analytics)
+- Quick wins identifiés sous 2 semaines (actions rapides ROI immédiat)
+- Pilotage KPIs CX (CSAT, NPS, CES, FCR, temps résolution)
+
+**Résultats mesurés :**
+- First Contact Resolution : +25% moyenne observée
+- Taux abandon appels : -30%
+- CSAT : amélioration 15 points moyenne sur 6 mois","optimisation,cx,expérience client,parcours,friction,conversion,nps,csat",https://onex-technology.com/#expertises,Haute
+8,Services,IA Conversationnelle,Automatiser les 60% de Requêtes Simples,"Vos agents passent 60% de leur temps sur des questions FAQ. Checking statut commande, réinitialisation mot de passe, prise de RDV. On déploie des voicebots/chatbots intelligents qui traitent le simple, libèrent les agents pour le complexe. ROI sous 6 mois.
+
+**Nos services incluent :**
+- Voicebot NLU (compréhension langage naturel, pas arbre de décision rigide)
+- Handover intelligent agent (escalade automatique si échec bot)
+- Agent Assist temps réel (suggestions réponses pendant appel)
+- Mesure ROI précise (taux déflection, temps agent économisé)
+
+**Résultats mesurés :**
+- Taux déflection appels simples : 40-60% (selon secteur)
+- Coût par interaction : divisé par 3 sur requêtes FAQ
+- Disponibilité 24/7 sans surcoût humain","voicebot,chatbot,ia,intelligence artificielle,automatisation,bot,nlp,nlu",https://onex-technology.com/#expertises,Moyenne
+9,Services,Infrastructure Cloud,Architecture Cloud pour Supporter CCaaS,"Un CCaaS ne tient pas tout seul. Il faut de l'infra AWS/Azure solide, sécurisée, scalable. On conçoit l'architecture complète : réseau, sécurité, résilience, disaster recovery. Pas de mauvaise surprise technique post go-live.
+
+**Nos services incluent :**
+- Architecture multi-AZ haute disponibilité (99,95%+ SLA)
+- Sécurité RGPD/PCI-DSS natives (conformité financière/assurance)
+- Stratégie backup & disaster recovery testée (RTO < 1h)
+- Optimisation coûts cloud (reserved instances, scaling automatique)
+
+**Résultats mesurés :**
+- SLA disponibilité : 99,95%+ garanti contrat
+- Coûts cloud optimisés : -25% vs provisioning statique
+- Temps restauration incident : < 1h (RTO documenté)","cloud,infrastructure,aws,azure,architecture,sécurité,disaster recovery",https://onex-technology.com/#expertises,Moyenne
+10,Offres,Diagnostic Express,Diagnostic CCaaS Express (Gratuit),"**Prix : 0 MAD - Sans engagement**
+**Durée : 30 min visio + rapport sous 48h**
+
+**Pour qui ?** DSI/Directeurs CX qui hésitent entre Genesys/AWS/Avaya ou veulent un 2e avis sur leur projet CCaaS actuel
+
+**Ce qui est inclus :**
+- Visio 30 min avec architecte CCaaS senior
+- Analyse rapide plateforme actuelle vs besoins
+- Évaluation faisabilité technique
+- Ordre de grandeur budget & timeline
+
+**Livrables :**
+- Rapport PDF 5 pages avec recommandations
+- Checklist : 10 points critiques à vérifier avant go-live","diagnostic,gratuit,audit express,consultation,30 min,évaluation",https://onex-technology.com/#offres,Haute
+11,Offres,Audit Complet,Audit CX & CCaaS Complet (15 000 MAD HT),"**Prix : 15 000 MAD HT (déduit si vous signez le projet)**
+**Durée : Livré sous 2 semaines**
+
+**Pour qui ?** PME/Grandes entreprises avec 20-200 agents qui veulent sécuriser leur décision avant d'investir
+
+**Ce qui est inclus :**
+- Audit technique plateforme existante (on-premise ou cloud)
+- Cartographie flux appels & intégrations CRM
+- Analyse parcours clients omnicanaux
+- Business case ROI chiffré (coûts actuels vs futurs)
+- Roadmap migration sécurisée par vagues
+- Présentation exec 1h pour comité de direction
+
+**Livrables :**
+- Rapport audit 40+ pages (forces/faiblesses/risques)
+- Architecture technique cible (schémas HLD/LLD)
+- Roadmap go-live semaine par semaine
+- Budget détaillé (licences + delivery + run)","audit,complet,15000,15k,mad,évaluation approfondie,diagnostic détaillé",https://onex-technology.com/#offres,Haute
+12,Offres,Migration Clé en Main,Migration CCaaS Clé en Main (Sur Devis),"**Prix : Sur Devis (Forfait projet, pas de régie)**
+**Durée : 8-12 semaines selon complexité**
+
+**Pour qui ?** Centres de contact 50-500 agents qui veulent basculer vers Genesys/AWS/Avaya sans risque ni downtime
+
+**Ce qui est inclus :**
+- Audit + Architecture cloud + Spécifications fonctionnelles
+- Configuration plateforme CCaaS (routage, IVR, reporting)
+- Intégrations CRM (Salesforce, Dynamics, custom APIs)
+- Migration progressive agents (10% par vague, plan rollback)
+- Formation terrain 2 jours + coaching post go-live
+- Support intensif 30 jours (24/7 première semaine)
+
+**Livrables :**
+- Plateforme opérationnelle avec SLA 99,95%
+- Documentation run complète (admin + troubleshooting)
+- Équipes formées et autonomes
+- KPIs avant/après migration (ROI démontré)","migration,clé en main,projet complet,delivery,mise en œuvre,go-live",https://onex-technology.com/#offres,Haute
+13,Méthode,Phase 1,Phase 1 : On Diagnostique Avant de Prescrire,"Audit technique plateforme existante. Cartographie flux appels. Analyse intégrations. Identification quick wins. À la fin : business case chiffré, ROI prévisionnel, plan d'action validé. Pas de devis à l'aveugle.
+
+**Livrables :**
+- Rapport audit technique (forces/faiblesses plateforme actuelle)
+- Cartographie flux & intégrations (tout documenté, pas de zone d'ombre)
+- Business case ROI (coûts actuels vs futurs, timeline retour investissement)
+- Roadmap go-live (semaine par semaine, qui fait quoi)","phase 1,audit,diagnostic,analyse,méthodologie,approche",https://onex-technology.com/#approche,Moyenne
+14,Méthode,Phase 2,Phase 2 : On Conçoit l'Architecture Cible,"Architecture détaillée cloud. Spécifications fonctionnelles. Design parcours clients optimisés. Plan de migration par vagues. Stratégie de tests. Tout est documenté avant de toucher une seule ligne de config.
+
+**Livrables :**
+- Architecture technique HLD/LLD (schémas réseau, flux de données)
+- Spécifications fonctionnelles validées métier (chaque feature décrite)
+- Plan de migration sécurisé (bascule progressive, rollback prévu)
+- Matrice de tests & scénarios de validation (rien au hasard)","phase 2,architecture,conception,design,spécifications,hld,lld",https://onex-technology.com/#approche,Moyenne
+15,Méthode,Phase 3,Phase 3 : On Déploie Sans Casser l'Existant,"Configuration plateforme. Intégrations CRM. Migration progressive des agents (10% par vague). Tests de charge. Formation terrain. Bascule DNS finale. Support intensif post go-live (24/7 première semaine). Vous dormez tranquille.
+
+**Livrables :**
+- Plateforme CCaaS configurée & testée (tous flux validés)
+- Intégrations CRM opérationnelles (Salesforce, Dynamics, custom APIs)
+- Agents formés terrain (2 jours formation + coaching post go-live)
+- Documentation run complète (procédures admin, troubleshooting)","phase 3,déploiement,migration,go-live,configuration,formation,tests",https://onex-technology.com/#approche,Moyenne
+16,Méthode,Phase 4,Phase 4 : On Optimise & On Forme Vos Équipes,"Monitoring KPIs. Analyse performances. Ajustements config. Évolutions fonctionnelles. Transfert compétences progressif vers vos équipes IT. Objectif : vous rendre autonomes. Pas de dépendance éternelle.
+
+**Livrables :**
+- Tableaux de bord opérationnels (KPIs temps réel Genesys/AWS)
+- Rapports mensuels optimisation (analyse perfs, recommandations)
+- Transfert compétences IT (formation admin plateforme certifiante)
+- Documentation complète run (vous êtes autonomes post-projet)","phase 4,optimisation,support,formation,transfert compétences,run,maintenance",https://onex-technology.com/#approche,Moyenne
+17,À Propos,Équipe,Une Équipe de Seniors (18 ans d'expertise cumulée),"Nos architectes CCaaS ont 10+ ans d'expérience chacun. Formés sur les plus grands déploiements CX en France et à l'international (luxe, banque, assurance, télécoms). Vous payez pour de l'expertise rare, pas pour former des juniors.
+
+**Notre philosophie :**
+Chez ONEX, on croit qu'un projet CCaaS bien fait vaut mieux que 10 projets bâclés. On ne prend que 3-4 clients simultanés pour garantir l'excellence. Si on ne peut pas livrer la qualité qu'on promet, on refuse le projet.
+
+**Nos valeurs :**
+- Excellence Technique (Pas de Bricolage)
+- Transparence Brutale (Pas de Bullshit)
+- Résultats Mesurables (Pas juste des Livrables)","équipe,team,experts,seniors,expérience,à propos,qui sommes-nous",https://onex-technology.com/#equipe,Moyenne
+18,À Propos,Pourquoi ONEX,Pourquoi Migrer Votre CCaaS avec ONEX ?,"15 centres de contact migrés sans interruption. Voici comment on fait différent :
+
+**1. Architectes CCaaS certifiés (pas des juniors)**
+Genesys Cloud CX Certified, AWS Connect Specialist, Avaya Cloud Expert. Nos architectes ont 10+ ans sur les plateformes que vous allez déployer.
+
+**2. Support basé à Casablanca, pas à Paris**
+Équipe locale disponible en français/arabe, sur votre fuseau horaire. Ateliers sur site, formation agents terrain, hotline post go-live 24/7.
+
+**3. Bascule progressive (pas de big bang suicidaire)**
+Migration par vagues de 10% des agents/jour. Tests de charge réels. Plan de rollback systématique. 15 migrations sans incident majeur.
+
+**4. Engagement sur les résultats (pas juste des livrables)**
+On s'engage sur vos KPIs : -20% coûts télécoms, +15% FCR, -30% AHT, amélioration CSAT mesurable.","pourquoi,différence,avantages,onex,valeur ajoutée,bénéfices",https://onex-technology.com/#a-propos,Haute
+19,À Propos,Partenaires,Partenaires Technologiques Officiels,"Certifications officielles Genesys Cloud, AWS Connect Specialist, Microsoft Partner. Accès privilégié aux roadmaps produits, support éditeur niveau 3, formations continues. Vous bénéficiez des dernières innovations avant tout le monde.
+
+**Nos partenariats :**
+- Genesys : Cloud CX Leader (Genesys Cloud CX Certified Professional)
+- AWS : Amazon Connect Specialist (AWS Connect Deployment Specialist)
+- Microsoft : Azure Partner (Microsoft Certified Partner)","partenaires,certifications,genesys,aws,microsoft,partners,éditeurs",https://onex-technology.com/#partenaires,Basse
+20,Contact,Prise de Contact,Comment nous contacter ?,"**Email :** contact@onex-technology.com
+**Téléphone :** +212 5 22 XX XX XX
+**WhatsApp :** +212 6 XX XX XX XX
+**Localisation :** Casablanca, Maroc
+
+**Ce que vous obtenez en nous contactant :**
+- Une réponse personnalisée sous 24h ouvrées (pas de bot, un humain)
+- Un 1er échange de 30 min avec un architecte CCaaS senior (pas un commercial)
+- Une évaluation honnête : on vous dit si votre projet est viable ou s'il faut revoir votre copie
+
+**Vous nous contactez pour :**
+1. Hésiter entre Genesys, AWS Connect ou Avaya
+2. Votre migration CCaaS actuelle est bloquée
+3. Vous voulez un audit ou un devis détaillé","contact,email,téléphone,rdv,rendez-vous,consultation,casablanca",https://onex-technology.com/#contact,Haute
+21,Statistiques,Chiffres Clés,Nos chiffres clés et impact,"**Notre impact mesuré :**
+- 18+ années d'expérience cumulées
+- 50+ projets de transformation CX livrés
+- 15+ centres de contact modernisés
+- 98% taux de satisfaction client
+- 0 downtime sur 15 migrations réalisées
+- ROI moyen : 8 mois
+- SLA disponibilité : 99,95% garanti","statistiques,chiffres,kpi,résultats,impact,références,projets",https://onex-technology.com/,Basse
+22,Process,Rendez-vous,Comment prendre rendez-vous avec ONEX ?,"Pour prendre rendez-vous avec notre équipe :
+
+**Option 1 : Diagnostic Express Gratuit (30 min)**
+- Contactez-nous via le formulaire sur notre site
+- Email : contact@onex-technology.com
+- Téléphone : +212 5 22 XX XX XX
+- WhatsApp : +212 6 XX XX XX XX
+
+**Option 2 : Utiliser l'assistant IA**
+- Indiquez vos disponibilités (en heure de Paris)
+- Fournissez votre nom complet et email
+- L'assistant vérifie les créneaux disponibles
+- Confirmation automatique par email
+
+**Délai de réponse :** Sous 24h ouvrées (lun-ven, 9h-18h)
+**Durée du 1er RDV :** 30 minutes
+**Format :** Visioconférence ou sur site à Casablanca","rendez-vous,rdv,appointment,réunion,consultation,créneau,disponibilité,réserver",https://onex-technology.com/#contact,Haute
