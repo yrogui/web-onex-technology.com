@@ -15,13 +15,16 @@ export async function POST(request: NextRequest) {
     // Récupérer le body de la requête
     const body = await request.json();
 
-    // Appeler le webhook n8n
+    // Extraire le message (supporte message ou searchQuery en entrée)
+    const userMessage = body.searchQuery || body.message || "";
+
+    // Appeler le webhook n8n avec la clé searchQuery attendue par le workflow
     const response = await fetch(N8N_WEBHOOK_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({ searchQuery: userMessage }),
     });
 
     if (!response.ok) {

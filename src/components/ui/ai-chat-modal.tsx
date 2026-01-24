@@ -21,10 +21,10 @@ interface Message {
 }
 
 /**
- * Configuration n8n Webhook
+ * Configuration API Proxy (évite les problèmes CORS)
  */
-const N8N_CONFIG = {
-  webhookUrl: "https://n8n.expertiaacademy.com/webhook/78de5190-132b-4220-8df8-a7945a444927",
+const API_CONFIG = {
+  proxyUrl: "/api/n8n-proxy",
   method: "POST" as const,
 };
 
@@ -84,11 +84,11 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
     setError(null);
 
     try {
-      console.log("🔵 Envoi de la requête à n8n...", { userMessage });
+      console.log("🔵 Envoi de la requête via proxy...", { userMessage });
 
-      // Appel à l'API n8n
-      const response = await fetch(N8N_CONFIG.webhookUrl, {
-        method: N8N_CONFIG.method,
+      // Appel via le proxy Next.js (évite CORS)
+      const response = await fetch(API_CONFIG.proxyUrl, {
+        method: API_CONFIG.method,
         headers: {
           "Content-Type": "application/json",
         },
@@ -97,7 +97,7 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
         }),
       });
 
-      console.log("🟢 Réponse reçue de n8n:", {
+      console.log("🟢 Réponse reçue du proxy:", {
         status: response.status,
         statusText: response.statusText,
         ok: response.ok
@@ -111,8 +111,8 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
       const data = await response.json();
       console.log("📦 Données JSON reçues:", data);
 
-      // Le workflow n8n renvoie la réponse de l'AI Agent
-      // La structure exacte dépend de votre configuration, ajustez si nécessaire
+      // Le workflow n8n renvoie { "output": "..." }
+      // Fallback sur response/message si la structure change
       const aiResponse = data.output || data.response || data.message || JSON.stringify(data);
       console.log("💬 Réponse AI extraite:", aiResponse);
 
