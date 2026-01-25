@@ -36,6 +36,11 @@ jobs:
           test -d out
           test -f out/index.html
 
+      - name: Add EX2 server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.EX2_PORT }} ${{ secrets.EX2_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy out/ to EX2 via rsync over SSH
         uses: burnett01/rsync-deployments@6.0.0
         with:
