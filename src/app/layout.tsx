@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     default: "Migration CCaaS Maroc | Genesys, AWS Connect, Avaya",
     template: "%s | ONEX Technology",
   },
+
+  verification: {
+  google: 'Jf2GBTTeHKDGWJa-G_wu0Q88SvxzTAHZ9uueii96ZjA',
+  },
+  
   description:
     "Spécialistes migration CCaaS au Maroc : Genesys Cloud, AWS Connect, Avaya. Zéro downtime, ROI 8 mois garanti. 15 centres migrés. Audit gratuit 30 min.",
   keywords: [
