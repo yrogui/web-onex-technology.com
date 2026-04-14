@@ -8,18 +8,23 @@ export const wording = {
     tagline: "Spécialistes CCaaS & Expérience Client",
   },
 
-  // === HERO VARIANTE 1 (RECOMMANDÉE) - RÉSULTAT D'ABORD ===
+  // === HERO — CHARTE ONE-X v1.0 ===
   hero: {
-    badge: "Spécialistes CCaaS & Expérience Client",
-    title: "MIGREZ VOTRE CENTRE DE CONTACT VERS LE CLOUD SANS INTERRUPTION. SANS DÉPASSEMENT.",
+    eyebrow: "DESIGN AUTHORITY · CX & CLOUD · MAROC",
+    title: "Migrez votre centre de contact vers le cloud,",
+    titleItalic: "sans interruption.",
     subtitle:
       "40% des migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif dès le 8e mois. Garanti.",
+    baseline: "Le partenaire marocain des programmes CX critiques.",
     stats: [
-      { label: "ROI moyen sur migrations", value: "8 mois" },
-      { label: "Taux de disponibilité garanti", value: "0 downtime" },
-      { label: "Centres modernisés au Maroc", value: "15" },
+      { label: "ROI MOYEN SUR MIGRATIONS", value: "8 mois" },
+      { label: "TAUX DE DISPONIBILITÉ", value: "0 downtime" },
+      { label: "CENTRES MODERNISÉS AU MAROC", value: "15" },
     ],
-    ctaPrimary: "Audit gratuit de votre plateforme (30 min)",
+    ctaPrimary: "Audit gratuit (30 min)",
+    ctaSecondary: "Découvrir notre approche",
+    // Ancienne structure conservée pour compatibilité
+    badge: "DESIGN AUTHORITY · CX & CLOUD · MAROC",
   },
 
   /*

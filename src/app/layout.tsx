@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import "@fontsource/geist/400.css";
+import "@fontsource/geist/500.css";
+import "@fontsource/geist/600.css";
+import "@fontsource/fraunces/400.css";
+import "@fontsource/fraunces/500.css";
+import "@fontsource/fraunces/600.css";
+import "@fontsource/fraunces/500-italic.css";
+import "@fontsource/geist-mono/400.css";
+import "@fontsource/geist-mono/500.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -7,20 +15,6 @@ import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { SchemaOrg } from "@/components/seo/schema-org";
 import { CookieConsent } from "@/components/cookie-consent";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-  preload: true,
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-  preload: true,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://onex-technology.com"),
@@ -97,17 +91,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" suppressHydrationWarning className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-      </head>
-      <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
-      >
+      <body className="font-sans antialiased">
         <SchemaOrg />
         <ThemeProvider
           attribute="class"
@@ -116,7 +100,7 @@ export default function RootLayout({
           storageKey="onex-theme"
         >
           <SmoothScroll>
-            <div className="flex flex-col min-h-screen bg-brand-cream dark:bg-[#0a0c10] text-brand-noir dark:text-[#e2e8f0] transition-colors duration-700">
+            <div className="flex flex-col min-h-screen bg-paper dark:bg-primary text-ink dark:text-paper transition-colors duration-700">
               <Navbar />
               <main className="flex-grow">{children}</main>
               <Footer />

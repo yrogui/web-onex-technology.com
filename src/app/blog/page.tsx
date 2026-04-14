@@ -7,17 +7,17 @@ export default async function BlogPage() {
   const articles = await getPublishedArticles();
 
   return (
-    <main className="min-h-screen bg-brand-cream dark:bg-[#0a0c10] pt-20">
+    <main className="min-h-screen bg-paper dark:bg-primary pt-20">
       {/* Header */}
-      <section className="py-20 border-b border-brand-noir/10 dark:border-white/[0.05]">
+      <section className="py-20 border-b border-smoke/30 dark:border-charcoal">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
             Pensées & Stratégies
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-noir dark:text-white mb-6 tracking-tight">
-            Retours Terrain & Insights
+          <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-ink dark:text-paper mb-6 tracking-[-0.02em]">
+            Retours terrain & insights
           </h1>
-          <p className="text-lg text-brand-slate dark:text-[#94a3b8] max-w-3xl">
+          <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl">
             Articles techniques, retours d'expérience et analyses basés sur nos
             missions réelles au Maroc et en Afrique. Sans buzzwords, que du
             concret.
@@ -35,17 +35,15 @@ export default async function BlogPage() {
                 href={`/blog/${article.slug}`}
                 className="group"
               >
-                <article className="bg-white dark:bg-[#11141a] border border-brand-noir/10 dark:border-white/[0.05] hover:border-brand-gold/30 dark:hover:border-brand-gold/30 transition-all duration-300 card-glow h-full flex flex-col">
+                <article className="bg-paper dark:bg-charcoal/50 border border-smoke/30 dark:border-charcoal hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 rounded h-full flex flex-col">
                   {/* Image placeholder */}
-                  <div className="relative h-48 bg-brand-slate/10 dark:bg-white/[0.03] overflow-hidden">
+                  <div className="relative h-48 bg-graphite/10 dark:bg-paper/[0.03] overflow-hidden rounded-t">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-brand-gold text-6xl opacity-20">
-                        ✦
-                      </div>
+                      <div className="text-accent text-6xl opacity-20">✦</div>
                     </div>
                     {/* Category badge */}
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-brand-gold/90 text-white text-[9px] font-bold uppercase tracking-wider">
+                      <span className="px-3 py-1 bg-accent/90 text-paper text-[9px] font-semibold uppercase tracking-wider rounded-sm">
                         {article.category}
                       </span>
                     </div>
@@ -54,7 +52,7 @@ export default async function BlogPage() {
                   {/* Content */}
                   <div className="p-8 flex-grow flex flex-col">
                     {/* Meta */}
-                    <div className="flex items-center gap-4 mb-4 text-xs text-brand-slate dark:text-[#94a3b8]">
+                    <div className="flex items-center gap-4 mb-4 text-xs text-graphite dark:text-smoke">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         <time dateTime={article.date}>
@@ -72,17 +70,17 @@ export default async function BlogPage() {
                     </div>
 
                     {/* Title */}
-                    <h2 className="font-serif text-2xl text-brand-noir dark:text-white mb-3 group-hover:text-brand-gold dark:group-hover:text-brand-gold transition-colors">
+                    <h2 className="font-display font-medium text-2xl text-ink dark:text-paper mb-3 group-hover:text-accent dark:group-hover:text-accent-light transition-colors tracking-[-0.01em]">
                       {article.title}
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-sm text-brand-slate dark:text-[#94a3b8] leading-relaxed mb-6 flex-grow">
+                    <p className="text-sm text-charcoal dark:text-smoke leading-[1.65] mb-6 flex-grow">
                       {article.excerpt}
                     </p>
 
                     {/* Read more */}
-                    <div className="flex items-center gap-2 text-brand-gold text-sm font-medium group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-accent dark:text-accent-light text-sm font-medium group-hover:gap-3 transition-all">
                       <span>Lire l'article</span>
                       <ArrowRight className="h-4 w-4" />
                     </div>
