@@ -55,7 +55,7 @@ export function ContactIcons({
       href: "mailto:contact@onex-technology.com",
       ariaLabel: "Envoyer un email à contact@onex-technology.com",
       external: false,
-      color: "hover:bg-brand-gold/10 hover:border-brand-gold",
+      color: "hover:bg-accent/10 hover:border-accent",
     },
     {
       id: "calendly",
@@ -103,7 +103,7 @@ export function ContactIcons({
             ${sizeClasses[size]}
             flex items-center justify-center
             rounded-xl
-            border-2 border-brand-noir/10 dark:border-white/10
+            border-2 border-ink/10 dark:border-white/10
             bg-transparent
             transition-all duration-300
             ${contact.color}
@@ -113,10 +113,10 @@ export function ContactIcons({
           const content = (
             <>
               <Icon
-                className={`${iconSizes[size]} text-brand-noir dark:text-white transition-colors`}
+                className={`${iconSizes[size]} text-ink dark:text-paper transition-colors`}
               />
               {showLabels && (
-                <span className="text-xs font-medium text-brand-slate dark:text-[#94a3b8] mt-2">
+                <span className="text-xs font-medium text-graphite dark:text-smoke mt-2">
                   {contact.label}
                 </span>
               )}

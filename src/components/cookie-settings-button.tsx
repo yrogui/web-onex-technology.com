@@ -25,7 +25,7 @@ export function CookieSettingsButton({
     return (
       <button
         onClick={handleClick}
-        className={`px-8 py-4 rounded-lg bg-brand-gold hover:bg-brand-gold/90 text-brand-noir font-semibold transition-all duration-200 inline-flex items-center gap-3 ${className}`}
+        className={`px-8 py-4 rounded-sm bg-accent hover:bg-accent/90 text-ink font-semibold transition-all duration-200 inline-flex items-center gap-3 ${className}`}
       >
         <Settings className="h-5 w-5" />
         Gérer mes préférences cookies
@@ -36,7 +36,7 @@ export function CookieSettingsButton({
   return (
     <button
       onClick={handleClick}
-      className={`mt-6 px-6 py-3 rounded-lg bg-brand-gold hover:bg-brand-gold/90 text-brand-noir font-medium transition-all duration-200 inline-flex items-center gap-2 ${className}`}
+      className={`mt-6 px-6 py-3 rounded-sm bg-accent hover:bg-accent/90 text-ink font-medium transition-all duration-200 inline-flex items-center gap-2 ${className}`}
     >
       <Settings className="h-4 w-4" />
       Gérer mes préférences cookies

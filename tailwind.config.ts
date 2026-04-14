@@ -12,18 +12,27 @@ const config: Config = {
 
   theme: {
     extend: {
-      // Palette de couleurs personnalisée (conservée depuis globals.css)
+      // Palette charte One-X v1.0
       colors: {
-        brand: {
-          noir: "#1a1a1a",
-          cream: "#faf8f5",
-          gold: "#d4af37",
-          slate: "#64748b",
-        },
+        primary:        "#0F0F14",  // Noir Encre
+        accent:         "#D4803B",  // Safran Doré
+        "accent-light": "#E8A168",  // Safran Clair (fond sombre)
+
+        ink:      "#0B0F14",
+        charcoal: "#2B3038",
+        graphite: "#5C6470",
+        smoke:    "#C9CDD3",
+        mist:     "#EEE8DB",  // Mist Crème
+        paper:    "#F7F3EA",  // Crème Pierre
+
+        success: "#3F7A5E",
+        warning: "#B8791C",
+        error:   "#A43B2E",
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        serif: ["var(--font-serif)"],
+        sans:    ["Geist", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
+        mono:    ["Geist Mono", "Consolas", "monospace"],
       },
     },
   },

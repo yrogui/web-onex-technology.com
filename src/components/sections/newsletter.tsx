@@ -13,8 +13,6 @@ export function Newsletter() {
     e.preventDefault();
     setIsLoading(true);
 
-    // TODO: Intégrer avec n8n ou votre service d'emailing
-    // Pour l'instant, simulons l'envoi
     setTimeout(() => {
       setIsSubscribed(true);
       setIsLoading(false);
@@ -24,28 +22,27 @@ export function Newsletter() {
 
   return (
     <section
-      className="py-20 bg-brand-gold/5 dark:bg-[#11141a] border-y border-brand-gold/20 dark:border-white/[0.05]"
+      className="py-20 bg-accent/5 dark:bg-charcoal/30 border-y border-accent/20 dark:border-charcoal"
       suppressHydrationWarning
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Header */}
           <div className="mb-10">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-3">
               {wording.newsletter.subtitle}
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-noir dark:text-white mb-6 tracking-tight">
+            <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-ink dark:text-paper mb-6 tracking-[-0.015em]">
               {wording.newsletter.title}
             </h2>
-            <p className="text-lg text-brand-slate dark:text-[#94a3b8] mb-4">
+            <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke mb-4">
               {wording.newsletter.description}
             </p>
-            <p className="text-base text-brand-gold font-medium">
+            <p className="text-base text-accent dark:text-accent-light font-medium">
               {wording.newsletter.leadMagnet}
             </p>
           </div>
 
-          {/* Form or Success Message */}
           {!isSubscribed ? (
             <form
               onSubmit={handleSubmit}
@@ -54,37 +51,37 @@ export function Newsletter() {
             >
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <div className="flex-grow relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-brand-slate dark:text-[#94a3b8]" />
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-graphite dark:text-smoke" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={wording.newsletter.placeholders.email}
-                    className="w-full pl-12 pr-5 py-4 bg-white dark:bg-[#0a0c10] border border-brand-noir/20 dark:border-white/[0.05] text-brand-noir dark:text-white placeholder:text-brand-slate/50 dark:placeholder:text-[#94a3b8]/50 focus:outline-none focus:border-brand-gold transition-colors"
+                    className="w-full pl-12 pr-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
                     required
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="px-8 py-4 bg-brand-gold text-white text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-brand-gold-dark transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                  className="px-8 py-4 bg-accent text-paper text-sm font-medium tracking-wide hover:bg-accent/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap rounded-sm"
                 >
                   {isLoading ? "Envoi..." : wording.newsletter.button}
                 </button>
               </div>
-              <p className="text-xs text-brand-slate dark:text-[#94a3b8]/70 text-center">
+              <p className="text-xs text-graphite dark:text-smoke/70 text-center">
                 {wording.newsletter.rgpd}
               </p>
             </form>
           ) : (
-            <div className="max-w-2xl mx-auto p-8 bg-brand-gold/10 border border-brand-gold/30 dark:bg-brand-gold/5">
+            <div className="max-w-2xl mx-auto p-8 bg-accent/10 border border-accent/30 rounded">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <CheckCircle className="h-8 w-8 text-brand-gold" />
-                <h3 className="font-serif text-2xl text-brand-noir dark:text-white">
+                <CheckCircle className="h-8 w-8 text-accent dark:text-accent-light" />
+                <h3 className="font-display font-medium text-2xl text-ink dark:text-paper">
                   Merci pour votre inscription !
                 </h3>
               </div>
-              <p className="text-brand-slate dark:text-[#94a3b8]">
+              <p className="text-charcoal dark:text-smoke">
                 Vous allez recevoir votre checklist par email dans quelques
                 instants. Pensez à vérifier vos spams.
               </p>

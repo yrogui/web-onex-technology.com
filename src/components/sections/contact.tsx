@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, MessageCircle, Check, Calendar, Linkedin, Bot } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Check, Calendar, Linkedin } from "lucide-react";
 import { wording } from "@/data/wording";
 import { ContactIcons } from "@/components/ui/contact-icons";
 
@@ -9,21 +9,21 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 bg-white dark:bg-[#11141a]"
+      className="py-32 bg-mist dark:bg-charcoal/30"
       suppressHydrationWarning
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <div className="mb-16 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
             {wording.contact.subtitle}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-noir dark:text-white mb-6 tracking-tight">
+          <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6">
             {wording.contact.title}
           </h2>
         </div>
 
-        {/* Méthodes de Contact Rapides (Mise en avant) */}
+        {/* Méthodes de Contact Rapides */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,27 +32,26 @@ export function Contact() {
           className="mb-20"
         >
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-lg font-bold text-brand-noir dark:text-white mb-8 text-center">
+            <h3 className="text-lg font-medium text-ink dark:text-paper mb-8 text-center">
               Choisissez votre méthode de contact préférée
             </h3>
 
-            {/* Grille de méthodes de contact premium */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* LinkedIn */}
               <a
                 href={wording.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 rounded-2xl bg-brand-cream dark:bg-[#1a1c20] border-2 border-brand-noir/10 dark:border-white/10 hover:border-[#0077B5] dark:hover:border-[#0077B5] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-[#0077B5] dark:hover:border-[#0077B5] transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-xl bg-[#0077B5]/10 dark:bg-[#0077B5]/20 flex items-center justify-center mb-4 group-hover:bg-[#0077B5]/20 dark:group-hover:bg-[#0077B5]/30 transition-colors">
+                  <div className="w-14 h-14 rounded bg-[#0077B5]/10 dark:bg-[#0077B5]/20 flex items-center justify-center mb-4 group-hover:bg-[#0077B5]/20 dark:group-hover:bg-[#0077B5]/30 transition-colors">
                     <Linkedin className="h-7 w-7 text-[#0077B5]" />
                   </div>
-                  <h4 className="font-semibold text-brand-noir dark:text-white mb-2">
+                  <h4 className="font-medium text-ink dark:text-paper mb-2">
                     LinkedIn
                   </h4>
-                  <p className="text-sm text-brand-slate dark:text-[#94a3b8]">
+                  <p className="text-sm text-graphite dark:text-smoke">
                     Message professionnel
                   </p>
                 </div>
@@ -61,16 +60,16 @@ export function Contact() {
               {/* Email */}
               <a
                 href={`mailto:${wording.contact.email}`}
-                className="group relative p-6 rounded-2xl bg-brand-cream dark:bg-[#1a1c20] border-2 border-brand-noir/10 dark:border-white/10 hover:border-brand-gold dark:hover:border-brand-gold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
-                    <Mail className="h-7 w-7 text-brand-gold" />
+                  <div className="w-14 h-14 rounded bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Mail className="h-7 w-7 text-accent dark:text-accent-light" />
                   </div>
-                  <h4 className="font-semibold text-brand-noir dark:text-white mb-2">
+                  <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Email
                   </h4>
-                  <p className="text-sm text-brand-slate dark:text-[#94a3b8]">
+                  <p className="text-sm text-graphite dark:text-smoke">
                     Réponse sous 24h
                   </p>
                 </div>
@@ -81,55 +80,43 @@ export function Contact() {
                 href={wording.contact.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-2 border-blue-600 dark:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-6 rounded bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-600 dark:border-blue-500 transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Badge "Recommandé" */}
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-sm bg-blue-600 text-paper text-xs font-medium">
                     <Calendar className="h-3 w-3" />
                     RECOMMANDÉ
                   </span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-xl bg-blue-600/20 dark:bg-blue-600/30 flex items-center justify-center mb-4 group-hover:bg-blue-600/30 dark:group-hover:bg-blue-600/40 transition-colors">
+                  <div className="w-14 h-14 rounded bg-blue-600/20 flex items-center justify-center mb-4 group-hover:bg-blue-600/30 transition-colors">
                     <Calendar className="h-7 w-7 text-blue-600" />
                   </div>
-                  <h4 className="font-semibold text-brand-noir dark:text-white mb-2">
+                  <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Calendly
                   </h4>
-                  <p className="text-sm text-brand-slate dark:text-[#94a3b8]">
+                  <p className="text-sm text-graphite dark:text-smoke">
                     RDV immédiat (30 min)
                   </p>
                 </div>
               </a>
 
-              {/* Bot IA (Bientôt) */}
+              {/* Bot IA */}
               <button
                 onClick={() => {
-                  // Trigger du modal via l'icône dans ContactIcons
                   const event = new CustomEvent("openBotModal");
                   window.dispatchEvent(event);
                 }}
-                className="group relative p-6 rounded-2xl bg-brand-cream dark:bg-[#1a1c20] border-2 border-brand-noir/10 dark:border-white/10 hover:border-purple-600 dark:hover:border-purple-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-purple-600 dark:hover:border-purple-600 transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Badge "Bientôt" */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-purple-600/10 text-purple-600 text-xs font-bold">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-600"></span>
-                    </span>
-                    BIENTÔT
-                  </span>
-                </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-xl bg-purple-600/10 dark:bg-purple-600/20 flex items-center justify-center mb-4 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/30 transition-colors">
+                  <div className="w-14 h-14 rounded bg-purple-600/10 flex items-center justify-center mb-4 group-hover:bg-purple-600/20 transition-colors">
                     <MessageCircle className="h-7 w-7 text-purple-600" />
                   </div>
-                  <h4 className="font-semibold text-brand-noir dark:text-white mb-2">
+                  <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Assistant IA
                   </h4>
-                  <p className="text-sm text-brand-slate dark:text-[#94a3b8]">
+                  <p className="text-sm text-graphite dark:text-smoke">
                     Réponses instantanées
                   </p>
                 </div>
@@ -138,7 +125,7 @@ export function Contact() {
           </div>
         </motion.div>
 
-        {/* Promesse (ce que le prospect obtient) */}
+        {/* Promesse */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,23 +133,23 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto mb-16"
         >
-          <h3 className="text-xl font-bold text-brand-noir dark:text-white mb-6 text-center">
+          <h3 className="text-xl font-medium text-ink dark:text-paper mb-6 text-center">
             {wording.contact.promise.title}
           </h3>
           <ul className="space-y-4">
             {wording.contact.promise.items.map((item, index) => (
               <li
                 key={index}
-                className="flex items-start gap-3 text-brand-slate dark:text-[#94a3b8]"
+                className="flex items-start gap-3 text-charcoal dark:text-smoke"
               >
-                <Check className="h-5 w-5 text-brand-gold flex-shrink-0 mt-0.5" />
-                <span>{item}</span>
+                <Check className="h-5 w-5 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
+                <span className="text-[15px] leading-[1.65]">{item}</span>
               </li>
             ))}
           </ul>
         </motion.div>
 
-        {/* 3 raisons de contacter (use cases) */}
+        {/* 3 raisons de contacter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -170,19 +157,19 @@ export function Contact() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-20"
         >
-          <h3 className="text-xl font-bold text-brand-noir dark:text-white mb-10 text-center">
+          <h3 className="text-xl font-medium text-ink dark:text-paper mb-10 text-center">
             {wording.contact.reasons.title}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {wording.contact.reasons.items.map((reason, index) => (
               <div
                 key={index}
-                className="bg-brand-cream dark:bg-[#0a0c10] p-8 border border-brand-noir/10 dark:border-white/[0.05] hover:border-brand-gold/30 dark:hover:border-brand-gold/30 transition-all duration-300"
+                className="bg-paper dark:bg-charcoal/50 p-8 border border-smoke/30 dark:border-charcoal hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 rounded"
               >
-                <h4 className="text-lg font-bold text-brand-noir dark:text-white mb-4">
+                <h4 className="text-lg font-medium text-ink dark:text-paper mb-4">
                   {reason.title}
                 </h4>
-                <p className="text-sm text-brand-slate dark:text-[#94a3b8] leading-relaxed">
+                <p className="text-sm text-charcoal dark:text-smoke leading-[1.65]">
                   {reason.description}
                 </p>
               </div>
@@ -198,19 +185,17 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="font-serif text-2xl text-brand-noir dark:text-white mb-8">
-              Coordonnées Directes
+            <h3 className="font-display font-medium text-2xl text-ink dark:text-paper mb-8 tracking-[-0.01em]">
+              Coordonnées directes
             </h3>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <Mail className="h-6 w-6 text-brand-gold flex-shrink-0 mt-1" />
+                <Mail className="h-6 w-6 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm font-medium text-brand-slate dark:text-[#94a3b8] mb-1">
-                    Email
-                  </p>
+                  <p className="text-sm font-medium text-graphite dark:text-smoke mb-1">Email</p>
                   <a
                     href={`mailto:${wording.contact.email}`}
-                    className="text-brand-noir dark:text-white hover:text-brand-gold transition-colors"
+                    className="text-ink dark:text-paper hover:text-accent dark:hover:text-accent-light transition-colors"
                   >
                     {wording.contact.email}
                   </a>
@@ -218,14 +203,12 @@ export function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <Phone className="h-6 w-6 text-brand-gold flex-shrink-0 mt-1" />
+                <Phone className="h-6 w-6 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm font-medium text-brand-slate dark:text-[#94a3b8] mb-1">
-                    Téléphone
-                  </p>
+                  <p className="text-sm font-medium text-graphite dark:text-smoke mb-1">Téléphone</p>
                   <a
                     href={`tel:${wording.contact.phone}`}
-                    className="text-brand-noir dark:text-white hover:text-brand-gold transition-colors"
+                    className="text-ink dark:text-paper hover:text-accent dark:hover:text-accent-light transition-colors"
                   >
                     {wording.contact.phone}
                   </a>
@@ -233,14 +216,12 @@ export function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <MessageCircle className="h-6 w-6 text-brand-gold flex-shrink-0 mt-1" />
+                <MessageCircle className="h-6 w-6 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm font-medium text-brand-slate dark:text-[#94a3b8] mb-1">
-                    WhatsApp
-                  </p>
+                  <p className="text-sm font-medium text-graphite dark:text-smoke mb-1">WhatsApp</p>
                   <a
                     href={`https://wa.me/${wording.contact.whatsapp.replace(/\s/g, "")}`}
-                    className="text-brand-noir dark:text-white hover:text-brand-gold transition-colors"
+                    className="text-ink dark:text-paper hover:text-accent dark:hover:text-accent-light transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -250,14 +231,10 @@ export function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-brand-gold flex-shrink-0 mt-1" />
+                <MapPin className="h-6 w-6 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm font-medium text-brand-slate dark:text-[#94a3b8] mb-1">
-                    Localisation
-                  </p>
-                  <p className="text-brand-noir dark:text-white">
-                    {wording.contact.location}
-                  </p>
+                  <p className="text-sm font-medium text-graphite dark:text-smoke mb-1">Localisation</p>
+                  <p className="text-ink dark:text-paper">{wording.contact.location}</p>
                 </div>
               </div>
             </div>
@@ -271,79 +248,52 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             suppressHydrationWarning
           >
-            <h3 className="font-serif text-2xl text-brand-noir dark:text-white mb-4">
+            <h3 className="font-display font-medium text-2xl text-ink dark:text-paper mb-4 tracking-[-0.01em]">
               {wording.contact.form.title}
             </h3>
-            <p className="text-brand-slate dark:text-[#94a3b8] mb-8">
+            <p className="text-charcoal dark:text-smoke mb-8 text-[15px] leading-[1.65]">
               {wording.contact.form.subtitle}
             </p>
 
             <form className="space-y-5" suppressHydrationWarning>
-              {/* Nom + Société */}
-              <div>
-                <input
-                  type="text"
-                  placeholder={wording.contact.form.placeholders.name}
-                  className="w-full px-5 py-4 bg-brand-cream dark:bg-[#0a0c10] border border-brand-noir/20 dark:border-white/[0.05] text-brand-noir dark:text-white placeholder:text-brand-slate/50 dark:placeholder:text-[#94a3b8]/50 focus:outline-none focus:border-brand-gold transition-colors"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                placeholder={wording.contact.form.placeholders.name}
+                className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
+                required
+              />
+              <input
+                type="email"
+                placeholder={wording.contact.form.placeholders.email}
+                className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
+                required
+              />
+              <input
+                type="tel"
+                placeholder={wording.contact.form.placeholders.phone}
+                className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
+              />
+              <input
+                type="text"
+                placeholder={wording.contact.form.placeholders.agents}
+                className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
+              />
+              <textarea
+                rows={5}
+                placeholder={wording.contact.form.placeholders.project}
+                className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors resize-none rounded-sm"
+                required
+              />
 
-              {/* Email */}
-              <div>
-                <input
-                  type="email"
-                  placeholder={wording.contact.form.placeholders.email}
-                  className="w-full px-5 py-4 bg-brand-cream dark:bg-[#0a0c10] border border-brand-noir/20 dark:border-white/[0.05] text-brand-noir dark:text-white placeholder:text-brand-slate/50 dark:placeholder:text-[#94a3b8]/50 focus:outline-none focus:border-brand-gold transition-colors"
-                  required
-                />
-              </div>
-
-              {/* Téléphone */}
-              <div>
-                <input
-                  type="tel"
-                  placeholder={wording.contact.form.placeholders.phone}
-                  className="w-full px-5 py-4 bg-brand-cream dark:bg-[#0a0c10] border border-brand-noir/20 dark:border-white/[0.05] text-brand-noir dark:text-white placeholder:text-brand-slate/50 dark:placeholder:text-[#94a3b8]/50 focus:outline-none focus:border-brand-gold transition-colors"
-                />
-              </div>
-
-              {/* Nombre d'agents (optional, pour qualifier) */}
-              <div>
-                <input
-                  type="text"
-                  placeholder={wording.contact.form.placeholders.agents}
-                  className="w-full px-5 py-4 bg-brand-cream dark:bg-[#0a0c10] border border-brand-noir/20 dark:border-white/[0.05] text-brand-noir dark:text-white placeholder:text-brand-slate/50 dark:placeholder:text-[#94a3b8]/50 focus:outline-none focus:border-brand-gold transition-colors"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <textarea
-                  rows={5}
-                  placeholder={wording.contact.form.placeholders.project}
-                  className="w-full px-5 py-4 bg-brand-cream dark:bg-[#0a0c10] border border-brand-noir/20 dark:border-white/[0.05] text-brand-noir dark:text-white placeholder:text-brand-slate/50 dark:placeholder:text-[#94a3b8]/50 focus:outline-none focus:border-brand-gold transition-colors resize-none"
-                  required
-                />
-              </div>
-
-              {/* Microcopy anti-friction */}
               <div className="space-y-2 pt-2">
-                <p className="text-xs text-brand-slate dark:text-[#94a3b8]">
-                  {wording.contact.form.microcopy.responseTime}
-                </p>
-                <p className="text-xs text-brand-slate dark:text-[#94a3b8]">
-                  {wording.contact.form.microcopy.confidentiality}
-                </p>
-                <p className="text-xs text-brand-slate dark:text-[#94a3b8]">
-                  {wording.contact.form.microcopy.noCommitment}
-                </p>
+                <p className="text-xs text-graphite dark:text-smoke">{wording.contact.form.microcopy.responseTime}</p>
+                <p className="text-xs text-graphite dark:text-smoke">{wording.contact.form.microcopy.confidentiality}</p>
+                <p className="text-xs text-graphite dark:text-smoke">{wording.contact.form.microcopy.noCommitment}</p>
               </div>
 
-              {/* CTA Button */}
               <button
                 type="submit"
-                className="w-full px-10 py-4 bg-brand-gold hover:bg-brand-gold/90 text-brand-noir text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300"
+                className="w-full px-8 py-4 bg-primary dark:bg-accent text-paper text-sm font-medium tracking-wide rounded-sm transition-all duration-300 hover:opacity-90"
               >
                 {wording.contact.form.submit}
               </button>

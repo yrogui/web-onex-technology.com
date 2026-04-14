@@ -14,18 +14,18 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-[88px] h-10 rounded-full border border-brand-noir/10 dark:border-white/[0.08]" />
+      <div className="w-[88px] h-10 rounded-sm border border-ink/10 dark:border-charcoal" />
     );
   }
 
   return (
-    <div className="relative inline-flex items-center bg-brand-cream dark:bg-[#1a1d23] border border-brand-noir/10 dark:border-white/[0.08] rounded-full p-1 transition-colors">
+    <div className="relative inline-flex items-center bg-paper dark:bg-charcoal/70 border border-ink/10 dark:border-charcoal rounded-sm p-1 transition-colors">
       <button
         onClick={() => setTheme("light")}
-        className={`relative z-10 p-2 rounded-full transition-all duration-300 ${
+        className={`relative z-10 p-2 rounded-sm transition-all duration-300 ${
           theme === "light"
-            ? "bg-brand-gold text-white shadow-sm"
-            : "text-brand-noir/70 dark:text-brand-cream/40 hover:text-brand-noir dark:hover:text-brand-cream"
+            ? "bg-accent text-white shadow-sm"
+            : "text-ink/70 dark:text-paper/40 hover:text-ink dark:hover:text-paper"
         }`}
         aria-label="Mode clair"
       >
@@ -33,10 +33,10 @@ export function ThemeToggle() {
       </button>
       <button
         onClick={() => setTheme("dark")}
-        className={`relative z-10 p-2 rounded-full transition-all duration-300 ${
+        className={`relative z-10 p-2 rounded-sm transition-all duration-300 ${
           theme === "dark"
-            ? "bg-brand-gold text-white shadow-sm"
-            : "text-brand-noir/70 dark:text-brand-cream/40 hover:text-brand-noir dark:hover:text-brand-cream"
+            ? "bg-accent text-white shadow-sm"
+            : "text-ink/70 dark:text-paper/40 hover:text-ink dark:hover:text-paper"
         }`}
         aria-label="Mode sombre"
       >

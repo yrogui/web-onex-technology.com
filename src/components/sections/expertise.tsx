@@ -15,17 +15,17 @@ const iconMap = {
 
 export function Expertise() {
   return (
-    <section id="expertises" className="py-32 bg-brand-cream dark:bg-[#0a0c10]" suppressHydrationWarning>
+    <section id="expertises" className="py-32 bg-paper dark:bg-primary" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <div className="mb-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
             {wording.expertise.subtitle}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-noir dark:text-white mb-6 tracking-tight">
+          <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6">
             {wording.expertise.title}
           </h2>
-          <p className="text-lg text-brand-slate dark:text-[#94a3b8] max-w-3xl">
+          <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl">
             {wording.expertise.description}
           </p>
         </div>
@@ -41,24 +41,24 @@ export function Expertise() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-[#11141a] p-10 border border-brand-noir/10 dark:border-white/[0.05] hover:border-brand-gold/30 dark:hover:border-brand-gold/30 transition-all duration-300 card-glow"
+                className="bg-paper dark:bg-charcoal/50 p-10 border border-smoke/30 dark:border-charcoal hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 rounded"
               >
                 <div className="mb-6">
-                  <Icon className="h-12 w-12 text-brand-gold" />
+                  <Icon className="h-12 w-12 text-accent dark:text-accent-light" />
                 </div>
-                <h3 className="font-serif text-2xl text-brand-noir dark:text-white mb-5">
+                <h3 className="font-display font-medium text-2xl text-ink dark:text-paper mb-5 tracking-[-0.01em]">
                   {item.title}
                 </h3>
-                <p className="text-brand-slate dark:text-[#94a3b8] mb-8 leading-relaxed">
+                <p className="text-charcoal dark:text-smoke mb-8 leading-[1.65] text-[15px]">
                   {item.description}
                 </p>
                 <ul className="space-y-3 mb-8">
                   {item.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="text-sm text-brand-slate dark:text-[#94a3b8] flex items-start gap-3"
+                      className="text-sm text-charcoal dark:text-smoke flex items-start gap-3"
                     >
-                      <Check className="h-4 w-4 text-brand-gold flex-shrink-0 mt-0.5" />
+                      <Check className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -66,15 +66,15 @@ export function Expertise() {
 
                 {/* Résultats mesurables */}
                 {item.results && item.results.length > 0 && (
-                  <div className="pt-6 border-t border-brand-noir/10 dark:border-white/[0.05]">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-4">
+                  <div className="pt-6 border-t border-smoke/30 dark:border-charcoal">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-4">
                       RÉSULTATS CLIENTS
                     </p>
                     <ul className="space-y-2">
                       {item.results.map((result, idx) => (
                         <li
                           key={idx}
-                          className="text-xs font-medium text-brand-noir dark:text-white"
+                          className="text-xs font-medium text-ink dark:text-paper"
                         >
                           {result}
                         </li>
