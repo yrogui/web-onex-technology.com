@@ -39,3 +39,6 @@ next-env.d.ts
 # Dossiers de travail Claude (ne jamais commiter)
 .playwright-mcp/
 /onex-refonte/
+
+# Screenshots audit Playwright (locaux uniquement)
+/public/_audit/
