@@ -514,7 +514,7 @@ export const wording = {
     whatsapp: "+212 6 XX XX XX XX",
     location: "Casablanca, Maroc",
     calendly: "https://calendly.com/yrogui/30min",
-    linkedin: "https://www.linkedin.com/in/yrogui/",
+    linkedin: "https://www.linkedin.com/company/onex-technology/",
 
     form: {
       title: "Formulaire de Contact",
