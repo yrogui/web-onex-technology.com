@@ -23,7 +23,7 @@ export const faqData: FAQItem[] = [
 
 **Inclus :** Architecture cloud, configuration plateforme, intégrations CRM, migration progressive, formation agents, support post go-live 30 jours.
 
-**💡 Bon à savoir :** Nous facturons au forfait projet (pas de régie), avec ROI positif dès le 8e mois en moyenne grâce aux économies télécoms (-20 à -40%).`,
+**💡 Bon à savoir :** Nous facturons au forfait projet (pas de régie), avec un ROI positif mesurable grâce aux économies télécoms (-20 à -40%).`,
   },
   {
     id: "faq-delais",
@@ -59,7 +59,7 @@ export const faqData: FAQItem[] = [
 4. **Plan de rollback documenté** : Retour arrière possible en < 30 min si problème critique
 5. **Support 24/7 première semaine** : Équipe dédiée post go-live
 
-**Résultat :** Sur 15 migrations réalisées au Maroc, **0 incident majeur**, SLA 99,95%+ respecté.
+**Résultat :** Sur des centaines de projets pilotés, **0 incident majeur en production**, SLA 99,95%+ respecté.
 
 **💡 Garantie One-X :** Si downtime non planifié > 1h, pénalités contractuelles appliquées (remboursement partiel).`,
   },

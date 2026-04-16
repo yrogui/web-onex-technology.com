@@ -14,7 +14,7 @@ export function SchemaOrg() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+212-5-22-XX-XX-XX",
+      telephone: "+33-6-65-56-72-67",
       contactType: "Customer Service",
       areaServed: "MA",
       availableLanguage: ["French", "Arabic", "English"],

@@ -14,7 +14,7 @@ export const wording = {
     title: "Migrez votre centre de contact vers le cloud,",
     titleItalic: "sans interruption.",
     subtitle:
-      "40% des migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif dès le 8e mois. Garanti.",
+      "40% des migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif mesurable dès les premiers mois.",
     baseline: "Le partenaire marocain des programmes CX critiques.",
     stats: [
       { label: "ANNÉES D'EXPERTISE CX & CLOUD", value: "18+" },
@@ -510,8 +510,8 @@ export const wording = {
 
     // Coordonnées et liens de contact
     email: "contact@onex-technology.com",
-    phone: "+212 5 22 XX XX XX",
-    whatsapp: "+212 6 XX XX XX XX",
+    phone: "+33 6 65 56 72 67",
+    whatsapp: "+33 6 65 56 72 67",
     location: "Casablanca, Maroc",
     calendly: "https://calendly.com/yrogui/30min",
     linkedin: "https://www.linkedin.com/company/onex-technology/",
@@ -588,7 +588,7 @@ export const wording = {
             label: "contact@onex-technology.com",
             href: "mailto:contact@onex-technology.com",
           },
-          { label: "+212 5 22 XX XX XX", href: "tel:+212522XXXXXX" },
+          { label: "+33 6 65 56 72 67", href: "tel:+33665567267" },
           { label: "Casablanca, Maroc", href: "#contact" },
         ],
       },
