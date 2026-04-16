@@ -34,8 +34,8 @@ export function Team() {
         >
           {/* Avatar */}
           <div className="flex-shrink-0">
-            <div className="w-[200px] h-[200px] rounded-full bg-primary dark:bg-ink flex items-center justify-center">
-              <span className="font-display text-5xl text-paper font-medium">YR</span>
+            <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
+              <img src="/images/team/yassine-rogui.jpg" alt="Yassine Rogui — Practice Leader One-X Technology" className="w-full h-full object-cover" />
             </div>
           </div>
 
