@@ -35,3 +35,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Dossiers de travail Claude (ne jamais commiter)
+.playwright-mcp/
+/onex-refonte/
