@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "One-X Technology — Partenaire CCaaS et CX au Maroc",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     title: "One—X Technology — Partenaire CCaaS et CX au Maroc",
     description:
       "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.png"],
   },
   category: "technology",
 };
