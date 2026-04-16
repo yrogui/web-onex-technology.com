@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mentions Légales | ONEX Technology",
-  description: "Mentions légales et informations juridiques d'ONEX Technology",
+  title: "Mentions Légales | One-X Technology",
+  description: "Mentions légales et informations juridiques de One-X Technology",
   robots: "noindex, nofollow",
 };
 
@@ -89,7 +89,7 @@ export default function MentionsLegalesPage() {
               </h2>
               <div className="text-graphite dark:text-smoke leading-relaxed space-y-3">
                 <p>
-                  <strong className="text-ink dark:text-paper">Raison sociale :</strong> ONEX Technology
+                  <strong className="text-ink dark:text-paper">Raison sociale :</strong> One-X Technology
                 </p>
                 <p>
                   <strong className="text-ink dark:text-paper">Forme juridique :</strong> Cabinet de conseil et delivery
@@ -107,7 +107,7 @@ export default function MentionsLegalesPage() {
                   </a>
                 </p>
                 <p>
-                  <strong className="text-ink dark:text-paper">Directeur de publication :</strong> ONEX Technology
+                  <strong className="text-ink dark:text-paper">Directeur de publication :</strong> One-X Technology
                 </p>
               </div>
             </section>
@@ -143,10 +143,10 @@ export default function MentionsLegalesPage() {
               </h2>
               <div className="text-graphite dark:text-smoke leading-relaxed space-y-4">
                 <p>
-                  L'ensemble du contenu du présent site <strong>onex-technology.com</strong>, incluant, de façon non limitative, les textes, images, graphismes, logos, vidéos, icônes et mise en forme, est la propriété exclusive d'ONEX Technology, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
+                  L'ensemble du contenu du présent site <strong>onex-technology.com</strong>, incluant, de façon non limitative, les textes, images, graphismes, logos, vidéos, icônes et mise en forme, est la propriété exclusive de One-X Technology, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
                 </p>
                 <p>
-                  Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord écrit préalable d'ONEX Technology.
+                  Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord écrit préalable de One-X Technology.
                 </p>
                 <p>
                   Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
@@ -164,19 +164,19 @@ export default function MentionsLegalesPage() {
               </h2>
               <div className="text-graphite dark:text-smoke leading-relaxed space-y-4">
                 <p>
-                  ONEX Technology s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.
+                  One-X Technology s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.
                 </p>
                 <p>
-                  Toutefois, ONEX Technology ne saurait être tenu responsable des omissions, des inexactitudes ou des erreurs involontaires qui auraient pu se glisser dans les informations présentées.
+                  Toutefois, One-X Technology ne saurait être tenu responsable des omissions, des inexactitudes ou des erreurs involontaires qui auraient pu se glisser dans les informations présentées.
                 </p>
                 <p>
-                  Les informations fournies le sont à titre indicatif et général. Elles n'ont pas de valeur contractuelle et ne sauraient engager la responsabilité d'ONEX Technology.
+                  Les informations fournies le sont à titre indicatif et général. Elles n'ont pas de valeur contractuelle et ne sauraient engager la responsabilité de One-X Technology.
                 </p>
                 <p>
-                  L'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive et décharge ONEX Technology de toute responsabilité à cet égard.
+                  L'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive et décharge One-X Technology de toute responsabilité à cet égard.
                 </p>
                 <p>
-                  ONEX Technology ne saurait être tenu responsable des dommages directs ou indirects qui pourraient résulter de l'utilisation, de l'accès au site ou de l'impossibilité d'y accéder.
+                  One-X Technology ne saurait être tenu responsable des dommages directs ou indirects qui pourraient résulter de l'utilisation, de l'accès au site ou de l'impossibilité d'y accéder.
                 </p>
               </div>
             </section>
@@ -191,13 +191,13 @@ export default function MentionsLegalesPage() {
                   Le site <strong>onex-technology.com</strong> peut contenir des liens hypertextes vers d'autres sites présents sur le réseau Internet. Les liens vers ces autres ressources vous font quitter le site onex-technology.com.
                 </p>
                 <p>
-                  ONEX Technology n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à l'accès, au contenu ou à l'utilisation de ces sites, ainsi qu'aux dommages pouvant en résulter.
+                  One-X Technology n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à l'accès, au contenu ou à l'utilisation de ces sites, ainsi qu'aux dommages pouvant en résulter.
                 </p>
                 <p>
-                  Les liens hypertextes mis en place dans le cadre du présent site en direction d'autres sites et/ou de pages personnelles et d'une manière générale vers toutes ressources existantes sur Internet, ne sauraient engager la responsabilité d'ONEX Technology.
+                  Les liens hypertextes mis en place dans le cadre du présent site en direction d'autres sites et/ou de pages personnelles et d'une manière générale vers toutes ressources existantes sur Internet, ne sauraient engager la responsabilité de One-X Technology.
                 </p>
                 <p>
-                  La création de liens hypertextes vers le site <strong>onex-technology.com</strong> nécessite une autorisation écrite préalable d'ONEX Technology.
+                  La création de liens hypertextes vers le site <strong>onex-technology.com</strong> nécessite une autorisation écrite préalable de One-X Technology.
                 </p>
               </div>
             </section>

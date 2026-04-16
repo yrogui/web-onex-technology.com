@@ -5,7 +5,7 @@ import { CookieSettingsButton } from "@/components/cookie-settings-button";
 export const metadata: Metadata = {
   title: "Politique de Gestion des Cookies",
   description:
-    "Découvrez comment ONEX Technology utilise les cookies sur son site web, vos droits RGPD et comment gérer vos préférences de cookies.",
+    "Découvrez comment One-X Technology utilise les cookies sur son site web, vos droits RGPD et comment gérer vos préférences de cookies.",
   robots: {
     index: true,
     follow: true,
@@ -29,7 +29,7 @@ export default function PolitiqueCookiesPage() {
             Dernière mise à jour : <strong>17 janvier 2026</strong>
           </p>
           <p className="text-lg text-graphite dark:text-smoke leading-relaxed mt-2">
-            Chez ONEX Technology, nous respectons votre vie privée. Cette politique explique comment nous utilisons les cookies
+            Chez One-X Technology, nous respectons votre vie privée. Cette politique explique comment nous utilisons les cookies
             et comment vous pouvez contrôler vos préférences.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function PolitiqueCookiesPage() {
           <section className="mb-12">
             <h2 className="font-display text-3xl font-bold text-ink dark:text-paper mb-6 flex items-center gap-3">
               <span className="text-accent">02</span>
-              Cookies utilisés sur ONEX Technology
+              Cookies utilisés sur One-X Technology
             </h2>
 
             {/* Essentiels */}

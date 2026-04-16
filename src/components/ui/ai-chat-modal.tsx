@@ -24,7 +24,7 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
     {
       id: "welcome",
       content:
-        "Bonjour ! Je suis l'assistant IA de ONEX Technology. Je peux vous aider avec :\n\n• Informations sur nos services CCaaS\n• Prise de rendez-vous\n• Questions techniques sur les migrations cloud\n• Tarifs et méthodologie\n\nComment puis-je vous aider aujourd'hui ?",
+        "Bonjour ! Je suis l'assistant IA de One-X Technology. Je peux vous aider avec :\n\n• Informations sur nos services CCaaS\n• Prise de rendez-vous\n• Questions techniques sur les migrations cloud\n• Tarifs et méthodologie\n\nComment puis-je vous aider aujourd'hui ?",
       role: "assistant",
       timestamp: new Date(),
     },
@@ -178,7 +178,7 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-ink dark:text-paper">
-                  Assistant IA ONEX
+                  Assistant IA One-X
                 </h3>
                 <p className="text-xs text-graphite dark:text-smoke">
                   Propulsé par GPT-4 + Calendrier + Base de connaissances

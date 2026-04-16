@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité | ONEX Technology",
-  description: "Politique de confidentialité et protection des données personnelles d'ONEX Technology",
+  title: "Politique de Confidentialité | One-X Technology",
+  description: "Politique de confidentialité et protection des données personnelles de One-X Technology",
   robots: "noindex, nofollow",
 };
 
@@ -39,7 +39,7 @@ export default function PolitiqueConfidentialitePage() {
           {/* Intro */}
           <div className="mb-12 p-6 bg-accent/5 border border-accent/20 dark:bg-accent/5">
             <p className="text-graphite dark:text-smoke leading-relaxed">
-              ONEX Technology s'engage à protéger la confidentialité et la sécurité de vos données personnelles. Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations conformément au Règlement Général sur la Protection des Données (RGPD) et aux lois marocaines en vigueur.
+              One-X Technology s'engage à protéger la confidentialité et la sécurité de vos données personnelles. Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations conformément au Règlement Général sur la Protection des Données (RGPD) et aux lois marocaines en vigueur.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export default function PolitiqueConfidentialitePage() {
                   Le responsable du traitement des données personnelles est :
                 </p>
                 <p>
-                  <strong className="text-ink dark:text-paper">ONEX Technology</strong><br />
+                  <strong className="text-ink dark:text-paper">One-X Technology</strong><br />
                   Casablanca, Maroc<br />
                   Email : <a href="mailto:contact@onex-technology.com" className="text-accent hover:underline">contact@onex-technology.com</a>
                 </p>
@@ -195,7 +195,7 @@ export default function PolitiqueConfidentialitePage() {
                 5. Destinataires des données
               </h2>
               <div className="text-graphite dark:text-smoke leading-relaxed space-y-4">
-                <p>Vos données personnelles sont destinées aux services internes d'ONEX Technology.</p>
+                <p>Vos données personnelles sont destinées aux services internes de One-X Technology.</p>
                 <p>Nous pouvons partager vos données avec des prestataires de services tiers dans le cadre strict de nos activités :</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong className="text-ink dark:text-paper">Hébergement :</strong> EX2 Hosting (serveurs en France)</li>

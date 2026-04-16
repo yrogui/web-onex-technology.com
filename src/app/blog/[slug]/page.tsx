@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!article) {
     return {
-      title: "Article introuvable | ONEX Technology",
+      title: "Article introuvable | One-X Technology",
     };
   }
 
   return {
-    title: `${article.title} | Blog ONEX Technology`,
+    title: `${article.title} | Blog One-X Technology`,
     description: article.excerpt,
     keywords: [article.category, "CCaaS Maroc", "CX", "transformation digitale"],
   };

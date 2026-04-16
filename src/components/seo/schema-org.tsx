@@ -2,7 +2,7 @@ export function SchemaOrg() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "ONEX Technology",
+    name: "One-X Technology",
     description:
       "Cabinet de conseil et delivery spécialisé en transformation digitale, expérience client et solutions CCaaS au Maroc.",
     url: "https://onex-technology.com",

@@ -44,7 +44,7 @@ export const faqData: FAQItem[] = [
 - Intégrations CRM standardisées (Salesforce/Dynamics)
 - Équipe IT disponible pour tests
 
-**💡 Engagement ONEX :** Roadmap semaine par semaine dès l'audit. Pas de retard sauf demande de changement de votre part.`,
+**💡 Engagement One-X :** Roadmap semaine par semaine dès l'audit. Pas de retard sauf demande de changement de votre part.`,
   },
   {
     id: "faq-downtime",
@@ -61,7 +61,7 @@ export const faqData: FAQItem[] = [
 
 **Résultat :** Sur 15 migrations réalisées au Maroc, **0 incident majeur**, SLA 99,95%+ respecté.
 
-**💡 Garantie ONEX :** Si downtime non planifié > 1h, pénalités contractuelles appliquées (remboursement partiel).`,
+**💡 Garantie One-X :** Si downtime non planifié > 1h, pénalités contractuelles appliquées (remboursement partiel).`,
   },
   {
     id: "faq-choix-plateforme",
@@ -79,7 +79,7 @@ export const faqData: FAQItem[] = [
 - **Vous êtes déjà sur AWS + équipe tech forte** → **AWS Connect**
 - **Vous migrez depuis Avaya on-premise** → **Avaya Cloud**
 
-**💡 Service ONEX :** Diagnostic gratuit 30 min pour comparer les 3 selon VOS critères (budget, nb agents, CRM, timeline). Recommandation objective, on ne touche pas de commission éditeur.`,
+**💡 Service One-X :** Diagnostic gratuit 30 min pour comparer les 3 selon VOS critères (budget, nb agents, CRM, timeline). Recommandation objective, on ne touche pas de commission éditeur.`,
   },
   {
     id: "faq-local-maroc",
@@ -88,7 +88,7 @@ export const faqData: FAQItem[] = [
     answer: `**3 raisons concrètes :**
 
 **1. Réactivité & Disponibilité**
-- **Cabinet local (ONEX)** : Équipe à Casablanca, interventions sur site sous 48h, support en français/arabe, même fuseau horaire
+- **Cabinet local (One-X)** : Équipe à Casablanca, interventions sur site sous 48h, support en français/arabe, même fuseau horaire
 - **Intégrateur international** : Consultants basés à Paris/Londres, déplacements coûteux, décalage horaire, disponibilité limitée
 
 **2. Coûts Maîtrisés**

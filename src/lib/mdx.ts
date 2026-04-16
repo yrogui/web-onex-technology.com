@@ -90,7 +90,7 @@ export async function getArticleBySlug(
       date: data.date || new Date().toISOString().split("T")[0],
       category: data.category || "Non classé",
       tags: data.tags || [],
-      author: data.author || "ONEX Technology",
+      author: data.author || "One-X Technology",
       readTime: data.readTime || stats.text,
       image: data.image || "/images/blog/default.jpg",
       ogImage: data.ogImage || data.image || "/images/blog/default.jpg",

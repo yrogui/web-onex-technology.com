@@ -21,7 +21,7 @@ export default function Home() {
       {/* Partenaires Technologiques */}
       <Partners />
 
-      {/* Pourquoi ONEX */}
+      {/* Pourquoi One-X */}
       <WhyOnex />
 
       {/* Témoignages Clients (Social Proof) */}

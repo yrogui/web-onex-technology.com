@@ -1,10 +1,10 @@
-// WORDING OPTIMISÉ CONVERSION B2B - ONEX Technology
+// WORDING OPTIMISÉ CONVERSION B2B - One-X Technology
 // Focus : CCaaS & CX (pas généraliste)
 // Approche : Bénéfices > Features | Preuves chiffrées | CTAs explicites
 
 export const wording = {
   header: {
-    name: "ONEX Technology",
+    name: "One-X Technology",
     tagline: "Spécialistes CCaaS & Expérience Client",
   },
 
@@ -85,7 +85,7 @@ export const wording = {
   },
 
   whyOnex: {
-    title: "Pourquoi Migrer Votre CCaaS avec ONEX ?",
+    title: "Pourquoi Migrer Votre CCaaS avec One-X ?",
     subtitle: "ZÉRO IMPROVISATION. ZÉRO DOWNTIME.",
     description:
       "15 centres de contact migrés sans interruption. Voici comment on fait différent.",
@@ -284,7 +284,7 @@ export const wording = {
     description:
       "Nos architectes CCaaS ont 10+ ans d'expérience chacun. Formés sur les plus grands déploiements CX en France et à l'international (luxe, banque, assurance, télécoms). Vous payez pour de l'expertise rare, pas pour former des juniors.",
     philosophy:
-      "Chez ONEX, on croit qu'un projet CCaaS bien fait vaut mieux que 10 projets bâclés. On ne prend que 3-4 clients simultanés pour garantir l'excellence. Si on ne peut pas livrer la qualité qu'on promet, on refuse le projet.",
+      "Chez One-X, on croit qu'un projet CCaaS bien fait vaut mieux que 10 projets bâclés. On ne prend que 3-4 clients simultanés pour garantir l'excellence. Si on ne peut pas livrer la qualité qu'on promet, on refuse le projet.",
     values: [
       {
         title: "Excellence Technique (Pas de Bricolage)",
@@ -390,7 +390,7 @@ export const wording = {
 
   // === OFFRES PRODUITISÉES (CONVERSION) ===
   offers: {
-    title: "Comment Démarrer Avec ONEX ?",
+    title: "Comment Démarrer Avec One-X ?",
     subtitle: "3 OFFRES PACKAGÉES. PRIX FIXES. ZÉRO SURPRISE.",
     description:
       "Pas de devis à rallonge. Pas de consultants qui facturent du temps. Des offres claires avec scope fixe, prix transparent, timeline garantie.",
@@ -557,13 +557,13 @@ export const wording = {
 
   // === FOOTER ===
   footer: {
-    bio: "ONEX Technology est le cabinet spécialisé CCaaS & CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Zéro downtime, ROI garanti. Casablanca.",
+    bio: "One-X Technology est le cabinet spécialisé CCaaS & CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Zéro downtime, ROI garanti. Casablanca.",
     columns: [
       {
         title: "Navigation",
         links: [
           { label: "Accueil", href: "/" },
-          { label: "Pourquoi ONEX", href: "#a-propos" },
+          { label: "Pourquoi One-X", href: "#a-propos" },
           { label: "Nos Expertises CCaaS", href: "#expertises" },
           { label: "Notre Méthode", href: "#approche" },
           { label: "L'Équipe", href: "#equipe" },
@@ -596,7 +596,7 @@ export const wording = {
     socials: {
       linkedin: "https://www.linkedin.com/company/onex-technology",
     },
-    legal: "© 2026 ONEX Technology. Tous droits réservés.",
+    legal: "© 2026 One-X Technology. Tous droits réservés.",
     legalLinks: [
       { label: "Mentions Légales", href: "/mentions-legales" },
       {
