@@ -19,8 +19,8 @@ import { CookieConsent } from "@/components/cookie-consent";
 export const metadata: Metadata = {
   metadataBase: new URL("https://onex-technology.com"),
   title: {
-    default: "Migration CCaaS Maroc | Genesys, AWS Connect, Avaya",
-    template: "%s | ONEX Technology",
+    default: "One—X Technology — Partenaire CCaaS et CX au Maroc",
+    template: "%s | One—X Technology",
   },
 
   verification: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   
   description:
-    "Spécialistes migration CCaaS au Maroc : Genesys Cloud, AWS Connect, Avaya. Zéro downtime, ROI 8 mois garanti. 15 centres migrés. Audit gratuit 30 min.",
+    "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
   keywords: [
     "migration ccaas maroc",
     "genesys cloud maroc",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     "migration telephonie cloud maroc",
     "integration crm genesys maroc",
   ],
-  authors: [{ name: "ONEX Technology", url: "https://onex-technology.com" }],
-  creator: "ONEX Technology",
-  publisher: "ONEX Technology",
+  authors: [{ name: "One-X Technology", url: "https://onex-technology.com" }],
+  creator: "One-X Technology",
+  publisher: "One-X Technology",
   robots: {
     index: true,
     follow: true,
@@ -66,24 +66,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://onex-technology.com",
-    siteName: "ONEX Technology",
-    title: "Migration CCaaS Maroc | Genesys Cloud, AWS Connect, Avaya",
+    siteName: "One-X Technology",
+    title: "One—X Technology — Partenaire CCaaS et CX au Maroc",
     description:
-      "Spécialistes migration CCaaS au Maroc : Genesys Cloud, AWS Connect, Avaya. Zéro downtime, ROI 8 mois garanti. 15 centres migrés. Audit gratuit 30 min.",
+      "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ONEX Technology - Migration CCaaS Maroc : Genesys Cloud, AWS Connect",
+        alt: "One-X Technology — Partenaire CCaaS et CX au Maroc",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Migration CCaaS Maroc | Genesys, AWS Connect, Avaya",
+    title: "One—X Technology — Partenaire CCaaS et CX au Maroc",
     description:
-      "Spécialistes migration CCaaS au Maroc : Genesys Cloud, AWS Connect, Avaya. Zéro downtime, ROI 8 mois garanti. 15 centres migrés.",
+      "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
     images: ["/images/og-image.jpg"],
   },
   category: "technology",
