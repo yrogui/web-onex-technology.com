@@ -15,8 +15,8 @@ export const wordingConversion = {
     subtitle:
       "40% des migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif dès le 8e mois. Garanti.",
     stats: [
-      { label: "ROI moyen sur migrations", value: "8 mois" },
-      { label: "Taux de disponibilité garanti", value: "0 downtime" },
+      { label: "ANNÉES D'EXPERTISE CX & CLOUD", value: "18+" },
+      { label: "PROJETS DE TRANSFORMATION PILOTÉS", value: "400+" },
       { label: "Centres modernisés au Maroc", value: "15" },
     ],
     ctaPrimary: "Audit gratuit de votre plateforme (30 min)",
@@ -80,7 +80,7 @@ export const wordingConversion = {
     title: "Pourquoi Migrer Votre CCaaS avec One-X ?",
     subtitle: "ZÉRO IMPROVISATION. ZÉRO DOWNTIME.",
     description:
-      "15 centres de contact migrés sans interruption. Voici comment on fait différent.",
+      "18 ans d'expertise en migration CCaaS. Voici comment on fait différent.",
     items: [
       {
         title: "Architectes CCaaS certifiés (pas des juniors)",
@@ -97,7 +97,7 @@ export const wordingConversion = {
       {
         title: "Bascule progressive (pas de big bang suicidaire)",
         description:
-          "Migration par vagues de 10% des agents/jour. Tests de charge réels. Plan de rollback systématique. Dual-running si besoin. 15 migrations sans incident majeur. Preuve par les faits.",
+          "Migration par vagues de 10% des agents/jour. Tests de charge réels. Plan de rollback systématique. Dual-running si besoin. Des centaines de projets menés sans incident majeur. Preuve par les faits.",
         icon: "bridge",
       },
       {
@@ -328,7 +328,7 @@ export const wordingConversion = {
     title: "Checklist Migration CCaaS : 25 Points de Contrôle Avant Go-Live",
     subtitle: "PDF GRATUIT + RETOURS TERRAIN MENSUELS",
     description:
-      "40% des migrations CCaaS échouent par oubli de points techniques critiques. Téléchargez notre checklist (PDF gratuit) basée sur 15 migrations réelles. Bonus : 1 email/mois avec retours terrain (pas de spam commercial).",
+      "40% des migrations CCaaS échouent par oubli de points techniques critiques. Téléchargez notre checklist (PDF gratuit) basée sur 18 ans de retours terrain. Bonus : 1 email/mois avec retours terrain (pas de spam commercial).",
     leadMagnet: "🎁 Checklist Migration CCaaS - 25 Points Critiques (PDF)",
     placeholders: {
       email: "Votre email professionnel",
