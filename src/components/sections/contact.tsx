@@ -1,4 +1,5 @@
 "use client";
+import { useState, FormEvent } from "react";
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, MessageCircle, Check, Calendar, Linkedin } from "lucide-react";
@@ -6,6 +7,27 @@ import { wording } from "@/data/wording";
 import { ContactIcons } from "@/components/ui/contact-icons";
 
 export function Contact() {
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus("sending");
+    const fd = new FormData(e.currentTarget);
+    try {
+      const res = await fetch("https://n8n.expertiaacademy.com/webhook/onex-livechat-0001-0001-000000000001", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: "Formulaire contact onex-technology.com\nNom: " + fd.get("name") + "\nEmail: " + fd.get("email") + "\nTel: " + (fd.get("phone") || "N/A") + "\nAgents: " + (fd.get("agents") || "N/A") + "\nProjet: " + fd.get("project"),
+          sessionId: "contact_" + Date.now(),
+        }),
+      });
+      setFormStatus(res.ok ? "success" : "error");
+    } catch {
+      setFormStatus("error");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -255,31 +277,36 @@ export function Contact() {
               {wording.contact.form.subtitle}
             </p>
 
-            <form className="space-y-5" suppressHydrationWarning>
+            <form className="space-y-5" onSubmit={handleSubmit} suppressHydrationWarning>
               <input
                 type="text"
+                name="name"
                 placeholder={wording.contact.form.placeholders.name}
                 className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
                 required
               />
               <input
                 type="email"
+                name="email"
                 placeholder={wording.contact.form.placeholders.email}
                 className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
                 required
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder={wording.contact.form.placeholders.phone}
                 className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
               />
               <input
                 type="text"
+                name="agents"
                 placeholder={wording.contact.form.placeholders.agents}
                 className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm"
               />
               <textarea
                 rows={5}
+                name="project"
                 placeholder={wording.contact.form.placeholders.project}
                 className="w-full px-5 py-4 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors resize-none rounded-sm"
                 required
@@ -291,12 +318,22 @@ export function Contact() {
                 <p className="text-xs text-graphite dark:text-smoke">{wording.contact.form.microcopy.noCommitment}</p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full px-8 py-4 bg-primary dark:bg-accent text-paper text-sm font-medium tracking-wide rounded-sm transition-all duration-300 hover:opacity-90"
-              >
-                {wording.contact.form.submit}
-              </button>
+              {formStatus === "success" ? (
+                <div className="w-full px-8 py-4 bg-success/10 border border-success/30 text-success text-sm font-medium text-center rounded-sm">
+                  Message envoy\u00e9 ! Nous vous r\u00e9pondons sous 24h.
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={formStatus === "sending"}
+                  className="w-full px-8 py-4 bg-primary dark:bg-accent text-paper text-sm font-medium tracking-wide rounded-sm transition-all duration-300 hover:opacity-90 disabled:opacity-50"
+                >
+                  {formStatus === "sending" ? "Envoi en cours..." : formStatus === "error" ? "R\u00e9essayer" : wording.contact.form.submit}
+                </button>
+              )}
+              {formStatus === "error" && (
+                <p className="text-error text-sm text-center mt-2">Une erreur est survenue. R\u00e9essayez ou contactez-nous par email.</p>
+              )}
             </form>
           </motion.div>
         </div>
