@@ -14,15 +14,20 @@ export function Contact() {
     setFormStatus("sending");
     const fd = new FormData(e.currentTarget);
     try {
-      const res = await fetch("https://flow.onextechnology.cloud/webhook/livechat", { mode: "no-cors",
+      const res = await fetch("https://flow.onextechnology.cloud/webhook/contact-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: "Formulaire contact onex-technology.com\nNom: " + fd.get("name") + "\nEmail: " + fd.get("email") + "\nTel: " + (fd.get("phone") || "N/A") + "\nAgents: " + (fd.get("agents") || "N/A") + "\nProjet: " + fd.get("project"),
+          name: fd.get("name"),
+          email: fd.get("email"),
+          phone: fd.get("phone") || "",
+          agents: fd.get("agents") || "",
+          project: fd.get("project"),
+          website: fd.get("website") || "",
           sessionId: "contact_" + Date.now(),
         }),
       });
-      setFormStatus("success");
+      setFormStatus(res.ok ? "success" : "error");
     } catch {
       setFormStatus("error");
     }
@@ -312,6 +317,13 @@ export function Contact() {
                 required
               />
 
+              <input
+                type="text"
+                name="website"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div className="space-y-2 pt-2">
                 <p className="text-xs text-graphite dark:text-smoke">{wording.contact.form.microcopy.responseTime}</p>
                 <p className="text-xs text-graphite dark:text-smoke">{wording.contact.form.microcopy.confidentiality}</p>
