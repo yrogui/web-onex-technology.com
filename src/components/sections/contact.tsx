@@ -14,7 +14,7 @@ export function Contact() {
     setFormStatus("sending");
     const fd = new FormData(e.currentTarget);
     try {
-      const res = await fetch("https://n8n.expertiaacademy.com/webhook/onex-livechat-0001-0001-000000000001", {
+      const res = await fetch("https://flow.onextechnology.cloud/webhook/livechat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
