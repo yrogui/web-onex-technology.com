@@ -15,7 +15,7 @@ interface Message {
 }
 
 const N8N_CONFIG = {
-  webhookUrl: "https://n8n.expertiaacademy.com/webhook/78de5190-132b-4220-8df8-a7945a444927",
+  webhookUrl: "https://flow.onextechnology.cloud/webhook/chatbot-site",
   method: "POST" as const,
 };
 
