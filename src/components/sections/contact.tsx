@@ -14,19 +14,18 @@ export function Contact() {
     setFormStatus("sending");
     const fd = new FormData(e.currentTarget);
     try {
-      const res = await fetch("https://flow.onextechnology.cloud/webhook/contact-form", { mode: "no-cors",
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: fd.get("name"),
-          email: fd.get("email"),
-          phone: fd.get("phone") || "",
-          agents: fd.get("agents") || "",
-          project: fd.get("project"),
-          website: fd.get("website") || "",
-          sessionId: "contact_" + Date.now(),
-        }),
-      });
+      const params = new URLSearchParams();
+        params.append("name", fd.get("name") as string);
+        params.append("email", fd.get("email") as string);
+        params.append("phone", (fd.get("phone") as string) || "");
+        params.append("agents", (fd.get("agents") as string) || "");
+        params.append("project", (fd.get("project") as string) || "");
+        params.append("website", (fd.get("website") as string) || "");
+        params.append("sessionId", "contact_" + Date.now());
+        const res = await fetch("https://flow.onextechnology.cloud/webhook/contact-form", {
+          method: "POST",
+          body: params,
+        });
       setFormStatus("success");
     } catch {
       setFormStatus("error");
