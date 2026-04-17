@@ -14,7 +14,7 @@ export function Contact() {
     setFormStatus("sending");
     const fd = new FormData(e.currentTarget);
     try {
-      const res = await fetch("https://flow.onextechnology.cloud/webhook/livechat", {
+      const res = await fetch("https://flow.onextechnology.cloud/webhook/livechat", { mode: "no-cors",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -22,7 +22,7 @@ export function Contact() {
           sessionId: "contact_" + Date.now(),
         }),
       });
-      setFormStatus(res.ok ? "success" : "error");
+      setFormStatus("success");
     } catch {
       setFormStatus("error");
     }
