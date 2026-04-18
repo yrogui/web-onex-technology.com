@@ -63,8 +63,8 @@ export function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Logo variant="dark" size="md" href="/" />
+          {/* Logo : light quand navbar transparente sur hero sombre, dark sinon */}
+          <Logo variant={isScrolled ? "dark" : "light"} size="md" href="/" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

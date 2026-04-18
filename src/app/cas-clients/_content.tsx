@@ -66,7 +66,7 @@ export function CasClientsContent() {
                 transition={{ duration: 0.7 }}
                 className="mb-12"
               >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+                <p className={`text-[11px] font-semibold uppercase tracking-[0.12em] ${isDark ? "text-accent" : "text-graphite dark:text-accent"} mb-4`}>
                   {cs.sector}
                 </p>
                 <h2

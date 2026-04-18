@@ -43,7 +43,7 @@ export function AProposContent() {
             transition={{ duration: 0.7 }}
             className="mb-12"
           >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               NOTRE HISTOIRE
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-10 max-w-3xl">
@@ -147,7 +147,7 @@ export function AProposContent() {
             transition={{ duration: 0.7 }}
             className="mb-16"
           >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               CERTIFICATIONS & STACK
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper max-w-3xl">

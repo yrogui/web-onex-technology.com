@@ -130,7 +130,7 @@ export function ServicesContent() {
             transition={{ duration: 0.7 }}
             className="mb-16"
           >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               MIGRATION CCAAS
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-3xl">
@@ -303,7 +303,7 @@ export function ServicesContent() {
             transition={{ duration: 0.7 }}
             className="mb-16"
           >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               AUTOMATISATION IA
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-3xl">

@@ -85,7 +85,7 @@ export const wording = {
   },
 
   whyOnex: {
-    title: "Pourquoi migrer votre CCaaS avec One-X ?",
+    title: "Pourquoi migrer votre CCaaS avec One—X ?",
     subtitle: "ZÉRO IMPROVISATION. ZÉRO DOWNTIME.",
     description:
       "18 ans d'expertise en migration CCaaS. Voici comment nous faisons différemment.",
@@ -256,15 +256,15 @@ export const wording = {
       },
     ],
     engagement: {
-      title: "Comment On Travaille Ensemble",
+      title: "Comment on travaille ensemble",
       items: [
         {
           title: "Diagnostic CCaaS complet",
           description:
-            "Vous ne savez pas par où commencer ? Audit technique plateforme existante, cartographie flux, business case chiffré, roadmap recommandée. Livré sous 2 semaines. Forfait fixe 15k€ HT (déduit si vous signez la mise en œuvre).",
+            "Vous ne savez pas par où commencer ? Audit technique plateforme existante, cartographie flux, business case chiffré, roadmap recommandée. Livré sous 2 semaines. Forfait fixe 15 000 MAD HT (≈ 1 400 €), déduit si vous signez la mise en œuvre.",
         },
         {
-          title: "Delivery End-to-End CCaaS",
+          title: "Delivery end-to-end CCaaS",
           description:
             "De l'audit au go-live sécurisé. Forfait global incluant architecture, config, intégrations CRM, formation, support post go-live 30 jours. Timeline fixe, budget maîtrisé, zéro surprise.",
         },
@@ -454,7 +454,7 @@ export const wording = {
 
   // === OFFRES PRODUITISÉES (CONVERSION) ===
   offers: {
-    title: "Comment démarrer avec One-X ?",
+    title: "Comment démarrer avec One—X ?",
     subtitle: "3 OFFRES PACKAGÉES. PRIX FIXES. ZÉRO SURPRISE.",
     description:
       "Pas de devis à rallonge. Pas de consultants qui facturent du temps. Des offres claires avec scope fixe, prix transparent, timeline garantie.",
@@ -627,7 +627,7 @@ export const wording = {
         title: "Navigation",
         links: [
           { label: "Accueil", href: "/" },
-          { label: "Pourquoi One-X", href: "#a-propos" },
+          { label: "Pourquoi One—X", href: "#a-propos" },
           { label: "Nos expertises CCaaS", href: "#expertises" },
           { label: "Notre méthode", href: "#approche" },
           { label: "L'équipe", href: "#equipe" },

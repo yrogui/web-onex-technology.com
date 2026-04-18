@@ -20,7 +20,7 @@ export function Offers() {
           transition={{ duration: 0.7 }}
           className="mb-20 text-center"
         >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
             {wording.offers.subtitle}
           </p>
           <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6">

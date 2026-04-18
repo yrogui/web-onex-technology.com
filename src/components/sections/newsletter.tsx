@@ -36,7 +36,7 @@ export function Newsletter() {
             transition={{ duration: 0.7 }}
             className="mb-10"
           >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-3">
               {wording.newsletter.subtitle}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-ink dark:text-paper mb-6 tracking-[-0.015em]">
