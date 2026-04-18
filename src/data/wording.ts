@@ -559,7 +559,7 @@ export const wording = {
       items: [
         {
           title: "1. Vous hésitez entre Genesys, AWS Connect ou Avaya",
-          description: "On compare les 3 plateformes selon VOS contraintes (budget, nb agents, intégrations CRM, timeline). Recommandation objective, pas de commission éditeur.",
+          description: "Nous comparons les 3 plateformes selon vos contraintes (budget, nb agents, intégrations CRM, timeline). Recommandation objective, pas de commission éditeur.",
         },
         {
           title: "2. Votre migration CCaaS actuelle est bloquée",
@@ -567,7 +567,7 @@ export const wording = {
         },
         {
           title: "3. Vous voulez un audit ou un devis détaillé",
-          description: "Besoin d'un rapport technique pour votre COMEX ou d'un chiffrage précis ? On vous envoie notre grille tarifaire et nos conditions d'intervention (transparence totale).",
+          description: "Besoin d'un rapport technique pour votre COMEX ou d'un chiffrage précis ? Nous vous envoyons notre grille tarifaire et nos conditions d'intervention (transparence totale).",
         },
       ],
     },
@@ -586,8 +586,8 @@ export const wording = {
 
       // Microcopy anti-friction
       microcopy: {
-        responseTime: "⏱️ Réponse sous 24h ouvrées (lun-ven, 9h-18h)",
-        confidentiality: "🔒 Vos données restent confidentielles. Pas de revente, pas de spam. Conformité RGPD.",
+        responseTime: "Réponse sous 24h ouvrées (lun-ven, 9h-18h)",
+        confidentiality: "Vos données restent confidentielles. Pas de revente, pas de spam. Conformité RGPD.",
         noCommitment: "Sans engagement. Si nous ne pouvons pas vous aider, nous vous le disons franchement.",
       },
 
@@ -601,7 +601,7 @@ export const wording = {
       },
 
       submit: "Envoyer ma demande",
-      successMessage: "✅ Message envoyé ! On vous répond sous 24h ouvrées.",
+      successMessage: "Message envoyé. Nous vous répondons sous 24h ouvrées.",
     },
   },
 
@@ -672,7 +672,7 @@ export const wording = {
         href: "/politique-cookies",
       },
       {
-        label: "🍪 Gérer mes cookies",
+        label: "Gérer mes cookies",
         href: "#",
         onClick: "openCookieSettings",
       },

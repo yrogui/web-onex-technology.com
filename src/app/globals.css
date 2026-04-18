@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 /* FIX: Activer dark mode avec classe .dark (requis pour next-themes) */
 @custom-variant dark (&:where(.dark, .dark *));

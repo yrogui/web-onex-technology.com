@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { getPublishedArticles } from "@/lib/mdx";
 import { Newsletter } from "@/components/sections/newsletter";
+
+export const metadata: Metadata = {
+  title: "Blog — Retours terrain & insights CCaaS",
+  description:
+    "Articles techniques, retours d'expérience et analyses sur les migrations CCaaS, l'expérience client et l'IA conversationnelle au Maroc.",
+  alternates: { canonical: "https://onex-technology.com/blog" },
+};
 
 export default async function BlogPage() {
   const articles = await getPublishedArticles();
@@ -18,9 +26,8 @@ export default async function BlogPage() {
             Retours terrain & insights
           </h1>
           <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl">
-            Articles techniques, retours d'expérience et analyses basés sur nos
-            missions réelles au Maroc et en Afrique. Sans buzzwords, que du
-            concret.
+            Articles techniques, retours d'expérience et analyses issus de nos
+            missions réelles au Maroc et en Afrique. Précis, sourcés, applicables.
           </p>
         </div>
       </section>

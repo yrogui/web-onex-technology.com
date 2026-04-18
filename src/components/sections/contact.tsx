@@ -74,11 +74,11 @@ export function Contact() {
                 href={wording.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-[#0077B5] dark:hover:border-[#0077B5] transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-charcoal dark:hover:border-smoke transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-[#0077B5]/10 dark:bg-[#0077B5]/20 flex items-center justify-center mb-4 group-hover:bg-[#0077B5]/20 dark:group-hover:bg-[#0077B5]/30 transition-colors">
-                    <Linkedin className="h-7 w-7 text-[#0077B5]" />
+                  <div className="w-14 h-14 rounded bg-charcoal/10 dark:bg-paper/10 flex items-center justify-center mb-4 group-hover:bg-charcoal/20 dark:group-hover:bg-paper/20 transition-colors">
+                    <Linkedin className="h-7 w-7 text-charcoal dark:text-smoke" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     LinkedIn
@@ -112,17 +112,17 @@ export function Contact() {
                 href={wording.contact.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 rounded bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-600 dark:border-blue-500 transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded bg-accent/5 dark:bg-accent/10 border-2 border-accent transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-sm bg-blue-600 text-paper text-xs font-medium">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-sm bg-accent text-paper text-xs font-medium">
                     <Calendar className="h-3 w-3" />
                     RECOMMANDÉ
                   </span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-blue-600/20 flex items-center justify-center mb-4 group-hover:bg-blue-600/30 transition-colors">
-                    <Calendar className="h-7 w-7 text-blue-600" />
+                  <div className="w-14 h-14 rounded bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
+                    <Calendar className="h-7 w-7 text-accent dark:text-accent-light" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Calendly
@@ -139,11 +139,11 @@ export function Contact() {
                   const event = new CustomEvent("openBotModal");
                   window.dispatchEvent(event);
                 }}
-                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-purple-600 dark:hover:border-purple-600 transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-charcoal dark:hover:border-smoke transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-purple-600/10 flex items-center justify-center mb-4 group-hover:bg-purple-600/20 transition-colors">
-                    <MessageCircle className="h-7 w-7 text-purple-600" />
+                  <div className="w-14 h-14 rounded bg-charcoal/10 dark:bg-paper/10 flex items-center justify-center mb-4 group-hover:bg-charcoal/20 dark:group-hover:bg-paper/20 transition-colors">
+                    <MessageCircle className="h-7 w-7 text-charcoal dark:text-smoke" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Assistant IA
@@ -187,7 +187,7 @@ export function Contact() {
                 <div>
                   <p className="text-sm font-medium text-graphite dark:text-smoke mb-1">Téléphone</p>
                   <a
-                    href={`tel:${wording.contact.phone}`}
+                    href={`tel:${wording.contact.phone.replace(/\s/g, "")}`}
                     className="text-ink dark:text-paper hover:text-accent dark:hover:text-accent-light transition-colors"
                   >
                     {wording.contact.phone}

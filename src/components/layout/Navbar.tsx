@@ -109,7 +109,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-ink/10 dark:border-paper/10">
+          <div className="md:hidden py-4 border-t border-ink/10 dark:border-paper/10 bg-paper dark:bg-primary">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

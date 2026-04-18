@@ -76,7 +76,7 @@ export function Hero() {
           </div>
 
           {/* Baseline éditoriale */}
-          <p className="font-display italic text-2xl text-smoke/70 mt-12">
+          <p className="font-display text-2xl text-smoke/70 mt-12">
             {wording.hero.baseline}
           </p>
         </motion.div>
