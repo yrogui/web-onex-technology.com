@@ -1,5 +1,11 @@
 "use client";
 
+function formatMessage(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline font-medium">$1</a>');
+}
+
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, Send, X, Loader2, User, Bot } from "lucide-react";
 
@@ -235,9 +241,10 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
                       : "bg-paper dark:bg-charcoal/70 text-ink dark:text-paper border border-smoke/30 dark:border-charcoal"
                   }`}
                 >
-                  <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                    {message.content}
-                  </p>
+                  <p
+                    className="text-sm leading-relaxed whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{ __html: message.role === "assistant" ? formatMessage(message.content) : message.content }}
+                  />
                   <p
                     className={`text-xs mt-2 ${
                       message.role === "user"
