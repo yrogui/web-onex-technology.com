@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité | One-X Technology",
-  description: "Politique de confidentialité et protection des données personnelles de One-X Technology",
-  robots: "noindex, nofollow",
+  title: "Politique de confidentialité | One-X Technology",
+  description: "Politique de confidentialité et protection des données personnelles de One-X Technology.",
+  alternates: { canonical: "https://onex-technology.com/politique-de-confidentialite" },
 };
 
 export default function PolitiqueConfidentialitePage() {

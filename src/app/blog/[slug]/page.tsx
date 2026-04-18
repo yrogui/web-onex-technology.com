@@ -30,6 +30,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${article.title} | Blog One-X Technology`,
     description: article.excerpt,
     keywords: [article.category, "CCaaS Maroc", "CX", "transformation digitale"],
+    alternates: {
+      canonical: `https://onex-technology.com/blog/${slug}`,
+    },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://onex-technology.com/blog/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: article.ogImage || "/images/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
   };
 }
 

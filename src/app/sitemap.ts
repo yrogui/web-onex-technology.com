@@ -52,5 +52,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: "https://onex-technology.com/blog/ia-generative-ccaas-gadget-ou-revolution",
+      lastModified: new Date("2026-01-03"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: "https://onex-technology.com/blog/migration-amazon-connect-guide-survie",
+      lastModified: new Date("2025-12-03"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: "https://onex-technology.com/blog/migration-ccaas-5-erreurs-qui-plombent-projets",
+      lastModified: new Date("2025-11-02"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
   ];
 }

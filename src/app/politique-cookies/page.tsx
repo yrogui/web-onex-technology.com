@@ -3,13 +3,10 @@ import { Cookie, Shield, FileText } from "lucide-react";
 import { CookieSettingsButton } from "@/components/cookie-settings-button";
 
 export const metadata: Metadata = {
-  title: "Politique de Gestion des Cookies",
+  title: "Politique de gestion des cookies | One-X Technology",
   description:
-    "Découvrez comment One-X Technology utilise les cookies sur son site web, vos droits RGPD et comment gérer vos préférences de cookies.",
-  robots: {
-    index: true,
-    follow: true,
-  },
+    "Découvrez comment One-X Technology utilise les cookies sur son site web, vos droits RGPD et comment gérer vos préférences.",
+  alternates: { canonical: "https://onex-technology.com/politique-cookies" },
 };
 
 export default function PolitiqueCookiesPage() {

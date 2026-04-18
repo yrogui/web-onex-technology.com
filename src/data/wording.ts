@@ -129,7 +129,7 @@ export const wording = {
         title: "Migration Genesys / AWS Connect / Avaya Cloud",
         icon: "headset",
         description:
-          "Votre plateforme on-premise est obsolète. Vos coûts télécoms explosent. Vos agents rament sur une interface des années 2010. On migre vers le cloud en 8 à 12 semaines, sans couper une seule ligne.",
+          "Votre plateforme on-premise est obsolète. Vos coûts télécoms augmentent. Vos agents travaillent sur une interface des années 2010. Nous migrons vers le cloud en 8 à 12 semaines, sans couper une seule ligne.",
         features: [
           "Migration sans interruption",
           "Architecture omnicanale",
@@ -144,7 +144,7 @@ export const wording = {
       },
       {
         id: "cx-optimization",
-        title: "Réduire Friction Client = Augmenter Conversion",
+        title: "Réduire la friction client = augmenter la conversion",
         icon: "heart",
         description:
           "Vos clients appellent 3 fois pour le même problème. Votre NPS stagne. Votre taux d'abandon web-to-call est à 40%. Nous diagnostiquons les points de friction, refondons les parcours, mesurons l'impact. Méthodologie éprouvée.",
@@ -162,7 +162,7 @@ export const wording = {
       },
       {
         id: "ai-conversational",
-        title: "Automatiser les 60% de Requêtes Simples",
+        title: "Automatiser les 60% de requêtes simples",
         icon: "brain",
         description:
           "Vos agents passent 60% de leur temps sur des questions FAQ. Checking statut commande, réinitialisation mot de passe, prise de RDV. Nous déployons des voicebots/chatbots intelligents qui traitent le simple, libèrent les agents pour le complexe. ROI sous 6 mois.",
@@ -180,7 +180,7 @@ export const wording = {
       },
       {
         id: "cloud-infrastructure",
-        title: "Architecture Cloud pour Supporter CCaaS",
+        title: "Architecture cloud pour supporter le CCaaS",
         icon: "cloud",
         description:
           "Un CCaaS ne tient pas tout seul. Il faut de l'infra AWS/Azure solide, sécurisée, scalable. Nous concevons l'architecture complète : réseau, sécurité, résilience, disaster recovery. Pas de mauvaise surprise technique post go-live.",

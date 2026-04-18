@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Clock } from "lucide-react";
 import { wording } from "@/data/wording";
 
 export function Offers() {
@@ -74,8 +74,9 @@ export function Offers() {
 
               {/* Durée */}
               <div className="mb-8 pb-8 border-b border-smoke/30 dark:border-charcoal">
-                <p className="text-sm font-medium text-ink dark:text-paper">
-                  ⏱️ {offer.duration}
+                <p className="text-sm font-medium text-ink dark:text-paper flex items-center gap-1.5">
+                  <Clock className="h-4 w-4 text-graphite dark:text-smoke flex-shrink-0" />
+                  {offer.duration}
                 </p>
               </div>
 

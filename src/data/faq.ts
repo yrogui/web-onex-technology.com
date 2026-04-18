@@ -23,7 +23,7 @@ export const faqData: FAQItem[] = [
 
 **Inclus :** Architecture cloud, configuration plateforme, intégrations CRM, migration progressive, formation agents, support post go-live 30 jours.
 
-**💡 Bon à savoir :** Nous facturons au forfait projet (pas de régie), avec un ROI positif mesurable grâce aux économies télécoms (-20 à -40%).`,
+**À noter :** Nous facturons au forfait projet (pas de régie), avec un ROI positif mesurable grâce aux économies télécoms (-20 à -40%).`,
   },
   {
     id: "faq-delais",
@@ -44,7 +44,7 @@ export const faqData: FAQItem[] = [
 - Intégrations CRM standardisées (Salesforce/Dynamics)
 - Équipe IT disponible pour tests
 
-**💡 Engagement One-X :** Roadmap semaine par semaine dès l'audit. Pas de retard sauf demande de changement de votre part.`,
+**Engagement One-X :** Roadmap semaine par semaine dès l'audit. Pas de retard sauf demande de changement de votre part.`,
   },
   {
     id: "faq-downtime",
@@ -61,7 +61,7 @@ export const faqData: FAQItem[] = [
 
 **Résultat :** Sur des centaines de projets pilotés, **0 incident majeur en production**, SLA 99,95%+ respecté.
 
-**💡 Garantie One-X :** Si downtime non planifié > 1h, pénalités contractuelles appliquées (remboursement partiel).`,
+**Garantie One-X :** Si downtime non planifié > 1h, pénalités contractuelles appliquées (remboursement partiel).`,
   },
   {
     id: "faq-choix-plateforme",
@@ -79,7 +79,7 @@ export const faqData: FAQItem[] = [
 - **Vous êtes déjà sur AWS + équipe tech forte** → **AWS Connect**
 - **Vous migrez depuis Avaya on-premise** → **Avaya Cloud**
 
-**💡 Service One-X :** Diagnostic gratuit 30 min pour comparer les 3 selon VOS critères (budget, nb agents, CRM, timeline). Recommandation objective, on ne touche pas de commission éditeur.`,
+**Service One-X :** Diagnostic gratuit 30 min pour comparer les 3 selon vos critères (budget, nb agents, CRM, timeline). Recommandation objective, nous ne touchons pas de commission éditeur.`,
   },
   {
     id: "faq-local-maroc",
@@ -101,7 +101,7 @@ export const faqData: FAQItem[] = [
 - Pratiques RH centres de contact marocains
 - Écosystème fournisseurs locaux (connectivité, SIP trunking)
 
-**💡 Notre positionnement :** Expertise internationale (formés sur gros projets France/Europe) + delivery local Maroc = meilleur des deux mondes.`,
+**Notre positionnement :** Expertise internationale (formés sur grands projets France/Europe) + delivery local Maroc = meilleur des deux mondes.`,
   },
 ];
 

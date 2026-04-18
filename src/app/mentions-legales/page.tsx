@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mentions Légales | One-X Technology",
-  description: "Mentions légales et informations juridiques de One-X Technology",
-  robots: "noindex, nofollow",
+  title: "Mentions légales | One-X Technology",
+  description: "Mentions légales et informations juridiques de One-X Technology, cabinet CCaaS basé à Casablanca.",
+  alternates: { canonical: "https://onex-technology.com/mentions-legales" },
 };
 
 export default function MentionsLegalesPage() {
