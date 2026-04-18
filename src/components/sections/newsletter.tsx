@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Mail, CheckCircle } from "lucide-react";
 import { wording } from "@/data/wording";
 
@@ -28,7 +29,13 @@ export function Newsletter() {
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Header */}
-          <div className="mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-10"
+          >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-3">
               {wording.newsletter.subtitle}
             </p>
@@ -41,7 +48,7 @@ export function Newsletter() {
             <p className="text-base text-accent dark:text-accent-light font-medium">
               {wording.newsletter.leadMagnet}
             </p>
-          </div>
+          </motion.div>
 
           {!isSubscribed ? (
             <form

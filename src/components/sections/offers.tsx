@@ -13,7 +13,13 @@ export function Offers() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
-        <div className="mb-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-20 text-center"
+        >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
             {wording.offers.subtitle}
           </p>
@@ -23,7 +29,7 @@ export function Offers() {
           <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl mx-auto">
             {wording.offers.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Grille d'offres */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -125,7 +131,7 @@ export function Offers() {
                 className={`block w-full px-8 py-4 text-center text-sm font-medium tracking-wide rounded-sm transition-all duration-300 ${
                   offer.recommended
                     ? "bg-accent text-paper hover:bg-accent/90"
-                    : "bg-primary text-paper dark:bg-paper dark:text-ink hover:opacity-90"
+                    : "border border-primary dark:border-paper text-primary dark:text-paper hover:border-accent hover:text-accent dark:hover:border-accent-light dark:hover:text-accent-light"
                 }`}
               >
                 {offer.cta}

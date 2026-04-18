@@ -14,7 +14,7 @@ export const wording = {
     title: "Migrez votre centre de contact vers le cloud,",
     titleItalic: "sans interruption.",
     subtitle:
-      "40% des migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif mesurable dès les premiers mois.",
+      "Trop de migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif mesurable dès les premiers mois.",
     baseline: "Le partenaire marocain des programmes CX critiques.",
     stats: [
       { label: "ANNÉES D'EXPERTISE CX & CLOUD", value: "18+" },
@@ -61,7 +61,7 @@ export const wording = {
 
   // === PARTENAIRES ===
   partners: {
-    title: "Partenaires Technologiques Officiels",
+    title: "Partenaires technologiques officiels",
     subtitle: "CERTIFICATIONS ÉDITEURS",
     description:
       "Certifications officielles Genesys Cloud, AWS Connect Specialist, Microsoft Partner. Accès privilégié aux roadmaps produits, support éditeur niveau 3, formations continues. Vous bénéficiez des dernières innovations avant tout le monde.",
@@ -85,10 +85,10 @@ export const wording = {
   },
 
   whyOnex: {
-    title: "Pourquoi Migrer Votre CCaaS avec One-X ?",
+    title: "Pourquoi migrer votre CCaaS avec One-X ?",
     subtitle: "ZÉRO IMPROVISATION. ZÉRO DOWNTIME.",
     description:
-      "18 ans d'expertise en migration CCaaS. Voici comment on fait différent.",
+      "18 ans d'expertise en migration CCaaS. Voici comment nous faisons différemment.",
     items: [
       {
         title: "Architectes CCaaS certifiés (pas des juniors)",
@@ -103,7 +103,7 @@ export const wording = {
         icon: "map-pin",
       },
       {
-        title: "Bascule progressive (pas de big bang suicidaire)",
+        title: "Bascule progressive (pas de big bang risquée)",
         description:
           "Migration par vagues de 10% des agents/jour. Tests de charge réels. Plan de rollback systématique. Dual-running si besoin. Des centaines de projets menés sans incident majeur. Preuve par les faits.",
         icon: "bridge",
@@ -111,7 +111,7 @@ export const wording = {
       {
         title: "Engagement sur les résultats (pas juste des livrables)",
         description:
-          "On ne facture pas des jours/homme. On s'engage sur vos KPIs : -20% coûts télécoms, +15% FCR, -30% AHT, amélioration CSAT mesurable. Si ça ne marche pas, on corrige à nos frais.",
+          "Nous ne facturons pas des jours/homme. Nous nous engageons sur vos KPIs : -20% coûts télécoms, +15% FCR, -30% AHT, amélioration CSAT mesurable. Si ça ne marche pas, nous corrigeons à nos frais.",
         icon: "target",
       },
     ],
@@ -119,10 +119,10 @@ export const wording = {
 
   // === EXPERTISES (Focus CCaaS/CX uniquement) ===
   expertise: {
-    title: "Ce Qu'On Fait (et Ce Qu'On Ne Fait PAS)",
+    title: "Ce que nous faisons (et ce que nous ne faisons pas)",
     subtitle: "FOCUS TOTAL : CCAAS & EXPÉRIENCE CLIENT",
     description:
-      "On ne fait pas de l'ERP, ni du BI, ni du développement web. On fait DU CCaaS. DU CX. Point. Mieux vaut être excellent sur un domaine que médiocre sur dix.",
+      "Nous ne faisons pas de l'ERP, ni du BI, ni du développement web. Nous faisons du CCaaS. Du CX. Point. Mieux vaut être excellent sur un domaine que médiocre sur dix.",
     items: [
       {
         id: "ccaas-migration",
@@ -131,10 +131,10 @@ export const wording = {
         description:
           "Votre plateforme on-premise est obsolète. Vos coûts télécoms explosent. Vos agents rament sur une interface des années 2010. On migre vers le cloud en 8 à 12 semaines, sans couper une seule ligne.",
         features: [
-          "Migration sans interruption (bascule progressive agents par agents)",
-          "Architecture omnicanale (voix + WhatsApp + chat + email unifiés)",
-          "Intégrations CRM prêtes (Salesforce, Dynamics, SAP C4C, solutions custom)",
-          "Formation opérationnelle terrain (pas juste des slides PowerPoint)",
+          "Migration sans interruption",
+          "Architecture omnicanale",
+          "Intégrations CRM natives",
+          "Formation terrain incluse",
         ],
         results: [
           "Coûts télécoms : -20 à -40% (SIP trunk cloud vs PSTN legacy)",
@@ -147,12 +147,12 @@ export const wording = {
         title: "Réduire Friction Client = Augmenter Conversion",
         icon: "heart",
         description:
-          "Vos clients appellent 3 fois pour le même problème. Votre NPS stagne. Votre taux d'abandon web-to-call est à 40%. On diagnostique les points de friction, on refond les parcours, on mesure l'impact. Méthodologie éprouvée.",
+          "Vos clients appellent 3 fois pour le même problème. Votre NPS stagne. Votre taux d'abandon web-to-call est à 40%. Nous diagnostiquons les points de friction, refondons les parcours, mesurons l'impact. Méthodologie éprouvée.",
         features: [
-          "Audit omnicanal complet (tous touchpoints clients cartographiés)",
-          "Refonte parcours basée data (pas intuition, analytics)",
-          "Quick wins identifiés sous 2 semaines (actions rapides ROI immédiat)",
-          "Pilotage KPIs CX (CSAT, NPS, CES, FCR, temps résolution)",
+          "Audit omnicanal complet",
+          "Refonte parcours basée data",
+          "Quick wins sous 2 semaines",
+          "Pilotage KPIs CX",
         ],
         results: [
           "First Contact Resolution : +25% moyenne observée",
@@ -165,12 +165,12 @@ export const wording = {
         title: "Automatiser les 60% de Requêtes Simples",
         icon: "brain",
         description:
-          "Vos agents passent 60% de leur temps sur des questions FAQ. Checking statut commande, réinitialisation mot de passe, prise de RDV. On déploie des voicebots/chatbots intelligents qui traitent le simple, libèrent les agents pour le complexe. ROI sous 6 mois.",
+          "Vos agents passent 60% de leur temps sur des questions FAQ. Checking statut commande, réinitialisation mot de passe, prise de RDV. Nous déployons des voicebots/chatbots intelligents qui traitent le simple, libèrent les agents pour le complexe. ROI sous 6 mois.",
         features: [
-          "Voicebot NLU (compréhension langage naturel, pas arbre de décision rigide)",
-          "Handover intelligent agent (escalade automatique si échec bot)",
-          "Agent Assist temps réel (suggestions réponses pendant appel)",
-          "Mesure ROI précise (taux déflection, temps agent économisé)",
+          "Voicebot NLU natif",
+          "Handover intelligent agent",
+          "Agent Assist temps réel",
+          "ROI mesuré précisément",
         ],
         results: [
           "Taux déflection appels simples : 40-60% (selon secteur)",
@@ -183,12 +183,12 @@ export const wording = {
         title: "Architecture Cloud pour Supporter CCaaS",
         icon: "cloud",
         description:
-          "Un CCaaS ne tient pas tout seul. Il faut de l'infra AWS/Azure solide, sécurisée, scalable. On conçoit l'architecture complète : réseau, sécurité, résilience, disaster recovery. Pas de mauvaise surprise technique post go-live.",
+          "Un CCaaS ne tient pas tout seul. Il faut de l'infra AWS/Azure solide, sécurisée, scalable. Nous concevons l'architecture complète : réseau, sécurité, résilience, disaster recovery. Pas de mauvaise surprise technique post go-live.",
         features: [
-          "Architecture multi-AZ haute disponibilité (99,95%+ SLA)",
-          "Sécurité RGPD/PCI-DSS natives (conformité financière/assurance)",
-          "Stratégie backup & disaster recovery testée (RTO < 1h)",
-          "Optimisation coûts cloud (reserved instances, scaling automatique)",
+          "Architecture multi-AZ",
+          "Sécurité RGPD/PCI-DSS",
+          "Disaster recovery testé",
+          "Optimisation coûts cloud",
         ],
         results: [
           "SLA disponibilité : 99,95%+ garanti contrat",
@@ -201,57 +201,57 @@ export const wording = {
 
   // === APPROCHE (Méthode de Delivery) ===
   approach: {
-    title: "Notre Méthode : De l'Audit au Go-Live Sécurisé",
+    title: "Notre méthode : de l'audit au go-live sécurisé",
     subtitle: "4 PHASES. 8 À 12 SEMAINES. ZÉRO IMPROVISATION.",
     description:
-      "Pas de méthode agile bullshit où personne ne sait quand ça se termine. Timeline fixe, jalons clairs, livraison sécurisée. Vous savez où vous allez.",
+      "Pas d'improvisation, pas de promesses vides. Timeline fixe, jalons clairs, livraison sécurisée. Vous savez exactement où vous allez.",
     phases: [
       {
         number: "01",
-        title: "On Diagnostique Avant de Prescrire",
+        title: "Nous diagnostiquons avant de prescrire",
         description:
           "Audit technique plateforme existante. Cartographie flux appels. Analyse intégrations. Identification quick wins. À la fin : business case chiffré, ROI prévisionnel, plan d'action validé. Pas de devis à l'aveugle.",
         deliverables: [
-          "Rapport audit technique (forces/faiblesses plateforme actuelle)",
-          "Cartographie flux & intégrations (tout documenté, pas de zone d'ombre)",
-          "Business case ROI (coûts actuels vs futurs, timeline retour investissement)",
-          "Roadmap go-live (semaine par semaine, qui fait quoi)",
+          "Rapport audit technique",
+          "Cartographie flux & intégrations",
+          "Business case ROI chiffré",
+          "Roadmap go-live détaillée",
         ],
       },
       {
         number: "02",
-        title: "On Conçoit l'Architecture Cible",
+        title: "Nous concevons l'architecture cible",
         description:
           "Architecture détaillée cloud. Spécifications fonctionnelles. Design parcours clients optimisés. Plan de migration par vagues. Stratégie de tests. Tout est documenté avant de toucher une seule ligne de config.",
         deliverables: [
-          "Architecture technique HLD/LLD (schémas réseau, flux de données)",
-          "Spécifications fonctionnelles validées métier (chaque feature décrite)",
-          "Plan de migration sécurisé (bascule progressive, rollback prévu)",
-          "Matrice de tests & scénarios de validation (rien au hasard)",
+          "Architecture HLD/LLD",
+          "Spécifications fonctionnelles",
+          "Plan migration sécurisé",
+          "Matrice de tests complète",
         ],
       },
       {
         number: "03",
-        title: "On Déploie Sans Casser l'Existant",
+        title: "Nous déployons sans casser l'existant",
         description:
           "Configuration plateforme. Intégrations CRM. Migration progressive des agents (10% par vague). Tests de charge. Formation terrain. Bascule DNS finale. Support intensif post go-live (24/7 première semaine). Vous dormez tranquille.",
         deliverables: [
-          "Plateforme CCaaS configurée & testée (tous flux validés)",
-          "Intégrations CRM opérationnelles (Salesforce, Dynamics, custom APIs)",
-          "Agents formés terrain (2 jours formation + coaching post go-live)",
-          "Documentation run complète (procédures admin, troubleshooting)",
+          "Plateforme configurée & testée",
+          "Intégrations CRM opérationnelles",
+          "Agents formés terrain",
+          "Documentation run complète",
         ],
       },
       {
         number: "04",
-        title: "On Optimise & On Forme Vos Équipes",
+        title: "Nous optimisons & formons vos équipes",
         description:
           "Monitoring KPIs. Analyse performances. Ajustements config. Évolutions fonctionnelles. Transfert compétences progressif vers vos équipes IT. Objectif : vous rendre autonomes. Pas de dépendance éternelle.",
         deliverables: [
-          "Tableaux de bord opérationnels (KPIs temps réel Genesys/AWS)",
-          "Rapports mensuels optimisation (analyse perfs, recommandations)",
-          "Transfert compétences IT (formation admin plateforme certifiante)",
-          "Documentation complète run (vous êtes autonomes post-projet)",
+          "Tableaux de bord KPIs temps réel",
+          "Rapports mensuels optimisation",
+          "Transfert compétences IT",
+          "Autonomie complète post-projet",
         ],
       },
     ],
@@ -259,7 +259,7 @@ export const wording = {
       title: "Comment On Travaille Ensemble",
       items: [
         {
-          title: "Diagnostic CCaaS Complet",
+          title: "Diagnostic CCaaS complet",
           description:
             "Vous ne savez pas par où commencer ? Audit technique plateforme existante, cartographie flux, business case chiffré, roadmap recommandée. Livré sous 2 semaines. Forfait fixe 15k€ HT (déduit si vous signez la mise en œuvre).",
         },
@@ -269,7 +269,7 @@ export const wording = {
             "De l'audit au go-live sécurisé. Forfait global incluant architecture, config, intégrations CRM, formation, support post go-live 30 jours. Timeline fixe, budget maîtrisé, zéro surprise.",
         },
         {
-          title: "Run & Évolutions Post Go-Live",
+          title: "Run & évolutions post go-live",
           description:
             "Support niveau 3, optimisation KPIs, évolutions fonctionnelles, formation continue. Engagement mensuel ou sur-mesure selon besoins. Objectif : transfert compétences progressif vers vos équipes (vous devenez autonomes sous 6-12 mois).",
         },
@@ -279,31 +279,31 @@ export const wording = {
 
   // === ÉQUIPE ===
   team: {
-    title: "Une Équipe de Seniors. Pas de Juniors sur Vos Projets.",
+    title: "Une équipe de seniors. Pas de juniors sur vos projets.",
     subtitle: "18 ANS D'EXPERTISE CUMULÉE",
     description:
       "Nos architectes CCaaS ont 10+ ans d'expérience chacun. Formés sur les plus grands déploiements CX en France et à l'international (luxe, banque, assurance, télécoms). Vous payez pour de l'expertise rare, pas pour former des juniors.",
     philosophy:
-      "Chez One-X, on croit qu'un projet CCaaS bien fait vaut mieux que 10 projets bâclés. On ne prend que 3-4 clients simultanés pour garantir l'excellence. Si on ne peut pas livrer la qualité qu'on promet, on refuse le projet.",
+      "Chez One-X, nous croyons qu'un projet CCaaS bien fait vaut mieux que 10 projets bâclés. Nous ne prenons que 3 à 4 clients simultanément pour garantir l'excellence. Si nous ne pouvons pas livrer la qualité que nous promettons, nous refusons le projet.",
     values: [
       {
-        title: "Excellence Technique (Pas de Bricolage)",
+        title: "Excellence technique (pas de bricolage)",
         description:
-          "On maîtrise les plateformes qu'on déploie. Genesys Cloud certifié, AWS Connect specialist, Avaya expert. Nos architectures tiennent la charge, résistent aux pannes, scalent proprement. Zéro improvisation technique.",
+          "Nous maîtrisons les plateformes que nous déployons. Genesys Cloud certifié, AWS Connect specialist, Avaya expert. Nos architectures tiennent la charge, résistent aux pannes, scalent proprement. Zéro improvisation technique.",
       },
       {
-        title: "Intégrité Technique (Zéro Complaisance)",
+        title: "Intégrité technique (zéro complaisance)",
         description:
           "Nous privilégions la vérité sur la complaisance commerciale. Projet à risque technique ? Nous vous alertons. Délais irréalistes ? Nous vous proposons un planning robuste. Nous refusons tout engagement que nous ne pouvons pas honorer avec l'excellence attendue.",
       },
       {
-        title: "Résultats Mesurables (Pas juste des Livrables)",
+        title: "Résultats mesurables (pas juste des livrables)",
         description:
-          "Chaque projet a des KPIs clairs : ROI, CSAT, FCR, AHT, taux déflection. On mesure avant/après. Si les résultats ne sont pas là, on corrige à nos frais. Notre réputation vaut plus qu'une facture.",
+          "Chaque projet a des KPIs clairs : ROI, CSAT, FCR, AHT, taux déflection. Nous mesurons avant/après. Si les résultats ne sont pas là, nous corrigeons à nos frais. Notre réputation vaut plus qu'une facture.",
       },
     ],
     network:
-      "Au-delà de l'équipe core, on mobilise un réseau d'experts pointus selon vos besoins : data scientists (analytics), designers UX (parcours clients), développeurs API (intégrations custom). Vous avez les bonnes compétences au bon moment.",
+      "Au-delà de l'équipe core, nous mobilisons un réseau d'experts pointus selon vos besoins : data scientists (analytics), designers UX (parcours clients), développeurs API (intégrations custom). Vous avez les bonnes compétences au bon moment.",
   },
 
   stats: {
@@ -331,8 +331,8 @@ export const wording = {
   // ✅ Témoignages authentiques extraits du profil LinkedIn de Yassine Rogui
   // Source : https://www.linkedin.com/in/yrogui/details/recommendations/
   testimonials: {
-    badge: "Ce Que Disent Nos Clients",
-    title: "Ils Nous Font Confiance",
+    badge: "Ce que disent nos clients",
+    title: "Ils nous font confiance",
     subtitle:
       "Découvrez les retours de managers, architectes et dirigeants qui ont collaboré avec Yassine sur des projets CCaaS et CX internationaux.",
     items: [
@@ -388,9 +388,73 @@ export const wording = {
     },
   },
 
+  // === TRAJECTOIRES ÉPROUVÉES (CAS CLIENTS) ===
+  caseStudies: {
+    subtitle: "ÉTUDES DE CAS",
+    title: "Trajectoires éprouvées",
+    description:
+      "Trois secteurs, trois défis distincts. Les chiffres sont issus de nos engagements — anonymisés selon nos accords de confidentialité.",
+    items: [
+      {
+        id: "banque",
+        sector: "SECTEUR BANCAIRE",
+        label: "Top 5 bancaire marocain",
+        agents: "400 agents · Casablanca",
+        challenge:
+          "Infrastructure Avaya on-premise en fin de vie, coûts télécoms en hausse de 40% sur trois ans, zéro reporting temps réel pour les superviseurs.",
+        mission: "Migration vers Genesys Cloud CX + intégration Salesforce CRM",
+        duration: "10 semaines",
+        results: [
+          { value: "−38%", label: "coûts télécoms" },
+          { value: "+22%", label: "FCR à 3 mois" },
+          { value: "0", label: "incident en production" },
+          { value: "< 12 mois", label: "retour sur investissement" },
+        ],
+        quote:
+          "La bascule progressive par vagues de 10% nous a permis de ne couper aucune ligne. À aucun moment nos clients n'ont perçu la transition.",
+      },
+      {
+        id: "assurance",
+        sector: "SECTEUR ASSURANCE",
+        label: "Assureur national leader",
+        agents: "150 agents",
+        challenge:
+          "CSAT à 6,2/10, taux d'abandon appels à 34%, NPS négatif. Les parcours clients n'avaient pas été revus depuis cinq ans.",
+        mission: "Audit CX omnicanal + refonte parcours + déploiement quick wins",
+        duration: "6 semaines diagnostic + 3 mois déploiement",
+        results: [
+          { value: "+18 pts", label: "CSAT (6,2 → 7,8)" },
+          { value: "−28%", label: "taux d'abandon" },
+          { value: "+24 pts", label: "NPS (−8 → +16)" },
+          { value: "2 semaines", label: "pour les premiers gains" },
+        ],
+        quote:
+          "Nous avions des intuitions sur nos failles CX. One-X les a quantifiées et priorisées. Les quick wins ont convaincu notre direction dès la sixième semaine.",
+      },
+      {
+        id: "telco",
+        sector: "SECTEUR TÉLÉCOM",
+        label: "Opérateur majeur marocain",
+        agents: "600 agents",
+        challenge:
+          "65% des appels portaient sur des questions simples : solde, forfaits, factures. Les agents étaient surchargés sur du volume à faible valeur.",
+        mission: "Déploiement voicebot NLU + agent assist temps réel sur Genesys",
+        duration: "8 semaines",
+        results: [
+          { value: "52%", label: "appels déflectés vers le bot" },
+          { value: "÷3", label: "coût par interaction FAQ" },
+          { value: "24/7", label: "disponibilité sans surcoût" },
+          { value: "+28%", label: "satisfaction agents" },
+        ],
+        quote:
+          "Nos agents traitent enfin les demandes complexes. Le bot gère le volume, eux gèrent la relation. C'est exactement la répartition que nous cherchions.",
+      },
+    ],
+  },
+
   // === OFFRES PRODUITISÉES (CONVERSION) ===
   offers: {
-    title: "Comment Démarrer Avec One-X ?",
+    title: "Comment démarrer avec One-X ?",
     subtitle: "3 OFFRES PACKAGÉES. PRIX FIXES. ZÉRO SURPRISE.",
     description:
       "Pas de devis à rallonge. Pas de consultants qui facturent du temps. Des offres claires avec scope fixe, prix transparent, timeline garantie.",
@@ -420,7 +484,7 @@ export const wording = {
       {
         id: "audit-complet",
         badge: "RECOMMANDÉ",
-        title: "Audit CX & CCaaS Complet",
+        title: "Audit CX & CCaaS complet",
         price: "15 000 MAD HT",
         priceDetail: "Déduit si vous signez le projet",
         duration: "Livré sous 2 semaines",
@@ -446,7 +510,7 @@ export const wording = {
       {
         id: "migration-cle-en-main",
         badge: "PROJET COMPLET",
-        title: "Migration CCaaS Clé en Main",
+        title: "Migration CCaaS clé en main",
         price: "Sur Devis",
         priceDetail: "Forfait projet (pas de régie)",
         duration: "8-12 semaines selon complexité",
@@ -471,13 +535,13 @@ export const wording = {
       },
     ],
     guarantee:
-      "🛡️ Engagement qualité : Si les résultats promis ne sont pas au rendez-vous, on corrige à nos frais. Pas de clause cachée. Pas de dépassement budgétaire sauf demande de votre part.",
+      "Engagement qualité : si les résultats promis ne sont pas au rendez-vous, nous corrigeons à nos frais. Pas de clause cachée. Pas de dépassement budgétaire sauf demande de votre part.",
   },
 
   // === CONTACT / CTA ===
   contact: {
     subtitle: "RÉPONSE SOUS 24H. SANS ENGAGEMENT.",
-    title: "Parlons de Votre Projet CCaaS",
+    title: "Parlons de votre projet CCaaS",
 
     // Promesse (ce que le prospect obtient)
     promise: {
@@ -485,7 +549,7 @@ export const wording = {
       items: [
         "Une réponse personnalisée sous 24h ouvrées (pas de bot, un humain)",
         "Un 1er échange de 30 min avec un architecte CCaaS senior (pas un commercial)",
-        "Une évaluation honnête : on vous dit si votre projet est viable ou s'il faut revoir votre copie",
+        "Une évaluation honnête : nous vous disons si votre projet est viable ou s'il faut revoir votre approche",
       ],
     },
 
@@ -499,7 +563,7 @@ export const wording = {
         },
         {
           title: "2. Votre migration CCaaS actuelle est bloquée",
-          description: "Dépassements budgets, retards go-live, agents qui refusent la nouvelle plateforme ? On diagnostique ce qui coince et on propose un plan de sauvetage (2e avis indépendant).",
+          description: "Dépassements budgets, retards go-live, agents qui refusent la nouvelle plateforme ? Nous diagnostiquons ce qui coince et proposons un plan de sauvetage (2e avis indépendant).",
         },
         {
           title: "3. Vous voulez un audit ou un devis détaillé",
@@ -517,14 +581,14 @@ export const wording = {
     linkedin: "https://www.linkedin.com/company/onex-technology/",
 
     form: {
-      title: "Formulaire de Contact",
+      title: "Formulaire de contact",
       subtitle: "Remplissez le formulaire ci-dessous. Réponse garantie sous 24h ouvrées.",
 
       // Microcopy anti-friction
       microcopy: {
         responseTime: "⏱️ Réponse sous 24h ouvrées (lun-ven, 9h-18h)",
         confidentiality: "🔒 Vos données restent confidentielles. Pas de revente, pas de spam. Conformité RGPD.",
-        noCommitment: "✅ Sans engagement. Si on ne peut pas vous aider, on vous le dit franchement.",
+        noCommitment: "Sans engagement. Si nous ne pouvons pas vous aider, nous vous le disons franchement.",
       },
 
       placeholders: {
@@ -543,11 +607,11 @@ export const wording = {
 
   // === NEWSLETTER (Lead Magnet) ===
   newsletter: {
-    title: "Checklist Migration CCaaS : 25 Points de Contrôle Avant Go-Live",
+    title: "Checklist migration CCaaS : 25 points de contrôle avant go-live",
     subtitle: "PDF GRATUIT + RETOURS TERRAIN MENSUELS",
     description:
-      "40% des migrations CCaaS échouent par oubli de points techniques critiques. Téléchargez notre checklist (PDF gratuit) basée sur 18 ans de retours terrain. Bonus : 1 email/mois avec retours terrain (pas de spam commercial).",
-    leadMagnet: "🎁 Checklist Migration CCaaS - 25 Points Critiques (PDF)",
+      "Trop de migrations CCaaS échouent par oubli de points techniques critiques. Téléchargez notre checklist (PDF gratuit) basée sur 18 ans de retours terrain. Bonus : 1 email/mois avec retours terrain (pas de spam commercial).",
+    leadMagnet: "Checklist migration CCaaS — 25 points critiques (PDF)",
     placeholders: {
       email: "Votre email professionnel",
     },
@@ -564,9 +628,9 @@ export const wording = {
         links: [
           { label: "Accueil", href: "/" },
           { label: "Pourquoi One-X", href: "#a-propos" },
-          { label: "Nos Expertises CCaaS", href: "#expertises" },
-          { label: "Notre Méthode", href: "#approche" },
-          { label: "L'Équipe", href: "#equipe" },
+          { label: "Nos expertises CCaaS", href: "#expertises" },
+          { label: "Notre méthode", href: "#approche" },
+          { label: "L'équipe", href: "#equipe" },
           { label: "Blog", href: "/blog" },
           { label: "Contact", href: "#contact" },
         ],

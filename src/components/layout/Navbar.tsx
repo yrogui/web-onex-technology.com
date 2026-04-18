@@ -23,10 +23,9 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Accueil", href: "/" },
-    { label: "À Propos", href: "#a-propos" },
-    { label: "Expertises", href: "#expertises" },
-    { label: "Équipe", href: "#equipe" },
-    { label: "Approche", href: "#approche" },
+    { label: "Services", href: "/services" },
+    { label: "Cas clients", href: "/cas-clients" },
+    { label: "À propos", href: "/a-propos" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "#contact" },
   ];
@@ -80,6 +79,15 @@ export function Navbar() {
               </Link>
             ))}
             <ThemeToggle />
+            {isScrolled && (
+              <a
+                href="#contact"
+                onClick={(e) => handleAnchorClick(e, "#contact")}
+                className="inline-block px-5 py-2.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-medium tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
+              >
+                Audit gratuit
+              </a>
+            )}
           </div>
 
           {/* Mobile menu button */}

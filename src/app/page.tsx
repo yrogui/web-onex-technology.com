@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/hero";
 import { Partners } from "@/components/sections/partners";
 import { WhyOnex } from "@/components/sections/why-onex";
 import { Testimonials } from "@/components/sections/testimonials";
+import { CaseStudies } from "@/components/sections/case-studies";
 import { Expertise } from "@/components/sections/expertise";
 import { Team } from "@/components/sections/team";
 import { Approach } from "@/components/sections/approach";
@@ -26,6 +27,9 @@ export default function Home() {
 
       {/* Témoignages Clients (Social Proof) */}
       <Testimonials />
+
+      {/* Trajectoires éprouvées — Cas clients */}
+      <CaseStudies />
 
       {/* Nos Expertises */}
       <Expertise />

@@ -14,7 +14,13 @@ export function Partners() {
     <section className="py-20 bg-paper dark:bg-primary border-y border-smoke/30 dark:border-charcoal" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <div className="flex items-center justify-center gap-3 mb-3">
             <Award className="h-4 w-4 text-accent dark:text-accent-light" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke">
@@ -24,7 +30,7 @@ export function Partners() {
           <p className="text-sm text-charcoal dark:text-smoke max-w-2xl mx-auto">
             Partenaires certifiés des leaders mondiaux de la transformation digitale
           </p>
-        </div>
+        </motion.div>
 
         {/* Grille de logos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">

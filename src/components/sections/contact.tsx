@@ -2,7 +2,7 @@
 import { useState, FormEvent } from "react";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, MessageCircle, Check, Calendar, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Calendar, Linkedin } from "lucide-react";
 import { wording } from "@/data/wording";
 import { ContactIcons } from "@/components/ui/contact-icons";
 
@@ -40,14 +40,20 @@ export function Contact() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-16 text-center"
+        >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
             {wording.contact.subtitle}
           </p>
           <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6">
             {wording.contact.title}
           </h2>
-        </div>
+        </motion.div>
 
         {/* Méthodes de Contact Rapides */}
         <motion.div
@@ -148,58 +154,6 @@ export function Contact() {
                 </div>
               </button>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Promesse */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto mb-16"
-        >
-          <h3 className="text-xl font-medium text-ink dark:text-paper mb-6 text-center">
-            {wording.contact.promise.title}
-          </h3>
-          <ul className="space-y-4">
-            {wording.contact.promise.items.map((item, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-3 text-charcoal dark:text-smoke"
-              >
-                <Check className="h-5 w-5 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
-                <span className="text-[15px] leading-[1.65]">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* 3 raisons de contacter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-20"
-        >
-          <h3 className="text-xl font-medium text-ink dark:text-paper mb-10 text-center">
-            {wording.contact.reasons.title}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {wording.contact.reasons.items.map((reason, index) => (
-              <div
-                key={index}
-                className="bg-paper dark:bg-charcoal/50 p-8 border border-smoke/30 dark:border-charcoal hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 rounded"
-              >
-                <h4 className="text-lg font-medium text-ink dark:text-paper mb-4">
-                  {reason.title}
-                </h4>
-                <p className="text-sm text-charcoal dark:text-smoke leading-[1.65]">
-                  {reason.description}
-                </p>
-              </div>
-            ))}
           </div>
         </motion.div>
 
