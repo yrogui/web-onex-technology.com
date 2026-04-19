@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Headset, Cloud, Brain } from "lucide-react";
+import { Heart, Headset, Cloud, Brain, Compass, GraduationCap } from "lucide-react";
 import { wording } from "@/data/wording";
 
 const cardIconMap = {
@@ -9,6 +9,8 @@ const cardIconMap = {
   headset: Headset,
   cloud: Cloud,
   brain: Brain,
+  compass: Compass,
+  graduationCap: GraduationCap,
 };
 
 const expertiseAnchorMap: Record<string, string> = {
@@ -16,6 +18,8 @@ const expertiseAnchorMap: Record<string, string> = {
   "cx-optimization": "/services#cx",
   "ai-conversational": "/services#automatisation",
   "cloud-infrastructure": "/services#cloud",
+  "cx-strategy": "/services#migration",
+  "training-transfer": "/services#migration",
 };
 
 export function Expertise() {

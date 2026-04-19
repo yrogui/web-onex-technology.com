@@ -2,7 +2,7 @@
 import { useState, FormEvent } from "react";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, MessageCircle, Calendar, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Calendar, Linkedin, Send } from "lucide-react";
 import { wording } from "@/data/wording";
 import { ContactIcons } from "@/components/ui/contact-icons";
 
@@ -68,17 +68,17 @@ export function Contact() {
               Choisissez votre méthode de contact préférée
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
               {/* LinkedIn */}
               <a
                 href={wording.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-charcoal dark:hover:border-smoke transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-charcoal/10 dark:bg-paper/10 flex items-center justify-center mb-4 group-hover:bg-charcoal/20 dark:group-hover:bg-paper/20 transition-colors">
-                    <Linkedin className="h-7 w-7 text-charcoal dark:text-smoke" />
+                  <div className="w-14 h-14 rounded bg-graphite/10 dark:bg-smoke/10 flex items-center justify-center mb-4 group-hover:bg-accent/15 dark:group-hover:bg-accent/10 transition-colors">
+                    <Linkedin className="h-7 w-7 text-graphite dark:text-smoke group-hover:text-accent dark:group-hover:text-accent-light transition-colors" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     LinkedIn
@@ -95,8 +95,8 @@ export function Contact() {
                 className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <Mail className="h-7 w-7 text-accent dark:text-accent-light" />
+                  <div className="w-14 h-14 rounded bg-graphite/10 dark:bg-smoke/10 flex items-center justify-center mb-4 group-hover:bg-accent/15 dark:group-hover:bg-accent/10 transition-colors">
+                    <Mail className="h-7 w-7 text-graphite dark:text-smoke group-hover:text-accent dark:group-hover:text-accent-light transition-colors" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Email
@@ -112,7 +112,7 @@ export function Contact() {
                 href={wording.contact.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-6 rounded bg-accent/5 dark:bg-accent/10 border-2 border-accent transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1 px-3 py-1 rounded-sm bg-accent text-paper text-xs font-medium">
@@ -121,8 +121,8 @@ export function Contact() {
                   </span>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-accent/15 flex items-center justify-center mb-4 group-hover:bg-accent/25 transition-colors">
-                    <Calendar className="h-7 w-7 text-accent dark:text-accent-light" />
+                  <div className="w-14 h-14 rounded bg-graphite/10 dark:bg-smoke/10 flex items-center justify-center mb-4 group-hover:bg-accent/15 dark:group-hover:bg-accent/10 transition-colors">
+                    <Calendar className="h-7 w-7 text-graphite dark:text-smoke group-hover:text-accent dark:group-hover:text-accent-light transition-colors" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Calendly
@@ -133,17 +133,37 @@ export function Contact() {
                 </div>
               </a>
 
+              {/* Telegram */}
+              <a
+                href="https://t.me/OneX_AI_Assistant_Bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded bg-graphite/10 dark:bg-smoke/10 flex items-center justify-center mb-4 group-hover:bg-accent/15 dark:group-hover:bg-accent/10 transition-colors">
+                    <Send className="h-7 w-7 text-graphite dark:text-smoke group-hover:text-accent dark:group-hover:text-accent-light transition-colors" />
+                  </div>
+                  <h4 className="font-medium text-ink dark:text-paper mb-2">
+                    Telegram
+                  </h4>
+                  <p className="text-sm text-graphite dark:text-smoke">
+                    Bot IA instantané
+                  </p>
+                </div>
+              </a>
+
               {/* Bot IA */}
               <button
                 onClick={() => {
                   const event = new CustomEvent("openBotModal");
                   window.dispatchEvent(event);
                 }}
-                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-charcoal dark:hover:border-smoke transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded bg-charcoal/10 dark:bg-paper/10 flex items-center justify-center mb-4 group-hover:bg-charcoal/20 dark:group-hover:bg-paper/20 transition-colors">
-                    <MessageCircle className="h-7 w-7 text-charcoal dark:text-smoke" />
+                  <div className="w-14 h-14 rounded bg-graphite/10 dark:bg-smoke/10 flex items-center justify-center mb-4 group-hover:bg-accent/15 dark:group-hover:bg-accent/10 transition-colors">
+                    <MessageCircle className="h-7 w-7 text-graphite dark:text-smoke group-hover:text-accent dark:group-hover:text-accent-light transition-colors" />
                   </div>
                   <h4 className="font-medium text-ink dark:text-paper mb-2">
                     Assistant IA

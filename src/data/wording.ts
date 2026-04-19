@@ -196,6 +196,42 @@ export const wording = {
           "Temps restauration incident : < 1h (RTO documenté)",
         ],
       },
+      {
+        id: "cx-strategy",
+        title: "Conseil & stratégie CX",
+        icon: "compass",
+        description:
+          "Cadrage stratégique, business case chiffré, benchmark concurrentiel et feuille de route CX alignée sur vos objectifs métier. Nous accompagnons vos comités de direction dans leurs décisions d'investissement CCaaS.",
+        features: [
+          "Benchmark plateformes CCaaS (Genesys vs AWS vs Avaya)",
+          "Business case ROI avec analyse TCO sur 3 ans",
+          "Feuille de route transformation CX priorisée",
+          "Accompagnement COMEX et aide à la décision",
+        ],
+        results: [
+          "Décision éclairée en moins de 4 semaines",
+          "Budget validé dès le premier passage en comité",
+          "Risques identifiés et mitigés avant lancement",
+        ],
+      },
+      {
+        id: "training-transfer",
+        title: "Formation & transfert de compétences",
+        icon: "graduationCap",
+        description:
+          "Vos équipes deviennent autonomes sur la plateforme CCaaS déployée. Formation certifiante pour administrateurs, superviseurs et agents. Objectif : zéro dépendance externe en 6 mois.",
+        features: [
+          "Formation admin plateforme (Genesys/AWS/Avaya)",
+          "Formation superviseurs (reporting, workforce management)",
+          "Coaching terrain agents (prise en main, bonnes pratiques)",
+          "Documentation run complète et procédures opérationnelles",
+        ],
+        results: [
+          "Autonomie équipes IT en 3 à 6 mois",
+          "Réduction tickets support N3 de 60%",
+          "Satisfaction agents : +20 points post-formation",
+        ],
+      },
     ],
   },
 
@@ -379,6 +415,15 @@ export const wording = {
         role: "IT Platform Manager",
         company: "Secteur Bancaire",
         context: "Déploiements Avaya ToIP",
+        rating: 5,
+      },
+      {
+        quote:
+          "I had the privilege of working with Yassine as a business partner and colleague. He is a calculated risk taker, pragmatic leader and realist who understands future upcoming technology with Avaya while taking note of the more acute details. He is a hard worker and value creator in the truest sense.",
+        author: "Arvind T.",
+        role: "Sr. CSM Account Manager",
+        company: "Cloud & AI Strategy",
+        context: "Partenariat Avaya international (2015)",
         rating: 5,
       },
     ],
