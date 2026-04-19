@@ -46,7 +46,7 @@ export function ContactIcons({
       href: "https://www.linkedin.com/company/onex-technology/",
       ariaLabel: "Page LinkedIn One-X Technology",
       external: true,
-      color: "hover:bg-[#0077B5]/10 hover:border-[#0077B5] dark:hover:bg-[#0077B5]/20",
+      color: "hover:bg-accent/10 hover:border-accent",
     },
     {
       id: "email",
@@ -64,7 +64,7 @@ export function ContactIcons({
       href: "https://calendly.com/yrogui/30min",
       ariaLabel: "Prendre rendez-vous sur Calendly (30 min)",
       external: true,
-      color: "hover:bg-blue-600/10 hover:border-blue-600 dark:hover:bg-blue-600/20",
+      color: "hover:bg-accent/10 hover:border-accent",
     },
     {
       id: "bot",
@@ -73,7 +73,7 @@ export function ContactIcons({
       onClick: () => setShowBotModal(true),
       ariaLabel: "Discuter avec l'assistant IA (GPT-4 + calendrier)",
       external: false,
-      color: "hover:bg-purple-600/10 hover:border-purple-600 dark:hover:bg-purple-600/20",
+      color: "hover:bg-accent/10 hover:border-accent",
     },
   ];
 
@@ -113,7 +113,7 @@ export function ContactIcons({
           const content = (
             <>
               <Icon
-                className={`${iconSizes[size]} text-ink dark:text-paper transition-colors`}
+                className={`${iconSizes[size]} text-ink dark:text-paper group-hover:text-accent dark:group-hover:text-accent-light transition-colors`}
               />
               {showLabels && (
                 <span className="text-xs font-medium text-graphite dark:text-smoke mt-2">

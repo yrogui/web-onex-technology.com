@@ -92,6 +92,8 @@ export function Contact() {
               {/* Email */}
               <a
                 href={`mailto:${wording.contact.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative p-6 rounded bg-paper dark:bg-charcoal/50 border-2 border-smoke/30 dark:border-charcoal hover:border-accent dark:hover:border-accent-light transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
