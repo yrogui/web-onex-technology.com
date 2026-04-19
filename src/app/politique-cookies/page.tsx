@@ -340,6 +340,8 @@ export default function PolitiqueCookiesPage() {
                   Email :{" "}
                   <a
                     href="mailto:contact@onex-technology.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-accent hover:underline font-medium"
                   >
                     contact@onex-technology.com
@@ -410,6 +412,8 @@ export default function PolitiqueCookiesPage() {
             </p>
             <a
               href="mailto:contact@onex-technology.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-accent hover:bg-accent/90 text-ink font-medium transition-all duration-200"
             >
               Nous contacter

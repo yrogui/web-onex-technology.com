@@ -158,6 +158,8 @@ export function CasClientsContent() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="mailto:contact@onex-technology.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-7 py-3.5 bg-paper text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-mist transition-colors duration-300"
               >
                 Demander un diagnostic gratuit

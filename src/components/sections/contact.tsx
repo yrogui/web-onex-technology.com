@@ -197,6 +197,8 @@ export function Contact() {
                   <p className="text-sm font-medium text-graphite dark:text-smoke mb-1">Email</p>
                   <a
                     href={`mailto:${wording.contact.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-ink dark:text-paper hover:text-accent dark:hover:text-accent-light transition-colors"
                   >
                     {wording.contact.email}

@@ -121,7 +121,7 @@ export default function PolitiqueConfidentialitePage() {
                 <p>
                   <strong className="text-ink dark:text-paper">One-X Technology</strong><br />
                   Casablanca, Maroc<br />
-                  Email : <a href="mailto:contact@onex-technology.com" className="text-accent hover:underline">contact@onex-technology.com</a>
+                  Email : <a href="mailto:contact@onex-technology.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">contact@onex-technology.com</a>
                 </p>
               </div>
             </section>
@@ -284,7 +284,7 @@ export default function PolitiqueConfidentialitePage() {
                 </p>
                 <p>
                   Vous pouvez exercer ces droits à tout moment en nous contactant par email à{" "}
-                  <a href="mailto:contact@onex-technology.com" className="text-accent hover:underline">
+                  <a href="mailto:contact@onex-technology.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                     contact@onex-technology.com
                   </a>
                   {" "}en précisant votre demande et en joignant une copie de votre pièce d'identité.
@@ -370,7 +370,7 @@ export default function PolitiqueConfidentialitePage() {
                 </p>
                 <p>
                   <strong className="text-ink dark:text-paper">Email :</strong>{" "}
-                  <a href="mailto:contact@onex-technology.com" className="text-accent hover:underline">
+                  <a href="mailto:contact@onex-technology.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                     contact@onex-technology.com
                   </a>
                 </p>

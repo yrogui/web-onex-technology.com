@@ -81,6 +81,8 @@ export function AProposContent() {
               Entité juridique marocaine indépendante · Casablanca ·{" "}
               <a
                 href="mailto:contact@onex-technology.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-accent hover:opacity-80 transition-opacity"
               >
                 contact@onex-technology.com
@@ -329,6 +331,8 @@ export function AProposContent() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="mailto:contact@onex-technology.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-7 py-3.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
               >
                 Démarrer la conversation

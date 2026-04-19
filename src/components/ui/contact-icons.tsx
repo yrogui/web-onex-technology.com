@@ -54,7 +54,7 @@ export function ContactIcons({
       icon: Mail,
       href: "mailto:contact@onex-technology.com",
       ariaLabel: "Envoyer un email à contact@onex-technology.com",
-      external: false,
+      external: true,
       color: "hover:bg-accent/10 hover:border-accent",
     },
     {

@@ -102,7 +102,7 @@ export default function MentionsLegalesPage() {
                 </p>
                 <p>
                   <strong className="text-ink dark:text-paper">Email :</strong>{" "}
-                  <a href="mailto:contact@onex-technology.com" className="text-accent hover:underline">
+                  <a href="mailto:contact@onex-technology.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                     contact@onex-technology.com
                   </a>
                 </p>
@@ -228,7 +228,7 @@ export default function MentionsLegalesPage() {
                 </p>
                 <p>
                   <strong className="text-ink dark:text-paper">Email :</strong>{" "}
-                  <a href="mailto:contact@onex-technology.com" className="text-accent hover:underline">
+                  <a href="mailto:contact@onex-technology.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                     contact@onex-technology.com
                   </a>
                 </p>
