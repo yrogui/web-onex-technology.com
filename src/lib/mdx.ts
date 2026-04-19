@@ -15,6 +15,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import type { BlogArticle } from "@/types";
+import { articleComponents } from "@/components/blog/article-components";
 
 const contentDirectory = path.join(process.cwd(), "content/blog");
 
@@ -211,6 +212,7 @@ export async function getAllTags(): Promise<
 export async function compileMDXContent(source: string) {
   return compileMDX({
     source,
+    components: articleComponents,
     options: {
       mdxOptions: {
         remarkPlugins: [
