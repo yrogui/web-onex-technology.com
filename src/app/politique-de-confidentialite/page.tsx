@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | One-X Technology",
-  description: "Politique de confidentialité et protection des données personnelles de One-X Technology.",
+  title: "Politique de confidentialité",
+  description: "Politique de confidentialité et protection des données personnelles de One-X Technology, cabinet CCaaS basé à Casablanca. Conformité RGPD.",
   alternates: { canonical: "https://onex-technology.com/politique-de-confidentialite" },
 };
 
@@ -29,7 +29,7 @@ export default function PolitiqueConfidentialitePage() {
         <div className="max-w-[900px] mx-auto px-8 lg:px-16">
           {/* Title */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink dark:text-paper mb-8 tracking-tight">
-            Politique de Confidentialité
+            Politique de confidentialité
           </h1>
 
           <p className="text-sm text-graphite dark:text-smoke mb-12">

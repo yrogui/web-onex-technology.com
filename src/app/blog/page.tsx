@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description:
     "Articles techniques, retours d'expérience et analyses sur les migrations CCaaS, l'expérience client et l'IA conversationnelle au Maroc.",
   alternates: { canonical: "https://onex-technology.com/blog" },
+  openGraph: {
+    title: "Blog — Retours terrain & insights CCaaS | One-X Technology",
+    description:
+      "Articles techniques, retours d'expérience et analyses sur les migrations CCaaS, l'expérience client et l'IA conversationnelle au Maroc.",
+    url: "https://onex-technology.com/blog",
+  },
 };
 
 export default async function BlogPage() {

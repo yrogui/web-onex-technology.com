@@ -7,7 +7,7 @@ export function Partners() {
   const partners = [
     { name: "Genesys", description: "Cloud CX Leader", logo: "genesys" },
     { name: "AWS", description: "Cloud Computing", logo: "aws" },
-    { name: "Microsoft", description: "Azure & Solutions", logo: "microsoft" },
+    { name: "Avaya", description: "Cloud & On-Prem", logo: "avaya" },
   ];
 
   return (
@@ -60,13 +60,10 @@ export function Partners() {
                         </div>
                       </div>
                     )}
-                    {partner.logo === "microsoft" && (
+                    {partner.logo === "avaya" && (
                       <div className="flex items-center justify-center">
-                        <div className="grid grid-cols-2 gap-1 w-16 h-16">
-                          <div className="bg-ink dark:bg-paper rounded-sm"></div>
-                          <div className="bg-ink dark:bg-paper rounded-sm"></div>
-                          <div className="bg-ink dark:bg-paper rounded-sm"></div>
-                          <div className="bg-ink dark:bg-paper rounded-sm"></div>
+                        <div className="w-32 h-16 bg-ink dark:bg-paper rounded flex items-center justify-center text-paper dark:text-ink text-xl font-bold tracking-widest">
+                          AVAYA
                         </div>
                       </div>
                     )}

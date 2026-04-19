@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AProposContent } from "./_content";
 
 export const metadata: Metadata = {
-  title: "À propos — One-X Technology, le partenaire CCaaS du Maroc",
+  title: "À propos — Le partenaire CCaaS & CX du Maroc",
   description:
     "L'histoire de One-X Technology, cabinet spécialisé CCaaS & CX basé à Casablanca. Yassine Rogui, Practice Leader & partenaire technique. Partenaire officiel ExpertiaX.",
   openGraph: {

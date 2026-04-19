@@ -1,10 +1,10 @@
 ---
-title: "Migration Amazon Connect : Guide de survie"
-excerpt: "Pourquoi 40% des migrations échouent techniquement et comment sécuriser votre flux d'appels."
+title: "Migration Amazon Connect : guide de survie"
+excerpt: "Pourquoi 40 % des migrations échouent techniquement et comment sécuriser votre flux d'appels. Retour terrain sur les pièges critiques et notre méthode zero-downtime."
 date: "2025-12-03"
 category: "Migration CCaaS"
-tags: ["Migration CCaaS", "AWS Connect", "Migration"]
-author: "ONEX Technology"
+tags: ["Migration CCaaS", "AWS Connect", "Migration", "Architecture cloud"]
+author: "Yassine Rogui"
 readTime: "10 min"
 image: "/images/blog/migration-connect.jpg"
 ogImage: "/images/blog/migration-connect.jpg"
@@ -12,77 +12,115 @@ published: true
 featured: false
 ---
 
-# Migration Amazon Connect : Guide de survie
+Amazon Connect s'est imposé comme l'une des plateformes CCaaS les plus déployées dans les entreprises qui ont fait le choix de l'écosystème AWS. Tarification à l'usage, intégration native avec les services AWS, flexibilité architecturale : les arguments sont solides.
 
-Amazon Connect s'impose comme une référence CCaaS, mais la migration depuis une plateforme legacy reste un exercice périlleux. 40% des projets rencontrent des incidents critiques lors du Go-Live. Voici comment les éviter.
+Mais migrer depuis une plateforme legacy — Avaya, Cisco, Genesys on-premise — vers Amazon Connect reste un exercice périlleux. Nos données terrain le confirment : **40 % des migrations rencontrent des incidents critiques lors du Go-Live**. Des incidents qui coûtent cher — en image, en chiffre d'affaires, en stress pour les équipes.
 
-## Les 5 Pièges Techniques Majeurs
+Voici ce que nous avons appris en accompagnant ces migrations au Maroc et en Europe.
 
-### 1. Sous-Estimation de la Complexité des IVR
-**Erreur courante** : Conversion directe des flux existants sans repenser l'architecture.
+## Pourquoi Amazon Connect attire (et ce que les commerciaux ne disent pas)
+
+La proposition de valeur d'AWS Connect est réelle. Pas de licence fixe, pas de serveur à maintenir, intégration native avec Amazon Lex pour le voicebot, AWS Lambda pour les automations, Amazon Connect Contact Lens pour l'analytics en temps réel.
+
+Ce que les commerciaux minimisent : la courbe d'apprentissage est abrupte si votre équipe IT n'est pas familière avec l'écosystème AWS. Les Contact Flows (l'équivalent des scripts SVI) ont leur propre logique, différente de Genesys Architect ou Avaya. Et les intégrations avec vos systèmes métier demandent souvent plus de développement custom qu'annoncé.
+
+## Les 5 pièges techniques qui font échouer les migrations
+
+### 1. Sous-estimer la complexité des flux SVI existants
+
+C'est l'erreur la plus fréquente. Votre SVI actuel tourne depuis 8 ou 10 ans. Il s'est enrichi d'exception en exception, de hotfix en hotfix. Il ressemble moins à une architecture propre qu'à un millefeuille.
+
+**Erreur classique** : convertir directement les flux existants sans les repenser. Vous reproduisez la complexité, vous ne l'éliminez pas.
 
 **Notre recommandation** :
-- Cartographie complète des call flows actuels
-- Simplification des arborescences (règle des 3 niveaux max)
-- Tests unitaires de chaque module Contact Flow
 
-### 2. Intégrations CRM Mal Préparées
-**Symptôme** : Les agents perdent l'accès aux données client au moment de la bascule.
+- Cartographie complète de tous les call flows actuels, y compris les cas edge rarement documentés
+- Simplification avant migration : règle des 3 niveaux maximum dans l'arborescence SVI
+- Tests unitaires de chaque module Contact Flow en environnement isolé
+- Validation fonctionnelle avec des superviseurs métier, pas seulement des équipes IT
 
-**Solution** :
-- API Gateway AWS pour centraliser les appels
-- Tests de charge réalistes (3x le volume peak)
-- Plan de rollback avec données de fallback
+Ce travail préalable représente généralement 2 à 3 semaines. Il détermine 50 % du succès du projet.
 
-### 3. Problèmes de Téléphonie (SIP/PSTN)
-**Point critique** : La portabilité des numéros peut prendre 15-30 jours.
+### 2. Intégrations CRM mal préparées
 
-**Checklist essentielle** :
-- Commande de portage 45 jours avant le Go-Live
-- Tests SIP trunk avec votre opérateur
-- Numéros de secours activés en parallèle
+Vos agents ne peuvent pas travailler si la fiche client n'apparaît pas au moment de l'appel. Ça semble évident. Pourtant, c'est l'un des incidents les plus fréquents au Go-Live.
 
-### 4. Formation des Agents Insuffisante
-**Réalité terrain** : Un agent non formé = 30% de temps de traitement en plus.
+**Symptôme typique** : l'intégration Salesforce ou Dynamics fonctionne en dev, mais pas en prod avec la charge réelle.
 
-**Programme recommandé** :
-- 2 jours de formation théorique
-- 1 semaine d'environnement sandbox
-- Binôme avec agents expérimentés pendant 2 semaines
+**La bonne approche** :
 
-### 5. Absence de Plan de Repli
-**Statistique alarmante** : Seulement 30% des migrations ont un vrai plan B.
+- Mettre en place une API Gateway AWS pour centraliser les appels entrants et sortants vers les systèmes tiers
+- Tests de charge réalistes : **3 fois le volume d'appels peak** en conditions réelles
+- Plan de rollback avec données de fallback : que se passe-t-il si l'API CRM tombe pendant 2 heures ?
+- Monitoring en temps réel des latences API dès le premier jour de production
 
-**Notre framework** :
-- Bascule progressive par équipe (10% / jour)
-- Dual-running de l'ancienne plateforme pendant 7 jours
+### 3. La téléphonie : le point souvent oublié jusqu'au dernier moment
+
+La portabilité de vos numéros de téléphone peut prendre **15 à 30 jours ouvrés** selon les opérateurs et les régulateurs. En France et en Europe, les délais sont encadrés. Au Maroc, anticipez des délais plus variables selon l'opérateur.
+
+**Checklist téléphonie que nous imposons dès le kick-off** :
+
+- Commande de portage lancée **45 jours avant le Go-Live** minimum
+- Tests SIP trunk complets avec votre opérateur télécom
+- Numéros de secours activés et testés en parallèle
+- Validation des qualités audio en conditions réelles (codec, latence, jitter)
+- Plan de bascule DNS documenté et répété en environnement de staging
+
+### 4. Formation insuffisante des agents
+
+Un agent non formé à son nouvel outil perd 30 % de productivité en moyenne les deux premières semaines. Sur un centre de 100 agents, c'est l'équivalent de 30 agents fantômes pendant un mois.
+
+Amazon Connect a une interface moderne et intuitive. Mais "intuitif" ne signifie pas "sans formation". Les workflows, les statuts, la gestion des transferts, l'utilisation des softphones AWS — tout cela demande une prise en main structurée.
+
+**Programme formation que nous recommandons** :
+
+- 2 jours de formation théorique et pratique en salle
+- 1 semaine d'accès à un environnement sandbox avec scénarios réels simulés
+- Binôme avec agents expérimentés (ambassadeurs) pendant 2 semaines post Go-Live
+- Hotline support interne dédiée le premier mois
+
+### 5. Aucun plan de repli sérieux
+
+Seulement 30 % des projets de migration que nous avons audités avaient un vrai plan de rollback documenté et testé. Les autres avaient un document PowerPoint qui n'avait jamais été répété.
+
+Un plan de rollback se teste comme un plan incendie : en conditions réelles, avant l'urgence.
+
+**Notre framework de continuité** :
+
+- Bascule progressive : **10 % des agents par vague**, avec validation des KPIs à chaque étape
+- Dual-running de l'ancienne plateforme pendant minimum 7 jours post Go-Live
 - Équipe technique en hotline 24/7 la première semaine
+- Critères de déclenchement du rollback définis et documentés avant la migration
 
-## La Méthode ONEX : Migration Zero-Downtime
+## La méthode zero-downtime que nous appliquons
 
-Nous avons développé une approche en 7 phases :
+Sur chaque migration AWS Connect que nous livrons, nous suivons une progression en 7 phases :
 
-1. **Audit Technique** (Semaine 1-2)
-2. **Proof of Concept** (Semaine 3-4)
-3. **Architecture Cloud** (Semaine 5-8)
-4. **Migration des Données** (Semaine 9-10)
-5. **Tests Intensifs** (Semaine 11-12)
-6. **Formation** (Semaine 13-14)
-7. **Go-Live Progressif** (Semaine 15-16)
+| Phase | Semaines | Livrable |
+|-------|----------|----------|
+| Audit technique | 1-2 | Cartographie flux, inventaire intégrations, risques identifiés |
+| Proof of Concept | 3-4 | 1 queue, 5 agents, validation architecture |
+| Architecture cloud | 5-8 | Contact Flows complets, IVR NLU, intégrations CRM |
+| Migration données | 9-10 | Historique appels, configurations agents |
+| Tests intensifs | 11-12 | Tests de charge, UAT, tests de rollback |
+| Formation | 13-14 | Agents, superviseurs, équipe IT |
+| Go-Live progressif | 15-16 | 10 % → 30 % → 60 % → 100 % |
 
-## Cas Client : Assurance au Maroc
+Ce calendrier peut être accéléré selon la taille du centre et la complexité des intégrations. Mais compresser les phases d'audit et de tests, c'est garantir des incidents en production.
 
-**Contexte** : Assureur marocain, 200 agents, plateforme on-premise vieillissante.
+## Ce que les projets réussis ont en commun
 
-**Challenge** : Migration sans interruption de service pendant la saison des sinistres.
+Après avoir accompagné des migrations CCaaS pour des assureurs, des banques et des opérateurs télécom au Maroc et en Europe, nous avons identifié trois caractéristiques communes aux projets qui se passent bien :
 
-**Résultat** :
-- 0 downtime critique
-- 15% de réduction AHT après 3 mois
-- ROI positif en 8 mois
+**Un sponsor exécutif impliqué.** Les migrations CCaaS touchent à la fois l'IT et les métiers. Sans une direction qui tranche les arbitrages rapidement, les projets s'enlisent dans les comités.
 
-## Conclusion
+**Un interlocuteur métier dédié.** Quelqu'un qui connaît les parcours clients réels, les cas edge, les exceptions que personne n'a documentées. Cet interlocuteur vaut souvent plus qu'une semaine d'audit technique.
 
-Une migration Amazon Connect réussie nécessite 3 mois de préparation minimum. Les entreprises qui échouent sont celles qui veulent aller trop vite. Prenez le temps de bien faire les choses, ou préparez-vous à gérer des crises.
+**Une culture du test.** Les équipes qui réussissent testent, testent encore, et testent différemment. Pas seulement en conditions nominales, mais en conditions dégradées, sous charge, avec des scénarios improbables.
 
-**Besoin d'accompagnement pour votre migration ?** Nos architectes AWS certifiés sont là pour vous aider.
+Voir nos [études de cas sectoriels](/cas-clients) pour des exemples concrets de migrations réussies.
+
+---
+
+**Vous avez un projet de migration AWS Connect ?**
+[Réservez un diagnostic gratuit (30 min)](https://calendly.com/yrogui/30min) — nos architectes AWS certifiés analysent votre infrastructure existante et vous donnent une évaluation honnête des risques et du planning réaliste.

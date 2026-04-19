@@ -59,7 +59,7 @@ export function Approach() {
                       {phase.number}
                     </div>
                   </div>
-                  <div className="flex-grow">
+                  <div className="flex-grow min-w-0">
                     <h3 className="font-display font-medium text-3xl text-ink dark:text-paper mb-5 tracking-[-0.01em]">
                       {phase.title}
                     </h3>

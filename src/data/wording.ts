@@ -11,10 +11,10 @@ export const wording = {
   // === HERO — CHARTE ONE-X v1.0 ===
   hero: {
     eyebrow: "DESIGN AUTHORITY · CX & CLOUD · MAROC",
-    title: "Migrez votre centre de contact vers le cloud,",
-    titleItalic: "sans interruption.",
+    title: "Votre centre de contact,",
+    titleItalic: "repensé pour le cloud.",
     subtitle:
-      "Trop de migrations CCaaS échouent par manque d'expertise technique. Nous sécurisons votre bascule Genesys/AWS/Avaya avec zéro downtime et un ROI positif mesurable dès les premiers mois.",
+      "Création, migration ou transformation de votre plateforme CCaaS — Genesys Cloud, AWS Connect, Avaya. Une équipe senior, un ROI mesurable, zéro interruption de service.",
     baseline: "Le partenaire marocain des programmes CX critiques.",
     stats: [
       { label: "ANNÉES D'EXPERTISE CX & CLOUD", value: "18+" },
@@ -77,9 +77,9 @@ export const wording = {
         certifications: ["AWS Connect Deployment Specialist"],
       },
       {
-        name: "Microsoft",
-        description: "Azure Partner",
-        certifications: ["Microsoft Certified Partner"],
+        name: "Avaya",
+        description: "Cloud & On-Prem",
+        certifications: ["Avaya Cloud Expert"],
       },
     ],
   },
@@ -256,7 +256,7 @@ export const wording = {
       },
     ],
     engagement: {
-      title: "Comment on travaille ensemble",
+      title: "Comment nous travaillons ensemble",
       items: [
         {
           title: "Diagnostic CCaaS complet",
@@ -503,7 +503,7 @@ export const wording = {
           "Roadmap go-live semaine par semaine",
           "Budget détaillé (licences + delivery + run)",
         ],
-        cta: "Commander l'audit (15k MAD)",
+        cta: "Commander l'audit (15 000 MAD)",
         ctaHref: "#contact",
         recommended: true,
       },
@@ -627,22 +627,22 @@ export const wording = {
         title: "Navigation",
         links: [
           { label: "Accueil", href: "/" },
-          { label: "Pourquoi One—X", href: "#a-propos" },
-          { label: "Nos expertises CCaaS", href: "#expertises" },
-          { label: "Notre méthode", href: "#approche" },
-          { label: "L'équipe", href: "#equipe" },
+          { label: "Pourquoi One—X", href: "/#a-propos" },
+          { label: "Nos expertises CCaaS", href: "/#expertises" },
+          { label: "Notre méthode", href: "/#approche" },
+          { label: "L'équipe", href: "/#equipe" },
           { label: "Blog", href: "/blog" },
-          { label: "Contact", href: "#contact" },
+          { label: "Contact", href: "/#contact" },
         ],
       },
       {
         title: "Expertises CCaaS",
         links: [
-          { label: "Migration Genesys Cloud", href: "#expertises" },
-          { label: "Migration AWS Connect", href: "#expertises" },
-          { label: "Migration Avaya Cloud", href: "#expertises" },
-          { label: "Optimisation CX", href: "#expertises" },
-          { label: "Voicebot / Chatbot", href: "#expertises" },
+          { label: "Migration Genesys Cloud", href: "/#expertises" },
+          { label: "Migration AWS Connect", href: "/#expertises" },
+          { label: "Migration Avaya Cloud", href: "/#expertises" },
+          { label: "Optimisation CX", href: "/#expertises" },
+          { label: "Voicebot / Chatbot", href: "/#expertises" },
         ],
       },
       {
@@ -653,7 +653,7 @@ export const wording = {
             href: "mailto:contact@onex-technology.com",
           },
           { label: "+33 6 65 56 72 67", href: "tel:+33665567267" },
-          { label: "Casablanca, Maroc", href: "#contact" },
+          { label: "Casablanca, Maroc", href: "/#contact" },
         ],
       },
     ],
@@ -662,13 +662,13 @@ export const wording = {
     },
     legal: "© 2026 One-X Technology. Tous droits réservés.",
     legalLinks: [
-      { label: "Mentions Légales", href: "/mentions-legales" },
+      { label: "Mentions légales", href: "/mentions-legales" },
       {
-        label: "Politique de Confidentialité",
+        label: "Politique de confidentialité",
         href: "/politique-de-confidentialite",
       },
       {
-        label: "Politique Cookies",
+        label: "Politique cookies",
         href: "/politique-cookies",
       },
       {

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   
   description:
-    "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
+    "Cabinet CCaaS & CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya sans downtime. Partenaire ExpertiaX. Architectes seniors certifiés basés à Casablanca.",
   keywords: [
     "migration ccaas maroc",
     "genesys cloud maroc",

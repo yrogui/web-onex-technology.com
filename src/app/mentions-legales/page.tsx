@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mentions légales | One-X Technology",
-  description: "Mentions légales et informations juridiques de One-X Technology, cabinet CCaaS basé à Casablanca.",
+  title: "Mentions légales",
+  description: "Mentions légales et informations juridiques de One-X Technology, cabinet CCaaS & CX basé à Casablanca, Maroc. Partenaire officiel ExpertiaX.",
   alternates: { canonical: "https://onex-technology.com/mentions-legales" },
 };
 
@@ -29,7 +29,7 @@ export default function MentionsLegalesPage() {
         <div className="max-w-[900px] mx-auto px-8 lg:px-16">
           {/* Title */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink dark:text-paper mb-8 tracking-tight">
-            Mentions Légales
+            Mentions légales
           </h1>
 
           <p className="text-sm text-graphite dark:text-smoke mb-12">
