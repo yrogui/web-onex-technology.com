@@ -31,6 +31,7 @@ jobs:
           NEXT_PUBLIC_N8N_CHECKLIST_CONFIRM_WEBHOOK: ${{ secrets.NEXT_PUBLIC_N8N_CHECKLIST_CONFIRM_WEBHOOK }}
           NEXT_PUBLIC_CHECKLIST_PDF_URL: ${{ secrets.NEXT_PUBLIC_CHECKLIST_PDF_URL }}
           NEXT_PUBLIC_N8N_CHAT_WEBHOOK: ${{ secrets.NEXT_PUBLIC_N8N_CHAT_WEBHOOK }}
+          NEXT_PUBLIC_CHAT_ENABLED: ${{ secrets.NEXT_PUBLIC_CHAT_ENABLED }}
         run: npm run build
 
       - name: Validate out/ exists
