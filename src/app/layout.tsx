@@ -15,6 +15,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { SchemaOrg } from "@/components/seo/schema-org";
 import { CookieConsent } from "@/components/cookie-consent";
+import { ChatWidgetLoader } from "@/components/chat/ChatWidgetLoader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://onex-technology.com"),
@@ -110,6 +111,7 @@ export default function RootLayout({
               <main className="flex-grow">{children}</main>
               <Footer />
               <CookieConsent />
+              <ChatWidgetLoader />
             </div>
           </SmoothScroll>
         </ThemeProvider>
