@@ -43,3 +43,5 @@ next-env.d.ts
 # Screenshots audit Playwright (locaux uniquement)
 /public/_audit/
 *.zip
+.env.local
+.claude/

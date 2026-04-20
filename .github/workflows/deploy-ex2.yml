@@ -26,6 +26,10 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          NEXT_PUBLIC_N8N_CHECKLIST_WEBHOOK: ${{ secrets.NEXT_PUBLIC_N8N_CHECKLIST_WEBHOOK }}
+          NEXT_PUBLIC_N8N_CHECKLIST_CONFIRM_WEBHOOK: ${{ secrets.NEXT_PUBLIC_N8N_CHECKLIST_CONFIRM_WEBHOOK }}
+          NEXT_PUBLIC_CHECKLIST_PDF_URL: ${{ secrets.NEXT_PUBLIC_CHECKLIST_PDF_URL }}
         run: npm run build
 
       - name: Validate out/ exists
@@ -37,6 +41,6 @@ jobs:
         run: |
           echo "${{ secrets.EX2_SSH_KEY }}" > /tmp/deploy_key
           chmod 600 /tmp/deploy_key
-          ssh -o StrictHostKeyChecking=no -p ${{ secrets.EX2_PORT }} -i /tmp/deploy_key ${{ secrets.EX2_USER }}@${{ secrets.EX2_HOST }} "cd ${{ secrets.EX2_PATH }} && rm -rf _next _not-found 404 404.html index.html index.txt blog mentions-legales politique-cookies politique-de-confidentialite assets __next.* *.txt"
+          ssh -o StrictHostKeyChecking=no -p ${{ secrets.EX2_PORT }} -i /tmp/deploy_key ${{ secrets.EX2_USER }}@${{ secrets.EX2_HOST }} "cd ${{ secrets.EX2_PATH }} && rm -rf _next _not-found 404 404.html index.html index.txt blog mentions-legales politique-cookies politique-de-confidentialite assets __next.* *.txt confirmer-inscription merci-checklist"
           scp -o StrictHostKeyChecking=no -P ${{ secrets.EX2_PORT }} -i /tmp/deploy_key -r out/* ${{ secrets.EX2_USER }}@${{ secrets.EX2_HOST }}:${{ secrets.EX2_PATH }}/
           rm -f /tmp/deploy_key
