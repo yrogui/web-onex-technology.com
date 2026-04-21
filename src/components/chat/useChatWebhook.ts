@@ -21,7 +21,6 @@ export function useChatWebhook() {
   const [error, setError] = useState<string | null>(null);
   const sessionIdRef = useRef<string | null>(null);
 
-  // Initialise ou récupère le sessionId depuis sessionStorage (RGPD-safe, reset au close)
   const getSessionId = useCallback((): string => {
     if (sessionIdRef.current) return sessionIdRef.current;
 
@@ -41,8 +40,12 @@ export function useChatWebhook() {
     return newId;
   }, []);
 
-  const sendMessage = useCallback(
-    async (message: string, _history?: Message[]): Promise<WebhookResponse> => {
+  const send = useCallback(
+    async (
+      userMessage: string,
+      _history: Message[],
+      onResponse: (msg: Omit<Message, "id">) => void
+    ): Promise<void> => {
       setIsLoading(true);
       setError(null);
 
@@ -50,12 +53,13 @@ export function useChatWebhook() {
       if (!webhookUrl) {
         setIsLoading(false);
         setError("Webhook non configuré");
-        return {
-          output:
+        onResponse({
+          role: "assistant",
+          content:
             "L'assistant est momentanément indisponible. Écrivez-nous à contact@onex-technology.com.",
-          leadType: "cold",
-          suggestedActions: [],
-        };
+          timestamp: Date.now(),
+        });
+        return;
       }
 
       const sessionId = getSessionId();
@@ -65,9 +69,8 @@ export function useChatWebhook() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            searchQuery: message,
+            searchQuery: userMessage,
             sessionId,
-            // Champs additionnels reconnus par le Brain (optionnels, ignorés si non gérés)
             source: "chatbot-site",
             pageUrl:
               typeof window !== "undefined"
@@ -83,33 +86,30 @@ export function useChatWebhook() {
         }
 
         const data = await res.json();
-
-        // Le Brain Hub retourne { output, sessionId, source }
-        // On mappe vers notre format frontend
         const output = data.output || data.message || data.text || "";
 
         if (!output) {
           throw new Error("Empty response");
         }
 
-        // Le Brain gère la détection high-value en interne mais ne l'expose pas dans la réponse publique.
-        // On génère donc des suggested actions basiques côté frontend selon le contenu.
         const suggestedActions = buildSuggestedActions(output);
 
         setIsLoading(false);
-        return {
-          output,
-          leadType: "cold", // Placeholder : le Brain ne retourne pas leadType publiquement
+        onResponse({
+          role: "assistant",
+          content: output,
+          timestamp: Date.now(),
           suggestedActions,
-        };
+        });
       } catch (err) {
         console.error("Chat webhook error:", err);
         setIsLoading(false);
         setError("Erreur réseau");
-        return {
-          output:
+        onResponse({
+          role: "assistant",
+          content:
             "Désolé, je rencontre un problème technique. Écrivez-nous directement à contact@onex-technology.com ou prenez rendez-vous sur https://calendly.com/yrogui/30min.",
-          leadType: "cold",
+          timestamp: Date.now(),
           suggestedActions: [
             {
               label: "Envoyer un email",
@@ -122,20 +122,15 @@ export function useChatWebhook() {
               value: "https://calendly.com/yrogui/30min",
             },
           ],
-        };
+        });
       }
     },
     [getSessionId]
   );
 
-  return { sendMessage, isLoading, error };
+  return { send, isLoading, error };
 }
 
-/**
- * Détecte dans la réponse du bot des triggers pour proposer des CTA.
- * Le Brain inclut souvent naturellement "calendly.com/yrogui/30min" ou "contact@onex-technology.com"
- * dans ses réponses — on les extrait pour en faire des boutons.
- */
 function buildSuggestedActions(
   output: string
 ): { label: string; action: "url" | "prefill" | "close"; value: string }[] {
@@ -147,7 +142,6 @@ function buildSuggestedActions(
 
   const lower = output.toLowerCase();
 
-  // Si le bot mentionne Calendly → bouton RDV
   if (lower.includes("calendly.com/yrogui")) {
     actions.push({
       label: "Prendre RDV avec Yassine",
@@ -156,7 +150,6 @@ function buildSuggestedActions(
     });
   }
 
-  // Si le bot mentionne une urgence ou donne le téléphone → bouton appel
   if (
     lower.includes("+33 6 65 56 72 67") ||
     lower.includes("+33665567267") ||
@@ -169,7 +162,6 @@ function buildSuggestedActions(
     });
   }
 
-  // Si le bot mentionne la checklist → bouton téléchargement
   if (lower.includes("checklist") || lower.includes("25 points")) {
     actions.push({
       label: "Télécharger la checklist",
@@ -178,6 +170,5 @@ function buildSuggestedActions(
     });
   }
 
-  // Max 3 boutons
   return actions.slice(0, 3);
 }
