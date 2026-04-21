@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
-import type { Message, WebhookResponse } from "./types";
+import type { Message } from "./types";
 
 const SESSION_STORAGE_KEY = "onex_chat_session";
 
@@ -54,10 +54,9 @@ export function useChatWebhook() {
         setIsLoading(false);
         setError("Webhook non configuré");
         onResponse({
-          role: "assistant",
+          role: "bot",
           content:
             "L'assistant est momentanément indisponible. Écrivez-nous à contact@onex-technology.com.",
-          timestamp: Date.now(),
         });
         return;
       }
@@ -96,9 +95,8 @@ export function useChatWebhook() {
 
         setIsLoading(false);
         onResponse({
-          role: "assistant",
+          role: "bot",
           content: output,
-          timestamp: Date.now(),
           suggestedActions,
         });
       } catch (err) {
@@ -106,10 +104,9 @@ export function useChatWebhook() {
         setIsLoading(false);
         setError("Erreur réseau");
         onResponse({
-          role: "assistant",
+          role: "bot",
           content:
             "Désolé, je rencontre un problème technique. Écrivez-nous directement à contact@onex-technology.com ou prenez rendez-vous sur https://calendly.com/yrogui/30min.",
-          timestamp: Date.now(),
           suggestedActions: [
             {
               label: "Envoyer un email",
