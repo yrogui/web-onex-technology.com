@@ -19,7 +19,7 @@ const phaseDeliverableIcons = [
 
 export function Approach() {
   return (
-    <section id="approche" className="py-32 bg-paper dark:bg-primary" suppressHydrationWarning>
+    <section id="approche" className="py-16 md:py-24 bg-paper dark:bg-primary" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <motion.div
@@ -27,7 +27,7 @@ export function Approach() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-20"
+          className="mb-12"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
             {wording.approach.subtitle}

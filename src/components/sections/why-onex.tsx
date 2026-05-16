@@ -12,8 +12,10 @@ const iconMap = {
 };
 
 export function WhyOnex() {
+  const items = wording.whyOnex.items;
+
   return (
-    <section id="a-propos" className="py-32 bg-primary" suppressHydrationWarning>
+    <section id="a-propos" className="py-16 md:py-24 bg-primary" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <motion.div
@@ -21,7 +23,7 @@ export function WhyOnex() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-20"
+          className="mb-12"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
             {wording.whyOnex.subtitle}
@@ -34,18 +36,14 @@ export function WhyOnex() {
           </p>
         </motion.div>
 
-        {/* Grille */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {wording.whyOnex.items.map((item, index) => {
+        {/* Carousel mobile / grille desktop */}
+        <div className="flex snap-x snap-mandatory overflow-x-auto gap-4 px-4 -mx-4 md:grid md:grid-cols-2 md:gap-6 md:px-0 md:mx-0 md:overflow-visible">
+          {items.map((item, index) => {
             const Icon = iconMap[item.icon as keyof typeof iconMap];
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-10 border border-charcoal hover:border-accent/40 transition-all duration-300 rounded bg-charcoal/30"
+                className="snap-center shrink-0 w-[85%] md:w-auto md:shrink p-8 md:p-10 border border-charcoal hover:border-accent/40 transition-all duration-300 rounded bg-charcoal/30"
               >
                 <div className="mb-6">
                   <Icon className="h-10 w-10 text-accent-light" />
@@ -56,9 +54,19 @@ export function WhyOnex() {
                 <p className="text-smoke leading-[1.65] text-[15px]">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
+        </div>
+
+        {/* Indicateurs scroll — mobile uniquement */}
+        <div className="flex justify-center gap-2 mt-6 md:hidden">
+          {items.map((_, i) => (
+            <div
+              key={i}
+              className={`rounded-full transition-all ${i === 0 ? "w-4 h-1.5 bg-graphite" : "w-1.5 h-1.5 bg-smoke"}`}
+            />
+          ))}
         </div>
       </div>
     </section>

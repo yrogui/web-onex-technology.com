@@ -8,7 +8,7 @@ export function Offers() {
   return (
     <section
       id="offres"
-      className="py-32 bg-mist dark:bg-charcoal/30"
+      className="py-16 md:py-24 bg-mist dark:bg-charcoal/30"
       suppressHydrationWarning
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">

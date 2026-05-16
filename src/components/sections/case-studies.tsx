@@ -8,7 +8,7 @@ export function CaseStudies() {
   return (
     <section
       id="trajectoires"
-      className="py-32 bg-mist dark:bg-charcoal/20"
+      className="py-16 md:py-24 bg-mist dark:bg-charcoal/20"
       suppressHydrationWarning
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">

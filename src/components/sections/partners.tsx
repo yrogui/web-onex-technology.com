@@ -11,7 +11,7 @@ export function Partners() {
   ];
 
   return (
-    <section className="py-20 bg-paper dark:bg-primary border-y border-smoke/30 dark:border-charcoal" suppressHydrationWarning>
+    <section className="py-16 md:py-24 bg-paper dark:bg-primary border-y border-smoke/30 dark:border-charcoal" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <motion.div
@@ -43,37 +43,11 @@ export function Partners() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="flex flex-col items-center justify-center p-8 border border-smoke/30 dark:border-charcoal hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-500 min-h-[160px] rounded bg-paper dark:bg-charcoal/50">
-                <div className="relative w-full h-20 flex items-center justify-center mb-4">
-                  <div className="text-4xl font-bold opacity-50 group-hover:opacity-100 transition-all duration-500">
-                    {partner.logo === "genesys" && (
-                      <div className="flex items-center justify-center">
-                        <div className="w-32 h-16 bg-ink dark:bg-paper rounded flex items-center justify-center text-paper dark:text-ink text-xl font-bold">
-                          GENESYS
-                        </div>
-                      </div>
-                    )}
-                    {partner.logo === "aws" && (
-                      <div className="flex items-center justify-center">
-                        <div className="w-32 h-16 bg-ink dark:bg-paper rounded flex items-center justify-center text-paper dark:text-ink text-2xl font-bold">
-                          AWS
-                        </div>
-                      </div>
-                    )}
-                    {partner.logo === "avaya" && (
-                      <div className="flex items-center justify-center">
-                        <div className="w-32 h-16 bg-ink dark:bg-paper rounded flex items-center justify-center text-paper dark:text-ink text-xl font-bold tracking-widest">
-                          AVAYA
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <h3 className="text-lg font-medium text-ink dark:text-paper mb-1 text-center">
+              <div className="flex flex-col items-center justify-center p-8 md:p-10 border border-smoke rounded-md bg-paper hover:border-accent/30 transition-all duration-500 min-h-[160px]">
+                <h3 className="font-display font-medium italic text-3xl md:text-4xl text-primary text-center mb-3">
                   {partner.name}
                 </h3>
-                <p className="text-xs text-graphite dark:text-smoke text-center">
+                <p className="text-xs text-graphite text-center">
                   {partner.description}
                 </p>
 

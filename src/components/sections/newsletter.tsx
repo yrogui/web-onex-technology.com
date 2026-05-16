@@ -7,7 +7,7 @@ import { NewsletterChecklistForm } from "@/components/NewsletterChecklistForm";
 export function Newsletter() {
   return (
     <section
-      className="py-20 bg-accent/5 dark:bg-charcoal/30 border-y border-accent/20 dark:border-charcoal"
+      className="py-16 md:py-24 bg-accent/5 dark:bg-charcoal/30 border-y border-accent/20 dark:border-charcoal"
       suppressHydrationWarning
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">

@@ -21,7 +21,7 @@ export function FAQ() {
 
       <section
         id="faq"
-        className="py-32 bg-primary"
+        className="py-16 md:py-24 bg-primary"
         suppressHydrationWarning
       >
         <div className="max-w-[1000px] mx-auto px-8 lg:px-16">

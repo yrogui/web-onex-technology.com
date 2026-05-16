@@ -6,7 +6,7 @@ import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
 
 export function Team() {
   return (
-    <section id="equipe" className="py-32 bg-primary" suppressHydrationWarning>
+    <section id="equipe" className="py-16 md:py-24 bg-primary" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <motion.div

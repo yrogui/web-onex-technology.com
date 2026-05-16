@@ -1,6 +1,7 @@
 "use client";
 
 import { Hero } from "@/components/sections/hero";
+import { KPIs } from "@/components/sections/kpis";
 import { Partners } from "@/components/sections/partners";
 import { WhyOnex } from "@/components/sections/why-onex";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -16,8 +17,11 @@ import { Newsletter } from "@/components/sections/newsletter";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Hero avec statistiques */}
+      {/* Hero */}
       <Hero />
+
+      {/* KPIs — bande Crème Pierre */}
+      <KPIs />
 
       {/* Partenaires Technologiques */}
       <Partners />
