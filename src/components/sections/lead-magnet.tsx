@@ -24,7 +24,7 @@ export function LeadMagnet() {
             Un audit terrain condensé. Architecture, KPIs, points de friction. À utiliser avant chaque migration critique.
           </p>
 
-          <NewsletterChecklistForm source="lead-magnet-home" />
+          <NewsletterChecklistForm source="lead-magnet-home" variant="featured" />
         </motion.div>
       </div>
     </section>
