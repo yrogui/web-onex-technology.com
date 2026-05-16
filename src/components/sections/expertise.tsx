@@ -18,8 +18,8 @@ const expertiseAnchorMap: Record<string, string> = {
   "cx-optimization": "/services#cx",
   "ai-conversational": "/services#automatisation",
   "cloud-infrastructure": "/services#cloud",
-  "cx-strategy": "/services#migration",
-  "training-transfer": "/services#migration",
+  "cx-strategy": "/services#cx",
+  "training-transfer": "/services",
 };
 
 export function Expertise() {
