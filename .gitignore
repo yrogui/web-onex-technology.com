@@ -44,7 +44,6 @@ next-env.d.ts
 *.zip
 .env.local
 .claude/
-*.png
 
 # Captures Claude Code (sessions audit)
 /*.png
