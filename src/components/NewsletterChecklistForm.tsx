@@ -21,7 +21,11 @@ interface FormError {
   global?: string;
 }
 
-export function NewsletterChecklistForm() {
+interface Props {
+  source?: string;
+}
+
+export function NewsletterChecklistForm({ source = "checklist-ccaas-25-points" }: Props) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
   const [website, setWebsite] = useState("");
@@ -72,7 +76,7 @@ export function NewsletterChecklistForm() {
         body: JSON.stringify({
           email,
           rgpd: true,
-          source: "checklist-ccaas-25-points",
+          source,
           timestamp: new Date().toISOString(),
           siteUrl: typeof window !== "undefined" ? window.location.origin : "https://onex-technology.com",
           website,
