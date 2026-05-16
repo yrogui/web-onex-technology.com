@@ -9,7 +9,6 @@
 # testing
 /coverage
 
-# next.js
 /.next/
 /out/
 
@@ -45,3 +44,6 @@ next-env.d.ts
 *.zip
 .env.local
 .claude/
+
+# Captures Claude Code (sessions audit)
+/*.png

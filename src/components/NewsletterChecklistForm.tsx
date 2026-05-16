@@ -21,12 +21,22 @@ interface FormError {
   global?: string;
 }
 
-export function NewsletterChecklistForm() {
+interface Props {
+  source?: string;
+  variant?: "default" | "featured";
+}
+
+export function NewsletterChecklistForm({
+  source = "checklist-ccaas-25-points",
+  variant = "default",
+}: Props) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
   const [website, setWebsite] = useState("");
   const [state, setState] = useState<State>("idle");
   const [errors, setErrors] = useState<FormError>({});
+
+  const isFeatured = variant === "featured";
 
   function validate(): FormError {
     const errs: FormError = {};
@@ -72,7 +82,7 @@ export function NewsletterChecklistForm() {
         body: JSON.stringify({
           email,
           rgpd: true,
-          source: "checklist-ccaas-25-points",
+          source,
           timestamp: new Date().toISOString(),
           siteUrl: typeof window !== "undefined" ? window.location.origin : "https://onex-technology.com",
           website,
@@ -102,16 +112,30 @@ export function NewsletterChecklistForm() {
 
   if (state === "success") {
     return (
-      <div className="w-full max-w-xl mx-auto p-8 border border-smoke/30 dark:border-charcoal bg-paper dark:bg-primary rounded-sm text-center">
+      <div className={[
+        "w-full max-w-xl mx-auto p-8 rounded-sm text-center",
+        isFeatured
+          ? "bg-white border border-smoke/30"
+          : "bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal",
+      ].join(" ")}>
         <CheckCircle className="h-10 w-10 mx-auto mb-4" style={{ color: "#3F7A5E" }} />
-        <h3 className="font-display font-medium text-2xl text-ink dark:text-paper mb-3">
+        <h3 className={[
+          "font-display font-medium text-2xl mb-3",
+          isFeatured ? "text-ink" : "text-ink dark:text-paper",
+        ].join(" ")}>
           Vérifiez votre boîte mail
         </h3>
-        <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke">
+        <p className={[
+          "text-[15px] leading-[1.65]",
+          isFeatured ? "text-charcoal" : "text-charcoal dark:text-smoke",
+        ].join(" ")}>
           Un email de confirmation vous a été envoyé. Cliquez sur le lien pour recevoir
           votre checklist <strong>25 points avant go-live</strong>.
         </p>
-        <p className="mt-4 text-sm text-graphite dark:text-smoke/70">
+        <p className={[
+          "mt-4 text-sm",
+          isFeatured ? "text-graphite" : "text-graphite dark:text-smoke/70",
+        ].join(" ")}>
           Pensez à vérifier vos spams si vous ne le recevez pas dans les 5 minutes.
         </p>
       </div>
@@ -138,12 +162,18 @@ export function NewsletterChecklistForm() {
       <div>
         <label
           htmlFor="checklist-email"
-          className="block text-sm font-medium text-ink dark:text-paper mb-2"
+          className={[
+            "block text-sm font-medium mb-2",
+            isFeatured ? "text-ink" : "text-ink dark:text-paper",
+          ].join(" ")}
         >
           Email professionnel
         </label>
         <div className="relative">
-          <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-graphite dark:text-smoke pointer-events-none" />
+          <Mail className={[
+            "absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 pointer-events-none",
+            isFeatured ? "text-graphite" : "text-graphite dark:text-smoke",
+          ].join(" ")} />
           <input
             id="checklist-email"
             type="email"
@@ -157,12 +187,16 @@ export function NewsletterChecklistForm() {
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
             className={[
-              "w-full pl-11 pr-4 py-3.5 text-[15px] bg-paper dark:bg-primary",
-              "border text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50",
-              "focus:outline-none transition-colors rounded-sm",
+              "w-full pl-11 pr-4 py-3.5 text-[15px]",
+              "border focus:outline-none transition-colors rounded-sm",
+              isFeatured
+                ? "bg-white text-primary placeholder:text-graphite/60"
+                : "bg-paper dark:bg-primary text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50",
               errors.email
                 ? "border-[#A43B2E] focus:border-[#A43B2E]"
-                : "border-smoke/40 dark:border-charcoal focus:border-accent",
+                : isFeatured
+                  ? "border-smoke focus:border-accent"
+                  : "border-smoke/40 dark:border-charcoal focus:border-accent",
             ].join(" ")}
           />
         </div>
@@ -199,10 +233,14 @@ export function NewsletterChecklistForm() {
                 "h-4 w-4 border rounded-[3px] transition-colors",
                 "peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-1",
                 rgpd
-                  ? "bg-primary dark:bg-accent border-primary dark:border-accent"
+                  ? "bg-primary border-primary"
                   : errors.rgpd
-                  ? "border-[#A43B2E] bg-paper dark:bg-primary"
-                  : "border-smoke dark:border-charcoal bg-paper dark:bg-primary",
+                  ? isFeatured
+                    ? "border-[#A43B2E] bg-white"
+                    : "border-[#A43B2E] bg-paper dark:bg-primary"
+                  : isFeatured
+                    ? "border-charcoal bg-white"
+                    : "border-smoke dark:border-charcoal bg-paper dark:bg-primary",
               ].join(" ")}
             >
               {rgpd && (
@@ -222,7 +260,10 @@ export function NewsletterChecklistForm() {
               )}
             </div>
           </div>
-          <span className="text-[13px] leading-[1.6] text-charcoal dark:text-smoke">
+          <span className={[
+            "text-[13px] leading-[1.6]",
+            isFeatured ? "text-charcoal" : "text-charcoal dark:text-smoke",
+          ].join(" ")}>
             J'accepte que One-X Technology utilise mon adresse email pour m'envoyer
             la checklist demandée et, occasionnellement, des contenus liés aux programmes CCaaS.
             Désinscription à tout moment via le lien présent dans chaque email.
@@ -291,7 +332,10 @@ export function NewsletterChecklistForm() {
         )}
       </button>
 
-      <p className="text-[11px] text-graphite dark:text-smoke/60 text-center">
+      <p className={[
+        "text-[11px] text-center",
+        isFeatured ? "text-graphite" : "text-graphite dark:text-smoke/60",
+      ].join(" ")}>
         Email professionnel requis · Zéro spam · Double confirmation
       </p>
     </form>
