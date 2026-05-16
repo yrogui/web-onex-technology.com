@@ -11,7 +11,7 @@ export function Partners() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-paper dark:bg-primary border-y border-smoke/30 dark:border-charcoal" suppressHydrationWarning>
+    <section className="py-16 md:py-24 bg-paper border-y border-smoke/30" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
         <motion.div
@@ -22,12 +22,12 @@ export function Partners() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-3 mb-3">
-            <Award className="h-4 w-4 text-accent dark:text-accent-light" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke">
+            <Award className="h-4 w-4 text-accent text-accent" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite text-charcoal">
               Nos alliances technologiques
             </p>
           </div>
-          <p className="text-sm text-charcoal dark:text-smoke max-w-2xl mx-auto">
+          <p className="text-sm text-charcoal text-charcoal max-w-2xl mx-auto">
             Partenaires certifiés des leaders mondiaux de la transformation digitale
           </p>
         </motion.div>
@@ -54,8 +54,8 @@ export function Partners() {
                 {/* Badge certifié */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex items-center gap-1 px-2 py-1 bg-accent/10 rounded-sm">
-                    <Award className="h-3 w-3 text-accent dark:text-accent-light" />
-                    <span className="text-[9px] font-semibold uppercase tracking-wider text-accent dark:text-accent-light">
+                    <Award className="h-3 w-3 text-accent text-accent" />
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-accent text-accent">
                       Certifié
                     </span>
                   </div>
@@ -72,7 +72,7 @@ export function Partners() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-10"
         >
-          <p className="text-xs text-graphite dark:text-smoke italic">
+          <p className="text-xs text-graphite text-charcoal italic">
             Certifications officielles • Formations continues • Accès aux programmes partenaires
           </p>
         </motion.div>
