@@ -672,12 +672,12 @@ export const wording = {
         title: "Navigation",
         links: [
           { label: "Accueil", href: "/" },
-          { label: "Pourquoi One—X", href: "/#a-propos" },
-          { label: "Nos expertises CCaaS", href: "/#expertises" },
-          { label: "Notre méthode", href: "/#approche" },
-          { label: "L'équipe", href: "/#equipe" },
+          { label: "Pourquoi One—X", href: "/a-propos" },
+          { label: "Nos expertises CCaaS", href: "/services" },
+          { label: "Notre méthode", href: "/services" },
+          { label: "L'équipe", href: "/a-propos" },
           { label: "Blog", href: "/blog" },
-          { label: "Contact", href: "/#contact" },
+          { label: "Contact", href: "/contact" },
         ],
       },
       {

@@ -27,30 +27,15 @@ export function Navbar() {
     { label: "Cas clients", href: "/cas-clients" },
     { label: "À propos", href: "/a-propos" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
-  const getHref = (originalHref: string) => {
-    if (originalHref.startsWith("#") && pathname !== "/") {
-      return `/${originalHref}`;
-    }
-    return originalHref;
-  };
-
-  const handleAnchorClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    if (href.startsWith("#") && pathname === "/") {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
-      setIsMobileMenuOpen(false);
-    }
-  };
+  // Pages dont le hero est bg-paper en mode clair → logo doit être "dark" (encre) au scroll=0
+  const lightHeroPages = ["/blog"];
+  const hasLightHero = lightHeroPages.some(
+    (p) => pathname === p || pathname.startsWith(p + "/")
+  );
+  const notScrolledLogoVariant = hasLightHero ? "dark" : "light";
 
   return (
     <nav
@@ -63,16 +48,15 @@ export function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
-          {/* Logo : light quand navbar transparente sur hero sombre, dark sinon */}
-          <Logo variant={isScrolled ? "dark" : "light"} size="md" href="/" />
+          {/* Logo : encre sur fonds clairs, crème sur fonds sombres */}
+          <Logo variant={isScrolled ? "dark" : notScrolledLogoVariant} size="md" href="/" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={getHref(link.href)}
-                onClick={(e) => handleAnchorClick(e, link.href)}
+                href={link.href}
                 className="text-sm font-medium text-graphite dark:text-smoke/70 hover:text-ink dark:hover:text-paper transition-colors"
               >
                 {link.label}
@@ -80,13 +64,12 @@ export function Navbar() {
             ))}
             <ThemeToggle />
             {isScrolled && (
-              <a
-                href="#contact"
-                onClick={(e) => handleAnchorClick(e, "#contact")}
+              <Link
+                href="/contact"
                 className="inline-block px-5 py-2.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-medium tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
               >
                 Audit gratuit
-              </a>
+              </Link>
             )}
           </div>
 
@@ -113,11 +96,8 @@ export function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={getHref(link.href)}
-                onClick={(e) => {
-                  handleAnchorClick(e, link.href);
-                  setIsMobileMenuOpen(false);
-                }}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block py-3 text-sm font-medium text-graphite dark:text-smoke/70 hover:text-ink dark:hover:text-paper transition-colors"
               >
                 {link.label}

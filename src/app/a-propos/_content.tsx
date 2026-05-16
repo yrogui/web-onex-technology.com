@@ -330,9 +330,7 @@ export function AProposContent() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
-                href="mailto:contact@onex-technology.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="inline-block px-7 py-3.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
               >
                 Démarrer la conversation

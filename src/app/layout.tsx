@@ -16,6 +16,7 @@ import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { SchemaOrg } from "@/components/seo/schema-org";
 import { CookieConsent } from "@/components/cookie-consent";
 import { ChatWidgetLoader } from "@/components/chat/ChatWidgetLoader";
+import { ScrollToHash } from "@/components/layout/scroll-to-hash";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://onex-technology.com"),
@@ -112,6 +113,7 @@ export default function RootLayout({
               <Footer />
               <CookieConsent />
               <ChatWidgetLoader />
+              <ScrollToHash />
             </div>
           </SmoothScroll>
         </ThemeProvider>
