@@ -2,10 +2,12 @@
 
 import { Hero } from "@/components/sections/hero";
 import { KPIs } from "@/components/sections/kpis";
-import { Partners } from "@/components/sections/partners";
+import { PavesSectoriels } from "@/components/sections/paves-sectoriels";
 import { Manifesto } from "@/components/sections/manifesto";
+import { Partners } from "@/components/sections/partners";
 import { WhyOnex } from "@/components/sections/why-onex";
 import { TroisMissions } from "@/components/sections/trois-missions";
+import { LeadMagnet } from "@/components/sections/lead-magnet";
 import { Testimonials } from "@/components/sections/testimonials";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { Expertise } from "@/components/sections/expertise";
@@ -25,6 +27,9 @@ export default function Home() {
       {/* KPIs — bande Crème Pierre */}
       <KPIs />
 
+      {/* Pavés sectoriels — Crème Pierre */}
+      <PavesSectoriels />
+
       {/* Manifeste — Noir Encre */}
       <Manifesto />
 
@@ -36,6 +41,9 @@ export default function Home() {
 
       {/* Trois missions — Crème Pierre */}
       <TroisMissions />
+
+      {/* Lead magnet — Mist Crème */}
+      <LeadMagnet />
 
       {/* Témoignages Clients (Social Proof) */}
       <Testimonials />
