@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 // Domaines personnels bloqués (validation côté client — confirmée côté n8n)
 const BLOCKED_DOMAINS = new Set([
@@ -30,6 +31,9 @@ export function NewsletterChecklistForm({
   source = "checklist-ccaas-25-points",
   variant = "default",
 }: Props) {
+  const t = useTranslations("leadMagnet");
+  const tc = useTranslations("contact");
+
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
   const [website, setWebsite] = useState("");
@@ -42,19 +46,18 @@ export function NewsletterChecklistForm({
     const errs: FormError = {};
 
     if (!email) {
-      errs.email = "Veuillez saisir votre adresse email professionnelle.";
+      errs.email = t("errorEmailRequired");
     } else if (!EMAIL_RE.test(email)) {
-      errs.email = "Format d'email invalide.";
+      errs.email = t("errorEmailInvalid");
     } else {
       const domain = email.split("@")[1]?.toLowerCase();
       if (domain && BLOCKED_DOMAINS.has(domain)) {
-        errs.email =
-          "Merci d'utiliser votre email professionnel (adresse personnelle non acceptée).";
+        errs.email = t("errorEmailPersonal");
       }
     }
 
     if (!rgpd) {
-      errs.rgpd = "Vous devez accepter la politique de confidentialité pour continuer.";
+      errs.rgpd = t("errorRgpdRequired");
     }
 
     return errs;
@@ -96,7 +99,7 @@ export function NewsletterChecklistForm({
         // n8n peut retourner une erreur métier explicite (ex: domaine sans MX)
         const data = await res.json().catch(() => ({}));
         if (data?.error === "DOMAIN_NO_MX") {
-          setErrors({ email: "Ce domaine email ne semble pas valide (aucun serveur mail détecté)." });
+          setErrors({ email: t("errorEmailDomain") });
           setState("idle");
         } else {
           // Autres erreurs → on masque et on affiche success (anti-enumeration)
@@ -105,7 +108,7 @@ export function NewsletterChecklistForm({
       }
     } catch {
       // Erreur réseau → message générique
-      setErrors({ global: "Une erreur réseau est survenue. Veuillez réessayer dans quelques instants." });
+      setErrors({ global: t("errorNetwork") });
       setState("error");
     }
   }
@@ -123,20 +126,19 @@ export function NewsletterChecklistForm({
           "font-display font-medium text-2xl mb-3",
           isFeatured ? "text-ink" : "text-ink dark:text-paper",
         ].join(" ")}>
-          Vérifiez votre boîte mail
+          {t("successTitle")}
         </h3>
         <p className={[
           "text-[15px] leading-[1.65]",
           isFeatured ? "text-charcoal" : "text-charcoal dark:text-smoke",
         ].join(" ")}>
-          Un email de confirmation vous a été envoyé. Cliquez sur le lien pour recevoir
-          votre checklist <strong>25 points avant go-live</strong>.
+          {t.rich("successDesc", { b: (chunks) => <strong>{chunks}</strong> })}
         </p>
         <p className={[
           "mt-4 text-sm",
           isFeatured ? "text-graphite" : "text-graphite dark:text-smoke/70",
         ].join(" ")}>
-          Pensez à vérifier vos spams si vous ne le recevez pas dans les 5 minutes.
+          {t("successSpam")}
         </p>
       </div>
     );
@@ -167,7 +169,7 @@ export function NewsletterChecklistForm({
             isFeatured ? "text-ink" : "text-ink dark:text-paper",
           ].join(" ")}
         >
-          Email professionnel
+          {t("emailLabel")}
         </label>
         <div className="relative">
           <Mail className={[
@@ -183,7 +185,7 @@ export function NewsletterChecklistForm({
               setEmail(e.target.value);
               if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
             }}
-            placeholder="prenom.nom@entreprise.com"
+            placeholder={t("emailPlaceholder")}
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
             className={[
@@ -264,26 +266,23 @@ export function NewsletterChecklistForm({
             "text-[13px] leading-[1.6]",
             isFeatured ? "text-charcoal" : "text-charcoal dark:text-smoke",
           ].join(" ")}>
-            J'accepte que One-X Technology utilise mon adresse email pour m'envoyer
-            la checklist demandée et, occasionnellement, des contenus liés aux programmes CCaaS.
-            Désinscription à tout moment via le lien présent dans chaque email.
-            Droits RGPD à{" "}
+            {t("rgpdLabel")}{" "}
             <a
-              href="mailto:contact@onex-technology.com"
+              href={`mailto:${tc("email")}`}
               className="underline underline-offset-2 transition-colors"
               style={{ color: "#D4803B" }}
             >
-              contact@onex-technology.com
+              {tc("email")}
             </a>
-            . Voir notre{" "}
+            {". Voir notre "}
             <a
               href="/politique-de-confidentialite"
               className="underline underline-offset-2 transition-colors"
               style={{ color: "#D4803B" }}
             >
-              politique de confidentialité
+              {t("rgpdPolitique")}
             </a>
-            .
+            {"."}
           </span>
         </label>
         {errors.rgpd && (
@@ -325,10 +324,10 @@ export function NewsletterChecklistForm({
         {state === "loading" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            Envoi en cours…
+            {t("submitLoading")}
           </>
         ) : (
-          "Recevoir la checklist"
+          t("submitButton")
         )}
       </button>
 
@@ -336,7 +335,7 @@ export function NewsletterChecklistForm({
         "text-[11px] text-center",
         isFeatured ? "text-graphite" : "text-graphite dark:text-smoke/60",
       ].join(" ")}>
-        Email professionnel requis · Zéro spam · Double confirmation
+        {t("microcopy")}
       </p>
     </form>
   );

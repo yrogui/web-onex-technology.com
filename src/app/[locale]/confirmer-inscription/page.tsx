@@ -3,12 +3,14 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 type State = "loading" | "success" | "error";
 
 function ConfirmationHandler() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const t = useTranslations("confirmerInscription");
   const [state, setState] = useState<State>("loading");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -16,7 +18,7 @@ function ConfirmationHandler() {
     const token = searchParams.get("token");
 
     if (!token) {
-      setErrorMsg("Lien invalide ou expiré. Veuillez recommencer depuis le formulaire.");
+      setErrorMsg(t("invalidTokenMsg"));
       setState("error");
       return;
     }
@@ -37,20 +39,17 @@ function ConfirmationHandler() {
           setTimeout(() => router.push("/merci-checklist/"), 1500);
         } else {
           const data = await res.json().catch(() => ({}));
-          setErrorMsg(
-            data?.message ??
-              "Ce lien de confirmation est invalide ou a déjà été utilisé."
-          );
+          setErrorMsg(data?.message ?? t("defaultErrorMsg"));
           setState("error");
         }
       } catch {
-        setErrorMsg("Une erreur réseau est survenue. Veuillez réessayer.");
+        setErrorMsg(t("networkErrorMsg"));
         setState("error");
       }
     }
 
     confirm();
-  }, [searchParams, router]);
+  }, [searchParams, router, t]);
 
   return (
     <div className="max-w-md w-full text-center space-y-6 py-24">
@@ -58,10 +57,10 @@ function ConfirmationHandler() {
         <>
           <Loader2 className="h-12 w-12 mx-auto animate-spin text-accent" />
           <h1 className="font-display font-medium text-2xl text-ink dark:text-paper">
-            Confirmation en cours…
+            {t("loadingTitle")}
           </h1>
           <p className="text-[15px] text-charcoal dark:text-smoke">
-            Veuillez patienter quelques instants.
+            {t("loadingDesc")}
           </p>
         </>
       )}
@@ -70,10 +69,10 @@ function ConfirmationHandler() {
         <>
           <CheckCircle className="h-12 w-12 mx-auto" style={{ color: "#3F7A5E" }} />
           <h1 className="font-display font-medium text-2xl text-ink dark:text-paper">
-            Inscription confirmée
+            {t("successTitle")}
           </h1>
           <p className="text-[15px] text-charcoal dark:text-smoke">
-            Redirection vers votre checklist…
+            {t("successDesc")}
           </p>
         </>
       )}
@@ -82,7 +81,7 @@ function ConfirmationHandler() {
         <>
           <AlertCircle className="h-12 w-12 mx-auto" style={{ color: "#A43B2E" }} />
           <h1 className="font-display font-medium text-2xl text-ink dark:text-paper">
-            Lien invalide
+            {t("errorTitle")}
           </h1>
           <p className="text-[15px] text-charcoal dark:text-smoke">{errorMsg}</p>
           <a
@@ -90,7 +89,7 @@ function ConfirmationHandler() {
             className="inline-block mt-4 text-sm font-medium underline underline-offset-2 transition-colors"
             style={{ color: "#D4803B" }}
           >
-            Retour à l'accueil
+            {t("backHome")}
           </a>
         </>
       )}

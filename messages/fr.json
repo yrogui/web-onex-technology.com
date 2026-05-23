@@ -233,7 +233,7 @@
     "submitButton": "Recevoir la checklist",
     "submitLoading": "Envoi en cours…",
     "successTitle": "Vérifiez votre boîte mail",
-    "successDesc": "Un email de confirmation vous a été envoyé. Cliquez sur le lien pour recevoir votre checklist 25 points avant go-live.",
+    "successDesc": "Un email de confirmation vous a été envoyé. Cliquez sur le lien pour recevoir votre checklist <b>25 points avant go-live</b>.",
     "successSpam": "Pensez à vérifier vos spams si vous ne le recevez pas dans les 5 minutes.",
     "microcopy": "Email professionnel requis · Zéro spam · Double confirmation",
     "rgpdLabel": "J'accepte que One-X Technology utilise mon adresse email pour m'envoyer la checklist demandée et, occasionnellement, des contenus liés aux programmes CCaaS. Désinscription à tout moment via le lien présent dans chaque email. Droits RGPD à",

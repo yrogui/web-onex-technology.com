@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X, Cookie, Settings } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export type CookieCategory = "essential" | "functional" | "analytics" | "marketing";
 
@@ -12,10 +13,19 @@ interface CookiePreferences {
   marketing: boolean;
 }
 
+interface CookieCat {
+  key: string;
+  title: string;
+  desc: string;
+}
+
 const CONSENT_STORAGE_KEY = "onex-cookie-consent";
 const CONSENT_VERSION = "1.0";
 
 export function CookieConsent() {
+  const t = useTranslations("cookieConsent");
+  const cats = t.raw("cats") as CookieCat[];
+
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -146,6 +156,8 @@ export function CookieConsent() {
 
   if (!isVisible) return null;
 
+  const prefKeys: CookieCategory[] = ["essential", "functional", "analytics", "marketing"];
+
   return (
     <>
       {showSettings && (
@@ -165,18 +177,17 @@ export function CookieConsent() {
                   <Cookie className="h-6 w-6 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-base font-medium text-ink dark:text-paper mb-2">
-                      Gestion des cookies
+                      {t("title")}
                     </h3>
                     <p className="text-sm text-charcoal dark:text-smoke leading-relaxed">
-                      Nous utilisons des cookies pour améliorer votre expérience, analyser notre trafic et personnaliser le contenu.
-                      Vous pouvez accepter tous les cookies, les refuser ou personnaliser vos préférences.{" "}
+                      {t("desc")}{" "}
                       <a
                         href="/politique-cookies"
                         className="text-accent dark:text-accent-light hover:underline font-medium"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        En savoir plus
+                        {t("learnMore")}
                       </a>
                     </p>
                   </div>
@@ -189,19 +200,19 @@ export function CookieConsent() {
                     className="px-6 py-3 rounded-sm font-medium text-sm border-2 border-ink dark:border-paper text-ink dark:text-paper hover:bg-ink/5 dark:hover:bg-paper/5 transition-all duration-200 flex items-center justify-center gap-2 min-w-[140px]"
                   >
                     <Settings className="h-4 w-4" />
-                    Personnaliser
+                    {t("customize")}
                   </button>
                   <button
                     onClick={rejectAll}
                     className="px-6 py-3 rounded-sm font-medium text-sm bg-error hover:bg-error/90 text-paper transition-all duration-200 min-w-[140px]"
                   >
-                    Tout refuser
+                    {t("rejectAll")}
                   </button>
                   <button
                     onClick={acceptAll}
                     className="px-6 py-3 rounded-sm font-medium text-sm bg-success hover:bg-success/90 text-paper transition-all duration-200 min-w-[140px]"
                   >
-                    Tout accepter
+                    {t("acceptAll")}
                   </button>
                 </div>
               </div>
@@ -216,16 +227,16 @@ export function CookieConsent() {
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-medium text-ink dark:text-paper mb-2">
-                    Personnaliser mes préférences cookies
+                    {t("settingsTitle")}
                   </h3>
                   <p className="text-sm text-charcoal dark:text-smoke">
-                    Choisissez les catégories de cookies que vous souhaitez autoriser
+                    {t("settingsSubtitle")}
                   </p>
                 </div>
                 <button
                   onClick={() => setShowSettings(false)}
                   className="p-2 hover:bg-ink/5 dark:hover:bg-paper/5 rounded-sm transition-colors"
-                  aria-label="Fermer"
+                  aria-label={t("settingsClose")}
                 >
                   <X className="h-5 w-5 text-graphite dark:text-smoke" />
                 </button>
@@ -233,34 +244,17 @@ export function CookieConsent() {
 
               {/* Catégories */}
               <div className="space-y-4 mb-6">
-                <CookieCategoryRow
-                  title="Cookies essentiels"
-                  description="Nécessaires au fonctionnement du site. Ils permettent la navigation et l'utilisation des fonctionnalités de base (préférence de thème, consentement cookies). Ne peuvent pas être désactivés."
-                  enabled={true}
-                  required={true}
-                  onChange={() => {}}
-                />
-                <CookieCategoryRow
-                  title="Cookies fonctionnels"
-                  description="Améliorent l'expérience utilisateur en mémorisant vos préférences (formulaires pré-remplis, langue). Incluent les polices locales pour un affichage optimal."
-                  enabled={preferences.functional}
-                  required={false}
-                  onChange={() => toggleCategory("functional")}
-                />
-                <CookieCategoryRow
-                  title="Cookies statistiques"
-                  description="Nous aident à comprendre comment les visiteurs utilisent le site (pages visitées, temps de visite) via Google Analytics. Données anonymisées."
-                  enabled={preferences.analytics}
-                  required={false}
-                  onChange={() => toggleCategory("analytics")}
-                />
-                <CookieCategoryRow
-                  title="Cookies marketing"
-                  description="Permettent de personnaliser les publicités et mesurer l'efficacité des campagnes (Meta Pixel, LinkedIn Insight). Vous pouvez les refuser sans impact sur le site."
-                  enabled={preferences.marketing}
-                  required={false}
-                  onChange={() => toggleCategory("marketing")}
-                />
+                {cats.map((cat, i) => (
+                  <CookieCategoryRow
+                    key={cat.key}
+                    title={cat.title}
+                    description={cat.desc}
+                    enabled={i === 0 ? true : preferences[prefKeys[i]]}
+                    required={i === 0}
+                    requiredLabel={t("required")}
+                    onChange={() => toggleCategory(prefKeys[i])}
+                  />
+                ))}
               </div>
 
               {/* Boutons d'action */}
@@ -269,19 +263,19 @@ export function CookieConsent() {
                   onClick={rejectAll}
                   className="flex-1 px-6 py-3 rounded-sm font-medium text-sm bg-error hover:bg-error/90 text-paper transition-all duration-200"
                 >
-                  Tout refuser
+                  {t("rejectAll")}
                 </button>
                 <button
                   onClick={saveCustomPreferences}
                   className="flex-1 px-6 py-3 rounded-sm font-medium text-sm bg-accent hover:bg-accent/90 text-paper transition-all duration-200"
                 >
-                  Enregistrer mes choix
+                  {t("saveChoices")}
                 </button>
                 <button
                   onClick={acceptAll}
                   className="flex-1 px-6 py-3 rounded-sm font-medium text-sm bg-success hover:bg-success/90 text-paper transition-all duration-200"
                 >
-                  Tout accepter
+                  {t("acceptAll")}
                 </button>
               </div>
 
@@ -292,7 +286,7 @@ export function CookieConsent() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Consulter notre politique de cookies détaillée
+                  {t("seePolitique")}
                 </a>
               </div>
             </div>
@@ -308,10 +302,11 @@ interface CookieCategoryRowProps {
   description: string;
   enabled: boolean;
   required: boolean;
+  requiredLabel: string;
   onChange: () => void;
 }
 
-function CookieCategoryRow({ title, description, enabled, required, onChange }: CookieCategoryRowProps) {
+function CookieCategoryRow({ title, description, enabled, required, requiredLabel, onChange }: CookieCategoryRowProps) {
   return (
     <div className="flex items-start gap-4 p-4 rounded border border-smoke/30 dark:border-charcoal bg-mist/50 dark:bg-charcoal/30">
       <div className="flex-1">
@@ -319,7 +314,7 @@ function CookieCategoryRow({ title, description, enabled, required, onChange }: 
           <h4 className="font-medium text-ink dark:text-paper">{title}</h4>
           {required && (
             <span className="text-xs px-2 py-1 rounded-sm bg-ink/10 dark:bg-paper/10 text-graphite dark:text-smoke">
-              Obligatoire
+              {requiredLabel}
             </span>
           )}
         </div>

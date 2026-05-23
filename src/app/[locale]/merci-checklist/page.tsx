@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, Download, ArrowRight } from "lucide-react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Votre checklist CCaaS est en route",
@@ -11,7 +12,11 @@ export const metadata: Metadata = {
 
 const PDF_URL = process.env.NEXT_PUBLIC_CHECKLIST_PDF_URL ?? "#";
 
-export default function MerciChecklistPage() {
+export default async function MerciChecklistPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("merciChecklist");
+
   return (
     <section className="bg-paper dark:bg-primary flex items-center justify-center px-8 py-32">
       <div className="max-w-2xl w-full mx-auto text-center space-y-8">
@@ -25,18 +30,17 @@ export default function MerciChecklistPage() {
 
         {/* Eyebrow */}
         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-graphite dark:text-smoke">
-          Double opt-in confirmé
+          {t("eyebrow")}
         </p>
 
         {/* Titre */}
         <h1 className="font-display font-medium text-4xl md:text-5xl text-ink dark:text-paper tracking-tight">
-          Votre checklist est prête
+          {t("title")}
         </h1>
 
         {/* Description */}
         <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-lg mx-auto">
-          La checklist <strong>25 points avant go-live</strong> vous a été envoyée à
-          votre adresse email. Si vous ne la recevez pas sous 5 minutes, vérifiez vos spams.
+          {t("desc")}
         </p>
 
         {/* Téléchargement direct */}
@@ -48,7 +52,7 @@ export default function MerciChecklistPage() {
             style={{ background: "#0F0F14", color: "#F7F3EA" }}
           >
             <Download className="h-4 w-4" />
-            Télécharger la checklist PDF
+            {t("downloadBtn")}
           </a>
         )}
 
@@ -58,14 +62,13 @@ export default function MerciChecklistPage() {
         {/* CTA audit flash */}
         <div className="space-y-4">
           <p className="text-[14px] text-graphite dark:text-smoke">
-            Prêt à passer à l'action ? Réservez un audit flash de 45 min
-            avec un architecte senior certifié.
+            {t("ctaLabel")}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 text-[15px] font-medium border border-ink dark:border-paper text-ink dark:text-paper px-7 py-3.5 rounded-sm hover:bg-ink hover:text-paper dark:hover:bg-paper dark:hover:text-ink transition-all duration-200"
           >
-            Réserver un audit flash
+            {t("ctaButton")}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
