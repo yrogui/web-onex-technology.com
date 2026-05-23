@@ -73,7 +73,7 @@ export default function MentionsLegalesPage() {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-accent transition-colors">
+                <a href="/contact" className="hover:text-accent transition-colors">
                   7. Contact
                 </a>
               </li>

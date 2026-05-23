@@ -100,7 +100,7 @@ export default function PolitiqueConfidentialitePage() {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-accent transition-colors">
+                <a href="/contact" className="hover:text-accent transition-colors">
                   11. Contact
                 </a>
               </li>

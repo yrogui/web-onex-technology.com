@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, Linkedin } from "lucide-react";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
+import { Testimonials } from "@/components/sections/testimonials";
 
 export function AProposContent() {
   return (
@@ -311,6 +312,9 @@ export function AProposContent() {
           </div>
         </div>
       </section>
+
+      {/* ── Témoignages ── */}
+      <Testimonials />
 
       {/* ── CTA finale ── */}
       <section className="py-24 bg-mist dark:bg-charcoal/20">

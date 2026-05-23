@@ -40,7 +40,7 @@ export function Offers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative bg-paper dark:bg-charcoal/50 p-10 border-2 rounded ${
+              className={`relative bg-paper dark:bg-charcoal/50 p-10 border-2 rounded shadow-none ${
                 offer.recommended
                   ? "border-accent dark:border-accent-light"
                   : "border-smoke/30 dark:border-charcoal"
@@ -67,6 +67,11 @@ export function Offers() {
                 <div className="font-display text-4xl font-medium text-ink dark:text-paper mb-2">
                   {offer.price}
                 </div>
+                {"priceEur" in offer && offer.priceEur && (
+                  <p className="text-sm text-graphite mt-1">
+                    {(offer as { priceEur: string }).priceEur}
+                  </p>
+                )}
                 <p className="text-sm text-graphite dark:text-smoke">
                   {offer.priceDetail}
                 </p>
@@ -129,6 +134,10 @@ export function Offers() {
               {/* CTA */}
               <a
                 href={offer.ctaHref}
+                {...(offer.ctaHref.startsWith("http") && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
                 className={`block w-full px-8 py-4 text-center text-sm font-medium tracking-wide rounded-sm transition-all duration-300 ${
                   offer.recommended
                     ? "bg-accent text-paper hover:bg-accent/90"

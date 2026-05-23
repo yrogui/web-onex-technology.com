@@ -18,7 +18,7 @@ export function LeadMagnet() {
             RESSOURCE EXCLUSIVE
           </p>
           <h2 className="font-display font-medium text-3xl md:text-5xl text-primary tracking-[-0.015em] mb-4">
-            Checklist <em className="not-italic italic">Migration CCaaS</em> — 12 points avant go-live.
+            Checklist <em className="not-italic italic">Migration CCaaS</em> — 25 points avant go-live.
           </h2>
           <p className="text-[15px] leading-[1.65] text-charcoal mb-8">
             Un audit terrain condensé. Architecture, KPIs, points de friction. À utiliser avant chaque migration critique.
