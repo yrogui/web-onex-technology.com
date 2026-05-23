@@ -1,38 +1,83 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
+const LANGUAGES = [
+  { code: "FR", label: "Français", active: true },
+  { code: "EN", label: "English", active: false },
+  { code: "AR", label: "العربية", active: false },
+];
+
 function LanguagePicker({ scrolled }: { scrolled: boolean }) {
-  const langs = [
-    { code: "FR", active: true },
-    { code: "EN", active: false },
-    { code: "AR", active: false },
-  ];
+  const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState("FR");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const triggerColor = scrolled ? "text-ink" : "text-paper";
 
   return (
-    <div className="flex items-center gap-0.5 text-sm font-semibold">
-      {langs.map((lang, i) => (
-        <span key={lang.code} className="flex items-center">
-          {i > 0 && (
-            <span className={cn("mx-1.5 select-none", scrolled ? "text-graphite/40" : "text-paper/30")}>·</span>
-          )}
-          {lang.active ? (
-            <span className={scrolled ? "text-ink cursor-default" : "text-paper cursor-default"}>{lang.code}</span>
-          ) : (
-            <span
-              title="Bientôt disponible"
-              className={cn("cursor-not-allowed select-none", scrolled ? "text-graphite/40" : "text-paper/30")}
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className={cn(
+          "flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors hover:text-accent",
+          triggerColor
+        )}
+        aria-label="Sélectionner la langue"
+        aria-expanded={open}
+        aria-haspopup="true"
+      >
+        <Globe className="w-4 h-4" strokeWidth={1.5} />
+        <span>{current}</span>
+        <ChevronDown
+          className={cn("w-3.5 h-3.5 transition-transform", open ? "rotate-180" : "")}
+          strokeWidth={1.5}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 mt-2 w-44 rounded-sm border border-smoke/40 bg-paper shadow-md py-1 z-50">
+          {LANGUAGES.map((lang) => (
+            <button
+              key={lang.code}
+              disabled={!lang.active}
+              onClick={() => {
+                if (lang.active) {
+                  setCurrent(lang.code);
+                  setOpen(false);
+                }
+              }}
+              className={cn(
+                "w-full text-left px-4 py-2 text-sm flex items-center justify-between transition-colors",
+                lang.active
+                  ? "text-ink hover:bg-mist cursor-pointer"
+                  : "text-graphite/50 cursor-not-allowed"
+              )}
+              title={!lang.active ? "Bientôt disponible" : undefined}
             >
-              {lang.code}
-            </span>
-          )}
-        </span>
-      ))}
+              <span className={current === lang.code ? "font-semibold" : ""}>{lang.label}</span>
+              {!lang.active && (
+                <span className="text-[10px] text-graphite/50 italic tracking-wide">bientôt</span>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -43,10 +88,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -78,7 +120,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Logo variant={isScrolled ? "dark" : notScrolledLogoVariant} size="md" href="/" />
 
-          {/* Desktop Navigation */}
+          {/* Desktop — ordre : liens · Contact · [sep] · LanguagePicker */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -89,7 +131,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <LanguagePicker scrolled={isScrolled} />
             <Link
               href="/contact"
               className={cn(
@@ -101,26 +142,28 @@ export function Navbar() {
             >
               Contact
             </Link>
+            <div className="border-l border-smoke/30 pl-4">
+              <LanguagePicker scrolled={isScrolled} />
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex md:hidden items-center space-x-4">
-            <LanguagePicker scrolled={isScrolled} />
+          {/* Mobile — juste burger */}
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-ink dark:text-paper" />
+                <X className="h-6 w-6 text-paper dark:text-paper" />
               ) : (
-                <Menu className="h-6 w-6 text-ink dark:text-paper" />
+                <Menu className="h-6 w-6 text-paper dark:text-paper" />
               )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile menu drawer */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-ink/10 dark:border-paper/10 bg-paper dark:bg-primary">
             {navLinks.map((link) => (
@@ -140,6 +183,9 @@ export function Navbar() {
             >
               Contact
             </Link>
+            <div className="pt-3 border-t border-smoke/20 mt-2">
+              <LanguagePicker scrolled={true} />
+            </div>
           </div>
         )}
       </div>
