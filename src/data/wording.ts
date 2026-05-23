@@ -12,7 +12,7 @@ export const wording = {
   hero: {
     eyebrow: "DESIGN AUTHORITY · CX & CLOUD · MAROC",
     title: "Votre centre de contact,",
-    titleItalic: "repensé pour le cloud.",
+    titleItalic: "repensé",
     subtitle:
       "Création, migration ou transformation de votre plateforme CCaaS — Genesys Cloud, AWS Connect, Avaya. Une équipe senior, un ROI mesurable, zéro interruption de service.",
     baseline: "Le partenaire marocain des programmes CX critiques.",
@@ -20,6 +20,7 @@ export const wording = {
       { label: "ANNÉES D'EXPERTISE CX & CLOUD", value: "18+" },
       { label: "PROJETS DE TRANSFORMATION PILOTÉS", value: "400+" },
       { label: "PLATEFORMES CERTIFIÉES", value: "3" },
+      { label: "ROI MOYEN", value: "< 12 mois" },
     ],
     ctaPrimary: "Audit gratuit (30 min)",
     ctaSecondary: "Découvrir notre approche",
@@ -443,7 +444,7 @@ export const wording = {
       {
         id: "banque",
         sector: "SECTEUR BANCAIRE",
-        label: "Top 5 bancaire marocain",
+        label: "Leader bancaire marocain",
         agents: "400 agents · Casablanca",
         challenge:
           "Infrastructure Avaya on-premise en fin de vie, coûts télécoms en hausse de 40% sur trois ans, zéro reporting temps réel pour les superviseurs.",
@@ -523,7 +524,7 @@ export const wording = {
           "Checklist : 10 points critiques à vérifier avant go-live",
         ],
         cta: "Réserver mon diagnostic gratuit",
-        ctaHref: "#contact",
+        ctaHref: "https://calendly.com/yrogui/30min",
         recommended: false,
       },
       {
@@ -531,6 +532,7 @@ export const wording = {
         badge: "RECOMMANDÉ",
         title: "Audit CX & CCaaS complet",
         price: "15 000 MAD HT",
+        priceEur: "≈ 1 400 € HT",
         priceDetail: "Déduit si vous signez le projet",
         duration: "Livré sous 2 semaines",
         forWho: "PME/Grandes entreprises avec 20-200 agents qui veulent sécuriser leur décision avant d'investir",
@@ -549,7 +551,7 @@ export const wording = {
           "Budget détaillé (licences + delivery + run)",
         ],
         cta: "Commander l'audit (15 000 MAD)",
-        ctaHref: "#contact",
+        ctaHref: "/contact",
         recommended: true,
       },
       {
@@ -575,7 +577,7 @@ export const wording = {
           "KPIs avant/après migration (ROI démontré)",
         ],
         cta: "Demander un devis détaillé",
-        ctaHref: "#contact",
+        ctaHref: "/contact",
         recommended: false,
       },
     ],
@@ -674,7 +676,7 @@ export const wording = {
           { label: "Accueil", href: "/" },
           { label: "Pourquoi One—X", href: "/a-propos" },
           { label: "Nos expertises CCaaS", href: "/services" },
-          { label: "Notre méthode", href: "/services" },
+          { label: "Notre méthode", href: "/approche" },
           { label: "L'équipe", href: "/a-propos" },
           { label: "Blog", href: "/blog" },
           { label: "Contact", href: "/contact" },
@@ -698,7 +700,7 @@ export const wording = {
             href: "mailto:contact@onex-technology.com",
           },
           { label: "+33 6 65 56 72 67", href: "tel:+33665567267" },
-          { label: "Casablanca, Maroc", href: "/#contact" },
+          { label: "Casablanca, Maroc", href: "/contact" },
         ],
       },
     ],

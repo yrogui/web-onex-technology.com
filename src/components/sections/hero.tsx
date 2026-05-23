@@ -26,7 +26,7 @@ export function Hero() {
             {/* H1 — sentence case, mot-clé en italic Fraunces */}
             <h1 className="font-display font-medium text-5xl lg:text-7xl tracking-[-0.02em] leading-[1.05] text-paper mb-10">
               {wording.hero.title}{" "}
-              <em className="not-italic italic">{wording.hero.titleItalic}</em>
+              <em className="italic font-display">{wording.hero.titleItalic}</em>{" "}pour le cloud.
             </h1>
 
             {/* Sous-titre */}
@@ -37,13 +37,15 @@ export function Hero() {
             {/* CTAs — un seul bouton primaire + lien texte */}
             <div className="flex flex-wrap items-center gap-6 mb-8">
               <a
-                href="#contact"
+                href="https://calendly.com/yrogui/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-paper text-primary text-sm font-medium tracking-wide rounded-sm hover:bg-mist transition-colors duration-300"
               >
                 {wording.hero.ctaPrimary}
               </a>
               <a
-                href="#approche"
+                href="/approche"
                 className="text-accent underline underline-offset-4 hover:text-accent-light transition-colors text-sm md:text-base font-medium"
               >
                 {wording.hero.ctaSecondary}
@@ -52,6 +54,20 @@ export function Hero() {
 
             {/* Badge partenaire */}
             <BadgePartenaire variant="dark" />
+
+            {/* KPIs — 4 chiffres */}
+            <div className="mt-12 pt-10 border-t border-charcoal grid grid-cols-2 md:grid-cols-4 gap-8">
+              {wording.hero.stats.map((stat, i) => (
+                <div key={i}>
+                  <div className="font-display font-semibold text-3xl text-accent tracking-[-0.02em]">
+                    {stat.value}
+                  </div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mt-2">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

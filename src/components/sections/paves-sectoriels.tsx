@@ -17,14 +17,14 @@ export function PavesSectoriels() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mb-6">
             ILS NOUS FONT CONFIANCE
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
             {sectors.map((sector, i) => (
-              <span key={sector} className="flex items-center gap-x-6">
-                <span className="font-display font-medium text-xl md:text-4xl text-primary tracking-tight">
+              <span key={sector} className="flex items-center gap-x-8">
+                <span className="font-sans font-semibold text-sm uppercase tracking-[0.2em] text-graphite">
                   {sector}
                 </span>
                 {i < sectors.length - 1 && (
-                  <span className="font-display text-xl md:text-4xl text-accent">·</span>
+                  <span className="text-sm text-graphite/40">·</span>
                 )}
               </span>
             ))}

@@ -104,7 +104,7 @@ export function FAQ() {
                         {(faq.category === "prix" || faq.category === "délais") && (
                           <div className="mt-6 pt-4 border-t border-charcoal">
                             <a
-                              href="#contact"
+                              href="/contact"
                               className="inline-flex items-center text-sm font-medium text-accent hover:opacity-80 transition-opacity"
                             >
                               {faq.category === "prix"
@@ -133,7 +133,7 @@ export function FAQ() {
               Vous avez d'autres questions sur votre projet CCaaS ?
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block px-8 py-4 bg-paper text-primary text-sm font-medium tracking-wide rounded-sm transition-all duration-300 hover:bg-mist"
             >
               Parler à un architecte CCaaS

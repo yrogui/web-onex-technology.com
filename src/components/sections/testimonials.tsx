@@ -61,7 +61,7 @@ export function Testimonials() {
               </a>
             )}
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-accent hover:bg-accent/90 text-paper font-medium text-sm transition-all duration-200"
             >
               Parler à un architecte CCaaS

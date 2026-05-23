@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
 import { wording } from "@/data/wording";
+import { FAQ } from "@/components/sections/faq";
 
 const NAV_ITEMS = [
   { label: "Migration CCaaS", anchor: "#migration" },
@@ -438,6 +439,9 @@ export function ServicesContent() {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
+      <FAQ />
 
       {/* ── CTA finale ── */}
       <section

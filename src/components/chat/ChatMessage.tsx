@@ -80,7 +80,7 @@ function HotCTA() {
   return (
     <div style={{ marginTop: 10 }}>
       <a
-        href="/#contact"
+        href="/contact"
         style={{
           display: "inline-flex",
           alignItems: "center",

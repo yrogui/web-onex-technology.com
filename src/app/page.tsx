@@ -1,75 +1,35 @@
 "use client";
 
 import { Hero } from "@/components/sections/hero";
-import { KPIs } from "@/components/sections/kpis";
 import { PavesSectoriels } from "@/components/sections/paves-sectoriels";
+import { ExpertisesHome } from "@/components/sections/expertises-home";
+import { CasClientsHome } from "@/components/sections/cas-clients-home";
 import { Manifesto } from "@/components/sections/manifesto";
-import { Partners } from "@/components/sections/partners";
-import { WhyOnex } from "@/components/sections/why-onex";
-import { TroisMissions } from "@/components/sections/trois-missions";
-import { LeadMagnet } from "@/components/sections/lead-magnet";
-import { Testimonials } from "@/components/sections/testimonials";
-import { CaseStudies } from "@/components/sections/case-studies";
-import { Expertise } from "@/components/sections/expertise";
-import { Team } from "@/components/sections/team";
-import { Approach } from "@/components/sections/approach";
 import { Offers } from "@/components/sections/offers";
-import { FAQ } from "@/components/sections/faq";
-import { Contact } from "@/components/sections/contact";
 import { Newsletter } from "@/components/sections/newsletter";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Hero */}
+      {/* 1 — Hero (titre + sous-titre + 2 CTA + 4 KPIs + badge ExpertiaX) */}
       <Hero />
 
-      {/* KPIs — bande Crème Pierre */}
-      <KPIs />
-
-      {/* Pavés sectoriels — Crème Pierre */}
+      {/* 2 — Bandeau secteurs */}
       <PavesSectoriels />
 
-      {/* Manifeste — Noir Encre */}
+      {/* 3 — Expertises (1 carte large CCaaS + 4 compactes) */}
+      <ExpertisesHome />
+
+      {/* 4 — Cas clients (1 grand bancaire + 2 compacts) */}
+      <CasClientsHome />
+
+      {/* 5 — Manifeste (citation centrée + signature + WhyOnex) */}
       <Manifesto />
 
-      {/* Alliances technologiques — Crème Pierre */}
-      <Partners />
-
-      {/* Pourquoi One-X — Noir Encre */}
-      <WhyOnex />
-
-      {/* Trois missions — Crème Pierre */}
-      <TroisMissions />
-
-      {/* Lead magnet — Mist Crème */}
-      <LeadMagnet />
-
-      {/* Témoignages Clients (Social Proof) */}
-      <Testimonials />
-
-      {/* Trajectoires éprouvées — Cas clients */}
-      <CaseStudies />
-
-      {/* Nos Expertises */}
-      <Expertise />
-
-      {/* Notre Approche */}
-      <Approach />
-
-      {/* Notre Équipe */}
-      <Team />
-
-      {/* Offres Packagées */}
+      {/* 6 — Offres & démarrer */}
       <Offers />
 
-      {/* FAQ (SEO + Conversion) */}
-      <FAQ />
-
-      {/* Contact */}
-      <Contact />
-
-      {/* Newsletter */}
+      {/* 7 — Lead magnet unique (checklist 25 points) */}
       <Newsletter />
     </main>
   );
