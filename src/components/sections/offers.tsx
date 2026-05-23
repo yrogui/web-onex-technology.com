@@ -2,9 +2,28 @@
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Clock } from "lucide-react";
-import { wording } from "@/data/wording";
+import { useTranslations } from "next-intl";
+
+interface OfferItem {
+  id: string;
+  badge: string;
+  title: string;
+  price: string;
+  priceEur?: string;
+  priceDetail: string;
+  duration: string;
+  forWho: string;
+  includes: string[];
+  deliverables: string[];
+  cta: string;
+  ctaHref: string;
+  recommended: boolean;
+}
 
 export function Offers() {
+  const t = useTranslations("offers");
+  const items = t.raw("items") as OfferItem[];
+
   return (
     <section
       id="offres"
@@ -21,19 +40,19 @@ export function Offers() {
           className="mb-20 text-center"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
-            {wording.offers.subtitle}
+            {t("eyebrow")}
           </p>
           <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6">
-            {wording.offers.title}
+            {t("title")}
           </h2>
           <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl mx-auto">
-            {wording.offers.description}
+            {t("desc")}
           </p>
         </motion.div>
 
-        {/* Grille d'offres */}
+        {/* Grille */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          {wording.offers.items.map((offer, index) => (
+          {items.map((offer, index) => (
             <motion.div
               key={offer.id}
               initial={{ opacity: 0, y: 30 }}
@@ -57,27 +76,20 @@ export function Offers() {
                 {offer.badge}
               </div>
 
-              {/* Titre */}
               <h3 className="font-display font-medium text-2xl text-ink dark:text-paper mb-4 tracking-[-0.01em]">
                 {offer.title}
               </h3>
 
-              {/* Prix */}
               <div className="mb-6">
                 <div className="font-display text-4xl font-medium text-ink dark:text-paper mb-2">
                   {offer.price}
                 </div>
-                {"priceEur" in offer && offer.priceEur && (
-                  <p className="text-sm text-graphite mt-1">
-                    {(offer as { priceEur: string }).priceEur}
-                  </p>
+                {offer.priceEur && (
+                  <p className="text-sm text-graphite mt-1">{offer.priceEur}</p>
                 )}
-                <p className="text-sm text-graphite dark:text-smoke">
-                  {offer.priceDetail}
-                </p>
+                <p className="text-sm text-graphite dark:text-smoke">{offer.priceDetail}</p>
               </div>
 
-              {/* Durée */}
               <div className="mb-8 pb-8 border-b border-smoke/30 dark:border-charcoal">
                 <p className="text-sm font-medium text-ink dark:text-paper flex items-center gap-1.5">
                   <Clock className="h-4 w-4 text-graphite dark:text-smoke flex-shrink-0" />
@@ -85,27 +97,20 @@ export function Offers() {
                 </p>
               </div>
 
-              {/* Pour qui */}
               <div className="mb-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
-                  POUR QUI ?
+                  {t("labelPourQui")}
                 </p>
-                <p className="text-sm text-charcoal dark:text-smoke leading-[1.65]">
-                  {offer.forWho}
-                </p>
+                <p className="text-sm text-charcoal dark:text-smoke leading-[1.65]">{offer.forWho}</p>
               </div>
 
-              {/* Ce qui est inclus */}
               <div className="mb-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-4">
-                  CE QUI EST INCLUS
+                  {t("labelInclus")}
                 </p>
                 <ul className="space-y-3">
                   {offer.includes.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="text-sm text-charcoal dark:text-smoke flex items-start gap-3"
-                    >
+                    <li key={idx} className="text-sm text-charcoal dark:text-smoke flex items-start gap-3">
                       <Check className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -113,17 +118,13 @@ export function Offers() {
                 </ul>
               </div>
 
-              {/* Livrables */}
               <div className="mb-10">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-4">
-                  LIVRABLES
+                  {t("labelLivrables")}
                 </p>
                 <ul className="space-y-3">
                   {offer.deliverables.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="text-sm font-medium text-ink dark:text-paper flex items-start gap-3"
-                    >
+                    <li key={idx} className="text-sm font-medium text-ink dark:text-paper flex items-start gap-3">
                       <ArrowRight className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -131,7 +132,6 @@ export function Offers() {
                 </ul>
               </div>
 
-              {/* CTA */}
               <a
                 href={offer.ctaHref}
                 {...(offer.ctaHref.startsWith("http") && {
@@ -159,7 +159,7 @@ export function Offers() {
           className="text-center p-8 bg-accent/10 border border-accent/20 rounded"
         >
           <p className="text-sm text-ink dark:text-paper font-medium leading-relaxed">
-            {wording.offers.guarantee}
+            {t("guarantee")}
           </p>
         </motion.div>
       </div>

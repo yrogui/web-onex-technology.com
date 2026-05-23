@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const sectors = ["BANQUE", "ASSURANCE", "TELCO", "TOURISME", "RETAIL"];
+import { useTranslations } from "next-intl";
 
 export function PavesSectoriels() {
+  const t = useTranslations("pavesSectoriels");
+  const sectors = t.raw("sectors") as string[];
+
   return (
     <section className="py-12 md:py-16 bg-paper border-t border-smoke/30" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16 text-center">
@@ -15,7 +17,7 @@ export function PavesSectoriels() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mb-6">
-            ILS NOUS FONT CONFIANCE
+            {t("eyebrow")}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
             {sectors.map((sector, i) => (

@@ -2,10 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import { wording } from "@/data/wording";
+import { useTranslations } from "next-intl";
+
+interface Result {
+  value: string;
+  label: string;
+}
+
+interface CaseStudy {
+  id: string;
+  sector: string;
+  label: string;
+  agents: string;
+  challenge: string;
+  mission: string;
+  duration: string;
+  results: Result[];
+  quote: string;
+}
 
 export function CasClientsHome() {
-  const { items } = wording.caseStudies;
+  const t = useTranslations("casClientsHome");
+  const tCS = useTranslations("caseStudies");
+  const items = tCS.raw("items") as CaseStudy[];
   const banque = items[0];
   const assurance = items[1];
   const telco = items[2];
@@ -22,17 +41,17 @@ export function CasClientsHome() {
           className="mb-12"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mb-4">
-            CAS CLIENTS
+            {t("eyebrow")}
           </p>
           <div className="flex items-end justify-between flex-wrap gap-4">
             <h2 className="font-display font-medium text-4xl md:text-5xl text-primary tracking-[-0.015em]">
-              Trois missions <em className="italic font-display">récentes</em>.
+              {t("titleBefore")} <em className="italic font-display">{t("titleItalic")}</em>{t("titleAfter")}
             </h2>
             <a
               href="/cas-clients"
               className="text-sm font-medium text-accent hover:text-accent-light transition-colors shrink-0"
             >
-              Voir tous les cas →
+              {t("ctaAll")}
             </a>
           </div>
         </motion.div>
@@ -46,7 +65,7 @@ export function CasClientsHome() {
           className="mb-8 bg-mist border border-smoke rounded overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            {/* Colonne gauche — contexte */}
+            {/* Colonne gauche */}
             <div className="lg:col-span-5 p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-smoke">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-3">
                 {banque.sector}
@@ -58,34 +77,30 @@ export function CasClientsHome() {
 
               <div className="mb-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mb-2">
-                  ENJEU
+                  {t("labelEnjeu")}
                 </p>
-                <p className="text-[15px] leading-[1.65] text-charcoal">
-                  {banque.challenge}
-                </p>
+                <p className="text-[15px] leading-[1.65] text-charcoal">{banque.challenge}</p>
               </div>
 
               <div className="mb-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mb-2">
-                  MISSION
+                  {t("labelMission")}
                 </p>
-                <p className="text-[15px] leading-[1.65] text-primary font-medium">
-                  {banque.mission}
-                </p>
+                <p className="text-[15px] leading-[1.65] text-primary font-medium">{banque.mission}</p>
               </div>
 
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-sm">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent">
-                  Durée : {banque.duration}
+                  {t("labelDuree")} {banque.duration}
                 </span>
               </div>
             </div>
 
-            {/* Colonne droite — résultats */}
+            {/* Colonne droite */}
             <div className="lg:col-span-7 p-10 lg:p-12 flex flex-col justify-between">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-8">
-                  RÉSULTATS MESURÉS
+                  {t("labelResultats")}
                 </p>
                 <div className="grid grid-cols-2 gap-6 mb-10">
                   {banque.results.map((r, i) => (
@@ -112,7 +127,7 @@ export function CasClientsHome() {
           </div>
         </motion.div>
 
-        {/* 2 cas compacts — Assurance + Telco */}
+        {/* 2 cas compacts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[assurance, telco].map((cs, i) => (
             <motion.div
@@ -130,9 +145,7 @@ export function CasClientsHome() {
                 {cs.label}
               </h3>
               <p className="text-sm text-graphite mb-4">{cs.agents}</p>
-              <p className="text-sm text-charcoal leading-relaxed flex-grow">
-                {cs.challenge}
-              </p>
+              <p className="text-sm text-charcoal leading-relaxed flex-grow">{cs.challenge}</p>
               <div className="font-mono text-xs text-graphite mt-6 pt-4 border-t border-smoke">
                 {cs.results
                   .slice(0, 3)
