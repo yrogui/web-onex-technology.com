@@ -21,22 +21,22 @@ export function Contact() {
     setFormStatus("sending");
     const fd = new FormData(e.currentTarget);
     try {
-      await fetch("/api/n8n-proxy", {
+      const params = new URLSearchParams();
+      params.append("source", "contact-qualification");
+      params.append("name", fd.get("nom") as string);
+      params.append("entreprise", fd.get("entreprise") as string);
+      params.append("email", fd.get("email") as string);
+      params.append("phone", (fd.get("telephone") as string) || "");
+      params.append("typeBesoin", (fd.get("typeBesoin") as string) || "");
+      params.append("tailleCentre", (fd.get("tailleCentre") as string) || "");
+      params.append("delai", (fd.get("delai") as string) || "");
+      params.append("project", (fd.get("message") as string) || "");
+      params.append("sessionId", "contact_" + Date.now());
+      const res = await fetch("https://flow.onextechnology.cloud/webhook/contact-form", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: "contact-qualification",
-          nom: fd.get("nom"),
-          entreprise: fd.get("entreprise"),
-          email: fd.get("email"),
-          telephone: fd.get("telephone"),
-          typeBesoin: fd.get("typeBesoin"),
-          tailleCentre: fd.get("tailleCentre"),
-          delai: fd.get("delai"),
-          message: fd.get("message"),
-          sessionId: "contact_" + Date.now(),
-        }),
+        body: params,
       });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setFormStatus("success");
     } catch {
       setFormStatus("error");
@@ -231,6 +231,9 @@ export function Contact() {
                   loading="lazy"
                 />
               </div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-graphite/60 dark:text-smoke/40 mt-3 text-center">
+                CADRAGE INITIAL · 30 MIN · VISIO · FUSEAU CASABLANCA / PARIS
+              </p>
             </div>
 
             {/* Coordonnées */}

@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
+import { cn } from "@/lib/utils";
 
-function LanguagePicker() {
+function LanguagePicker({ scrolled }: { scrolled: boolean }) {
   const langs = [
     { code: "FR", active: true },
     { code: "EN", active: false },
@@ -14,18 +15,18 @@ function LanguagePicker() {
   ];
 
   return (
-    <div className="flex items-center gap-0.5 text-sm font-medium">
+    <div className="flex items-center gap-0.5 text-sm font-semibold">
       {langs.map((lang, i) => (
         <span key={lang.code} className="flex items-center">
           {i > 0 && (
-            <span className="text-graphite/30 dark:text-smoke/30 mx-1.5 select-none">·</span>
+            <span className={cn("mx-1.5 select-none", scrolled ? "text-graphite/40" : "text-paper/30")}>·</span>
           )}
           {lang.active ? (
-            <span className="text-ink dark:text-paper cursor-default">{lang.code}</span>
+            <span className={scrolled ? "text-ink cursor-default" : "text-paper cursor-default"}>{lang.code}</span>
           ) : (
             <span
               title="Bientôt disponible"
-              className="text-graphite/40 dark:text-smoke/30 cursor-not-allowed select-none"
+              className={cn("cursor-not-allowed select-none", scrolled ? "text-graphite/40" : "text-paper/30")}
             >
               {lang.code}
             </span>
@@ -88,10 +89,15 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <LanguagePicker />
+            <LanguagePicker scrolled={isScrolled} />
             <Link
               href="/contact"
-              className="text-sm font-semibold text-accent dark:text-accent-light hover:text-accent/80 dark:hover:text-accent transition-colors"
+              className={cn(
+                "text-sm font-semibold text-accent hover:text-accent/80 transition-colors",
+                pathname === "/contact" || pathname === "/contact/"
+                  ? "underline underline-offset-4 decoration-accent"
+                  : ""
+              )}
             >
               Contact
             </Link>
@@ -99,7 +105,7 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-4">
-            <LanguagePicker />
+            <LanguagePicker scrolled={isScrolled} />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"

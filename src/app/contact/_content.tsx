@@ -19,11 +19,11 @@ export function ContactPageContent() {
               CONTACT
             </p>
             <h1 className="font-display font-medium text-4xl md:text-6xl tracking-[-0.02em] text-paper mb-6 max-w-3xl">
-              Cadrer votre <em className="italic font-display">inconnue</em>.
+              Cadrer votre <em className="italic font-display text-accent">inconnue</em>.
             </h1>
             <p className="text-[17px] leading-[1.7] text-smoke max-w-2xl">
-              Un premier échange de 30 minutes avec Yassine. Sans engagement.
-              Pour comprendre votre contexte et voir si nous pouvons vous aider.
+              Quelques questions pour préparer un échange utile. 30 minutes avec
+              Yassine — sans engagement, sans prospection.
             </p>
           </motion.div>
         </div>
