@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +18,7 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState("FR");
   const ref = useRef<HTMLDivElement>(null);
+  const t = useTranslations("navbar");
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -38,7 +40,7 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
           "flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors hover:text-accent",
           triggerColor
         )}
-        aria-label="Sélectionner la langue"
+        aria-label={t("ariaSelectLang")}
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -68,11 +70,11 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
                   ? "text-ink hover:bg-mist cursor-pointer"
                   : "text-graphite/50 cursor-not-allowed"
               )}
-              title={!lang.active ? "Bientôt disponible" : undefined}
+              title={!lang.active ? t("langComingSoon") : undefined}
             >
               <span className={current === lang.code ? "font-semibold" : ""}>{lang.label}</span>
               {!lang.active && (
-                <span className="text-[10px] text-graphite/50 italic tracking-wide">bientôt</span>
+                <span className="text-[10px] text-graphite/50 italic tracking-wide">{t("langComingSoonTag")}</span>
               )}
             </button>
           ))}
@@ -86,6 +88,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("navbar");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -94,11 +97,11 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Accueil", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Cas clients", href: "/cas-clients" },
-    { label: "À propos", href: "/a-propos" },
-    { label: "Blog", href: "/blog" },
+    { label: t("home"), href: "/" },
+    { label: t("services"), href: "/services" },
+    { label: t("casClients"), href: "/cas-clients" },
+    { label: t("aPropos"), href: "/a-propos" },
+    { label: t("blog"), href: "/blog" },
   ];
 
   const lightHeroPages = ["/blog"];
@@ -120,7 +123,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Logo variant={isScrolled ? "dark" : notScrolledLogoVariant} size="md" href="/" />
 
-          {/* Desktop — ordre : liens · Contact · [sep] · LanguagePicker */}
+          {/* Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -140,19 +143,19 @@ export function Navbar() {
                   : ""
               )}
             >
-              Contact
+              {t("contact")}
             </Link>
             <div className="border-l border-smoke/30 pl-4">
               <LanguagePicker scrolled={isScrolled} />
             </div>
           </div>
 
-          {/* Mobile — juste burger */}
+          {/* Mobile burger */}
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
-              aria-label="Toggle menu"
+              aria-label={t("ariaToggleMenu")}
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6 text-paper dark:text-paper" />
@@ -163,7 +166,7 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu drawer */}
+        {/* Mobile drawer */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-ink/10 dark:border-paper/10 bg-paper dark:bg-primary">
             {navLinks.map((link) => (
@@ -181,7 +184,7 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="block py-3 text-sm font-semibold text-accent dark:text-accent-light"
             >
-              Contact
+              {t("contact")}
             </Link>
             <div className="pt-3 border-t border-smoke/20 mt-2">
               <LanguagePicker scrolled={true} />
