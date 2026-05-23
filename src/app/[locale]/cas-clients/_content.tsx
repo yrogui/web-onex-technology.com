@@ -2,20 +2,30 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
-import { wording } from "@/data/wording";
 
-const caseDeployments: Record<string, string> = {
-  banque:
-    "Nous avons démarré par un audit technique complet de l'infrastructure Avaya existante — cartographie des flux, identification des risques de migration et conception de l'architecture Genesys Cloud cible. La bascule s'est déroulée en vagues de 10% sur dix semaines, avec un dual-running maintenu jusqu'à validation complète de chaque lot. L'intégration Salesforce CRM a été déployée en parallèle, connectant en temps réel la fiche client dans Genesys. Le go-live final s'est effectué un dimanche soir sans aucune interruption visible pour les clients de la banque.",
-  assurance:
-    "Nous avons conduit un audit CX omnicanal sur six semaines : écoute de 400 appels, analyse des verbatims chats et emails, cartographie de 12 parcours clients distincts. La priorisation s'est basée sur l'impact ROI et la complexité d'implémentation — les quick wins ont été déployés dès la semaine 4 : réécriture du SVI, réduction des transferts internes, scripts agents optimisés. La deuxième phase a intégré un module de rappel automatique et un dashboard superviseurs temps réel, réduisant drastiquement le taux d'abandon.",
-  telco:
-    "Le projet a débuté par l'identification des 15 motifs d'appels les plus fréquents représentant 65% du volume. Nous avons conçu et déployé un voicebot NLU sur Genesys, capable de traiter les demandes en langage naturel sans arbre de décision rigide. Un module Agent Assist a été intégré dans l'interface agent, affichant en temps réel les suggestions de réponse basées sur la transcription de l'appel. Les agents ont été formés sur deux jours pour adopter la nouvelle dynamique humain/IA.",
-};
+interface CaseStudyResult {
+  value: string;
+  label: string;
+}
+
+interface CaseStudy {
+  id: string;
+  sector: string;
+  label: string;
+  agents: string;
+  challenge: string;
+  mission: string;
+  duration: string;
+  deployment: string;
+  results: CaseStudyResult[];
+  quote: string;
+}
 
 export function CasClientsContent() {
-  const { items } = wording.caseStudies;
+  const t = useTranslations("caseStudies");
+  const items = t.raw("items") as CaseStudy[];
 
   return (
     <main>
@@ -29,17 +39,16 @@ export function CasClientsContent() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              ÉTUDES DE CAS
+              {t("eyebrow")}
             </p>
             <h1 className="font-display font-medium text-4xl md:text-6xl tracking-[-0.02em] text-paper mb-6 max-w-3xl">
-              Trajectoires éprouvées
+              {t("title")}
             </h1>
             <p className="text-[17px] leading-[1.7] text-smoke max-w-2xl mb-6">
-              {wording.caseStudies.description}
+              {t("desc")}
             </p>
             <p className="text-sm text-smoke/60 italic">
-              Toutes les références sont anonymisées selon nos accords de
-              confidentialité.
+              {t("anonymized")}
             </p>
           </motion.div>
         </div>
@@ -54,7 +63,6 @@ export function CasClientsContent() {
         const cardBg = isDark
           ? "bg-charcoal/30 border border-charcoal"
           : "bg-paper dark:bg-charcoal/50 border border-smoke/30 dark:border-charcoal";
-        const deployment = caseDeployments[cs.id] ?? "";
 
         return (
           <section key={cs.id} className={`${bg} py-24`}>
@@ -80,9 +88,9 @@ export function CasClientsContent() {
               {/* Enjeu / Mission / Durée */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 {[
-                  { label: "Enjeu", value: cs.challenge },
-                  { label: "Mission", value: cs.mission },
-                  { label: "Durée", value: cs.duration },
+                  { label: t("labelEnjeu"), value: cs.challenge },
+                  { label: t("labelMission"), value: cs.mission },
+                  { label: t("labelDuree"), value: cs.duration },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -103,10 +111,10 @@ export function CasClientsContent() {
               {/* Déploiement */}
               <div className="mb-12 max-w-3xl">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-                  DÉPLOIEMENT
+                  {t("labelDeploiement")}
                 </p>
                 <p className={`text-[15px] leading-[1.7] ${textColor}`}>
-                  {deployment}
+                  {cs.deployment}
                 </p>
               </div>
 
@@ -149,18 +157,17 @@ export function CasClientsContent() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-paper mb-6 max-w-2xl mx-auto">
-              Votre situation ressemble à l&apos;une de ces trajectoires ?
+              {t("ctaTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-smoke max-w-xl mx-auto mb-10">
-              Nous analysons votre contexte gratuitement en 30 minutes. Vous
-              repartez avec une évaluation honnête et des pistes concrètes.
+              {t("ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="/contact"
                 className="inline-block px-7 py-3.5 bg-paper text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-mist transition-colors duration-300"
               >
-                Demander un diagnostic gratuit
+                {t("ctaButton")}
               </a>
               <BadgePartenaire variant="dark" />
             </div>

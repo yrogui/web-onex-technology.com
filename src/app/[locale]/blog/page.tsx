@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { getPublishedArticles } from "@/lib/mdx";
 import { Newsletter } from "@/components/sections/newsletter";
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
   const articles = await getPublishedArticles();
+  const t = await getTranslations("blog");
 
   return (
     <main className="min-h-screen bg-paper dark:bg-primary pt-20">
@@ -26,14 +28,13 @@ export default async function BlogPage() {
       <section className="py-20 border-b border-smoke/30 dark:border-charcoal">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-            Pensées & Stratégies
+            {t("eyebrow")}
           </p>
           <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-ink dark:text-paper mb-6 tracking-[-0.02em]">
-            Retours terrain & insights
+            {t("title")}
           </h1>
           <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl">
-            Articles techniques, retours d'expérience et analyses issus de nos
-            missions réelles au Maroc et en Afrique. Précis, sourcés, applicables.
+            {t("desc")}
           </p>
         </div>
       </section>
@@ -94,7 +95,7 @@ export default async function BlogPage() {
 
                     {/* Read more */}
                     <div className="flex items-center gap-2 text-accent dark:text-accent-light text-sm font-medium group-hover:gap-3 transition-all">
-                      <span>Lire l'article</span>
+                      <span>{t("readMore")}</span>
                       <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>

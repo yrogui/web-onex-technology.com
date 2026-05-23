@@ -3,10 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { faqData, faqSchema } from "@/data/faq";
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const t = useTranslations("services");
+  const tc = useTranslations("common");
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -34,14 +37,13 @@ export function FAQ() {
             className="mb-16 text-center"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              QUESTIONS FRÉQUENTES
+              {t("faqEyebrow")}
             </p>
             <h2 className="font-display font-medium text-4xl md:text-5xl text-paper mb-6 tracking-[-0.015em]">
-              Tout ce que vous devez savoir sur la migration CCaaS
+              {t("faqTitle")}
             </h2>
             <p className="text-[15px] leading-[1.65] text-smoke">
-              Prix, délais, risques : les réponses honnêtes aux 5 questions que
-              tous nos clients posent avant de démarrer.
+              {t("faqDesc")}
             </p>
           </motion.div>
 
@@ -108,8 +110,8 @@ export function FAQ() {
                               className="inline-flex items-center text-sm font-medium text-accent hover:opacity-80 transition-opacity"
                             >
                               {faq.category === "prix"
-                                ? "→ Demander un devis détaillé"
-                                : "→ Réserver un diagnostic gratuit 30 min"}
+                                ? t("faqCtaDevis")
+                                : t("faqCtaDiagnostic")}
                             </a>
                           </div>
                         )}
@@ -130,13 +132,13 @@ export function FAQ() {
             className="mt-12 text-center"
           >
             <p className="text-smoke mb-6">
-              Vous avez d'autres questions sur votre projet CCaaS ?
+              {t("faqCtaQuestion")}
             </p>
             <a
               href="/contact"
               className="inline-block px-8 py-4 bg-paper text-primary text-sm font-medium tracking-wide rounded-sm transition-all duration-300 hover:bg-mist"
             >
-              Parler à un architecte CCaaS
+              {tc("parlerArchitecte")}
             </a>
           </motion.div>
         </div>

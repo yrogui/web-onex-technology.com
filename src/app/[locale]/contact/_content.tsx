@@ -1,9 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Contact } from "@/components/sections/contact";
 
 export function ContactPageContent() {
+  const t = useTranslations("contactPage");
+
   return (
     <main>
       {/* Hero */}
@@ -16,14 +19,13 @@ export function ContactPageContent() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              CONTACT
+              {t("eyebrow")}
             </p>
             <h1 className="font-display font-medium text-4xl md:text-6xl tracking-[-0.02em] text-paper mb-6 max-w-3xl">
-              Cadrer votre <em className="italic font-display text-accent">inconnue</em>.
+              {t("titleBefore")} <em className="italic font-display text-accent">{t("titleItalic")}</em>{t("titleAfter")}
             </h1>
             <p className="text-[17px] leading-[1.7] text-smoke max-w-2xl">
-              Quelques questions pour préparer un échange utile. 30 minutes avec
-              Yassine — sans engagement, sans prospection.
+              {t("subtitle")}
             </p>
           </motion.div>
         </div>

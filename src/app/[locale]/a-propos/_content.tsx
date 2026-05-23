@@ -3,10 +3,29 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
 import { Testimonials } from "@/components/sections/testimonials";
 
+interface Valeur {
+  title: string;
+  desc: string;
+}
+
+interface YasStat {
+  value: string;
+  label: string;
+}
+
 export function AProposContent() {
+  const t = useTranslations("aPropos");
+  const tc = useTranslations("contact");
+  const tcm = useTranslations("common");
+  const valeurs = t.raw("valeurs") as Valeur[];
+  const certs = t.raw("certs") as string[];
+  const stack = t.raw("stack") as string[];
+  const yasStats = t.raw("yasStats") as YasStat[];
+
   return (
     <main>
       {/* ── Hero ── */}
@@ -19,15 +38,13 @@ export function AProposContent() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              À PROPOS
+              {t("heroEyebrow")}
             </p>
             <h1 className="font-display font-medium text-4xl md:text-6xl tracking-[-0.02em] text-paper mb-6 max-w-4xl">
-              Le partenaire marocain des programmes CX critiques
+              {t("heroTitle")}
             </h1>
             <p className="text-[17px] leading-[1.7] text-smoke max-w-2xl mb-10">
-              One-X Technology est né d&apos;un constat simple : les grands comptes
-              marocains avaient besoin d&apos;un partenaire CCaaS local, senior,
-              ancré — pas d&apos;une filiale lointaine ou d&apos;un consultant de passage.
+              {t("heroDesc")}
             </p>
             <BadgePartenaire variant="dark" />
           </motion.div>
@@ -45,48 +62,36 @@ export function AProposContent() {
             className="mb-12"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
-              NOTRE HISTOIRE
+              {t("histoireEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-10 max-w-3xl">
-              18 ans d&apos;expertise au service du Maroc
+              {t("histoireTitle")}
             </h2>
           </motion.div>
 
           <div className="max-w-3xl space-y-6">
             <p className="text-[16px] leading-[1.8] text-charcoal dark:text-smoke">
-              Yassine Rogui a passé 18 ans à piloter des programmes CX et CCaaS
-              pour des organisations de premier plan en France, en Europe et à
-              l&apos;international — dans le luxe, la finance, les
-              télécommunications et l&apos;assurance. 400 projets. Des équipes de 10
-              à 600 agents. Des plateformes Genesys, Avaya, AWS Connect dans
-              leurs versions les plus complexes.
+              {t("histoireP1")}
             </p>
             <p className="text-[16px] leading-[1.8] text-charcoal dark:text-smoke">
-              En 2024, il fonde One-X Technology à Casablanca avec une
-              conviction : les grandes entreprises marocaines méritent le même
-              niveau d&apos;expertise que leurs homologues européens, délivrée
-              localement, en français et en arabe, au bon fuseau horaire.
+              {t("histoireP2")}
             </p>
             <p className="text-[16px] leading-[1.8] text-charcoal dark:text-smoke">
-              One-X Technology est partenaire commercial officiel d&apos;ExpertiaX,
-              cabinet CX & CCaaS de référence en France et en Europe. Cette
-              relation garantit un accès aux meilleurs standards européens tout
-              en ancrant chaque intervention dans les réalités du marché
-              marocain.
+              {t("histoireP3")}
             </p>
           </div>
 
           {/* Encadré info */}
           <div className="mt-10 inline-flex items-center gap-3 px-6 py-4 bg-mist dark:bg-charcoal/30 border border-smoke/30 dark:border-charcoal rounded-sm">
             <p className="text-sm text-charcoal dark:text-smoke">
-              Entité juridique marocaine indépendante · Casablanca ·{" "}
+              {t("histoireInfo")}{" "}
               <a
-                href="mailto:contact@onex-technology.com"
+                href={`mailto:${tc("email")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:opacity-80 transition-opacity"
               >
-                contact@onex-technology.com
+                {tc("email")}
               </a>
             </p>
           </div>
@@ -104,28 +109,15 @@ export function AProposContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              NOS VALEURS
+              {t("valeursEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-paper max-w-2xl">
-              Rigueur · Hauteur · Ancrage
+              {t("valeursTitle")}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Rigueur",
-                desc: "Nous documentons tout. Architecture HLD/LLD, tests de charge, plan de rollback. Rien n'est laissé au hasard. Notre réputation se construit sur la prévisibilité de nos livraisons.",
-              },
-              {
-                title: "Hauteur",
-                desc: "Nous prenons du recul là où d'autres proposent vite. Recommander Genesys quand AWS Connect correspond mieux à votre contexte : c'est notre valeur ajoutée. L'objectivité plutôt que la complaisance.",
-              },
-              {
-                title: "Ancrage",
-                desc: "Être à Casablanca n'est pas un détail logistique. C'est une conviction. Comprendre BAM, ACAPS, les dynamiques des grands comptes marocains — de l'intérieur, pas depuis Paris.",
-              },
-            ].map((v) => (
+            {valeurs.map((v) => (
               <div
                 key={v.title}
                 className="bg-charcoal/30 border border-charcoal rounded p-10"
@@ -151,10 +143,10 @@ export function AProposContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
-              CERTIFICATIONS & STACK
+              {t("certsEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper max-w-3xl">
-              Expertise certifiée, plateformes maîtrisées
+              {t("certsTitle")}
             </h2>
           </motion.div>
 
@@ -162,17 +154,10 @@ export function AProposContent() {
             {/* Certifications */}
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke/60 mb-6">
-                CERTIFICATIONS
+                {t("certsLabel")}
               </p>
               <div className="space-y-4">
-                {[
-                  "Genesys Cloud CX Certified Professional",
-                  "AWS Connect Deployment Specialist",
-                  "Microsoft Certified Partner",
-                  "PMP — Project Management Professional",
-                  "AWS Cloud Practitioner (CCP)",
-                  "Data Analyst Certification",
-                ].map((cert) => (
+                {certs.map((cert) => (
                   <div key={cert} className="flex items-center gap-3">
                     <Check
                       className="h-5 w-5 text-accent flex-shrink-0"
@@ -182,7 +167,7 @@ export function AProposContent() {
                       {cert}
                     </span>
                     <span className="ml-auto px-2.5 py-1 bg-accent/10 text-accent text-[11px] font-semibold rounded-sm uppercase tracking-wider">
-                      Certifié
+                      {tcm("certified")}
                     </span>
                   </div>
                 ))}
@@ -192,25 +177,10 @@ export function AProposContent() {
             {/* Stack technique */}
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke/60 mb-6">
-                STACK TECHNIQUE
+                {t("stackLabel")}
               </p>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Genesys Cloud",
-                  "AWS Connect",
-                  "Amazon Lex",
-                  "Avaya Aura",
-                  "Avaya Cloud Elite",
-                  "Salesforce CRM",
-                  "Microsoft Dynamics",
-                  "Azure",
-                  "AWS",
-                  "SAP C4C",
-                  "Python",
-                  "Genesys Architect",
-                  "REST APIs",
-                  "Webhooks n8n",
-                ].map((tech) => (
+                {stack.map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 bg-mist dark:bg-charcoal/30 border border-smoke/30 dark:border-charcoal rounded-sm text-sm text-charcoal dark:text-smoke"
@@ -235,10 +205,10 @@ export function AProposContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              PRACTICE LEADER
+              {t("yasEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-paper max-w-2xl">
-              Yassine Rogui
+              {t("yasTitle")}
             </h2>
           </motion.div>
 
@@ -248,7 +218,7 @@ export function AProposContent() {
               <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-charcoal">
                 <Image
                   src="/images/team/yassine-rogui.jpg"
-                  alt="Yassine Rogui — Practice Leader One-X Technology"
+                  alt={t("yasAltPhoto")}
                   fill
                   className="object-cover"
                   sizes="192px"
@@ -257,11 +227,7 @@ export function AProposContent() {
 
               {/* Stats */}
               <div className="flex gap-10">
-                {[
-                  { value: "18+", label: "ans" },
-                  { value: "400+", label: "projets" },
-                  { value: "3", label: "plateformes certifiées" },
-                ].map((s) => (
+                {yasStats.map((s) => (
                   <div key={s.label}>
                     <p className="font-display font-medium text-3xl text-accent">
                       {s.value}
@@ -280,7 +246,7 @@ export function AProposContent() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-smoke hover:text-paper transition-colors"
-                  aria-label="LinkedIn Yassine Rogui"
+                  aria-label={t("yasAriaLinkedIn")}
                 >
                   <Linkedin className="h-5 w-5" strokeWidth={1.5} />
                 </a>
@@ -290,23 +256,13 @@ export function AProposContent() {
             {/* Biographie */}
             <div className="space-y-6">
               <p className="text-[16px] leading-[1.8] text-smoke">
-                Yassine Rogui est architecte CCaaS et Practice Leader
-                d&apos;One-X Technology. Il intervient personnellement sur chaque
-                mission critique — de la phase d&apos;audit jusqu&apos;au support post
-                go-live.
+                {t("yasBio1")}
               </p>
               <p className="text-[16px] leading-[1.8] text-smoke">
-                Formé sur les plateformes les plus exigeantes (Genesys, Avaya,
-                AWS Connect), il a piloté des déploiements pour des acteurs
-                majeurs du luxe international, de la banque privée et des
-                télécommunications en France, en Belgique, en Suisse et au
-                Maroc.
+                {t("yasBio2")}
               </p>
               <p className="text-[16px] leading-[1.8] text-smoke">
-                Sa conviction : un projet CCaaS réussi n&apos;est pas une question
-                de technologie, c&apos;est une question de méthode et d&apos;humain.
-                L&apos;architecture est au service des agents, des superviseurs et
-                du client final.
+                {t("yasBio3")}
               </p>
             </div>
           </div>
@@ -326,18 +282,17 @@ export function AProposContent() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-2xl mx-auto">
-              Parlons de votre projet
+              {t("ctaTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-xl mx-auto mb-10">
-              Un premier échange de 30 minutes avec Yassine. Sans engagement.
-              Pour comprendre votre contexte et voir si nous pouvons vous aider.
+              {t("ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="/contact"
                 className="inline-block px-7 py-3.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
               >
-                Démarrer la conversation
+                {t("ctaButton")}
               </a>
               <BadgePartenaire variant="light" />
             </div>

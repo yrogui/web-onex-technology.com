@@ -9,19 +9,62 @@ import {
   BarChart2,
   Quote,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
-import { wording } from "@/data/wording";
 import { FAQ } from "@/components/sections/faq";
 
-const NAV_ITEMS = [
-  { label: "Migration CCaaS", anchor: "#migration" },
-  { label: "Optimisation CX", anchor: "#cx" },
-  { label: "Automatisation IA", anchor: "#automatisation" },
-  { label: "Architecture Cloud", anchor: "#cloud" },
-];
+interface MigrationResult {
+  value: string;
+  label: string;
+}
+
+interface CxCard {
+  title: string;
+  desc: string;
+}
+
+interface AutoCard {
+  title: string;
+  desc: string;
+}
+
+interface CloudCase {
+  title: string;
+  desc: string;
+}
+
+interface CaseStudy {
+  id: string;
+  label: string;
+  agents: string;
+  quote: string;
+}
+
+const autoIcons = [Mic, Headset, BarChart2];
 
 export function ServicesContent() {
   const [activeSection, setActiveSection] = useState("migration");
+  const t = useTranslations("services");
+  const tCS = useTranslations("caseStudies");
+
+  const caseStudyItems = tCS.raw("items") as CaseStudy[];
+  const telcoCase = caseStudyItems[2];
+
+  const migrationPoints = t.raw("migrationPoints") as string[];
+  const migrationPlateformes = t.raw("migrationPlateformes") as string[];
+  const migrationResults = t.raw("migrationResults") as MigrationResult[];
+  const cxCards = t.raw("cxCards") as CxCard[];
+  const cxStats = t.raw("cxStats") as string[];
+  const autoCards = t.raw("autoCards") as AutoCard[];
+  const cloudPills = t.raw("cloudPills") as string[];
+  const cloudCases = t.raw("cloudCases") as CloudCase[];
+
+  const NAV_ITEMS = [
+    { label: t("navMigration"), anchor: "#migration" },
+    { label: t("navCx"), anchor: "#cx" },
+    { label: t("navAuto"), anchor: "#automatisation" },
+    { label: t("navCloud"), anchor: "#cloud" },
+  ];
 
   useEffect(() => {
     const sections = ["migration", "cx", "automatisation", "cloud"];
@@ -54,8 +97,6 @@ export function ServicesContent() {
     }
   };
 
-  const telcoCase = wording.caseStudies.items[2];
-
   return (
     <main>
       {/* ── Hero ── */}
@@ -68,15 +109,13 @@ export function ServicesContent() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              NOS SERVICES
+              {t("eyebrow")}
             </p>
             <h1 className="font-display font-medium text-4xl md:text-6xl tracking-[-0.02em] text-paper mb-6 max-w-4xl">
-              Migration CCaaS, optimisation CX, automatisation IA
+              {t("title")}
             </h1>
             <p className="text-[17px] leading-[1.7] text-smoke max-w-2xl mb-10">
-              Quatre domaines d&apos;expertise, une seule obsession : transformer
-              votre centre de contacts en actif stratégique, sans risque et avec
-              un ROI démontré.
+              {t("desc")}
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <a
@@ -84,7 +123,7 @@ export function ServicesContent() {
                 onClick={(e) => handleNavClick(e, "#contact-cta")}
                 className="inline-block px-7 py-3.5 bg-paper text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-mist transition-colors duration-300"
               >
-                Réserver un diagnostic gratuit
+                {t("ctaPrimary")}
               </a>
               <BadgePartenaire variant="dark" />
             </div>
@@ -132,29 +171,20 @@ export function ServicesContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
-              MIGRATION CCAAS
+              {t("migrationEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-3xl">
-              Migration Genesys, AWS Connect, Avaya
+              {t("migrationTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-2xl">
-              Votre infrastructure on-premise coûte cher, vieillit et manque de
-              flexibilité. La migration vers le cloud n&apos;est pas une question de
-              si, mais de comment. Nous avons piloté des centaines de migrations
-              sans interruption de service — avec une méthode éprouvée, une
-              bascule progressive par vagues de 10%, et un plan de rollback à
-              chaque étape.
+              {t("migrationDesc")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Points clés */}
             <div className="space-y-6">
-              {[
-                "Bascule progressive 10%/vague, plan rollback systématique",
-                "Architecture omnicanale : voix, WhatsApp, chat, email unifiés",
-                "Intégrations CRM natives (Salesforce, Dynamics, SAP C4C)",
-              ].map((point) => (
+              {migrationPoints.map((point) => (
                 <div key={point} className="flex items-start gap-4">
                   <Check
                     className="h-5 w-5 text-accent flex-shrink-0 mt-0.5"
@@ -169,14 +199,10 @@ export function ServicesContent() {
               {/* Plateformes certifiées */}
               <div className="pt-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke/60 mb-4">
-                  PLATEFORMES CERTIFIÉES
+                  {t("migrationPlateformesLabel")}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {[
-                    "Genesys Cloud CX",
-                    "AWS Connect",
-                    "Avaya Cloud Elite",
-                  ].map((p) => (
+                  {migrationPlateformes.map((p) => (
                     <span
                       key={p}
                       className="px-4 py-2 bg-mist dark:bg-charcoal/30 border border-smoke/30 dark:border-charcoal rounded-sm text-sm font-medium text-charcoal dark:text-smoke"
@@ -191,17 +217,10 @@ export function ServicesContent() {
             {/* Métriques */}
             <div className="bg-primary dark:bg-charcoal/30 p-8 rounded border border-charcoal">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-8">
-                RÉSULTATS OBSERVÉS
+                {t("migrationResultsLabel")}
               </p>
               <div className="space-y-8">
-                {[
-                  {
-                    value: "−20 à −40%",
-                    label: "coûts télécoms",
-                  },
-                  { value: "99,95%", label: "SLA garanti" },
-                  { value: "8-12 semaines", label: "délai go-live" },
-                ].map((m) => (
+                {migrationResults.map((m) => (
                   <div key={m.label}>
                     <p className="font-display font-medium text-3xl text-accent mb-1">
                       {m.value}
@@ -226,39 +245,18 @@ export function ServicesContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              OPTIMISATION CX
+              {t("cxEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-paper mb-6 max-w-3xl">
-              Réduire la friction client, augmenter la valeur
+              {t("cxTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-smoke max-w-2xl">
-              Un NPS qui stagne, un taux d&apos;abandon à 30%, des agents surchargés
-              sur du volume à faible valeur : ce ne sont pas des fatalités. Ce
-              sont des problèmes de conception de parcours. Nous auditons,
-              quantifions, priorisons et déployons des améliorations avec un ROI
-              visible en moins de 90 jours.
+              {t("cxDesc")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-            {[
-              {
-                title: "Audit omnicanal",
-                desc: "Cartographie tous vos touchpoints clients",
-              },
-              {
-                title: "Refonte parcours",
-                desc: "Basée sur la data, pas les intuitions",
-              },
-              {
-                title: "Quick wins < 2 semaines",
-                desc: "Résultats immédiats pour crédibiliser le projet",
-              },
-              {
-                title: "Pilotage KPIs CX",
-                desc: "CSAT, NPS, FCR, AHT en temps réel",
-              },
-            ].map((card) => (
+            {cxCards.map((card) => (
               <div
                 key={card.title}
                 className="bg-charcoal/30 border border-charcoal rounded p-6"
@@ -273,17 +271,13 @@ export function ServicesContent() {
 
           {/* Stats inline */}
           <div className="flex flex-wrap gap-10">
-            {[
-              { value: "CSAT +15-20 pts", label: "" },
-              { value: "FCR +25%", label: "" },
-              { value: "Taux abandon −30%", label: "" },
-            ].map((s) => (
-              <div key={s.value}>
+            {cxStats.map((s) => (
+              <div key={s}>
                 <p className="font-display font-medium text-2xl text-accent">
-                  {s.value}
+                  {s}
                 </p>
                 <p className="text-xs text-smoke/70 uppercase tracking-wider mt-1">
-                  résultats observés
+                  {t("cxStatsLabel")}
                 </p>
               </div>
             ))}
@@ -305,52 +299,36 @@ export function ServicesContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
-              AUTOMATISATION IA
+              {t("autoEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-3xl">
-              Automatiser les 60% de requêtes simples
+              {t("autoTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-2xl">
-              Vos agents passent 60% de leur temps sur des questions FAQ. Chaque
-              interaction traitée par un voicebot ou chatbot intelligent libère
-              un agent pour les demandes complexes — et réduit votre coût par
-              contact d&apos;un facteur 3.
+              {t("autoDesc")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                Icon: Mic,
-                title: "Voicebot NLU",
-                desc: "Langage naturel, pas d'arbre de décision rigide",
-              },
-              {
-                Icon: Headset,
-                title: "Agent Assist",
-                desc: "Suggestions temps réel pendant l'appel",
-              },
-              {
-                Icon: BarChart2,
-                title: "Analytics IA",
-                desc: "Détection automatique des motifs d'appel",
-              },
-            ].map(({ Icon, title, desc }) => (
-              <div key={title} className="flex items-start gap-4">
-                <Icon
-                  className="h-6 w-6 text-accent flex-shrink-0 mt-1"
-                  strokeWidth={1.5}
-                />
-                <div>
-                  <h3 className="font-display font-medium text-lg text-ink dark:text-paper mb-2">
-                    {title}
-                  </h3>
-                  <p className="text-sm text-charcoal dark:text-smoke leading-[1.6]">
-                    {desc}
-                  </p>
+            {autoCards.map((card, i) => {
+              const Icon = autoIcons[i];
+              return (
+                <div key={card.title} className="flex items-start gap-4">
+                  <Icon
+                    className="h-6 w-6 text-accent flex-shrink-0 mt-1"
+                    strokeWidth={1.5}
+                  />
+                  <div>
+                    <h3 className="font-display font-medium text-lg text-ink dark:text-paper mb-2">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm text-charcoal dark:text-smoke leading-[1.6]">
+                      {card.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Témoignage */}
@@ -380,27 +358,19 @@ export function ServicesContent() {
             className="mb-16"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
-              ARCHITECTURE CLOUD
+              {t("cloudEyebrow")}
             </p>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-paper mb-6 max-w-3xl">
-              L&apos;infrastructure qui supporte votre CCaaS
+              {t("cloudTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-smoke max-w-2xl">
-              Un CCaaS performant repose sur une infra AWS/Azure solide,
-              sécurisée et scalable. Nous concevons l&apos;architecture complète :
-              réseau, sécurité RGPD/PCI-DSS, résilience multi-AZ, disaster
-              recovery testé. Pas de mauvaise surprise technique post go-live.
+              {t("cloudDesc")}
             </p>
           </motion.div>
 
           {/* Pills */}
           <div className="flex flex-wrap gap-3 mb-16">
-            {[
-              "Architecture multi-AZ",
-              "Sécurité RGPD & PCI-DSS",
-              "RTO < 1 heure",
-              "SLA 99,95%+",
-            ].map((pill) => (
+            {cloudPills.map((pill) => (
               <span
                 key={pill}
                 className="px-5 py-2.5 bg-charcoal/30 border border-charcoal rounded-sm text-sm font-medium text-paper"
@@ -412,20 +382,7 @@ export function ServicesContent() {
 
           {/* Cas d'usage */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "AWS Connect + Amazon Lex",
-                desc: "Centre de contact natif cloud avec IA conversationnelle intégrée, routing intelligent et analytics temps réel.",
-              },
-              {
-                title: "Genesys Cloud + AWS",
-                desc: "Architecture hybride haute disponibilité avec failover automatique et résilience multi-région.",
-              },
-              {
-                title: "Azure + Microsoft Teams",
-                desc: "Intégration native Teams pour les organisations Microsoft, avec sécurité Azure AD et conformité M365.",
-              },
-            ].map((c) => (
+            {cloudCases.map((c) => (
               <div
                 key={c.title}
                 className="bg-charcoal/30 border border-charcoal rounded p-6"
@@ -456,19 +413,17 @@ export function ServicesContent() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-2xl mx-auto">
-              Quel service correspond à votre priorité ?
+              {t("ctaTitle")}
             </h2>
             <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-xl mx-auto mb-10">
-              Un diagnostic gratuit de 30 min avec un architecte CCaaS senior.
-              Sans engagement. Nous vous disons honnêtement si nous pouvons vous
-              aider.
+              {t("ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="/contact"
                 className="inline-block px-7 py-3.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-semibold tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
               >
-                Réserver un diagnostic gratuit
+                {t("ctaPrimary")}
               </a>
               <BadgePartenaire variant="light" />
             </div>
