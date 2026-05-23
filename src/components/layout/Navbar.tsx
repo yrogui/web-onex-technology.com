@@ -4,8 +4,37 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Logo } from "@/components/ui/Logo";
+
+function LanguagePicker() {
+  const langs = [
+    { code: "FR", active: true },
+    { code: "EN", active: false },
+    { code: "AR", active: false },
+  ];
+
+  return (
+    <div className="flex items-center gap-0.5 text-sm font-medium">
+      {langs.map((lang, i) => (
+        <span key={lang.code} className="flex items-center">
+          {i > 0 && (
+            <span className="text-graphite/30 dark:text-smoke/30 mx-1.5 select-none">·</span>
+          )}
+          {lang.active ? (
+            <span className="text-ink dark:text-paper cursor-default">{lang.code}</span>
+          ) : (
+            <span
+              title="Bientôt disponible"
+              className="text-graphite/40 dark:text-smoke/30 cursor-not-allowed select-none"
+            >
+              {lang.code}
+            </span>
+          )}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,10 +56,8 @@ export function Navbar() {
     { label: "Cas clients", href: "/cas-clients" },
     { label: "À propos", href: "/a-propos" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
   ];
 
-  // Pages dont le hero est bg-paper en mode clair → logo doit être "dark" (encre) au scroll=0
   const lightHeroPages = ["/blog"];
   const hasLightHero = lightHeroPages.some(
     (p) => pathname === p || pathname.startsWith(p + "/")
@@ -48,7 +75,6 @@ export function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
-          {/* Logo : encre sur fonds clairs, crème sur fonds sombres */}
           <Logo variant={isScrolled ? "dark" : notScrolledLogoVariant} size="md" href="/" />
 
           {/* Desktop Navigation */}
@@ -62,20 +88,18 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
-            {isScrolled && (
-              <Link
-                href="/contact"
-                className="inline-block px-5 py-2.5 bg-primary dark:bg-paper text-paper dark:text-primary text-sm font-medium tracking-wide rounded-sm hover:bg-ink dark:hover:bg-mist transition-colors duration-300"
-              >
-                Audit gratuit
-              </Link>
-            )}
+            <LanguagePicker />
+            <Link
+              href="/contact"
+              className="text-sm font-semibold text-accent dark:text-accent-light hover:text-accent/80 dark:hover:text-accent transition-colors"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-4">
-            <ThemeToggle />
+            <LanguagePicker />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
@@ -103,6 +127,13 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-sm font-semibold text-accent dark:text-accent-light"
+            >
+              Contact
+            </Link>
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@
 import { wording } from "@/data/wording";
 import { Logo } from "@/components/ui/Logo";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
-import { ContactIcons } from "@/components/ui/contact-icons";
+import { Linkedin, Send, MessageCircle, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -26,7 +26,42 @@ export function Footer() {
               <p className="text-[11px] uppercase tracking-[0.12em] text-smoke/60 mb-3 font-semibold">
                 Nous Contacter
               </p>
-              <ContactIcons variant="footer" size="md" />
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.linkedin.com/company/onex-technology/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-graphite hover:text-accent transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://t.me/OneX_AI_Assistant_Bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
+                  className="text-graphite hover:text-accent transition-colors"
+                >
+                  <Send className="h-5 w-5" />
+                </a>
+                <a
+                  href={`https://wa.me/${wording.contact.whatsapp.replace(/\s/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="text-graphite hover:text-accent transition-colors"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                </a>
+                <a
+                  href={`mailto:${wording.contact.email}`}
+                  aria-label="Email"
+                  className="text-graphite hover:text-accent transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
 
