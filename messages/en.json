@@ -1,6 +1,730 @@
 {
   "common": {
     "siteName": "One—X Technology",
-    "tagline": "The Moroccan partner for critical CX programs."
+    "tagline": "The Moroccan partner for critical CX programs.",
+    "reserverDiagnostic": "Book a free diagnostic",
+    "demanderDiagnostic": "Request a free diagnostic",
+    "demarrerConversation": "Start the conversation",
+    "backHome": "Back to home",
+    "parlerArchitecte": "Talk to a CCaaS architect",
+    "certified": "Certified"
+  },
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "casClients": "Case studies",
+    "aPropos": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "ariaToggleMenu": "Toggle menu",
+    "ariaSelectLang": "Select language",
+    "langComingSoon": "Coming soon",
+    "langComingSoonTag": "soon"
+  },
+  "footer": {
+    "bio": "One-X Technology is Morocco's specialist CCaaS & CX consultancy. Genesys Cloud, AWS Connect, Avaya migrations. Zero downtime, guaranteed ROI. Casablanca.",
+    "contactTitle": "Contact Us",
+    "col1Title": "Navigation",
+    "col1Home": "Home",
+    "col1WhyOnex": "Why One—X",
+    "col1Services": "Our CCaaS expertise",
+    "col1Approche": "Our approach",
+    "col1Equipe": "The team",
+    "col1Blog": "Blog",
+    "col1Contact": "Contact",
+    "col2Title": "CCaaS Expertise",
+    "col2Genesys": "Genesys Cloud Migration",
+    "col2Aws": "AWS Connect Migration",
+    "col2Avaya": "Avaya Cloud Migration",
+    "col2Cx": "CX Optimisation",
+    "col2Voicebot": "Voicebot / Chatbot",
+    "col3Title": "Contact",
+    "copyright": "© 2026 One-X Technology. All rights reserved.",
+    "legalMentions": "Legal notice",
+    "legalConfidentialite": "Privacy policy",
+    "legalCookies": "Cookie policy",
+    "legalManageCookies": "Manage my cookies",
+    "ariaLinkedIn": "LinkedIn",
+    "ariaTelegram": "Telegram",
+    "ariaWhatsApp": "WhatsApp",
+    "ariaEmail": "Email"
+  },
+  "contact": {
+    "email": "contact@onex-technology.com",
+    "phone": "+33 6 65 56 72 67",
+    "whatsapp": "+33665567267",
+    "location": "Casablanca, Morocco"
+  },
+  "hero": {
+    "eyebrow": "DESIGN AUTHORITY · CX & CLOUD · MOROCCO",
+    "titleBefore": "Your contact center,",
+    "titleItalic": "reimagined",
+    "titleAfter": "for the cloud.",
+    "subtitle": "Build, migrate or transform your CCaaS platform — Genesys Cloud, AWS Connect, Avaya. A senior team, measurable ROI, zero service interruption.",
+    "ctaPrimary": "Free audit (30 min)",
+    "ctaSecondary": "Discover our approach",
+    "stats": [
+      { "value": "18+", "label": "YEARS OF CX & CLOUD EXPERTISE" },
+      { "value": "400+", "label": "TRANSFORMATION PROJECTS DELIVERED" },
+      { "value": "3", "label": "CERTIFIED PLATFORMS" },
+      { "value": "< 12 months", "label": "AVERAGE ROI" }
+    ]
+  },
+  "pavesSectoriels": {
+    "eyebrow": "THEY TRUST US",
+    "sectors": ["BANKING", "INSURANCE", "TELCO", "TOURISM", "RETAIL"]
+  },
+  "expertises": {
+    "eyebrow": "TOTAL FOCUS: CCAAS & CUSTOMER EXPERIENCE",
+    "titleBefore": "Four expertises, one",
+    "titleItalic": "obsession",
+    "titleAfter": ".",
+    "cardLargeEyebrow": "VENDOR CERTIFICATIONS",
+    "cardLargeTitle": "CCaaS & Customer Experience Specialists",
+    "cardLargeDesc": "We don't do ERP, BI or web development. We do CCaaS. CX. Full stop. Better to excel in one domain than be mediocre across ten.",
+    "cardLargeCta": "View our services →",
+    "cardDetailCta": "Details →",
+    "partners": [
+      { "name": "Genesys", "cert": "Genesys Cloud CX Certified Professional" },
+      { "name": "AWS", "cert": "AWS Connect Deployment Specialist" },
+      { "name": "Avaya", "cert": "Avaya Cloud Expert" }
+    ],
+    "items": [
+      {
+        "id": "ccaas-migration",
+        "title": "Genesys / AWS Connect / Avaya Cloud Migration",
+        "oneliner": "We migrate to the cloud in 8 to 12 weeks, without cutting a single line."
+      },
+      {
+        "id": "cx-optimization",
+        "title": "Reduce customer friction = increase conversion",
+        "oneliner": "We diagnose friction points, redesign journeys and measure the impact."
+      },
+      {
+        "id": "ai-conversational",
+        "title": "Automate 60% of simple requests",
+        "oneliner": "We deploy intelligent voicebots and chatbots that handle routine queries, freeing agents for complex cases."
+      },
+      {
+        "id": "cloud-infrastructure",
+        "title": "Cloud architecture to support CCaaS",
+        "oneliner": "We design the complete architecture: network, security, resilience, disaster recovery."
+      }
+    ]
+  },
+  "casClientsHome": {
+    "eyebrow": "CASE STUDIES",
+    "titleBefore": "Three",
+    "titleItalic": "recent",
+    "titleAfter": "missions.",
+    "ctaAll": "View all cases →",
+    "labelEnjeu": "CHALLENGE",
+    "labelMission": "MISSION",
+    "labelDuree": "Duration:",
+    "labelResultats": "MEASURED RESULTS"
+  },
+  "manifesto": {
+    "eyebrow": "MANIFESTO",
+    "titleBefore": "The",
+    "titleItalic": "Moroccan",
+    "titleAfter": "partner for critical CX programs.",
+    "signature": "YASSINE ROGUI · PRACTICE LEADER & TECHNICAL PARTNER",
+    "desc": "18 years of CCaaS migration expertise. Here's how we do things differently.",
+    "items": [
+      "Certified CCaaS architects",
+      "Casablanca-based support",
+      "Phased cutover",
+      "Commitment to results"
+    ]
+  },
+  "offers": {
+    "eyebrow": "3 PACKAGED OFFERS. FIXED PRICING. ZERO SURPRISES.",
+    "title": "How to get started with One—X?",
+    "desc": "No endless proposals. No consultants billing by the hour. Clear packages with a fixed scope, transparent pricing and guaranteed timelines.",
+    "labelPourQui": "FOR WHOM?",
+    "labelInclus": "WHAT'S INCLUDED",
+    "labelLivrables": "DELIVERABLES",
+    "guarantee": "Quality commitment: if the promised results are not delivered, we fix it at our own cost. No hidden clauses. No budget overrun unless you request it.",
+    "items": [
+      {
+        "id": "diagnostic-express",
+        "badge": "FREE",
+        "title": "CCaaS Express Diagnostic",
+        "price": "0 MAD",
+        "priceDetail": "No commitment",
+        "duration": "30-min video call + report within 48h",
+        "forWho": "CIOs/CX Directors hesitating between Genesys/AWS/Avaya or seeking a second opinion on their current CCaaS project",
+        "includes": [
+          "30-min video call with a senior CCaaS architect",
+          "Quick analysis of current platform vs. requirements",
+          "Technical feasibility assessment",
+          "Budget & timeline ballpark"
+        ],
+        "deliverables": [
+          "5-page PDF report with recommendations",
+          "Checklist: 10 critical points to verify before go-live"
+        ],
+        "cta": "Book my free diagnostic",
+        "ctaHref": "https://calendly.com/yrogui/30min",
+        "recommended": false
+      },
+      {
+        "id": "audit-complet",
+        "badge": "RECOMMENDED",
+        "title": "Complete CX & CCaaS Audit",
+        "price": "15,000 MAD ex. VAT",
+        "priceEur": "~1,400 € ex. VAT",
+        "priceDetail": "Deducted if you sign the project",
+        "duration": "Delivered within 2 weeks",
+        "forWho": "SMEs/Large enterprises with 20–200 agents who want to secure their decision before investing",
+        "includes": [
+          "Technical audit of existing platform (on-premise or cloud)",
+          "Call flow & CRM integration mapping",
+          "Omnichannel customer journey analysis",
+          "Quantified ROI business case (current vs. future costs)",
+          "Phased migration roadmap",
+          "1-hour executive presentation for the steering committee"
+        ],
+        "deliverables": [
+          "40+ page audit report (strengths/weaknesses/risks)",
+          "Target technical architecture (HLD/LLD diagrams)",
+          "Week-by-week go-live roadmap",
+          "Detailed budget (licences + delivery + operations)"
+        ],
+        "cta": "Order the audit (15,000 MAD)",
+        "ctaHref": "/contact",
+        "recommended": true
+      },
+      {
+        "id": "migration-cle-en-main",
+        "badge": "FULL PROJECT",
+        "title": "Turnkey CCaaS Migration",
+        "price": "On Quote",
+        "priceDetail": "Fixed-price project (no time & materials)",
+        "duration": "8–12 weeks depending on complexity",
+        "forWho": "Contact centres with 50–500 agents who want to switch to Genesys/AWS/Avaya with no risk or downtime",
+        "includes": [
+          "Audit + Cloud architecture + Functional specifications",
+          "CCaaS platform configuration (routing, IVR, reporting)",
+          "CRM integrations (Salesforce, Dynamics, custom APIs)",
+          "Phased agent migration (10% per wave, rollback plan)",
+          "2-day on-site training + post go-live coaching",
+          "Intensive 30-day support (24/7 for the first week)"
+        ],
+        "deliverables": [
+          "Operational platform with 99.95% SLA",
+          "Complete operational documentation (admin + troubleshooting)",
+          "Trained and autonomous teams",
+          "Before/after migration KPIs (demonstrated ROI)"
+        ],
+        "cta": "Request a detailed quote",
+        "ctaHref": "/contact",
+        "recommended": false
+      }
+    ]
+  },
+  "leadMagnet": {
+    "eyebrow": "FREE PDF + MONTHLY FIELD INSIGHTS",
+    "title": "CCaaS migration checklist: 25 control points before go-live",
+    "desc": "Too many CCaaS migrations fail due to overlooked critical checkpoints. Download our checklist (free PDF) based on 18 years of field experience. Bonus: 1 email/month with field insights (no commercial spam).",
+    "leadMagnetLabel": "CCaaS migration checklist — 25 critical points (PDF)",
+    "emailLabel": "Professional email",
+    "emailPlaceholder": "firstname.lastname@company.com",
+    "submitButton": "Get the checklist",
+    "submitLoading": "Sending…",
+    "successTitle": "Check your inbox",
+    "successDesc": "A confirmation email has been sent. Click the link to receive your <b>25-point go-live checklist</b>.",
+    "successSpam": "Check your spam folder if you don't receive it within 5 minutes.",
+    "microcopy": "Professional email required · Zero spam · Double opt-in",
+    "rgpdLabel": "I agree for One-X Technology to use my email address to send me the requested checklist and, occasionally, content related to CCaaS programmes. Unsubscribe at any time via the link in each email. GDPR rights at",
+    "rgpdPolitique": "privacy policy",
+    "errorEmailRequired": "Please enter your professional email address.",
+    "errorEmailInvalid": "Invalid email format.",
+    "errorEmailPersonal": "Please use your professional email (personal addresses are not accepted).",
+    "errorEmailDomain": "This email domain does not appear to be valid (no mail server detected).",
+    "errorRgpdRequired": "You must accept the privacy policy to continue.",
+    "errorNetwork": "A network error occurred. Please try again in a moment."
+  },
+  "testimonials": {
+    "badge": "What our clients say",
+    "title": "They trust us",
+    "subtitle": "Discover the reviews from managers, architects and executives who have worked with Yassine on international CCaaS and CX projects.",
+    "ctaText": "Over 17 years of CCaaS and CX expertise. Looking to modernise your contact centre?",
+    "ctaLinkedin": "View more recommendations",
+    "ctaContact": "Talk to a CCaaS architect",
+    "items": [
+      {
+        "quote": "I collaborated with Yassine for over a year on international contact centre projects in the luxury sector. His technical expertise combined with business acumen allows him to design innovative solutions perfectly aligned with client challenges. An architect capable of translating business needs into concrete, differentiating offerings.",
+        "author": "Sebastien L.",
+        "role": "Business Manager",
+        "company": "Luxury & Telecoms Sector",
+        "context": "International CCaaS projects (2023–2024)"
+      },
+      {
+        "quote": "Yassine was a key contributor to our international pre-sales team. His ability to understand client expectations and translate them into robust technical proposals is exceptional. He always delivers on time, with a creative touch that makes the difference. A committed, precise and persuasive professional.",
+        "author": "Josquin V.",
+        "role": "Head of International Pre-Sales",
+        "company": "International Telecoms",
+        "context": "CCaaS solutions pre-sales team"
+      },
+      {
+        "quote": "I worked with Yassine on several contact centre deployment projects. His professionalism, rigorous project management and technical mastery of Avaya platforms were decisive. His advice and solutions enabled us to deliver on time. In three words: professional, available, competent.",
+        "author": "Abdelmajid E.",
+        "role": "Contact Center Architect",
+        "company": "International Telecom Group",
+        "context": "Avaya CCaaS deployments"
+      },
+      {
+        "quote": "Yassine has always been an invaluable resource for our sales teams. In his pre-sales engineer role, his deep technical knowledge and project management skills were true assets with our clients. A professional capable of turning commercial opportunities into technical successes.",
+        "author": "Guillaume D.",
+        "role": "Chief Executive Officer",
+        "company": "IT & Telecoms Services",
+        "context": "Pre-sales & CCaaS project delivery"
+      },
+      {
+        "quote": "Yassine was an exceptional mentor during our Avaya deployment projects. His technical expertise, quick learning ability and availability allowed me to develop a solid command of Avaya telephony. A professional who is both rigorous and approachable, skilled at sharing his expertise with genuine care.",
+        "author": "Stephan O.",
+        "role": "IT Platform Manager",
+        "company": "Banking Sector",
+        "context": "Avaya VoIP deployments"
+      },
+      {
+        "quote": "I had the privilege of working with Yassine as a business partner and colleague. He is a calculated risk taker, pragmatic leader and realist who understands future upcoming technology with Avaya while taking note of the more acute details. He is a hard worker and value creator in the truest sense.",
+        "author": "Arvind T.",
+        "role": "Sr. CSM Account Manager",
+        "company": "Cloud & AI Strategy",
+        "context": "Avaya international partnership (2015)"
+      }
+    ]
+  },
+  "caseStudies": {
+    "eyebrow": "CASE STUDIES",
+    "title": "Proven trajectories",
+    "desc": "Three sectors, three distinct challenges. Figures drawn from our engagements — anonymised under our confidentiality agreements.",
+    "anonymized": "All references are anonymised under our confidentiality agreements.",
+    "labelEnjeu": "Challenge",
+    "labelMission": "Mission",
+    "labelDuree": "Duration",
+    "labelDeploiement": "DEPLOYMENT",
+    "ctaTitle": "Does your situation resemble one of these trajectories?",
+    "ctaDesc": "We analyse your context for free in 30 minutes. You leave with an honest assessment and concrete next steps.",
+    "ctaButton": "Request a free diagnostic",
+    "items": [
+      {
+        "id": "banque",
+        "sector": "BANKING SECTOR",
+        "label": "A Moroccan banking leader",
+        "agents": "400 agents · Casablanca",
+        "challenge": "End-of-life Avaya on-premise infrastructure, telecoms costs up 40% over three years, zero real-time reporting for supervisors.",
+        "mission": "Migration to Genesys Cloud CX + Salesforce CRM integration",
+        "duration": "10 weeks",
+        "deployment": "We started with a complete technical audit of the existing Avaya infrastructure — call flow mapping, migration risk identification and design of the target Genesys Cloud architecture. The cutover took place in 10% waves over ten weeks, with dual-running maintained until each batch was fully validated. Salesforce CRM integration was deployed in parallel, connecting the customer record in real time within Genesys. The final go-live took place on a Sunday evening with no visible interruption for the bank's customers.",
+        "results": [
+          { "value": "−38%", "label": "telecoms costs" },
+          { "value": "+22%", "label": "FCR at 3 months" },
+          { "value": "0", "label": "production incidents" },
+          { "value": "< 12 months", "label": "return on investment" }
+        ],
+        "quote": "The phased 10% wave cutover allowed us to keep every line active. At no point did our customers notice the transition."
+      },
+      {
+        "id": "assurance",
+        "sector": "INSURANCE SECTOR",
+        "label": "A leading national insurer",
+        "agents": "150 agents",
+        "challenge": "CSAT at 6.2/10, call abandonment rate at 34%, negative NPS. Customer journeys had not been reviewed in five years.",
+        "mission": "Omnichannel CX audit + journey redesign + quick win deployment",
+        "duration": "6-week diagnostic + 3-month deployment",
+        "deployment": "We conducted a six-week omnichannel CX audit: listening to 400 calls, analysing chat and email verbatims, mapping 12 distinct customer journeys. Prioritisation was based on ROI impact and implementation complexity — quick wins were deployed from week 4: IVR rewrite, reduction of internal transfers, optimised agent scripts. The second phase integrated an automatic callback module and a real-time supervisor dashboard, drastically reducing the abandonment rate.",
+        "results": [
+          { "value": "+18 pts", "label": "CSAT (6.2 → 7.8)" },
+          { "value": "−28%", "label": "abandonment rate" },
+          { "value": "+24 pts", "label": "NPS (−8 → +16)" },
+          { "value": "2 weeks", "label": "to the first gains" }
+        ],
+        "quote": "We had intuitions about our CX weaknesses. One-X quantified and prioritised them. The quick wins convinced our management team by week six."
+      },
+      {
+        "id": "telco",
+        "sector": "TELECOMS SECTOR",
+        "label": "A major Moroccan operator",
+        "agents": "600 agents",
+        "challenge": "65% of calls were about simple queries: account balance, tariff plans, invoices. Agents were overloaded with low-value volume.",
+        "mission": "NLU voicebot deployment + real-time agent assist on Genesys",
+        "duration": "8 weeks",
+        "deployment": "The project began by identifying the 15 most frequent call reasons representing 65% of volume. We designed and deployed an NLU voicebot on Genesys, capable of handling requests in natural language without a rigid decision tree. An Agent Assist module was integrated into the agent interface, displaying real-time response suggestions based on call transcription. Agents were trained over two days to adopt the new human/AI dynamic.",
+        "results": [
+          { "value": "52%", "label": "calls deflected to the bot" },
+          { "value": "÷3", "label": "cost per FAQ interaction" },
+          { "value": "24/7", "label": "availability at no extra cost" },
+          { "value": "+28%", "label": "agent satisfaction" }
+        ],
+        "quote": "Our agents finally handle complex requests. The bot manages the volume, they manage the relationship. That's exactly the split we were looking for."
+      }
+    ]
+  },
+  "approche": {
+    "eyebrow": "4 PHASES. 8 TO 12 WEEKS. ZERO IMPROVISATION.",
+    "title": "Our method: from audit to secure go-live",
+    "desc": "No improvisation, no empty promises. Fixed timeline, clear milestones, secure delivery. You know exactly where you're going.",
+    "engagementTitle": "How we work together",
+    "ctaTitle": "Ready to get started?",
+    "ctaDesc": "A free 30-min diagnostic with a senior CCaaS architect. No commitment. We'll tell you honestly whether we can help you.",
+    "phases": [
+      {
+        "number": "01",
+        "title": "We diagnose before we prescribe",
+        "desc": "Technical audit of existing platform. Call flow mapping. Integration analysis. Quick win identification. At the end: quantified business case, projected ROI, validated action plan. No blind proposals.",
+        "deliverables": [
+          "Technical audit report",
+          "Flow & integration mapping",
+          "Quantified ROI business case",
+          "Detailed go-live roadmap"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "We design the target architecture",
+        "desc": "Detailed cloud architecture. Functional specifications. Optimised customer journey design. Phased migration plan. Test strategy. Everything is documented before touching a single configuration line.",
+        "deliverables": [
+          "HLD/LLD Architecture",
+          "Functional specifications",
+          "Secure migration plan",
+          "Complete test matrix"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "We deploy without breaking what exists",
+        "desc": "Platform configuration. CRM integrations. Progressive agent migration (10% per wave). Load testing. On-site training. Final DNS cutover. Intensive post go-live support (24/7 for the first week). You sleep soundly.",
+        "deliverables": [
+          "Platform configured & tested",
+          "CRM integrations operational",
+          "On-site trained agents",
+          "Complete operational documentation"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "We optimise & train your teams",
+        "desc": "KPI monitoring. Performance analysis. Configuration adjustments. Feature evolution. Progressive skills transfer to your IT teams. Goal: making you autonomous. No endless dependency.",
+        "deliverables": [
+          "Real-time KPI dashboards",
+          "Monthly optimisation reports",
+          "IT skills transfer",
+          "Full post-project autonomy"
+        ]
+      }
+    ],
+    "engagementItems": [
+      {
+        "title": "Complete CCaaS Diagnostic",
+        "desc": "Not sure where to start? Technical audit of existing platform, flow mapping, quantified business case, recommended roadmap. Delivered within 2 weeks. Fixed fee 15,000 MAD ex. VAT (~1,400 €), deducted if you sign the implementation."
+      },
+      {
+        "title": "End-to-end CCaaS Delivery",
+        "desc": "From audit to secure go-live. Global fixed fee including architecture, configuration, CRM integrations, training, 30-day post go-live support. Fixed timeline, controlled budget, zero surprises."
+      },
+      {
+        "title": "Post go-live run & evolution",
+        "desc": "Level 3 support, KPI optimisation, feature evolution, continuous training. Monthly retainer or custom arrangement based on needs. Goal: progressive skills transfer to your teams (full autonomy within 6–12 months)."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "CCaaS migration, CX optimisation, AI automation",
+    "desc": "Four areas of expertise, one obsession: transforming your contact centre into a strategic asset, without risk and with demonstrated ROI.",
+    "ctaPrimary": "Book a free diagnostic",
+    "navMigration": "CCaaS Migration",
+    "navCx": "CX Optimisation",
+    "navAuto": "AI Automation",
+    "navCloud": "Cloud Architecture",
+    "migrationEyebrow": "CCAAS MIGRATION",
+    "migrationTitle": "Genesys, AWS Connect, Avaya Migration",
+    "migrationDesc": "Your on-premise infrastructure is costly, ageing and inflexible. Migration to the cloud is not a question of if, but how. We have delivered hundreds of migrations without service interruption — with a proven method, a phased 10% wave cutover, and a rollback plan at every step.",
+    "migrationPoints": [
+      "Phased 10%/wave cutover, systematic rollback plan",
+      "Omnichannel architecture: voice, WhatsApp, chat, email unified",
+      "Native CRM integrations (Salesforce, Dynamics, SAP C4C)"
+    ],
+    "migrationPlateformesLabel": "CERTIFIED PLATFORMS",
+    "migrationPlateformes": ["Genesys Cloud CX", "AWS Connect", "Avaya Cloud Elite"],
+    "migrationResultsLabel": "OBSERVED RESULTS",
+    "migrationResults": [
+      { "value": "−20 to −40%", "label": "telecoms costs" },
+      { "value": "99.95%", "label": "guaranteed SLA" },
+      { "value": "8–12 weeks", "label": "go-live timeline" }
+    ],
+    "cxEyebrow": "CX OPTIMISATION",
+    "cxTitle": "Reduce customer friction, increase value",
+    "cxDesc": "A stagnant NPS, a 30% abandonment rate, agents overloaded with low-value volume: these aren't inevitable. They are journey design problems. We audit, quantify, prioritise and deploy improvements with visible ROI in under 90 days.",
+    "cxCards": [
+      { "title": "Omnichannel audit", "desc": "Maps all your customer touchpoints" },
+      { "title": "Journey redesign", "desc": "Based on data, not intuition" },
+      { "title": "Quick wins < 2 weeks", "desc": "Immediate results to prove the project's value" },
+      { "title": "CX KPI management", "desc": "CSAT, NPS, FCR, AHT in real time" }
+    ],
+    "cxStats": ["CSAT +15–20 pts", "FCR +25%", "Abandonment rate −30%"],
+    "cxStatsLabel": "observed results",
+    "autoEyebrow": "AI AUTOMATION",
+    "autoTitle": "Automate 60% of simple requests",
+    "autoDesc": "Your agents spend 60% of their time on FAQ queries. Every interaction handled by an intelligent voicebot or chatbot frees an agent for complex requests — and reduces your cost per contact by a factor of 3.",
+    "autoCards": [
+      { "title": "NLU Voicebot", "desc": "Natural language, no rigid decision tree" },
+      { "title": "Agent Assist", "desc": "Real-time suggestions during the call" },
+      { "title": "AI Analytics", "desc": "Automatic call reason detection" }
+    ],
+    "cloudEyebrow": "CLOUD ARCHITECTURE",
+    "cloudTitle": "The infrastructure that powers your CCaaS",
+    "cloudDesc": "A high-performing CCaaS rests on a solid, secure and scalable AWS/Azure infrastructure. We design the complete architecture: network, GDPR/PCI-DSS security, multi-AZ resilience, tested disaster recovery. No nasty technical surprises after go-live.",
+    "cloudPills": ["Multi-AZ architecture", "GDPR & PCI-DSS security", "RTO < 1 hour", "SLA 99.95%+"],
+    "cloudCases": [
+      { "title": "AWS Connect + Amazon Lex", "desc": "Native cloud contact centre with integrated conversational AI, intelligent routing and real-time analytics." },
+      { "title": "Genesys Cloud + AWS", "desc": "High-availability hybrid architecture with automatic failover and multi-region resilience." },
+      { "title": "Azure + Microsoft Teams", "desc": "Native Teams integration for Microsoft organisations, with Azure AD security and M365 compliance." }
+    ],
+    "faqEyebrow": "FREQUENTLY ASKED QUESTIONS",
+    "faqTitle": "Everything you need to know about CCaaS migration",
+    "faqDesc": "Pricing, timelines, risks: honest answers to the 5 questions all our clients ask before getting started.",
+    "faqCtaQuestion": "Do you have other questions about your CCaaS project?",
+    "faqCtaDevis": "→ Request a detailed quote",
+    "faqCtaDiagnostic": "→ Book a free 30-min diagnostic",
+    "ctaTitle": "Which service matches your priority?",
+    "ctaDesc": "A free 30-min diagnostic with a senior CCaaS architect. No commitment. We'll tell you honestly whether we can help you."
+  },
+  "aPropos": {
+    "heroEyebrow": "ABOUT",
+    "heroTitle": "The Moroccan partner for critical CX programs",
+    "heroDesc": "One-X Technology was born from a simple observation: major Moroccan companies needed a local, senior, grounded CCaaS partner — not a distant subsidiary or a passing consultant.",
+    "histoireEyebrow": "OUR STORY",
+    "histoireTitle": "18 years of expertise in service of Morocco",
+    "histoireP1": "Yassine Rogui spent 18 years leading CX and CCaaS programmes for leading organisations in France, Europe and internationally — across luxury, finance, telecoms and insurance. 400 projects. Teams of 10 to 600 agents. Genesys, Avaya and AWS Connect platforms in their most complex configurations.",
+    "histoireP2": "In 2024, he founded One-X Technology in Casablanca with a conviction: major Moroccan companies deserve the same level of expertise as their European counterparts, delivered locally, in French and Arabic, in the right time zone.",
+    "histoireP3": "One-X Technology is an official commercial partner of ExpertiaX, the reference CX & CCaaS consultancy in France and Europe. This relationship guarantees access to the best European standards while grounding every engagement in the realities of the Moroccan market.",
+    "histoireInfo": "Independent Moroccan legal entity · Casablanca ·",
+    "valeursEyebrow": "OUR VALUES",
+    "valeursTitle": "Rigour · Vision · Roots",
+    "valeurs": [
+      {
+        "title": "Rigour",
+        "desc": "We document everything. HLD/LLD architecture, load tests, rollback plans. Nothing is left to chance. Our reputation is built on the predictability of our deliveries."
+      },
+      {
+        "title": "Vision",
+        "desc": "We step back where others rush to propose. Recommending Genesys when AWS Connect better fits your context: that is our added value. Objectivity over complacency."
+      },
+      {
+        "title": "Roots",
+        "desc": "Being in Casablanca is not a logistical detail. It is a conviction. Understanding BAM (Bank Al-Maghrib, Moroccan central bank), ACAPS (Moroccan insurance regulator), the dynamics of major Moroccan accounts — from the inside, not from Paris."
+      }
+    ],
+    "certsEyebrow": "CERTIFICATIONS & STACK",
+    "certsTitle": "Certified expertise, mastered platforms",
+    "certsLabel": "CERTIFICATIONS",
+    "stackLabel": "TECHNICAL STACK",
+    "certs": [
+      "Genesys Cloud CX Certified Professional",
+      "AWS Connect Deployment Specialist",
+      "Microsoft Certified Partner",
+      "PMP — Project Management Professional",
+      "AWS Cloud Practitioner (CCP)",
+      "Data Analyst Certification"
+    ],
+    "stack": [
+      "Genesys Cloud", "AWS Connect", "Amazon Lex", "Avaya Aura",
+      "Avaya Cloud Elite", "Salesforce CRM", "Microsoft Dynamics", "Azure",
+      "AWS", "SAP C4C", "Python", "Genesys Architect", "REST APIs", "Webhooks n8n"
+    ],
+    "yasEyebrow": "PRACTICE LEADER",
+    "yasTitle": "Yassine Rogui",
+    "yasStats": [
+      { "value": "18+", "label": "years" },
+      { "value": "400+", "label": "projects" },
+      { "value": "3", "label": "certified platforms" }
+    ],
+    "yasAriaLinkedIn": "LinkedIn Yassine Rogui",
+    "yasAltPhoto": "Yassine Rogui — Practice Leader One-X Technology",
+    "yasBio1": "Yassine Rogui is a CCaaS architect and Practice Leader at One-X Technology. He personally leads every critical engagement — from the audit phase through to post go-live support.",
+    "yasBio2": "Trained on the most demanding platforms (Genesys, Avaya, AWS Connect), he has led deployments for major players in international luxury, private banking and telecoms in France, Belgium, Switzerland and Morocco.",
+    "yasBio3": "His conviction: a successful CCaaS project is not a technology question, it is a question of method and people. The architecture serves the agents, the supervisors and the end customer.",
+    "ctaTitle": "Let's discuss your project",
+    "ctaDesc": "A first 30-minute exchange with Yassine. No commitment. To understand your context and see if we can help you.",
+    "ctaButton": "Start the conversation"
+  },
+  "contactPage": {
+    "eyebrow": "CONTACT",
+    "titleBefore": "Frame your",
+    "titleItalic": "unknown",
+    "titleAfter": ".",
+    "subtitle": "A few questions to prepare a useful exchange. 30 minutes with Yassine — no commitment, no sales pitch.",
+    "formEyebrow": "QUALIFICATION FORM",
+    "formTitle": "Describe your project",
+    "formSubtitle": "This information allows us to prepare a relevant discussion.",
+    "formSuccess": "Message received, thank you.",
+    "formSuccessDesc": "Yassine will reply within 24 hours — or book a slot directly via the calendar.",
+    "nomPlaceholder": "Full name *",
+    "entreprisePlaceholder": "Company *",
+    "emailPlaceholder": "Professional email *",
+    "telPlaceholder": "Phone",
+    "typeBesoinPlaceholder": "Type of need *",
+    "typeBesoinOpts": [
+      { "value": "migration-cloud", "label": "Cloud migration" },
+      { "value": "nouveau-centre", "label": "New contact centre" },
+      { "value": "optimisation", "label": "Existing CCaaS optimisation" },
+      { "value": "formation", "label": "Training / coaching" },
+      { "value": "autre", "label": "Other" }
+    ],
+    "taillePlaceholder": "Contact centre size",
+    "tailleOpts": [
+      { "value": "moins-20", "label": "< 20 agents" },
+      { "value": "20-100", "label": "20–100 agents" },
+      { "value": "100-500", "label": "100–500 agents" },
+      { "value": "plus-500", "label": "> 500 agents" }
+    ],
+    "delaiPlaceholder": "Start horizon",
+    "delaiOpts": [
+      { "value": "immediat", "label": "Immediate (< 1 month)" },
+      { "value": "court-terme", "label": "Short term (1–3 months)" },
+      { "value": "moyen-terme", "label": "Medium term (3–6 months)" },
+      { "value": "structurel", "label": "Structural project (> 6 months)" }
+    ],
+    "messagePlaceholder": "Briefly describe your context…",
+    "confidentialite": "Confidential data. No commitment on your part.",
+    "errorMsg": "An error occurred. Please retry or contact us by email.",
+    "submitIdle": "Send my request",
+    "submitLoading": "Sending…",
+    "calendlyEyebrow": "BOOK A SLOT",
+    "calendlyTitle": "30 min with Yassine",
+    "calendlyCaption": "INITIAL FRAMING · 30 MIN · VIDEO · CASABLANCA/PARIS TIMEZONE",
+    "calendlyAriaLabel": "Book a slot with Yassine",
+    "coordsEyebrow": "DIRECT CONTACT"
+  },
+  "blog": {
+    "eyebrow": "Thoughts & Strategies",
+    "title": "Field insights & analysis",
+    "desc": "Technical articles, field experience and analyses from our real engagements in Morocco and Africa. Precise, sourced, actionable.",
+    "readMore": "Read the article"
+  },
+  "cookieConsent": {
+    "title": "Cookie preferences",
+    "desc": "We use cookies to improve your experience, analyse our traffic and personalise content. You can accept all cookies, reject them or customise your preferences.",
+    "learnMore": "Learn more",
+    "customize": "Customise",
+    "rejectAll": "Reject all",
+    "acceptAll": "Accept all",
+    "settingsTitle": "Customise my cookie preferences",
+    "settingsSubtitle": "Choose the cookie categories you wish to allow",
+    "settingsClose": "Close",
+    "saveChoices": "Save my choices",
+    "seePolitique": "View our detailed cookie policy",
+    "required": "Required",
+    "cats": [
+      {
+        "key": "essential",
+        "title": "Essential cookies",
+        "desc": "Required for the site to function. They enable navigation and use of basic features (theme preference, cookie consent). Cannot be disabled."
+      },
+      {
+        "key": "functional",
+        "title": "Functional cookies",
+        "desc": "Improve the user experience by remembering your preferences (pre-filled forms, language). Include local fonts for optimal display."
+      },
+      {
+        "key": "analytics",
+        "title": "Analytics cookies",
+        "desc": "Help us understand how visitors use the site (pages visited, time spent) via Google Analytics. Anonymised data."
+      },
+      {
+        "key": "marketing",
+        "title": "Marketing cookies",
+        "desc": "Allow personalisation of ads and measurement of campaign effectiveness (Meta Pixel, LinkedIn Insight). You can reject them without any impact on the site."
+      }
+    ]
+  },
+  "confirmerInscription": {
+    "loadingTitle": "Confirming…",
+    "loadingDesc": "Please wait a moment.",
+    "successTitle": "Subscription confirmed",
+    "successDesc": "Redirecting to your checklist…",
+    "errorTitle": "Invalid link",
+    "defaultErrorMsg": "This confirmation link is invalid or has already been used.",
+    "networkErrorMsg": "A network error occurred. Please try again.",
+    "invalidTokenMsg": "Invalid or expired link. Please restart from the form.",
+    "backHome": "Back to home"
+  },
+  "merciChecklist": {
+    "eyebrow": "Double opt-in confirmed",
+    "title": "Your checklist is ready",
+    "desc": "The 25-point go-live checklist has been sent to your email address. If you don't receive it within 5 minutes, please check your spam folder.",
+    "downloadBtn": "Download the PDF checklist",
+    "ctaLabel": "Ready to take action? Book a 45-min flash audit with a certified senior architect.",
+    "ctaButton": "Book a flash audit"
+  },
+  "mentionsLegales": {
+    "title": "Legal notice",
+    "lastUpdate": "Last updated: January 2026",
+    "backHome": "Back to home",
+    "tocTitle": "Contents",
+    "toc": [
+      "Site publisher",
+      "Hosting",
+      "Intellectual property",
+      "Liability",
+      "Hyperlinks",
+      "Applicable law",
+      "Contact"
+    ],
+    "s1Title": "1. Site publisher",
+    "s1RaisonLabel": "Company name:",
+    "s1Raison": "One-X Technology",
+    "s1FormeLabel": "Legal form:",
+    "s1Forme": "Consulting and delivery firm",
+    "s1TypeLabel": "Activity type:",
+    "s1Type": "Digital transformation consulting, customer experience and CCaaS solutions",
+    "s1SiegeLabel": "Registered office:",
+    "s1Siege": "Casablanca, Morocco",
+    "s1EmailLabel": "Email:",
+    "s1DirLabel": "Publication director:",
+    "s1Dir": "One-X Technology",
+    "s2Title": "2. Hosting",
+    "s2HebLabel": "Host:",
+    "s2Heb": "EX2 Hosting",
+    "s2SocLabel": "Company:",
+    "s2Soc": "EX2",
+    "s2AddrLabel": "Address:",
+    "s2Addr": "CP 20031 BP pharmacie de la gare, 12229 Québec (QC), Canada",
+    "s2LocLabel": "Server location:",
+    "s2Loc": "French data centre (Paris region)",
+    "s2P1": "The onex-technology.com site uses a hosting infrastructure guaranteeing security and high availability. Data is hosted in a data centre located in France (Paris region), ensuring compliance with European data protection regulations.",
+    "s3Title": "3. Intellectual property",
+    "s3P1": "All content on this site onex-technology.com, including but not limited to texts, images, graphics, logos, videos, icons and layout, is the exclusive property of One-X Technology, with the exception of trademarks, logos or content belonging to other partner companies or authors.",
+    "s3P2": "Any reproduction, distribution, modification, adaptation, retransmission or publication, even partial, of these elements is strictly prohibited without prior written consent from One-X Technology.",
+    "s3P3": "Such reproduction or representation, by any means whatsoever, constitutes an infringement punishable under applicable intellectual property legislation.",
+    "s3P4": "Non-compliance with this prohibition constitutes an infringement that may incur the civil and criminal liability of the infringer.",
+    "s4Title": "4. Liability",
+    "s4P1": "One-X Technology endeavours to ensure the accuracy and currency of the information published on this site, and reserves the right to correct the content at any time and without notice.",
+    "s4P2": "However, One-X Technology cannot be held liable for any omissions, inaccuracies or unintentional errors that may have occurred in the information presented.",
+    "s4P3": "The information provided is for general and indicative purposes only. It has no contractual value and cannot engage the liability of One-X Technology.",
+    "s4P4": "The user acknowledges using this information under their sole responsibility and releases One-X Technology from any liability in this regard.",
+    "s4P5": "One-X Technology cannot be held liable for any direct or indirect damages that may result from access to, use of, or inability to access the site.",
+    "s5Title": "5. Hyperlinks",
+    "s5P1": "The site onex-technology.com may contain hyperlinks to other sites on the Internet. Links to these other resources will take you away from the onex-technology.com site.",
+    "s5P2": "One-X Technology has no control over these sites and accepts no liability for access to, content of, or use of these sites, nor for any damages that may result.",
+    "s5P3": "Hyperlinks established on this site pointing to other sites, personal pages and generally to all resources on the Internet cannot engage the liability of One-X Technology.",
+    "s5P4": "Creating hyperlinks to the onex-technology.com site requires prior written authorisation from One-X Technology.",
+    "s6Title": "6. Applicable law",
+    "s6P1": "These legal notices are governed by Moroccan and European legislation (GDPR) for the protection of personal data.",
+    "s6P2": "In the event of a dispute and in the absence of an amicable agreement, the dispute will be brought before the competent courts of Casablanca, Morocco.",
+    "s7Title": "7. Contact",
+    "s7P1": "For any question or information request regarding the site, or to report unlawful content or activities, users may contact the publisher at the following address:",
+    "s7EmailLabel": "Email:",
+    "s7TelLabel": "Phone:",
+    "s7Tel": "+212 5 22 XX XX XX"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "desc": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
   }
 }
