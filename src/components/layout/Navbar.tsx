@@ -1,24 +1,27 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
 const LANGUAGES = [
-  { code: "FR", label: "Français", active: true },
-  { code: "EN", label: "English", active: false },
-  { code: "AR", label: "العربية", active: false },
+  { code: "fr" as const, label: "Français", display: "FR" },
+  { code: "en" as const, label: "English", display: "EN" },
+  { code: "ar" as const, label: "العربية", display: "AR" },
 ];
 
 function LanguagePicker({ scrolled }: { scrolled: boolean }) {
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState("FR");
   const ref = useRef<HTMLDivElement>(null);
   const t = useTranslations("navbar");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const current = LANGUAGES.find((l) => l.code === locale) ?? LANGUAGES[0];
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -29,6 +32,15 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  function changeLocale(newLocale: "fr" | "en" | "ar") {
+    if (newLocale === locale) {
+      setOpen(false);
+      return;
+    }
+    router.replace(pathname, { locale: newLocale });
+    setOpen(false);
+  }
 
   const triggerColor = scrolled ? "text-ink" : "text-paper";
 
@@ -45,7 +57,7 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
         aria-haspopup="true"
       >
         <Globe className="w-4 h-4" strokeWidth={1.5} />
-        <span>{current}</span>
+        <span>{current.display}</span>
         <ChevronDown
           className={cn("w-3.5 h-3.5 transition-transform", open ? "rotate-180" : "")}
           strokeWidth={1.5}
@@ -54,30 +66,34 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
 
       {open && (
         <div className="absolute right-0 mt-2 w-44 rounded-sm border border-smoke/40 bg-paper shadow-md py-1 z-50">
-          {LANGUAGES.map((lang) => (
-            <button
-              key={lang.code}
-              disabled={!lang.active}
-              onClick={() => {
-                if (lang.active) {
-                  setCurrent(lang.code);
-                  setOpen(false);
-                }
-              }}
-              className={cn(
-                "w-full text-left px-4 py-2 text-sm flex items-center justify-between transition-colors",
-                lang.active
-                  ? "text-ink hover:bg-mist cursor-pointer"
-                  : "text-graphite/50 cursor-not-allowed"
-              )}
-              title={!lang.active ? t("langComingSoon") : undefined}
-            >
-              <span className={current === lang.code ? "font-semibold" : ""}>{lang.label}</span>
-              {!lang.active && (
-                <span className="text-[10px] text-graphite/50 italic tracking-wide">{t("langComingSoonTag")}</span>
-              )}
-            </button>
-          ))}
+          {LANGUAGES.map((lang) => {
+            const isCurrent = lang.code === locale;
+            const isDisabled = lang.code === "ar";
+            return (
+              <button
+                key={lang.code}
+                disabled={isDisabled}
+                onClick={() => !isDisabled && changeLocale(lang.code)}
+                className={cn(
+                  "w-full text-left px-4 py-2 text-sm flex items-center justify-between transition-colors",
+                  isDisabled
+                    ? "text-graphite/50 cursor-not-allowed"
+                    : "text-ink hover:bg-mist cursor-pointer"
+                )}
+                title={isDisabled ? t("langComingSoon") : undefined}
+              >
+                <span className={isCurrent ? "font-semibold" : ""}>{lang.label}</span>
+                {isDisabled && (
+                  <span className="text-[10px] text-graphite/50 italic tracking-wide">
+                    {t("langComingSoonTag")}
+                  </span>
+                )}
+                {isCurrent && !isDisabled && (
+                  <span className="text-xs" style={{ color: "#D4803B" }}>●</span>
+                )}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
@@ -138,7 +154,7 @@ export function Navbar() {
               href="/contact"
               className={cn(
                 "text-sm font-semibold text-accent hover:text-accent/80 transition-colors",
-                pathname === "/contact" || pathname === "/contact/"
+                pathname === "/contact"
                   ? "underline underline-offset-4 decoration-accent"
                   : ""
               )}
