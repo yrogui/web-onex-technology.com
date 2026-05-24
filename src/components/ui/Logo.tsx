@@ -33,7 +33,7 @@ export function Logo({ variant = "dark", size = "md", href = "/" }: LogoProps) {
       : "text-smoke/60";
 
   const content = (
-    <span className="inline-flex flex-col items-start leading-none">
+    <span className="inline-flex flex-col items-start leading-none" dir="ltr">
       <span
         className={`font-display font-medium tracking-tight ${sizeMap[size]} inline-flex items-center`}
       >

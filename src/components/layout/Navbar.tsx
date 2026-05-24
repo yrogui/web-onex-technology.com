@@ -87,17 +87,26 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
   );
 }
 
+const DARK_HERO_PATHS = ["/", "/services", "/cas-clients", "/a-propos", "/approche", "/contact"];
+
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const t = useTranslations("navbar");
 
+  const hasDarkHero = DARK_HERO_PATHS.some(
+    (p) => pathname === p || pathname === p + "/"
+  );
+
+  const [isScrolled, setIsScrolled] = useState(!hasDarkHero);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   useEffect(() => {
+    if (!hasDarkHero) return;
+    setIsScrolled(window.scrollY > 50);
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [hasDarkHero]);
 
   const navLinks = [
     { label: t("home"), href: "/" },
@@ -107,11 +116,7 @@ export function Navbar() {
     { label: t("blog"), href: "/blog" },
   ];
 
-  const lightHeroPages = ["/blog"];
-  const hasLightHero = lightHeroPages.some(
-    (p) => pathname === p || pathname.startsWith(p + "/")
-  );
-  const notScrolledLogoVariant = hasLightHero ? "dark" : "light";
+  const notScrolledLogoVariant = hasDarkHero ? "light" : "dark";
 
   return (
     <nav

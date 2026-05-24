@@ -53,6 +53,49 @@ export function Contact() {
     }
   };
 
+  const coordsBlock = (
+    <div className="pt-2 border-t border-smoke/30 dark:border-charcoal">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke/60 mb-6">
+        {t("coordsEyebrow")}
+      </p>
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <Mail className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
+          <a
+            href={`mailto:${tc("email")}`}
+            className="text-sm text-charcoal dark:text-smoke hover:text-accent dark:hover:text-accent-light transition-colors"
+          >
+            {tc("email")}
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <Phone className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
+          <a
+            href={`tel:${tc("phone").replace(/\s/g, "")}`}
+            className="text-sm text-charcoal dark:text-smoke hover:text-accent dark:hover:text-accent-light transition-colors"
+          >
+            <bdi dir="ltr">{tc("phone")}</bdi>
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <MessageCircle className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
+          <a
+            href={`https://wa.me/${tc("whatsapp")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-charcoal dark:text-smoke hover:text-accent dark:hover:text-accent-light transition-colors"
+          >
+            <bdi dir="ltr">{tc("phone")}</bdi>
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <MapPin className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
+          <p className="text-sm text-charcoal dark:text-smoke">{tc("location")}</p>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section
       id="contact"
@@ -60,7 +103,7 @@ export function Contact() {
       suppressHydrationWarning
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className={locale === "ar" ? "max-w-2xl mx-auto" : "grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"}>
           {/* Colonne gauche — Formulaire */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -149,16 +192,15 @@ export function Contact() {
             )}
           </motion.div>
 
-          {/* Colonne droite — Calendly + Coordonnées */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-10"
-          >
-            {/* Calendly — hidden on AR locale */}
-            {locale !== "ar" && (
+          {/* Colonne droite — Calendly + Coordonnées (FR/EN only) */}
+          {locale !== "ar" && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-10"
+            >
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
                   {t("calendlyEyebrow")}
@@ -180,51 +222,17 @@ export function Contact() {
                   {t("calendlyCaption")}
                 </p>
               </div>
-            )}
-
-            {/* Coordonnées */}
-            <div className="pt-2 border-t border-smoke/30 dark:border-charcoal">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-smoke/60 mb-6">
-                {t("coordsEyebrow")}
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
-                  <a
-                    href={`mailto:${tc("email")}`}
-                    className="text-sm text-charcoal dark:text-smoke hover:text-accent dark:hover:text-accent-light transition-colors"
-                  >
-                    {tc("email")}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
-                  <a
-                    href={`tel:${tc("phone").replace(/\s/g, "")}`}
-                    className="text-sm text-charcoal dark:text-smoke hover:text-accent dark:hover:text-accent-light transition-colors"
-                  >
-                    {tc("phone")}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MessageCircle className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
-                  <a
-                    href={`https://wa.me/${tc("whatsapp")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-charcoal dark:text-smoke hover:text-accent dark:hover:text-accent-light transition-colors"
-                  >
-                    {tc("phone")}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-accent dark:text-accent-light flex-shrink-0" />
-                  <p className="text-sm text-charcoal dark:text-smoke">{tc("location")}</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+              {coordsBlock}
+            </motion.div>
+          )}
         </div>
+
+        {/* AR: coordonnées sous le formulaire */}
+        {locale === "ar" && (
+          <div className="max-w-2xl mx-auto mt-12">
+            {coordsBlock}
+          </div>
+        )}
       </div>
     </section>
   );

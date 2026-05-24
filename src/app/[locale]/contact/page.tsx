@@ -1,14 +1,28 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { ContactPageContent } from "./_content";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Contactez One-X Technology pour votre projet CCaaS ou CX au Maroc. Premier échange 30 min avec un architecte senior. Sans engagement.",
-  alternates: {
-    canonical: "https://onex-technology.com/contact",
-  },
-};
+const BASE_URL = "https://onex-technology.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "contactPage" });
+  const tn = await getTranslations({ locale, namespace: "navbar" });
+
+  return {
+    title: tn("contact"),
+    description: t("subtitle"),
+    alternates: {
+      canonical: locale === "fr" ? `${BASE_URL}/contact` : `${BASE_URL}/${locale}/contact`,
+    },
+  };
+}
 
 export default function ContactPage() {
   return <ContactPageContent />;

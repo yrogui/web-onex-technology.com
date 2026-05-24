@@ -69,7 +69,7 @@ export function Hero() {
               {stats.map((stat, i) => (
                 <div key={i}>
                   <div className="font-display font-semibold text-3xl text-accent tracking-[-0.02em]">
-                    {stat.value}
+                    <bdi dir="ltr">{stat.value}</bdi>
                   </div>
                   <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mt-2">
                     {stat.label}

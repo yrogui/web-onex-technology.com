@@ -70,7 +70,7 @@ export function Footer() {
                   aria-label={t("ariaTelegram")}
                   className="text-graphite hover:text-accent transition-colors"
                 >
-                  <Send className="h-5 w-5" />
+                  <Send className="h-5 w-5 rtl:scale-x-[-1]" />
                 </a>
                 <a
                   href={`https://wa.me/${tc("whatsapp")}`}

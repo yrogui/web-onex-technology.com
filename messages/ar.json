@@ -83,8 +83,8 @@
     "cardLargeEyebrow": "شهادات الناشرين",
     "cardLargeTitle": "متخصصون في CCaaS وتجربة العميل",
     "cardLargeDesc": "لا نعمل في ERP، ولا في BI، ولا في تطوير الويب. نعمل في CCaaS. في تجربة العميل. فحسب. التميز في مجال واحد خير من الوسطية في عشرة.",
-    "cardLargeCta": "مشاهدة خدماتنا ←",
-    "cardDetailCta": "التفاصيل ←",
+    "cardLargeCta": "مشاهدة خدماتنا",
+    "cardDetailCta": "التفاصيل",
     "partners": [
       { "name": "Genesys", "cert": "Genesys Cloud CX Certified Professional" },
       { "name": "AWS", "cert": "AWS Connect Deployment Specialist" },

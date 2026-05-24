@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface ExpertiseItem {
@@ -79,9 +80,10 @@ export function ExpertisesHome() {
 
           <a
             href="/services"
-            className="text-sm font-medium text-accent hover:text-accent-light transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors"
           >
             {t("cardLargeCta")}
+            <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" strokeWidth={2} />
           </a>
         </motion.div>
 
@@ -104,9 +106,10 @@ export function ExpertisesHome() {
               </p>
               <a
                 href={ITEM_HREFS[i]}
-                className="text-sm font-medium text-accent hover:text-accent-light transition-colors mt-auto"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors mt-auto"
               >
                 {t("cardDetailCta")}
+                <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" strokeWidth={2} />
               </a>
             </motion.div>
           ))}

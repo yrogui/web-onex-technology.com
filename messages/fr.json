@@ -83,8 +83,8 @@
     "cardLargeEyebrow": "CERTIFICATIONS ÉDITEURS",
     "cardLargeTitle": "Spécialistes CCaaS & Expérience Client",
     "cardLargeDesc": "Nous ne faisons pas de l'ERP, ni du BI, ni du développement web. Nous faisons du CCaaS. Du CX. Point. Mieux vaut être excellent sur un domaine que médiocre sur dix.",
-    "cardLargeCta": "Voir nos services →",
-    "cardDetailCta": "Détail →",
+    "cardLargeCta": "Voir nos services",
+    "cardDetailCta": "Détail",
     "partners": [
       { "name": "Genesys", "cert": "Genesys Cloud CX Certified Professional" },
       { "name": "AWS", "cert": "AWS Connect Deployment Specialist" },
