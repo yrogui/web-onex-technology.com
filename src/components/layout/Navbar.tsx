@@ -68,27 +68,14 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
         <div className="absolute right-0 mt-2 w-44 rounded-sm border border-smoke/40 bg-paper shadow-md py-1 z-50">
           {LANGUAGES.map((lang) => {
             const isCurrent = lang.code === locale;
-            const isDisabled = lang.code === "ar";
             return (
               <button
                 key={lang.code}
-                disabled={isDisabled}
-                onClick={() => !isDisabled && changeLocale(lang.code)}
-                className={cn(
-                  "w-full text-left px-4 py-2 text-sm flex items-center justify-between transition-colors",
-                  isDisabled
-                    ? "text-graphite/50 cursor-not-allowed"
-                    : "text-ink hover:bg-mist cursor-pointer"
-                )}
-                title={isDisabled ? t("langComingSoon") : undefined}
+                onClick={() => changeLocale(lang.code)}
+                className="w-full text-left px-4 py-2 text-sm flex items-center justify-between transition-colors text-ink hover:bg-mist cursor-pointer"
               >
                 <span className={isCurrent ? "font-semibold" : ""}>{lang.label}</span>
-                {isDisabled && (
-                  <span className="text-[10px] text-graphite/50 italic tracking-wide">
-                    {t("langComingSoonTag")}
-                  </span>
-                )}
-                {isCurrent && !isDisabled && (
+                {isCurrent && (
                   <span className="text-xs" style={{ color: "#D4803B" }}>●</span>
                 )}
               </button>

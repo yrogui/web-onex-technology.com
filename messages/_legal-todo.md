@@ -25,6 +25,20 @@ The site is operated from Morocco; GDPR applicability should be confirmed with c
 First (and only) mention of CNIL in EN: translated as "CNIL (French data protection authority)".
 This appears in `leadMagnet.rgpdLabel`.
 
+## AR fusha legal review (messages/ar.json)
+
+> **AR fusha review by native speaker recommended before legal reliance.**
+
+The following namespaces in `messages/ar.json` contain legal language translated to Modern
+Standard Arabic (fusha). They should be reviewed by an Arabic-speaking legal professional
+before the AR locale is used in regulated contexts.
+
+| Namespace | Notes |
+|-----------|-------|
+| `mentionsLegales` | Full legal notice translated to AR fusha. References to Moroccan courts and legislation. Art. L.335-2 of French IP code omitted from AR (as in EN); Moroccan equivalent citations not added. |
+| `politiqueConfidentialite` | RGPD translated as "اللائحة العامة لحماية البيانات". CNDP (Moroccan authority) referenced correctly. Dual-jurisdiction framing (MA + EU) should be verified. |
+| `politiqueCookies` | References to CNIL in AR context — confirm relevance for Moroccan users. |
+
 ## Contact form select values (NOT translated — backend dependency)
 
 The following select option `value` fields in `contactPage` were intentionally kept

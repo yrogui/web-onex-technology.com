@@ -33,6 +33,7 @@ const config: Config = {
         sans:    ["Geist", "system-ui", "sans-serif"],
         display: ["Fraunces", "Georgia", "serif"],
         mono:    ["Geist Mono", "Consolas", "monospace"],
+        arabic:  ["Tajawal", "system-ui", "sans-serif"],
       },
     },
   },

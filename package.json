@@ -16,6 +16,7 @@
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/geist": "^5.2.8",
     "@fontsource/geist-mono": "^5.2.7",
+    "@fontsource/tajawal": "^5.2.7",
     "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",

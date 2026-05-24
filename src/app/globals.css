@@ -112,6 +112,47 @@ select:focus {
   }
 }
 
+/* ── RTL — Arabic locale ─────────────────────────────────────────────────── */
+
+/* All headings and display text use Tajawal on RTL */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] .font-display {
+  font-family: "Tajawal", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Italic → bold + accent (Arabic has no italic typographic tradition) */
+[dir="rtl"] em.italic {
+  font-style: normal;
+  font-weight: 800;
+  color: #D4803B;
+}
+
+/* Reverse flex row direction for RTL layouts */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Text alignment */
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+
+/* Border sides: flip left/right for RTL */
+[dir="rtl"] .border-l { border-left: none; border-right-width: var(--tw-border-width, 1px); }
+[dir="rtl"] .border-r { border-right: none; border-left-width: var(--tw-border-width, 1px); }
+
+/* Fix chat window position for RTL */
+[dir="rtl"] .chat-window-responsive {
+  right: auto !important;
+  left: 16px !important;
+}
+
 /* Respect des préférences utilisateur */
 @media (prefers-reduced-motion: reduce) {
   *,

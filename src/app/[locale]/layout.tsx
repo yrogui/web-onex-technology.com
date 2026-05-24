@@ -13,6 +13,11 @@ import "@fontsource/fraunces/600.css";
 import "@fontsource/fraunces/500-italic.css";
 import "@fontsource/geist-mono/400.css";
 import "@fontsource/geist-mono/500.css";
+import "@fontsource/tajawal/300.css";
+import "@fontsource/tajawal/400.css";
+import "@fontsource/tajawal/500.css";
+import "@fontsource/tajawal/700.css";
+import "@fontsource/tajawal/800.css";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -117,7 +122,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning className="scroll-smooth">
-      <body className="font-sans antialiased">
+      <body className={`${locale === "ar" ? "font-arabic" : "font-sans"} antialiased`}>
         <SchemaOrg />
         <ThemeProvider
           attribute="class"

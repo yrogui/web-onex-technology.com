@@ -3,7 +3,7 @@ import { useState, FormEvent } from "react";
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 const inputClasses =
   "w-full px-4 py-3 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm text-sm";
@@ -20,6 +20,7 @@ export function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const t = useTranslations("contactPage");
   const tc = useTranslations("contact");
+  const locale = useLocale();
 
   const typeBesoinOpts = t.raw("typeBesoinOpts") as SelectOpt[];
   const tailleOpts = t.raw("tailleOpts") as SelectOpt[];
@@ -156,28 +157,30 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-10"
           >
-            {/* Calendly */}
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
-                {t("calendlyEyebrow")}
-              </p>
-              <h2 className="font-display font-medium text-2xl md:text-3xl text-ink dark:text-paper mb-6 tracking-[-0.01em]">
-                {t("calendlyTitle")}
-              </h2>
-              <div className="rounded-sm overflow-hidden border border-smoke/30 dark:border-charcoal">
-                <iframe
-                  src="https://calendly.com/yrogui/30min?embed_domain=onex-technology.com&embed_type=Inline&hide_gdpr_banner=1"
-                  width="100%"
-                  height="580"
-                  frameBorder="0"
-                  title={t("calendlyAriaLabel")}
-                  loading="lazy"
-                />
+            {/* Calendly — hidden on AR locale */}
+            {locale !== "ar" && (
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
+                  {t("calendlyEyebrow")}
+                </p>
+                <h2 className="font-display font-medium text-2xl md:text-3xl text-ink dark:text-paper mb-6 tracking-[-0.01em]">
+                  {t("calendlyTitle")}
+                </h2>
+                <div className="rounded-sm overflow-hidden border border-smoke/30 dark:border-charcoal">
+                  <iframe
+                    src="https://calendly.com/yrogui/30min?embed_domain=onex-technology.com&embed_type=Inline&hide_gdpr_banner=1"
+                    width="100%"
+                    height="580"
+                    frameBorder="0"
+                    title={t("calendlyAriaLabel")}
+                    loading="lazy"
+                  />
+                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-graphite/60 dark:text-smoke/40 mt-3 text-center">
+                  {t("calendlyCaption")}
+                </p>
               </div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-graphite/60 dark:text-smoke/40 mt-3 text-center">
-                {t("calendlyCaption")}
-              </p>
-            </div>
+            )}
 
             {/* Coordonnées */}
             <div className="pt-2 border-t border-smoke/30 dark:border-charcoal">
