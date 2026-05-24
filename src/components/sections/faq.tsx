@@ -4,12 +4,34 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { faqData, faqSchema } from "@/data/faq";
+
+interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+}
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const t = useTranslations("services");
   const tc = useTranslations("common");
+  const tf = useTranslations("faq");
+
+  const faqItems = tf.raw("items") as FAQItem[];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer.replace(/\*\*/g, "").replace(/\n/g, " ").trim(),
+      },
+    })),
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -49,7 +71,7 @@ export function FAQ() {
 
           {/* FAQ Items */}
           <div className="space-y-4">
-            {faqData.map((faq, index) => (
+            {faqItems.map((faq, index) => (
               <motion.div
                 key={faq.id}
                 initial={{ opacity: 0, y: 20 }}

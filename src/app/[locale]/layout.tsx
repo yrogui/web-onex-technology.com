@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -31,34 +32,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const isDefault = locale === "fr";
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
     metadataBase: new URL(BASE_URL),
     title: {
-      default: "One—X Technology — Partenaire CCaaS et CX au Maroc",
-      template: "%s | One—X Technology",
+      default: t("title"),
+      template: `%s | One—X Technology`,
     },
     verification: {
       google: "Jf2GBTTeHKDGWJa-G_wu0Q88SvxzTAHZ9uueii96ZjA",
     },
-    description:
-      "Cabinet CCaaS & CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya sans downtime. Partenaire ExpertiaX. Architectes seniors certifiés basés à Casablanca.",
-    keywords: [
-      "migration ccaas maroc",
-      "genesys cloud maroc",
-      "centre de contact cloud maroc",
-      "aws connect maroc",
-      "migration centre d'appels casablanca",
-      "expert ccaas maroc",
-      "optimisation expérience client maroc",
-      "migration genesys cloud",
-      "consultant centre de contact maroc",
-      "plateforme ccaas sans downtime",
-      "avaya cloud maroc",
-      "architecte ccaas maroc",
-      "migration telephonie cloud maroc",
-      "integration crm genesys maroc",
-    ],
+    description: t("description"),
+    keywords: t.raw("keywords") as string[],
     authors: [{ name: "One-X Technology", url: BASE_URL }],
     creator: "One-X Technology",
     publisher: "One-X Technology",
@@ -87,23 +73,21 @@ export async function generateMetadata({
       locale: locale === "ar" ? "ar_MA" : locale === "en" ? "en_US" : "fr_FR",
       url: isDefault ? BASE_URL : `${BASE_URL}/${locale}`,
       siteName: "One-X Technology",
-      title: "One—X Technology — Partenaire CCaaS et CX au Maroc",
-      description:
-        "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
+      title: t("ogTitle"),
+      description: t("ogDescription"),
       images: [
         {
           url: "/images/og-image.png",
           width: 1200,
           height: 630,
-          alt: "One-X Technology — Partenaire CCaaS et CX au Maroc",
+          alt: t("ogImageAlt"),
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "One—X Technology — Partenaire CCaaS et CX au Maroc",
-      description:
-        "Cabinet spécialisé CCaaS et CX au Maroc. Migration Genesys Cloud, AWS Connect, Avaya. Architecture cloud, pilotage opérationnel, delivery senior bilingue depuis Casablanca. Partenaire officiel ExpertiaX.",
+      title: t("twitterTitle"),
+      description: t("twitterDescription"),
       images: ["/images/og-image.png"],
     },
     category: "technology",
