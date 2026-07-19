@@ -1,5 +1,5 @@
 "use client";
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useRef } from "react";
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
@@ -16,8 +16,19 @@ interface SelectOpt {
   label: string;
 }
 
+interface FormErrors {
+  nom?: string;
+  entreprise?: string;
+  email?: string;
+  typeBesoin?: string;
+}
+
+const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
 export function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<FormErrors>({});
+  const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("contactPage");
   const tc = useTranslations("contact");
   const locale = useLocale();
@@ -28,8 +39,23 @@ export function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormStatus("sending");
     const fd = new FormData(e.currentTarget);
+    const newErrors: FormErrors = {};
+    const nom = (fd.get("nom") as string).trim();
+    const entreprise = (fd.get("entreprise") as string).trim();
+    const email = (fd.get("email") as string).trim();
+    const typeBesoin = fd.get("typeBesoin") as string;
+    if (!nom) newErrors.nom = t("errorFieldRequired");
+    if (!entreprise) newErrors.entreprise = t("errorFieldRequired");
+    if (!email) newErrors.email = t("errorFieldRequired");
+    else if (!EMAIL_RE.test(email)) newErrors.email = t("errorEmailInvalid");
+    if (!typeBesoin) newErrors.typeBesoin = t("errorFieldRequired");
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setErrors({});
+    setFormStatus("sending");
     try {
       const params = new URLSearchParams();
       params.append("source", "contact-qualification");
@@ -127,23 +153,33 @@ export function Contact() {
                 <p className="text-sm text-charcoal dark:text-smoke">{t("formSuccessDesc")}</p>
               </div>
             ) : (
-              <form className="space-y-4" onSubmit={handleSubmit} suppressHydrationWarning>
+              <form className="space-y-4" onSubmit={handleSubmit} noValidate suppressHydrationWarning ref={formRef}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" name="nom" placeholder={t("nomPlaceholder")} className={inputClasses} required />
-                  <input type="text" name="entreprise" placeholder={t("entreprisePlaceholder")} className={inputClasses} required />
+                  <div>
+                    <input type="text" name="nom" placeholder={t("nomPlaceholder")} className={`${inputClasses} ${errors.nom ? "border-[#A43B2E]" : ""}`} />
+                    {errors.nom && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.nom}</p>}
+                  </div>
+                  <div>
+                    <input type="text" name="entreprise" placeholder={t("entreprisePlaceholder")} className={`${inputClasses} ${errors.entreprise ? "border-[#A43B2E]" : ""}`} />
+                    {errors.entreprise && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.entreprise}</p>}
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="email" name="email" placeholder={t("emailPlaceholder")} className={inputClasses} required />
+                  <div>
+                    <input type="email" name="email" placeholder={t("emailPlaceholder")} className={`${inputClasses} ${errors.email ? "border-[#A43B2E]" : ""}`} />
+                    {errors.email && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.email}</p>}
+                  </div>
                   <input type="tel" name="telephone" placeholder={t("telPlaceholder")} className={inputClasses} />
                 </div>
 
                 <div className="relative">
-                  <select name="typeBesoin" className={selectClasses} required>
+                  <select name="typeBesoin" defaultValue="" className={`${selectClasses} ${errors.typeBesoin ? "border-[#A43B2E]" : ""}`}>
                     <option value="" disabled>{t("typeBesoinPlaceholder")}</option>
                     {typeBesoinOpts.map((o) => (
                       <option key={o.value} value={o.value}>{o.label}</option>
                     ))}
                   </select>
+                  {errors.typeBesoin && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.typeBesoin}</p>}
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -594,6 +594,8 @@
     "messagePlaceholder": "Décrivez brièvement votre contexte...",
     "confidentialite": "Données confidentielles. Aucun engagement de votre part.",
     "errorMsg": "Une erreur est survenue. Réessayez ou contactez-nous par email.",
+    "errorFieldRequired": "Ce champ est requis.",
+    "errorEmailInvalid": "Format d'email invalide.",
     "submitIdle": "Envoyer ma demande",
     "submitLoading": "Envoi en cours…",
     "calendlyEyebrow": "RÉSERVER UN CRÉNEAU",

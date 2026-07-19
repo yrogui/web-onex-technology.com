@@ -594,6 +594,8 @@
     "messagePlaceholder": "Briefly describe your context…",
     "confidentialite": "Confidential data. No commitment on your part.",
     "errorMsg": "An error occurred. Please retry or contact us by email.",
+    "errorFieldRequired": "This field is required.",
+    "errorEmailInvalid": "Invalid email format.",
     "submitIdle": "Send my request",
     "submitLoading": "Sending…",
     "calendlyEyebrow": "BOOK A SLOT",

@@ -594,6 +594,8 @@
     "messagePlaceholder": "اشرحوا سياقكم باختصار...",
     "confidentialite": "بيانات سرية. لا التزام من جانبكم.",
     "errorMsg": "حدث خطأ. أعيدوا المحاولة أو تواصلوا معنا عبر البريد الإلكتروني.",
+    "errorFieldRequired": "هذا الحقل مطلوب.",
+    "errorEmailInvalid": "صيغة البريد الإلكتروني غير صحيحة.",
     "submitIdle": "إرسال طلبي",
     "submitLoading": "جارٍ الإرسال…",
     "calendlyEyebrow": "حجز موعد",
