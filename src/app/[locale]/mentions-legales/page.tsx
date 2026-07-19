@@ -161,9 +161,6 @@ export default async function MentionsLegalesPage({ params }: { params: Promise<
                     {tc("email")}
                   </a>
                 </p>
-                <p>
-                  <strong className="text-ink dark:text-paper">{t("s7TelLabel")}</strong> {t("s7Tel")}
-                </p>
               </div>
             </section>
           </div>

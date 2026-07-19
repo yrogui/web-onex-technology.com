@@ -720,9 +720,7 @@
     "s6P2": "In the event of a dispute and in the absence of an amicable agreement, the dispute will be brought before the competent courts of Casablanca, Morocco.",
     "s7Title": "7. Contact",
     "s7P1": "For any question or information request regarding the site, or to report unlawful content or activities, users may contact the publisher at the following address:",
-    "s7EmailLabel": "Email:",
-    "s7TelLabel": "Phone:",
-    "s7Tel": "+212 5 22 XX XX XX"
+    "s7EmailLabel": "Email:"
   },
   "metadata": {
     "title": "One—X Technology — CCaaS & CX Partner in Morocco",
@@ -900,8 +898,6 @@
     "s11Title": "11. Contact & Complaints",
     "s11P1": "For any questions regarding this privacy policy or the exercise of your rights, please contact us:",
     "s11EmailL": "Email:",
-    "s11PhoneL": "Phone:",
-    "s11Phone": "+212 5 22 XX XX XX",
     "s11P2": "If you believe your rights have not been respected, you have the right to lodge a complaint with the Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP) in Morocco, or with the CNIL in France if you reside in the European Union."
   },
   "politiqueCookies": {

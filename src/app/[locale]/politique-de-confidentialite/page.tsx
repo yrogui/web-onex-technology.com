@@ -312,10 +312,6 @@ export default async function PolitiqueConfidentialitePage({
                     contact@onex-technology.com
                   </a>
                 </p>
-                <p>
-                  <strong className="text-ink dark:text-paper">{t("s11PhoneL")}</strong>{" "}
-                  {t("s11Phone")}
-                </p>
                 <p className="mt-6">{t("s11P2")}</p>
               </div>
             </section>
