@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
-  <rect width="180" height="180" rx="40" fill="#0F0F14"/>
-  <text x="90" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="600" font-size="72" fill="#F7F3EA">O</text>
-  <text x="90" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="600" font-size="72" fill="#F7F3EA" dx="36">X</text>
-  <text x="90" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="300" font-size="72" fill="#D4803B">—</text>
+  <rect width="180" height="180" rx="22" fill="#0F0F14"/>
+  <text x="30" y="118" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="90" fill="#F7F3EA">1</text>
+  <text x="88" y="118" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="90" fill="#F7F3EA">X</text>
+  <line x1="30" y1="140" x2="150" y2="140" stroke="#D4803B" stroke-width="8" stroke-linecap="round"/>
 </svg>
