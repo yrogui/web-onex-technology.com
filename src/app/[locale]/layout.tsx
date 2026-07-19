@@ -134,7 +134,7 @@ export default async function LocaleLayout({
             <SmoothScroll>
               <div className="flex flex-col min-h-screen bg-paper dark:bg-primary text-ink dark:text-paper transition-colors duration-700">
                 <Navbar />
-                <main className="flex-grow">{children}</main>
+                <main className="flex-grow pb-24 sm:pb-0">{children}</main>
                 <Footer />
                 <CookieConsent />
                 <ChatWidgetLoader />
