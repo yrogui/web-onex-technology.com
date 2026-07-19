@@ -239,6 +239,7 @@
     "microcopy": "Email professionnel requis · Zéro spam · Double confirmation",
     "rgpdLabel": "J'accepte que One-X Technology utilise mon adresse email pour m'envoyer la checklist demandée et, occasionnellement, des contenus liés aux programmes CCaaS. Désinscription à tout moment via le lien présent dans chaque email. Droits RGPD à",
     "rgpdPolitique": "politique de confidentialité",
+    "rgpdSeeOur": ". Voir notre ",
     "errorEmailRequired": "Veuillez saisir votre adresse email professionnelle.",
     "errorEmailInvalid": "Format d'email invalide.",
     "errorEmailPersonal": "Merci d'utiliser votre email professionnel (adresse personnelle non acceptée).",

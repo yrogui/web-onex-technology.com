@@ -239,6 +239,7 @@
     "microcopy": "بريد إلكتروني مهني مطلوب · بدون إزعاج · تأكيد مزدوج",
     "rgpdLabel": "أوافق على أن يستخدم One-X Technology عنوان بريدي الإلكتروني لإرسال قائمة التحقق المطلوبة وبشكل عرضي محتوى متعلق ببرامج CCaaS. يمكنني إلغاء الاشتراك في أي وقت عبر الرابط الموجود في كل بريد إلكتروني. حقوق الخصوصية في",
     "rgpdPolitique": "سياسة الخصوصية",
+    "rgpdSeeOur": ". اطّلع على ",
     "errorEmailRequired": "يرجى إدخال عنوان بريدك الإلكتروني المهني.",
     "errorEmailInvalid": "صيغة البريد الإلكتروني غير صحيحة.",
     "errorEmailPersonal": "يرجى استخدام بريدك الإلكتروني المهني (العناوين الشخصية غير مقبولة).",
@@ -294,7 +295,7 @@
         "author": "Arvind T.",
         "role": "Sr. CSM Account Manager",
         "company": "Cloud & AI Strategy",
-        "context": "Partenariat Avaya international (2015)"
+        "context": "شراكة Avaya الدولية (2015)"
       }
     ]
   },

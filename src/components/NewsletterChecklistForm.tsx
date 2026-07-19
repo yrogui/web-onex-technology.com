@@ -274,7 +274,7 @@ export function NewsletterChecklistForm({
             >
               {tc("email")}
             </a>
-            {". Voir notre "}
+            {t("rgpdSeeOur")}
             <a
               href="/politique-de-confidentialite"
               className="underline underline-offset-2 transition-colors"
