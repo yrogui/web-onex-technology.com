@@ -25,7 +25,7 @@ export function Logo({ variant = "dark", size = "md", href = "/" }: LogoProps) {
     variant === "dark" ? "text-ink dark:text-paper" : "text-paper";
   const accentColor =
     variant === "dark"
-      ? "text-accent dark:text-accent-light"
+      ? "text-accent"
       : "text-accent-light";
   const subColor =
     variant === "dark"
