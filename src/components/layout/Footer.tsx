@@ -20,11 +20,11 @@ export function Footer() {
   ];
 
   const col2Links = [
-    { label: t("col2Genesys"), href: "/#expertises" },
-    { label: t("col2Aws"), href: "/#expertises" },
-    { label: t("col2Avaya"), href: "/#expertises" },
-    { label: t("col2Cx"), href: "/#expertises" },
-    { label: t("col2Voicebot"), href: "/#expertises" },
+    { label: t("col2Genesys"), href: "/#genesys" },
+    { label: t("col2Aws"), href: "/#aws-connect" },
+    { label: t("col2Avaya"), href: "/#avaya" },
+    { label: t("col2Cx"), href: "/#optimisation-cx" },
+    { label: t("col2Voicebot"), href: "/#voicebot" },
   ];
 
   const col3Links = [

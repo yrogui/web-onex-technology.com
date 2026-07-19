@@ -68,14 +68,19 @@ export function ExpertisesHome() {
 
           {/* Tags partenaires */}
           <div className="flex flex-wrap gap-3 mb-8">
-            {partners.map((p) => (
-              <span
-                key={p.name}
-                className="px-4 py-2 bg-primary border border-charcoal rounded-sm text-sm font-medium text-smoke"
-              >
-                {p.name} · {p.cert}
-              </span>
-            ))}
+            {partners.map((p) => {
+              const anchorId = p.name === "Genesys" ? "genesys" : p.name === "AWS" ? "aws-connect" : "avaya";
+              return (
+                <span
+                  key={p.name}
+                  id={anchorId}
+                  style={{ scrollMarginTop: "88px" }}
+                  className="px-4 py-2 bg-primary border border-charcoal rounded-sm text-sm font-medium text-smoke"
+                >
+                  {p.name} · {p.cert}
+                </span>
+              );
+            })}
           </div>
 
           <a
@@ -89,9 +94,17 @@ export function ExpertisesHome() {
 
         {/* 4 cartes compactes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {items.map((item, i) => (
+          {items.map((item, i) => {
+            const anchorMap: Record<string, string> = {
+              "cx-optimization": "optimisation-cx",
+              "ai-conversational": "voicebot",
+            };
+            const anchorId = anchorMap[item.id];
+            return (
             <motion.div
               key={item.id}
+              id={anchorId}
+              style={anchorId ? { scrollMarginTop: "88px" } : undefined}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -112,7 +125,8 @@ export function ExpertisesHome() {
                 <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" strokeWidth={2} />
               </a>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
