@@ -145,9 +145,9 @@ export function Navbar() {
             <Link
               href="/contact"
               className={cn(
-                "text-sm font-semibold text-accent hover:text-accent/80 transition-colors",
+                "text-sm font-semibold text-accent dark:text-accent-light hover:text-accent/80 dark:hover:text-accent-light/80 transition-colors",
                 pathname === "/contact"
-                  ? "underline underline-offset-4 decoration-accent"
+                  ? "underline underline-offset-4 decoration-accent dark:decoration-accent-light"
                   : ""
               )}
             >
