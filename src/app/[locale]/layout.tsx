@@ -119,9 +119,20 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const dir = locale === "ar" ? "rtl" : "ltr";
+  const isAr = locale === "ar";
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning className="scroll-smooth">
+      {isAr && (
+        <>
+          <link rel="preload" as="font" type="font/woff2"
+            href="/_next/static/media/tajawal-arabic-400-normal.912112bd.woff2"
+            crossOrigin="anonymous" />
+          <link rel="preload" as="font" type="font/woff2"
+            href="/_next/static/media/tajawal-arabic-700-normal.1703e830.woff2"
+            crossOrigin="anonymous" />
+        </>
+      )}
       <body className={`${locale === "ar" ? "font-arabic" : "font-sans"} antialiased`}>
         <SchemaOrg />
         <ThemeProvider
