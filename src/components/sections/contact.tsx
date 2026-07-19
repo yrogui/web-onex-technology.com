@@ -263,10 +263,22 @@ export function Contact() {
           )}
         </div>
 
-        {/* AR: coordonnées sous le formulaire */}
+        {/* AR: coordonnées + alternative RDV sous le formulaire */}
         {locale === "ar" && (
-          <div className="max-w-2xl mx-auto mt-12">
+          <div className="max-w-2xl mx-auto mt-12 space-y-8">
             {coordsBlock}
+            <div className="pt-6 border-t border-smoke/30 dark:border-charcoal">
+              <p className="text-sm text-charcoal dark:text-smoke leading-[1.65]">
+                {t("arCalendlyAlt")}{" "}
+                <a
+                  href={`mailto:${tc("email")}`}
+                  className="font-medium transition-colors"
+                  style={{ color: "#D4803B" }}
+                >
+                  {tc("email")}
+                </a>
+              </p>
+            </div>
           </div>
         )}
       </div>
