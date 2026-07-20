@@ -82,18 +82,10 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
     setError(null);
 
     try {
-      console.log("🔵 Envoi de la requête à n8n...", { userMessage });
-
       const response = await fetch(N8N_CONFIG.webhookUrl, {
         method: N8N_CONFIG.method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ searchQuery: userMessage }),
-      });
-
-      console.log("🟢 Réponse reçue de n8n:", {
-        status: response.status,
-        statusText: response.statusText,
-        ok: response.ok,
       });
 
       if (!response.ok) {
@@ -101,11 +93,8 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
       }
 
       const data = await response.json();
-      console.log("📦 Données JSON reçues:", data);
-
       const aiResponse =
         data.output || data.response || data.message || JSON.stringify(data);
-      console.log("💬 Réponse AI extraite:", aiResponse);
 
       const newAssistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -115,7 +104,6 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
       };
 
       setMessages((prev) => [...prev, newAssistantMessage]);
-      console.log("✅ Message assistant ajouté");
     } catch (err) {
       console.error("Erreur lors de l'envoi du message:", err);
       setError(
