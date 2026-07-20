@@ -1,7 +1,16 @@
 "use client";
 
-function formatMessage(text: string): string {
+function escapeHtml(text: string): string {
   return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function formatMessage(text: string): string {
+  return escapeHtml(text)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline font-medium">$1</a>');
 }
@@ -231,7 +240,7 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
                 >
                   <p
                     className="text-sm leading-relaxed whitespace-pre-wrap"
-                    dangerouslySetInnerHTML={{ __html: message.role === "assistant" ? formatMessage(message.content) : message.content }}
+                    dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
                   />
                   <p
                     className={`text-xs mt-2 ${
