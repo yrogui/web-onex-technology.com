@@ -155,35 +155,43 @@ export function Contact() {
               <form className="space-y-4" onSubmit={handleSubmit} noValidate suppressHydrationWarning>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <input type="text" name="nom" placeholder={t("nomPlaceholder")} className={`${inputClasses} ${errors.nom ? "border-[#A43B2E]" : ""}`} />
-                    {errors.nom && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.nom}</p>}
+                    <label htmlFor="contact-nom" className="sr-only">{t("nomPlaceholder")}</label>
+                    <input id="contact-nom" type="text" name="nom" placeholder={t("nomPlaceholder")} className={`${inputClasses} ${errors.nom ? "border-[#A43B2E]" : ""}`} aria-invalid={!!errors.nom} />
+                    {errors.nom && <p role="alert" className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.nom}</p>}
                   </div>
                   <div>
-                    <input type="text" name="entreprise" placeholder={t("entreprisePlaceholder")} className={`${inputClasses} ${errors.entreprise ? "border-[#A43B2E]" : ""}`} />
-                    {errors.entreprise && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.entreprise}</p>}
+                    <label htmlFor="contact-entreprise" className="sr-only">{t("entreprisePlaceholder")}</label>
+                    <input id="contact-entreprise" type="text" name="entreprise" placeholder={t("entreprisePlaceholder")} className={`${inputClasses} ${errors.entreprise ? "border-[#A43B2E]" : ""}`} aria-invalid={!!errors.entreprise} />
+                    {errors.entreprise && <p role="alert" className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.entreprise}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <input type="email" name="email" placeholder={t("emailPlaceholder")} className={`${inputClasses} ${errors.email ? "border-[#A43B2E]" : ""}`} />
-                    {errors.email && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.email}</p>}
+                    <label htmlFor="contact-email" className="sr-only">{t("emailPlaceholder")}</label>
+                    <input id="contact-email" type="email" name="email" placeholder={t("emailPlaceholder")} className={`${inputClasses} ${errors.email ? "border-[#A43B2E]" : ""}`} aria-invalid={!!errors.email} />
+                    {errors.email && <p role="alert" className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.email}</p>}
                   </div>
-                  <input type="tel" name="telephone" placeholder={t("telPlaceholder")} className={inputClasses} />
+                  <div>
+                    <label htmlFor="contact-tel" className="sr-only">{t("telPlaceholder")}</label>
+                    <input id="contact-tel" type="tel" name="telephone" placeholder={t("telPlaceholder")} className={inputClasses} />
+                  </div>
                 </div>
 
                 <div className="relative">
-                  <select name="typeBesoin" defaultValue="" className={`${selectClasses} ${errors.typeBesoin ? "border-[#A43B2E]" : ""}`}>
+                  <label htmlFor="contact-type" className="sr-only">{t("typeBesoinPlaceholder")}</label>
+                  <select id="contact-type" name="typeBesoin" defaultValue="" className={`${selectClasses} ${errors.typeBesoin ? "border-[#A43B2E]" : ""}`} aria-invalid={!!errors.typeBesoin}>
                     <option value="" disabled>{t("typeBesoinPlaceholder")}</option>
                     {typeBesoinOpts.map((o) => (
                       <option key={o.value} value={o.value}>{o.label}</option>
                     ))}
                   </select>
-                  {errors.typeBesoin && <p className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.typeBesoin}</p>}
+                  {errors.typeBesoin && <p role="alert" className="mt-1 text-[13px] font-medium" style={{ color: "#A43B2E" }}>{errors.typeBesoin}</p>}
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="relative">
-                    <select name="tailleCentre" defaultValue="" className={selectClasses}>
+                    <label htmlFor="contact-taille" className="sr-only">{t("taillePlaceholder")}</label>
+                    <select id="contact-taille" name="tailleCentre" defaultValue="" className={selectClasses}>
                       <option value="" disabled>{t("taillePlaceholder")}</option>
                       {tailleOpts.map((o) => (
                         <option key={o.value} value={o.value}>{o.label}</option>
@@ -192,7 +200,8 @@ export function Contact() {
                   </div>
 
                   <div className="relative">
-                    <select name="delai" defaultValue="" className={selectClasses}>
+                    <label htmlFor="contact-delai" className="sr-only">{t("delaiPlaceholder")}</label>
+                    <select id="contact-delai" name="delai" defaultValue="" className={selectClasses}>
                       <option value="" disabled>{t("delaiPlaceholder")}</option>
                       {delaiOpts.map((o) => (
                         <option key={o.value} value={o.value}>{o.label}</option>
@@ -201,12 +210,16 @@ export function Contact() {
                   </div>
                 </div>
 
-                <textarea
-                  rows={4}
-                  name="message"
-                  placeholder={t("messagePlaceholder")}
-                  className={`${inputClasses} resize-none`}
-                />
+                <div>
+                  <label htmlFor="contact-message" className="sr-only">{t("messagePlaceholder")}</label>
+                  <textarea
+                    id="contact-message"
+                    rows={4}
+                    name="message"
+                    placeholder={t("messagePlaceholder")}
+                    className={`${inputClasses} resize-none`}
+                  />
+                </div>
 
                 <div className="pt-1">
                   <p className="text-xs text-graphite dark:text-smoke/70">{t("confidentialite")}</p>
