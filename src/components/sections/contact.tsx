@@ -1,5 +1,5 @@
 "use client";
-import { useState, FormEvent, useRef } from "react";
+import { useState, FormEvent } from "react";
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
@@ -28,7 +28,6 @@ const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 export function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errors, setErrors] = useState<FormErrors>({});
-  const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("contactPage");
   const tc = useTranslations("contact");
   const locale = useLocale();
@@ -153,7 +152,7 @@ export function Contact() {
                 <p className="text-sm text-charcoal dark:text-smoke">{t("formSuccessDesc")}</p>
               </div>
             ) : (
-              <form className="space-y-4" onSubmit={handleSubmit} noValidate suppressHydrationWarning ref={formRef}>
+              <form className="space-y-4" onSubmit={handleSubmit} noValidate suppressHydrationWarning>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <input type="text" name="nom" placeholder={t("nomPlaceholder")} className={`${inputClasses} ${errors.nom ? "border-[#A43B2E]" : ""}`} />
@@ -184,7 +183,7 @@ export function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="relative">
-                    <select name="tailleCentre" className={selectClasses}>
+                    <select name="tailleCentre" defaultValue="" className={selectClasses}>
                       <option value="" disabled>{t("taillePlaceholder")}</option>
                       {tailleOpts.map((o) => (
                         <option key={o.value} value={o.value}>{o.label}</option>
@@ -193,7 +192,7 @@ export function Contact() {
                   </div>
 
                   <div className="relative">
-                    <select name="delai" className={selectClasses}>
+                    <select name="delai" defaultValue="" className={selectClasses}>
                       <option value="" disabled>{t("delaiPlaceholder")}</option>
                       {delaiOpts.map((o) => (
                         <option key={o.value} value={o.value}>{o.label}</option>
