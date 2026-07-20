@@ -6,7 +6,7 @@ export function SchemaOrg() {
     description:
       "Cabinet de conseil et delivery spécialisé en transformation digitale, expérience client et solutions CCaaS au Maroc.",
     url: "https://onex-technology.com",
-    logo: "https://onex-technology.com/images/logo.png",
+    logo: "https://onex-technology.com/images/og-image.png",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Casablanca",
