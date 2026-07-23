@@ -17,13 +17,13 @@ export function Manifesto() {
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center"
         >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mb-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-smoke mb-6">
             {t("eyebrow")}
           </p>
           <h2 className="font-display font-medium text-4xl md:text-6xl text-paper leading-tight tracking-[-0.02em]">
             {t("titleBefore")} <em className="not-italic italic">{t("titleItalic")}</em> {t("titleAfter")}
           </h2>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite mt-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-smoke mt-8">
             {t("signature")}
           </p>
 
@@ -32,7 +32,7 @@ export function Manifesto() {
           </p>
           <ul className="mt-6 space-y-2 inline-block text-left">
             {items.map((item, i) => (
-              <li key={i} className="text-sm text-graphite flex items-start gap-3">
+              <li key={i} className="text-sm text-smoke flex items-start gap-3">
                 <span className="text-accent mt-0.5 shrink-0">—</span>
                 <span>{item}</span>
               </li>

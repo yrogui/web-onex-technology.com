@@ -72,8 +72,19 @@
     ]
   },
   "pavesSectoriels": {
-    "eyebrow": "THEY TRUST US",
-    "sectors": ["BANKING", "INSURANCE", "TELCO", "TOURISM", "RETAIL"]
+    "eyebrow": "INDUSTRIES SERVED",
+    "sectors": {
+      "luxe": "LUXURY & COSMETICS",
+      "banque": "BANKING & FINANCE",
+      "assurance": "INSURANCE",
+      "industrie": "INDUSTRY & ENERGY",
+      "distribution": "B2B DISTRIBUTION",
+      "relationclient": "CUSTOMER SERVICE & BPO",
+      "transport": "PREMIUM TRANSPORT",
+      "hotellerie": "PREMIUM HOSPITALITY",
+      "education": "EDUCATION & TRAINING",
+      "public": "PUBLIC SECTOR & SECURITY"
+    }
   },
   "expertises": {
     "eyebrow": "TOTAL FOCUS: CCAAS & CUSTOMER EXPERIENCE",
@@ -82,7 +93,7 @@
     "titleAfter": ".",
     "cardLargeEyebrow": "VENDOR CERTIFICATIONS",
     "cardLargeTitle": "CCaaS & Customer Experience Specialists",
-    "cardLargeDesc": "We don't do ERP, BI or web development. We do CCaaS. CX. Full stop. Better to excel in one domain than be mediocre across ten.",
+    "cardLargeDesc": "CCaaS and CX are our sole focus. That specialization is your guarantee: depth of expertise, field-proven insight, zero dilution.",
     "cardLargeCta": "View our services",
     "cardDetailCta": "Details",
     "partners": [

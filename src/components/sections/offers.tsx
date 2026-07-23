@@ -85,7 +85,7 @@ export function Offers() {
                   {offer.price}
                 </div>
                 {offer.priceEur && (
-                  <p className="text-sm text-graphite mt-1">{offer.priceEur}</p>
+                  <p className="text-sm text-graphite dark:text-smoke mt-1">{offer.priceEur}</p>
                 )}
                 <p className="text-sm text-graphite dark:text-smoke">{offer.priceDetail}</p>
               </div>

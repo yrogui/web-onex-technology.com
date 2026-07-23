@@ -80,6 +80,55 @@ select:focus {
   color-scheme: dark;
 }
 
+/* ── Sector Marquee ──────────────────────────────────────────────────────── */
+
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+[dir="rtl"] .marquee-track {
+  animation-direction: reverse;
+}
+
+@media (max-width: 768px) {
+  .marquee-track {
+    animation-duration: 30s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-container {
+    overflow: visible !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+  .marquee-track {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: auto !important;
+    animation: none !important;
+  }
+  .marquee-duplicate {
+    display: none !important;
+  }
+}
+
 /* ── Chat Widget ─────────────────────────────────────────────────────────── */
 
 /* Pulse ring sur le bouton toggle (Safran Doré) */

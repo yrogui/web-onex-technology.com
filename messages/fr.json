@@ -72,8 +72,19 @@
     ]
   },
   "pavesSectoriels": {
-    "eyebrow": "ILS NOUS FONT CONFIANCE",
-    "sectors": ["BANQUE", "ASSURANCE", "TELCO", "TOURISME", "RETAIL"]
+    "eyebrow": "SECTEURS ACCOMPAGNÉS",
+    "sectors": {
+      "luxe": "LUXE & COSMÉTIQUE",
+      "banque": "BANQUE & FINANCE",
+      "assurance": "ASSURANCE & PRÉVOYANCE",
+      "industrie": "INDUSTRIE & ÉNERGIE",
+      "distribution": "DISTRIBUTION B2B",
+      "relationclient": "RELATION CLIENT & BPO",
+      "transport": "TRANSPORT PREMIUM",
+      "hotellerie": "HÔTELLERIE PREMIUM",
+      "education": "ÉDUCATION & FORMATION",
+      "public": "SECTEUR PUBLIC & SÉCURITÉ"
+    }
   },
   "expertises": {
     "eyebrow": "FOCUS TOTAL : CCAAS & EXPÉRIENCE CLIENT",
@@ -82,7 +93,7 @@
     "titleAfter": ".",
     "cardLargeEyebrow": "CERTIFICATIONS ÉDITEURS",
     "cardLargeTitle": "Spécialistes CCaaS & Expérience Client",
-    "cardLargeDesc": "Nous ne faisons pas de l'ERP, ni du BI, ni du développement web. Nous faisons du CCaaS. Du CX. Point. Mieux vaut être excellent sur un domaine que médiocre sur dix.",
+    "cardLargeDesc": "Le CCaaS et le CX sont notre unique métier. Cette spécialisation est votre garantie : profondeur d'expertise, retours terrain, zéro dilution.",
     "cardLargeCta": "Voir nos services",
     "cardDetailCta": "Détail",
     "partners": [

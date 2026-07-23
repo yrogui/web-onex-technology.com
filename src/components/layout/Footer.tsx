@@ -59,7 +59,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("ariaLinkedIn")}
-                  className="text-graphite hover:text-accent transition-colors"
+                  className="text-smoke hover:text-accent transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
@@ -68,7 +68,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("ariaTelegram")}
-                  className="text-graphite hover:text-accent transition-colors"
+                  className="text-smoke hover:text-accent transition-colors"
                 >
                   <Send className="h-5 w-5 rtl:scale-x-[-1]" />
                 </a>
@@ -77,14 +77,14 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("ariaWhatsApp")}
-                  className="text-graphite hover:text-accent transition-colors"
+                  className="text-smoke hover:text-accent transition-colors"
                 >
                   <MessageCircle className="h-5 w-5" />
                 </a>
                 <a
                   href={`mailto:${tc("email")}`}
                   aria-label={t("ariaEmail")}
-                  className="text-graphite hover:text-accent transition-colors"
+                  className="text-smoke hover:text-accent transition-colors"
                 >
                   <Mail className="h-5 w-5" />
                 </a>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Hero } from "@/components/sections/hero";
-import { PavesSectoriels } from "@/components/sections/paves-sectoriels";
+import { SectorMarquee } from "@/components/sections/sector-marquee";
 import { ExpertisesHome } from "@/components/sections/expertises-home";
 import { CasClientsHome } from "@/components/sections/cas-clients-home";
 import { Manifesto } from "@/components/sections/manifesto";
@@ -14,8 +14,8 @@ export default function Home() {
       {/* 1 — Hero (titre + sous-titre + 2 CTA + 4 KPIs + badge ExpertiaX) */}
       <Hero />
 
-      {/* 2 — Bandeau secteurs */}
-      <PavesSectoriels />
+      {/* 2 — Marquee secteurs */}
+      <SectorMarquee />
 
       {/* 3 — Expertises (1 carte large CCaaS + 4 compactes) */}
       <ExpertisesHome />
