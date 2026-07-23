@@ -31,9 +31,12 @@ const SECTORS: { id: string; Icon: FC<LucideProps> }[] = [
 
 function SectorCard({ Icon, label }: { Icon: FC<LucideProps>; label: string }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 w-[140px] h-[140px] md:w-[180px] md:h-[180px] bg-[#FAFAF7] border border-smoke rounded-[14px] shrink-0">
-      <Icon strokeWidth={1.5} className="w-8 h-8 text-charcoal" />
-      <span className="font-sans font-medium text-[11px] uppercase tracking-[0.1em] text-graphite text-center leading-tight px-3">
+    <div className="relative w-[140px] h-[140px] md:w-[180px] md:h-[180px] bg-[#FAFAF7] border border-smoke rounded-[14px] shrink-0 flex flex-col items-center justify-end pb-4 md:pb-5">
+      {/* Icon center anchored at 35% of card height */}
+      <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Icon strokeWidth={1.5} className="w-[70px] h-[70px] md:w-[90px] md:h-[90px] text-charcoal" />
+      </div>
+      <span className="relative font-sans font-medium text-[11px] uppercase tracking-[0.1em] text-graphite text-center leading-tight px-3">
         {label}
       </span>
     </div>
