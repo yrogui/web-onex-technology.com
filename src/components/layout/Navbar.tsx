@@ -87,7 +87,7 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
   );
 }
 
-const DARK_HERO_PATHS = ["/", "/services", "/cas-clients", "/a-propos", "/approche", "/contact"];
+const DARK_HERO_PATHS = ["/", "/services", "/cas-clients", "/a-propos", "/approche", "/contact", "/perspectives"];
 
 export function Navbar() {
   const pathname = usePathname();
@@ -114,6 +114,7 @@ export function Navbar() {
     { label: t("casClients"), href: "/cas-clients" },
     { label: t("aPropos"), href: "/a-propos" },
     { label: t("blog"), href: "/blog" },
+    { label: t("perspectives"), href: "/perspectives" },
   ];
 
   const notScrolledLogoVariant = hasDarkHero ? "light" : "dark";

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
+import { perspectives } from "@/data/perspectives";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,7 @@ const PAGES: { path: string; priority: number; changeFrequency: MetadataRoute.Si
   { path: "/a-propos",                                     priority: 0.8, changeFrequency: "monthly" },
   { path: "/approche",                                     priority: 0.8, changeFrequency: "monthly" },
   { path: "/blog",                                         priority: 0.7, changeFrequency: "weekly"  },
+  { path: "/perspectives",                                 priority: 0.8, changeFrequency: "weekly"  },
   { path: "/contact",                                      priority: 0.7, changeFrequency: "monthly" },
   { path: "/mentions-legales",                             priority: 0.3, changeFrequency: "yearly"  },
   { path: "/politique-de-confidentialite",                 priority: 0.3, changeFrequency: "yearly"  },
@@ -61,6 +63,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "yearly",
         priority: 0.6,
         alternates: { languages: alternatesFor(post.path) },
+      });
+    }
+  }
+
+  const publishedSlugs = [
+    ...new Set(
+      perspectives
+        .filter((p) => p.status === "published")
+        .map((p) => p.slug)
+    ),
+  ];
+  for (const slug of publishedSlugs) {
+    const path = `/perspectives/${slug}`;
+    for (const locale of routing.locales) {
+      entries.push({
+        url: pageUrl(locale, path),
+        lastModified: new Date(),
+        changeFrequency: "yearly",
+        priority: 0.7,
+        alternates: { languages: alternatesFor(path) },
       });
     }
   }

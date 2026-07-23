@@ -1,0 +1,90 @@
+[
+  {
+    "order": 1,
+    "discipline": "Migration CCaaS",
+    "angle": "Contre-pied",
+    "category": "MIGRATION",
+    "auteur": "workflow",
+    "slug": "migration-amazon-connect-maroc-nest-pas-une-migration-it",
+    "title_directeur": "Votre migration Amazon Connect au Maroc n'est pas un projet informatique.",
+    "these_imposee": "Les DSI marocains catégorisent les migrations CCaaS comme des projets IT. C'est une erreur de gouvernance qui explique 80% des dépassements. Une migration CCaaS réussie est un programme de transformation métier avec un composant technique — pas l'inverse. La thèse impose de démontrer pourquoi les migrations pilotées par la DSI sans sponsors métier forts échouent systématiquement, et comment recadrer la gouvernance dès le kick-off.",
+    "date": "27 JUILLET 2026"
+  },
+  {
+    "order": 2,
+    "discipline": "CX",
+    "angle": "Mythe à casser",
+    "category": "CX",
+    "auteur": "workflow",
+    "slug": "csat-85-cache-un-probleme-premier-contact",
+    "title_directeur": "Votre CSAT à 85 % cache un problème de premier contact.",
+    "these_imposee": "Le CSAT agrégé est la métrique CX la plus trompeuse des centres de contacts marocains. Un CSAT à 85% peut coexister avec un FCR inférieur à 60%, un taux de ré-appel élevé et une satisfaction client réelle dégradée. La thèse doit exposer pourquoi le CSAT agrégé masque les vraies frictions, quels indicateurs regarder en premier, et comment reconstruire un tableau de bord CX honnête pour un grand compte marocain.",
+    "date": "03 AOÛT 2026"
+  },
+  {
+    "order": 3,
+    "discipline": "IA",
+    "angle": "Contre-pied",
+    "category": "IA",
+    "auteur": "workflow",
+    "slug": "bot-vocal-revele-ce-que-agent-gere-mal",
+    "title_directeur": "Le bot vocal ne remplace pas votre agent — il révèle ce qu'il gère mal.",
+    "these_imposee": "Les projets Voice AI au Maroc sont vendus sur la réduction des effectifs. C'est un mauvais cadrage qui crée de la résistance interne et sous-exploite la vraie valeur du bot vocal. La thèse : un bot vocal bien déployé est un scanner de complexité du portefeuille de contacts, pas un substitut d'agent. Il révèle quels motifs de contact sont sous-gérés, mal scriptés ou surqualifiés — et permet de réallouer les agents vers la valeur. Démontrer avec des métriques concrètes.",
+    "date": "10 AOÛT 2026"
+  },
+  {
+    "order": 4,
+    "discipline": "Cloud",
+    "angle": "Cadre de décision",
+    "category": "CLOUD",
+    "auteur": "workflow",
+    "slug": "architecture-multi-cloud-centre-contacts-marocain-prematuree",
+    "title_directeur": "L'architecture multi-cloud pour un centre de contacts marocain est prématurée.",
+    "these_imposee": "Le multi-cloud est présenté comme la meilleure pratique par les éditeurs et les cabinets de conseil généraux. Pour un centre de contacts marocain en phase de transformation, c'est une complexité prématurée qui dilue l'effort de déploiement et multiplie les risques opérationnels. La thèse doit définir les conditions précises dans lesquelles le multi-cloud devient pertinent pour un grand compte marocain (taille, maturité cloud, équipe ops), et recommander un séquençage réaliste.",
+    "date": "17 AOÛT 2026"
+  },
+  {
+    "order": 5,
+    "discipline": "Data",
+    "angle": "Piège",
+    "category": "DATA",
+    "auteur": "workflow",
+    "slug": "donnees-interaction-centre-contacts-stockees-pas-exploitees",
+    "title_directeur": "Vos données d'interaction ne sont pas exploitées — elles sont stockées.",
+    "these_imposee": "Les centres de contacts marocains accumulent des téraoctets de données d'interaction (vocales, chat, email) sans en extraire de valeur analytique. Le piège : investir dans le stockage et la conformité sans investir dans l'exploitation. La thèse doit exposer les trois cas d'usage analytiques à ROI démontrable sur 90 jours (détection d'anomalies, prédiction de décrochage, optimisation des scripts), et le minimum viable analytique pour un centre de 50 agents.",
+    "date": "24 AOÛT 2026"
+  },
+  {
+    "order": 6,
+    "discipline": "Stratégie",
+    "angle": "Cadre de décision",
+    "category": "STRATEGIE",
+    "auteur": "workflow",
+    "slug": "roi-ccaas-12-mois-possible-pas-avec-nimporte-quel-scope",
+    "title_directeur": "Un ROI CCaaS en moins de 12 mois est possible — mais pas avec n'importe quel scope.",
+    "these_imposee": "Les DSI marocains demandent des business cases avec ROI en 12 mois mais approuvent des scopes qui en empêchent la réalisation. La thèse doit définir le scope CCaaS minimal qui permet un ROI mesurable en 12 mois pour un centre de contacts marocain de 100 à 500 agents : quels cas d'usage prioriser, quelles intégrations reporter, quels quick wins identifier en phase 1. Donner un cadre décisionnel actionnable, pas une liste de fonctionnalités.",
+    "date": "31 AOÛT 2026"
+  },
+  {
+    "order": 7,
+    "discipline": "CCaaS",
+    "angle": "Cadre de décision",
+    "category": "CCAAS",
+    "auteur": "workflow",
+    "slug": "genesys-cloud-vs-amazon-connect-question-nest-pas-plateforme",
+    "title_directeur": "Genesys Cloud vs Amazon Connect : la question n'est pas la plateforme.",
+    "these_imposee": "Les RFP CCaaS marocains organisent la compétition sur les fonctionnalités de la plateforme. C'est le mauvais critère de sélection. La vraie question est celle des capacités d'intégration avec les systèmes existants (CRM, ERP, legacy), de l'écosystème partenaire local, et de la feuille de route IA par rapport au plan de transformation. La thèse doit proposer un cadre de décision en 5 dimensions qui remplace les grilles fonctionnelles habituelles et identifie le vrai point de bascule Genesys vs Amazon Connect pour un grand compte marocain.",
+    "date": "07 SEPTEMBRE 2026"
+  },
+  {
+    "order": 8,
+    "discipline": "Migration CCaaS",
+    "angle": "Liste",
+    "category": "MIGRATION",
+    "auteur": "workflow",
+    "slug": "cinq-signaux-migration-ccaas-va-deraper",
+    "title_directeur": "Cinq signaux que votre migration CCaaS va déraper avant qu'elle ne démarre.",
+    "these_imposee": "Les dérapages de migration CCaaS sont prévisibles. Les équipes qui savent quoi chercher peuvent les éviter. La thèse doit identifier cinq signaux précis, observables dès la phase de kick-off, qui prédisent un dérapage : absence de sponsor métier C-level, périmètre fonctionnel non gelé au lancement, intégrations CRM sous-estimées, plan de conduite du changement non financé, équipe technique du client en sous-effectif. Pour chaque signal, proposer une action corrective concrète.",
+    "date": "14 SEPTEMBRE 2026"
+  }
+]
