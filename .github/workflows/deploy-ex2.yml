@@ -40,9 +40,43 @@ jobs:
           test -f out/index.html
 
       - name: Deploy to EX2 via scp
+        env:
+          EX2_HOST: ${{ secrets.EX2_HOST }}
+          EX2_PORT: ${{ secrets.EX2_PORT }}
+          EX2_USER: ${{ secrets.EX2_USER }}
+          EX2_PATH: ${{ secrets.EX2_PATH }}
+          EX2_SSH_KEY: ${{ secrets.EX2_SSH_KEY }}
         run: |
-          echo "${{ secrets.EX2_SSH_KEY }}" > /tmp/deploy_key
+          set -euo pipefail
+          echo "$EX2_SSH_KEY" > /tmp/deploy_key
           chmod 600 /tmp/deploy_key
-          ssh -o StrictHostKeyChecking=no -p ${{ secrets.EX2_PORT }} -i /tmp/deploy_key ${{ secrets.EX2_USER }}@${{ secrets.EX2_HOST }} "cd ${{ secrets.EX2_PATH }} && rm -rf _next _not-found 404 404.html index.html index.txt blog mentions-legales politique-cookies politique-de-confidentialite assets __next.* *.txt confirmer-inscription merci-checklist perspectives"
-          scp -o StrictHostKeyChecking=no -P ${{ secrets.EX2_PORT }} -i /tmp/deploy_key -r out/* ${{ secrets.EX2_USER }}@${{ secrets.EX2_HOST }}:${{ secrets.EX2_PATH }}/
-          rm -f /tmp/deploy_key
+          trap 'rm -f /tmp/deploy_key' EXIT
+
+          # Options SSH communes : accept-new (moins risqué que =no), timeouts, keepalive.
+          SSH_OPTS="-o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=4 -i /tmp/deploy_key -p $EX2_PORT"
+          SCP_OPTS="-o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=4 -i /tmp/deploy_key -P $EX2_PORT"
+
+          # Retry générique : 3 tentatives, backoff 10s/20s.
+          retry() {
+            local n=1 max=3 delay=10
+            until "$@"; do
+              if [ $n -ge $max ]; then
+                echo "::error::Échec après $max tentatives : $*"
+                return 1
+              fi
+              echo "Tentative $n/$max échouée, nouvel essai dans ${delay}s…"
+              sleep $delay; n=$((n+1)); delay=$((delay*2))
+            done
+          }
+
+          # Preflight : vérifie la connectivité AVANT de toucher au serveur.
+          if ! retry ssh $SSH_OPTS "$EX2_USER@$EX2_HOST" "echo ok" >/dev/null; then
+            echo "::error::Impossible de joindre $EX2_HOST:$EX2_PORT (timeout). Vérifier : secrets EX2_HOST/EX2_PORT, serveur up, et firewall cPanel/CSF autorisant l'IP du runner GitHub."
+            exit 1
+          fi
+
+          # Nettoyage ciblé (préserve .htaccess, cgi-bin, etc.).
+          retry ssh $SSH_OPTS "$EX2_USER@$EX2_HOST" "cd '$EX2_PATH' && rm -rf _next _not-found 404 404.html index.html index.txt blog mentions-legales politique-cookies politique-de-confidentialite assets __next.* *.txt confirmer-inscription merci-checklist perspectives"
+
+          # Upload.
+          retry scp $SCP_OPTS -r out/* "$EX2_USER@$EX2_HOST:$EX2_PATH/"

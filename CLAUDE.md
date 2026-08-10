@@ -33,8 +33,19 @@ AR = `dir="rtl"` + `font-arabic` (Tajawal). FR/EN = `font-sans` (Geist).
 
 ### Contenu blog
 Articles MDX dans `content/blog/*.mdx` (frontmatter : `title`, `excerpt`, `date`, `category`, `tags`, `published`, `featured`, `image`).  
-`src/lib/mdx.ts` gère parsing/compilation avec `gray-matter` + `next-mdx-remote/rsc` + rehype plugins (highlight, slug, autolink).  
-API route `src/app/api/blog/` expose create/publish pour CMS externe (n8n).
+`src/lib/mdx.ts` gère parsing/compilation avec `gray-matter` + `next-mdx-remote/rsc` + rehype plugins (highlight, slug, autolink).
+
+### Perspectives
+Contenu distinct du blog. Données dans `src/data/perspectives.json` (+ `perspectives-backlog.json`).  
+Type `Perspective` : `id`, `slug`, `title`, `excerpt`, `category`, `date`, `readTime`, `body` (HTML string), `status` (`draft`|`published`), `lang` (`fr`|`en`|`ar`).  
+Pas de fichiers MDX — le corps est du HTML inline dans le JSON.
+
+### API routes (dev only)
+`output: "export"` exclut les API routes de `out/` — elles ne fonctionnent pas en production.  
+Elles existent pour : `src/app/api/blog/` (create/publish via n8n), `src/app/api/n8n-proxy/` (proxy chat webhook), `src/app/api/assistant/` (chat, status, upload).
+
+### Pattern `_content.tsx`
+Pages avec contenu riche (a-propos, approche, cas-clients, contact, services) séparent la logique en deux fichiers : `page.tsx` (metadata + wrapper) + `_content.tsx` (JSX du contenu). Respecter ce pattern pour ces pages.
 
 ### Chat widget IA
 `src/components/chat/ChatWidgetLoader.tsx` — activé uniquement si `NEXT_PUBLIC_CHAT_ENABLED === "true"`.  
