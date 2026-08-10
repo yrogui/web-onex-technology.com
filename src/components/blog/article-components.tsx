@@ -56,7 +56,7 @@ function Strong({ children }: { children?: ReactNode }) {
 }
 
 function Em({ children }: { children?: ReactNode }) {
-  return <em className="font-display italic not-italic">{children}</em>;
+  return <em className="font-display italic">{children}</em>;
 }
 
 // ─── Links ───────────────────────────────────────────────────────────────────

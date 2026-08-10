@@ -24,10 +24,11 @@ export function ThemeToggle() {
         onClick={() => setTheme("light")}
         className={`relative z-10 p-2 rounded-sm transition-all duration-300 ${
           theme === "light"
-            ? "bg-accent text-white shadow-sm"
+            ? "bg-accent text-ink shadow-sm"
             : "text-ink/70 dark:text-paper/40 hover:text-ink dark:hover:text-paper"
         }`}
         aria-label="Mode clair"
+        aria-pressed={theme === "light"}
       >
         <Sun className="h-4 w-4" />
       </button>
@@ -35,10 +36,11 @@ export function ThemeToggle() {
         onClick={() => setTheme("dark")}
         className={`relative z-10 p-2 rounded-sm transition-all duration-300 ${
           theme === "dark"
-            ? "bg-accent text-white shadow-sm"
+            ? "bg-accent text-ink shadow-sm"
             : "text-ink/70 dark:text-paper/40 hover:text-ink dark:hover:text-paper"
         }`}
         aria-label="Mode sombre"
+        aria-pressed={theme === "dark"}
       >
         <Moon className="h-4 w-4" />
       </button>

@@ -329,6 +329,7 @@ function CookieCategoryRow({ title, description, enabled, required, requiredLabe
             checked={enabled}
             onChange={onChange}
             disabled={required}
+            aria-label={title}
             className="sr-only peer"
           />
           <div

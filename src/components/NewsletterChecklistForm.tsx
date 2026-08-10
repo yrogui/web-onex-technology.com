@@ -118,10 +118,10 @@ export function NewsletterChecklistForm({
       <div className={[
         "w-full max-w-xl mx-auto p-8 rounded-sm text-center",
         isFeatured
-          ? "bg-white border border-smoke/30"
+          ? "bg-paper border border-smoke/30"
           : "bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal",
       ].join(" ")}>
-        <CheckCircle className="h-10 w-10 mx-auto mb-4" style={{ color: "#3F7A5E" }} />
+        <CheckCircle className="h-10 w-10 mx-auto mb-4 text-success" />
         <h3 className={[
           "font-display font-medium text-2xl mb-3",
           isFeatured ? "text-ink" : "text-ink dark:text-paper",
@@ -190,12 +190,12 @@ export function NewsletterChecklistForm({
             aria-describedby={errors.email ? "email-error" : undefined}
             className={[
               "w-full pl-11 pr-4 py-3.5 text-[15px]",
-              "border focus:outline-none transition-colors rounded-sm",
+              "border transition-colors rounded-sm",
               isFeatured
-                ? "bg-white text-primary placeholder:text-graphite/60"
+                ? "bg-paper text-primary placeholder:text-graphite/60"
                 : "bg-paper dark:bg-primary text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50",
               errors.email
-                ? "border-[#A43B2E] focus:border-[#A43B2E]"
+                ? "border-error focus:border-error"
                 : isFeatured
                   ? "border-smoke focus:border-accent"
                   : "border-smoke/40 dark:border-charcoal focus:border-accent",
@@ -206,8 +206,7 @@ export function NewsletterChecklistForm({
           <p
             id="email-error"
             role="alert"
-            className="mt-1.5 flex items-start gap-1.5 text-[13px] font-medium"
-            style={{ color: "#A43B2E" }}
+            className="mt-1.5 flex items-start gap-1.5 text-[13px] font-medium text-error"
           >
             <AlertCircle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
             {errors.email}
@@ -227,6 +226,7 @@ export function NewsletterChecklistForm({
                 if (errors.rgpd) setErrors((prev) => ({ ...prev, rgpd: undefined }));
               }}
               aria-invalid={!!errors.rgpd}
+              aria-describedby={errors.rgpd ? "rgpd-error" : undefined}
               className="sr-only peer"
             />
             {/* Checkbox custom */}
@@ -238,10 +238,10 @@ export function NewsletterChecklistForm({
                   ? "bg-primary border-primary"
                   : errors.rgpd
                   ? isFeatured
-                    ? "border-[#A43B2E] bg-white"
-                    : "border-[#A43B2E] bg-paper dark:bg-primary"
+                    ? "border-error bg-paper"
+                    : "border-error bg-paper dark:bg-primary"
                   : isFeatured
-                    ? "border-charcoal bg-white"
+                    ? "border-charcoal bg-paper"
                     : "border-smoke dark:border-charcoal bg-paper dark:bg-primary",
               ].join(" ")}
             >
@@ -269,16 +269,14 @@ export function NewsletterChecklistForm({
             {t("rgpdLabel")}{" "}
             <a
               href={`mailto:${tc("email")}`}
-              className="underline underline-offset-2 transition-colors"
-              style={{ color: "#D4803B" }}
+              className="underline underline-offset-2 font-medium text-charcoal dark:text-accent-light hover:text-ink dark:hover:text-accent transition-colors"
             >
               {tc("email")}
             </a>
             {t("rgpdSeeOur")}
             <a
               href="/politique-de-confidentialite"
-              className="underline underline-offset-2 transition-colors"
-              style={{ color: "#D4803B" }}
+              className="underline underline-offset-2 font-medium text-charcoal dark:text-accent-light hover:text-ink dark:hover:text-accent transition-colors"
             >
               {t("rgpdPolitique")}
             </a>
@@ -287,9 +285,9 @@ export function NewsletterChecklistForm({
         </label>
         {errors.rgpd && (
           <p
+            id="rgpd-error"
             role="alert"
-            className="mt-1.5 ml-7 flex items-start gap-1.5 text-[13px] font-medium"
-            style={{ color: "#A43B2E" }}
+            className="mt-1.5 ml-7 flex items-start gap-1.5 text-[13px] font-medium text-error"
           >
             <AlertCircle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
             {errors.rgpd}
@@ -301,8 +299,7 @@ export function NewsletterChecklistForm({
       {state === "error" && errors.global && (
         <p
           role="alert"
-          className="flex items-start gap-2 text-[13px] font-medium p-3 border rounded-sm"
-          style={{ color: "#A43B2E", borderColor: "#A43B2E22", background: "#A43B2E08" }}
+          className="flex items-start gap-2 text-[13px] font-medium p-3 border rounded-sm text-error border-error/20 bg-error/5"
         >
           <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
           {errors.global}
@@ -313,13 +310,7 @@ export function NewsletterChecklistForm({
       <button
         type="submit"
         disabled={state === "loading"}
-        className="w-full flex items-center justify-center gap-2 py-4 px-8 text-[15px] font-medium tracking-wide transition-all duration-200 rounded-sm disabled:opacity-60 disabled:cursor-not-allowed"
-        style={{
-          background: "#0F0F14",
-          color: "#F7F3EA",
-        }}
-        onMouseEnter={(e) => { if (state !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#2B3038"; }}
-        onMouseLeave={(e) => { if (state !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#0F0F14"; }}
+        className="w-full flex items-center justify-center gap-2 py-4 px-8 text-[15px] font-medium tracking-wide rounded-sm transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed bg-primary text-paper hover:bg-charcoal dark:bg-paper dark:text-primary dark:hover:bg-mist"
       >
         {state === "loading" ? (
           <>

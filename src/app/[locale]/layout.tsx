@@ -144,8 +144,14 @@ export default async function LocaleLayout({
           <NextIntlClientProvider>
             <SmoothScroll>
               <div className="flex flex-col min-h-screen bg-paper dark:bg-primary text-ink dark:text-paper transition-colors duration-700">
+                <a
+                  href="#main-content"
+                  className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-paper"
+                >
+                  {isAr ? "تخطَّ إلى المحتوى" : locale === "en" ? "Skip to content" : "Aller au contenu"}
+                </a>
                 <Navbar />
-                <main className="flex-grow pb-24 sm:pb-0">{children}</main>
+                <main id="main-content" className="flex-grow pb-24 sm:pb-0">{children}</main>
                 <Footer />
                 <CookieConsent />
                 <ChatWidgetLoader />

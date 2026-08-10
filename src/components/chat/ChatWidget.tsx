@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { AnimatePresence } from "framer-motion";
 import { ChatToggle } from "./ChatToggle";
 import { ChatWindow } from "./ChatWindow";
 import { useChatWebhook } from "./useChatWebhook";
@@ -140,23 +139,21 @@ export function ChatWidget() {
   return (
     <>
       {/* Fenêtre chat */}
-      <AnimatePresence>
-        {isOpen && (
-          <ChatWindow
-            id="chat-window"
-            messages={messages}
-            input={input}
-            isLoading={isLoading}
-            hasUserMessaged={hasUserMessaged}
-            onClose={close}
-            onInputChange={setInput}
-            onSend={handleSend}
-            onQuickAction={handleQuickAction}
-            onSuggestedAction={handleSuggestedAction}
-            inputRef={inputRef}
-          />
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <ChatWindow
+          id="chat-window"
+          messages={messages}
+          input={input}
+          isLoading={isLoading}
+          hasUserMessaged={hasUserMessaged}
+          onClose={close}
+          onInputChange={setInput}
+          onSend={handleSend}
+          onQuickAction={handleQuickAction}
+          onSuggestedAction={handleSuggestedAction}
+          inputRef={inputRef}
+        />
+      )}
 
       {/* Bouton toggle */}
       <div

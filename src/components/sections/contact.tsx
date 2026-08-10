@@ -1,9 +1,9 @@
 "use client";
 import { useState, FormEvent } from "react";
 
-import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { Reveal } from "@/components/ui/Reveal";
 
 const inputClasses =
   "w-full px-4 py-3 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal text-ink dark:text-paper placeholder:text-graphite/50 dark:placeholder:text-smoke/50 focus:outline-none focus:border-accent transition-colors rounded-sm text-sm";
@@ -130,12 +130,7 @@ export function Contact() {
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className={locale === "ar" ? "max-w-2xl mx-auto" : "grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"}>
           {/* Colonne gauche — Formulaire */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <Reveal>
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
               {t("formEyebrow")}
             </p>
@@ -238,17 +233,11 @@ export function Contact() {
                 </button>
               </form>
             )}
-          </motion.div>
+          </Reveal>
 
           {/* Colonne droite — Calendly + Coordonnées (FR/EN only) */}
           {locale !== "ar" && (
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-10"
-            >
+            <Reveal className="space-y-10">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
                   {t("calendlyEyebrow")}
@@ -271,7 +260,7 @@ export function Contact() {
                 </p>
               </div>
               {coordsBlock}
-            </motion.div>
+            </Reveal>
           )}
         </div>
 

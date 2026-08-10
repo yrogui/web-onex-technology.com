@@ -127,7 +127,7 @@ export default async function PerspectivePage({ params }: Props) {
   const s = STRINGS[targetLang];
 
   return (
-    <main className="min-h-screen bg-paper dark:bg-primary pt-20">
+    <div className="min-h-screen bg-paper dark:bg-primary pt-20">
       {/* Back link */}
       <div className="border-b border-smoke/30 dark:border-charcoal">
         <div className="max-w-[900px] mx-auto px-8 lg:px-16 py-5">
@@ -216,6 +216,6 @@ export default async function PerspectivePage({ params }: Props) {
           </a>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

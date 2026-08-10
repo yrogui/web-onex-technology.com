@@ -19,7 +19,7 @@ export default async function MentionsLegalesPage({ params }: { params: Promise<
   const toc = t.raw("toc") as string[];
 
   return (
-    <main className="min-h-screen bg-paper dark:bg-primary pt-20">
+    <div className="min-h-screen bg-paper dark:bg-primary pt-20">
       {/* Back button */}
       <div className="border-b border-smoke/30 dark:border-charcoal">
         <div className="max-w-[900px] mx-auto px-8 lg:px-16 py-6">
@@ -176,6 +176,6 @@ export default async function MentionsLegalesPage({ params }: { params: Promise<
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

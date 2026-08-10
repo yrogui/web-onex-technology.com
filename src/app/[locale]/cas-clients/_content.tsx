@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface CaseStudyResult {
   value: string;
@@ -28,16 +28,11 @@ export function CasClientsContent() {
   const items = t.raw("items") as CaseStudy[];
 
   return (
-    <main>
+    <div>
       {/* ── Hero ── */}
       <section className="bg-primary pt-40 pb-24">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
               {t("eyebrow")}
             </p>
@@ -50,7 +45,7 @@ export function CasClientsContent() {
             <p className="text-sm text-smoke/60 italic">
               {t("anonymized")}
             </p>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
@@ -67,13 +62,7 @@ export function CasClientsContent() {
         return (
           <section key={cs.id} className={`${bg} py-24`}>
             <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="mb-12"
-              >
+              <Reveal className="mb-12">
                 <p className={`text-[11px] font-semibold uppercase tracking-[0.12em] ${isDark ? "text-accent" : "text-graphite dark:text-accent"} mb-4`}>
                   {cs.sector}
                 </p>
@@ -83,7 +72,7 @@ export function CasClientsContent() {
                   {cs.label}
                 </h2>
                 <p className={`text-[15px] ${textColor}`}>{cs.agents}</p>
-              </motion.div>
+              </Reveal>
 
               {/* Enjeu / Mission / Durée */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -150,12 +139,7 @@ export function CasClientsContent() {
       {/* ── CTA finale ── */}
       <section className="bg-primary py-24">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-paper mb-6 max-w-2xl mx-auto">
               {t("ctaTitle")}
             </h2>
@@ -171,9 +155,9 @@ export function CasClientsContent() {
               </a>
               <BadgePartenaire variant="dark" />
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

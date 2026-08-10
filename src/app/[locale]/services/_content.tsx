@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import {
   Check,
   Mic,
@@ -12,6 +11,7 @@ import {
 import { useTranslations } from "next-intl";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
 import { FAQ } from "@/components/sections/faq";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface MigrationResult {
   value: string;
@@ -98,16 +98,11 @@ export function ServicesContent() {
   };
 
   return (
-    <main>
+    <div>
       {/* ── Hero ── */}
       <section className="bg-primary pt-40 pb-32">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
               {t("eyebrow")}
             </p>
@@ -127,7 +122,7 @@ export function ServicesContent() {
               </a>
               <BadgePartenaire variant="dark" />
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
@@ -163,13 +158,7 @@ export function ServicesContent() {
         className="py-24 bg-paper dark:bg-primary"
       >
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-16"
-          >
+          <Reveal className="mb-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               {t("migrationEyebrow")}
             </p>
@@ -179,7 +168,7 @@ export function ServicesContent() {
             <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-2xl">
               {t("migrationDesc")}
             </p>
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Points clés */}
@@ -237,13 +226,7 @@ export function ServicesContent() {
       {/* ── Optimisation CX ── */}
       <section id="cx" className="py-24 bg-primary">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-16"
-          >
+          <Reveal className="mb-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
               {t("cxEyebrow")}
             </p>
@@ -253,7 +236,7 @@ export function ServicesContent() {
             <p className="text-[16px] leading-[1.7] text-smoke max-w-2xl">
               {t("cxDesc")}
             </p>
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
             {cxCards.map((card) => (
@@ -291,13 +274,7 @@ export function ServicesContent() {
         className="py-24 bg-paper dark:bg-primary"
       >
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-16"
-          >
+          <Reveal className="mb-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               {t("autoEyebrow")}
             </p>
@@ -307,7 +284,7 @@ export function ServicesContent() {
             <p className="text-[16px] leading-[1.7] text-charcoal dark:text-smoke max-w-2xl">
               {t("autoDesc")}
             </p>
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {autoCards.map((card, i) => {
@@ -350,13 +327,7 @@ export function ServicesContent() {
       {/* ── Architecture Cloud ── */}
       <section id="cloud" className="py-24 bg-primary">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-16"
-          >
+          <Reveal className="mb-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
               {t("cloudEyebrow")}
             </p>
@@ -366,7 +337,7 @@ export function ServicesContent() {
             <p className="text-[16px] leading-[1.7] text-smoke max-w-2xl">
               {t("cloudDesc")}
             </p>
-          </motion.div>
+          </Reveal>
 
           {/* Pills */}
           <div className="flex flex-wrap gap-3 mb-16">
@@ -406,12 +377,7 @@ export function ServicesContent() {
         className="py-24 bg-mist dark:bg-charcoal/20"
       >
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-2xl mx-auto">
               {t("ctaTitle")}
             </h2>
@@ -427,9 +393,9 @@ export function ServicesContent() {
               </a>
               <BadgePartenaire variant="light" />
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

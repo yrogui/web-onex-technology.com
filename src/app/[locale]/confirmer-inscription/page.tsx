@@ -99,7 +99,7 @@ function ConfirmationHandler() {
 
 export default function ConfirmerInscriptionPage() {
   return (
-    <main className="min-h-screen bg-paper dark:bg-primary flex items-center justify-center px-8">
+    <div className="min-h-screen bg-paper dark:bg-primary flex items-center justify-center px-8">
       <Suspense
         fallback={
           <div className="py-24 text-center">
@@ -109,6 +109,6 @@ export default function ConfirmerInscriptionPage() {
       >
         <ConfirmationHandler />
       </Suspense>
-    </main>
+    </div>
   );
 }

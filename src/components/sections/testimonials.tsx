@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Quote, Linkedin, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface TestimonialItem {
   quote: string;
@@ -21,13 +21,7 @@ export function Testimonials() {
     <section id="temoignages" className="py-24 bg-paper dark:bg-primary">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent dark:text-accent-light text-sm font-medium mb-6 rounded-sm">
             <Star className="h-4 w-4 fill-current" />
             {t("badge")}
@@ -38,20 +32,14 @@ export function Testimonials() {
           <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke">
             {t("subtitle")}
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Grille */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {items.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-            >
+            <Reveal key={index} delay={index * 80}>
               <TestimonialCard testimonial={testimonial} index={index} />
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
