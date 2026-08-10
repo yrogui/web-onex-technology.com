@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface FAQItem {
   id: string;
@@ -46,64 +46,54 @@ export function FAQ() {
 
       <section
         id="faq"
-        className="py-16 md:py-24 bg-primary"
+        className="py-16 md:py-24 bg-paper dark:bg-primary"
         suppressHydrationWarning
       >
         <div className="max-w-[1000px] mx-auto px-8 lg:px-16">
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-16 text-center"
-          >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+          <Reveal className="mb-16 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
               {t("faqEyebrow")}
             </p>
-            <h2 className="font-display font-medium text-4xl md:text-5xl text-paper mb-6 tracking-[-0.015em]">
+            <h2 className="font-display font-medium text-4xl md:text-5xl text-ink dark:text-paper mb-6 tracking-[-0.015em]">
               {t("faqTitle")}
             </h2>
-            <p className="text-[15px] leading-[1.65] text-smoke">
+            <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke">
               {t("faqDesc")}
             </p>
-          </motion.div>
+          </Reveal>
 
           {/* FAQ Items */}
           <div className="space-y-4">
             {faqItems.map((faq, index) => (
-              <motion.div
+              <Reveal
                 key={faq.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-charcoal/30 border border-charcoal overflow-hidden rounded"
+                delay={index * 50}
+                className="bg-mist dark:bg-charcoal/30 border border-smoke/30 dark:border-charcoal overflow-hidden rounded"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-charcoal/50 transition-colors"
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-panel-${faq.id}`}
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-smoke/20 dark:hover:bg-charcoal/50 transition-colors"
                 >
-                  <h3 className="font-medium text-lg text-paper pr-8">
+                  <h3 className="font-medium text-lg text-ink dark:text-paper pr-8">
                     {faq.question}
                   </h3>
                   <ChevronDown
-                    className={`h-6 w-6 text-accent flex-shrink-0 transition-transform duration-300 ${
+                    className={`h-6 w-6 text-graphite dark:text-accent flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-8 pb-6 pt-2 text-smoke leading-[1.65] space-y-4">
+                {openIndex === index && (
+                  <div
+                    id={`faq-panel-${faq.id}`}
+                    role="region"
+                    className="overflow-hidden"
+                  >
+                    <div className="px-8 pb-6 pt-2 text-charcoal dark:text-smoke leading-[1.65] space-y-4">
                         {faq.answer.split("\n\n").map((paragraph, pIndex) => {
                           const parts = paragraph.split(/(\*\*.*?\*\*)/g);
                           return (
@@ -113,7 +103,7 @@ export function FAQ() {
                                   return (
                                     <strong
                                       key={i}
-                                      className="font-medium text-paper"
+                                      className="font-medium text-ink dark:text-paper"
                                     >
                                       {part.slice(2, -2)}
                                     </strong>
@@ -126,10 +116,10 @@ export function FAQ() {
                         })}
 
                         {(faq.category === "prix" || faq.category === "délais") && (
-                          <div className="mt-6 pt-4 border-t border-charcoal">
+                          <div className="mt-6 pt-4 border-t border-smoke/30 dark:border-charcoal">
                             <a
                               href="/contact"
-                              className="inline-flex items-center text-sm font-medium text-accent hover:opacity-80 transition-opacity"
+                              className="inline-flex items-center text-sm font-medium text-charcoal dark:text-accent hover:opacity-80 transition-opacity"
                             >
                               {faq.category === "prix"
                                 ? t("faqCtaDevis")
@@ -137,32 +127,25 @@ export function FAQ() {
                             </a>
                           </div>
                         )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                    </div>
+                  </div>
+                )}
+              </Reveal>
             ))}
           </div>
 
           {/* CTA après FAQ */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-smoke mb-6">
+          <Reveal delay={300} className="mt-12 text-center">
+            <p className="text-charcoal dark:text-smoke mb-6">
               {t("faqCtaQuestion")}
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 bg-paper text-primary text-sm font-medium tracking-wide rounded-sm transition-all duration-300 hover:bg-mist"
+              className="inline-block px-8 py-4 bg-primary text-paper dark:bg-paper dark:text-primary text-sm font-medium tracking-wide rounded-sm transition-colors duration-300 hover:bg-charcoal dark:hover:bg-mist"
             >
               {tc("parlerArchitecte")}
             </a>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
     </>

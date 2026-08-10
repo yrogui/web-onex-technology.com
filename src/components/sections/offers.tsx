@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Check, ArrowRight, Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface OfferItem {
   id: string;
@@ -32,13 +32,7 @@ export function Offers() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-20 text-center"
-        >
+        <Reveal className="mb-20 text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
             {t("eyebrow")}
           </p>
@@ -48,17 +42,14 @@ export function Offers() {
           <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke max-w-3xl mx-auto">
             {t("desc")}
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Grille */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {items.map((offer, index) => (
-            <motion.div
+            <Reveal
               key={offer.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              delay={index * 100}
               className={`relative bg-paper dark:bg-charcoal/50 p-10 border-2 rounded shadow-none ${
                 offer.recommended
                   ? "border-accent dark:border-accent-light"
@@ -69,8 +60,8 @@ export function Offers() {
               <div
                 className={`inline-block px-4 py-1 mb-6 text-[11px] font-semibold uppercase tracking-[0.12em] rounded-sm ${
                   offer.recommended
-                    ? "bg-accent text-paper"
-                    : "bg-ink/5 dark:bg-paper/5 text-accent dark:text-accent-light"
+                    ? "bg-accent text-ink"
+                    : "bg-ink/5 dark:bg-paper/5 text-charcoal dark:text-accent-light"
                 }`}
               >
                 {offer.badge}
@@ -98,14 +89,14 @@ export function Offers() {
               </div>
 
               <div className="mb-8">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent-light mb-3">
                   {t("labelPourQui")}
                 </p>
                 <p className="text-sm text-charcoal dark:text-smoke leading-[1.65]">{offer.forWho}</p>
               </div>
 
               <div className="mb-8">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent-light mb-4">
                   {t("labelInclus")}
                 </p>
                 <ul className="space-y-3">
@@ -119,7 +110,7 @@ export function Offers() {
               </div>
 
               <div className="mb-10">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent dark:text-accent-light mb-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent-light mb-4">
                   {t("labelLivrables")}
                 </p>
                 <ul className="space-y-3">
@@ -140,28 +131,22 @@ export function Offers() {
                 })}
                 className={`block w-full px-8 py-4 text-center text-sm font-medium tracking-wide rounded-sm transition-all duration-300 ${
                   offer.recommended
-                    ? "bg-accent text-paper hover:bg-accent/90"
+                    ? "bg-accent text-ink hover:bg-accent/90"
                     : "border border-primary dark:border-paper text-primary dark:text-paper hover:border-accent hover:text-accent dark:hover:border-accent-light dark:hover:text-accent-light"
                 }`}
               >
                 {offer.cta}
               </a>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
         {/* Guarantee */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center p-8 bg-accent/10 border border-accent/20 rounded"
-        >
+        <Reveal delay={300} className="text-center p-8 bg-accent/10 border border-accent/20 rounded">
           <p className="text-sm text-ink dark:text-paper font-medium leading-relaxed">
             {t("guarantee")}
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

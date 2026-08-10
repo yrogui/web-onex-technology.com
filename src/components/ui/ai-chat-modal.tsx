@@ -52,6 +52,15 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Close on Escape (dialog accessibility).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   useEffect(() => {
     const container = messagesContainerRef.current;
     const anchor = messagesEndRef.current;
@@ -170,6 +179,9 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
       {/* Modal Chat */}
       <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 animate-fade-in">
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="ai-chat-title"
           className="relative bg-paper dark:bg-primary rounded shadow-2xl w-full max-w-2xl h-[600px] flex flex-col border border-smoke/30 dark:border-charcoal animate-slide-up"
           onClick={(e) => e.stopPropagation()}
         >
@@ -180,7 +192,7 @@ export function AIChatModal({ onClose }: AIChatModalProps) {
                 <MessageCircle className="h-5 w-5 text-accent dark:text-accent-light" />
               </div>
               <div>
-                <h3 className="text-lg font-medium text-ink dark:text-paper">
+                <h3 id="ai-chat-title" className="text-lg font-medium text-ink dark:text-paper">
                   Assistant IA One-X
                 </h3>
                 <p className="text-xs text-graphite dark:text-smoke">

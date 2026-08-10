@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   FileText, GitBranch, Calculator, CalendarDays,
   Network, FileCheck, Shield, ListChecks,
@@ -9,6 +8,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BadgePartenaire } from "@/components/ui/BadgePartenaire";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface Phase {
   number: string;
@@ -36,16 +36,11 @@ export function ApprocheContent() {
   const engagementItems = t.raw("engagementItems") as EngagementItem[];
 
   return (
-    <main>
+    <div>
       {/* ── Hero ── */}
       <section className="bg-primary pt-40 pb-24">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
               {t("eyebrow")}
             </p>
@@ -56,7 +51,7 @@ export function ApprocheContent() {
               {t("desc")}
             </p>
             <BadgePartenaire variant="dark" />
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
@@ -67,12 +62,9 @@ export function ApprocheContent() {
             {phases.map((phase, index) => {
               const icons = phaseDeliverableIcons[index] ?? [];
               return (
-                <motion.div
+                <Reveal
                   key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  delay={index * 100}
                   className="bg-paper dark:bg-charcoal/50 p-10 border border-smoke/30 dark:border-charcoal hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 rounded"
                 >
                   <div className="flex items-start space-x-8">
@@ -108,19 +100,13 @@ export function ApprocheContent() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </Reveal>
               );
             })}
           </div>
 
           {/* Modes d'engagement */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="bg-primary dark:bg-charcoal/70 text-paper p-12 border border-charcoal rounded"
-          >
+          <Reveal className="bg-primary dark:bg-charcoal/70 text-paper p-12 border border-charcoal rounded">
             <h3 className="font-display font-medium text-3xl text-paper mb-10 tracking-[-0.01em]">
               {t("engagementTitle")}
             </h3>
@@ -136,19 +122,14 @@ export function ApprocheContent() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── CTA finale ── */}
       <section className="py-24 bg-mist dark:bg-charcoal/20">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <h2 className="font-display font-medium text-3xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper mb-6 max-w-2xl mx-auto">
               {t("ctaTitle")}
             </h2>
@@ -164,9 +145,9 @@ export function ApprocheContent() {
               </a>
               <BadgePartenaire variant="light" />
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

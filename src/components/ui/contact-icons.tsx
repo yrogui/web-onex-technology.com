@@ -2,7 +2,13 @@
 
 import { Linkedin, Mail, Calendar, MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
-import { AIChatModal } from "./ai-chat-modal";
+import dynamic from "next/dynamic";
+
+// Lazy: keeps the modal (and its webhook client) out of every page's shared bundle.
+const AIChatModal = dynamic(
+  () => import("./ai-chat-modal").then((m) => m.AIChatModal),
+  { ssr: false }
+);
 
 /**
  * Props pour ContactIcons
@@ -79,7 +85,7 @@ export function ContactIcons({
 
   // Tailles des icônes
   const sizeClasses = {
-    sm: "w-10 h-10",
+    sm: "w-11 h-11",
     md: "w-12 h-12",
     lg: "w-14 h-14",
   };

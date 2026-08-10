@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { NewsletterChecklistForm } from "@/components/NewsletterChecklistForm";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function Newsletter() {
   const t = useTranslations("leadMagnet");
@@ -14,13 +14,7 @@ export function Newsletter() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-10"
-          >
+          <Reveal className="mb-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-3">
               {t("eyebrow")}
             </p>
@@ -30,10 +24,10 @@ export function Newsletter() {
             <p className="text-[15px] leading-[1.65] text-charcoal dark:text-smoke mb-4">
               {t("desc")}
             </p>
-            <p className="text-base text-accent dark:text-accent-light font-medium">
+            <p className="text-base text-charcoal dark:text-accent-light font-medium">
               {t("leadMagnetLabel")}
             </p>
-          </motion.div>
+          </Reveal>
 
           <NewsletterChecklistForm />
         </div>

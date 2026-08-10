@@ -1,23 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Contact } from "@/components/sections/contact";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function ContactPageContent() {
   const t = useTranslations("contactPage");
 
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section className="bg-primary pt-40 pb-16">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <Reveal>
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
               {t("eyebrow")}
             </p>
@@ -27,12 +22,12 @@ export function ContactPageContent() {
             <p className="text-[17px] leading-[1.7] text-smoke max-w-2xl">
               {t("subtitle")}
             </p>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
       {/* Contact section */}
       <Contact />
-    </main>
+    </div>
   );
 }

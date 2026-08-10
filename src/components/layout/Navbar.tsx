@@ -5,6 +5,7 @@ import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Logo } from "@/components/ui/Logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
 const LANGUAGES = [
@@ -13,7 +14,7 @@ const LANGUAGES = [
   { code: "ar" as const, label: "العربية", display: "AR" },
 ];
 
-function LanguagePicker({ scrolled }: { scrolled: boolean }) {
+function LanguagePicker() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const t = useTranslations("navbar");
@@ -42,7 +43,8 @@ function LanguagePicker({ scrolled }: { scrolled: boolean }) {
     setOpen(false);
   }
 
-  const triggerColor = scrolled ? "text-ink" : "text-paper";
+  // Heroes are theme-aware, so nav text tracks the theme in every state.
+  const triggerColor = "text-ink dark:text-paper";
 
   return (
     <div ref={ref} className="relative">
@@ -103,8 +105,16 @@ export function Navbar() {
   useEffect(() => {
     if (!hasDarkHero) return;
     setIsScrolled(window.scrollY > 50);
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
+        ticking = false;
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasDarkHero]);
 
@@ -117,8 +127,6 @@ export function Navbar() {
     { label: t("perspectives"), href: "/perspectives" },
   ];
 
-  const notScrolledLogoVariant = hasDarkHero ? "light" : "dark";
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -130,7 +138,7 @@ export function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
-          <Logo variant={isScrolled ? "dark" : notScrolledLogoVariant} size="md" href="/" />
+          <Logo variant="dark" size="md" href="/" />
 
           {/* Desktop */}
           <div className="hidden md:flex items-center space-x-8">
@@ -138,13 +146,15 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-graphite dark:text-smoke/70 hover:text-ink dark:hover:text-paper transition-colors"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className="text-sm font-medium text-graphite dark:text-smoke/70 hover:text-ink dark:hover:text-paper aria-[current=page]:text-ink dark:aria-[current=page]:text-paper transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/contact"
+              aria-current={pathname === "/contact" ? "page" : undefined}
               className={cn(
                 "text-sm font-semibold text-accent dark:text-accent-light hover:text-accent/80 dark:hover:text-accent-light/80 transition-colors",
                 pathname === "/contact"
@@ -154,8 +164,9 @@ export function Navbar() {
             >
               {t("contact")}
             </Link>
-            <div className="border-l border-smoke/30 pl-4">
-              <LanguagePicker scrolled={isScrolled} />
+            <div className="flex items-center gap-3 border-l border-smoke/30 pl-4">
+              <LanguagePicker />
+              <ThemeToggle />
             </div>
           </div>
 
@@ -163,13 +174,15 @@ export function Navbar() {
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2"
+              className="-mr-2.5 p-2.5"
               aria-label={t("ariaToggleMenu")}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-paper dark:text-paper" />
+                <X className="h-6 w-6 text-ink dark:text-paper" />
               ) : (
-                <Menu className="h-6 w-6 text-paper dark:text-paper" />
+                <Menu className="h-6 w-6 text-ink dark:text-paper" />
               )}
             </button>
           </div>
@@ -177,7 +190,7 @@ export function Navbar() {
 
         {/* Mobile drawer */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-ink/10 dark:border-paper/10 bg-paper dark:bg-primary">
+          <div id="mobile-menu" className="md:hidden py-4 border-t border-ink/10 dark:border-paper/10 bg-paper dark:bg-primary">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -195,8 +208,9 @@ export function Navbar() {
             >
               {t("contact")}
             </Link>
-            <div className="pt-3 border-t border-smoke/20 mt-2">
-              <LanguagePicker scrolled={true} />
+            <div className="pt-3 border-t border-smoke/20 mt-2 flex items-center justify-between gap-4">
+              <LanguagePicker />
+              <ThemeToggle />
             </div>
           </div>
         )}

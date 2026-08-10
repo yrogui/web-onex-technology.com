@@ -117,7 +117,7 @@ export default function PerspectivesPage() {
   }
 
   return (
-    <main className="min-h-screen bg-paper dark:bg-primary pt-20">
+    <div className="min-h-screen bg-paper dark:bg-primary pt-20">
       {/* Hero */}
       <section className="bg-primary py-24 border-b border-charcoal">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
@@ -244,6 +244,6 @@ export default function PerspectivesPage() {
           )}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface ExpertiseItem {
   id: string;
@@ -28,41 +28,29 @@ export function ExpertisesHome() {
   const partners = t.raw("partners") as Partner[];
 
   return (
-    <section id="expertises" className="py-16 md:py-24 bg-primary" suppressHydrationWarning>
+    <section id="expertises" className="py-16 md:py-24 bg-paper dark:bg-primary" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-12"
-        >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+        <Reveal className="mb-12">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
             {t("eyebrow")}
           </p>
-          <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-paper">
+          <h2 className="font-display font-medium text-4xl md:text-5xl tracking-[-0.015em] text-ink dark:text-paper">
             {t("titleBefore")}{" "}
             <em className="italic font-display">{t("titleItalic")}</em>
             {t("titleAfter")}
           </h2>
-        </motion.div>
+        </Reveal>
 
         {/* Carte large CCaaS */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-6 bg-charcoal/30 border border-charcoal rounded p-10 md:p-12"
-        >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-accent mb-4">
+        <Reveal className="mb-6 bg-mist dark:bg-charcoal/30 border border-smoke/30 dark:border-charcoal rounded p-10 md:p-12">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite dark:text-accent mb-4">
             {t("cardLargeEyebrow")}
           </p>
-          <h3 className="font-display font-medium text-3xl md:text-4xl text-paper mb-4 tracking-[-0.015em]">
+          <h3 className="font-display font-medium text-3xl md:text-4xl text-ink dark:text-paper mb-4 tracking-[-0.015em]">
             {t("cardLargeTitle")}
           </h3>
-          <p className="text-smoke leading-[1.65] text-[15px] max-w-2xl mb-8">
+          <p className="text-charcoal dark:text-smoke leading-[1.65] text-[15px] max-w-2xl mb-8">
             {t("cardLargeDesc")}
           </p>
 
@@ -75,7 +63,7 @@ export function ExpertisesHome() {
                   key={p.name}
                   id={anchorId}
                   style={{ scrollMarginTop: "88px" }}
-                  className="px-4 py-2 bg-primary border border-charcoal rounded-sm text-sm font-medium text-smoke"
+                  className="px-4 py-2 bg-paper dark:bg-primary border border-smoke/30 dark:border-charcoal rounded-sm text-sm font-medium text-charcoal dark:text-smoke"
                 >
                   {p.name} · {p.cert}
                 </span>
@@ -85,12 +73,12 @@ export function ExpertisesHome() {
 
           <a
             href="/services"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-charcoal dark:text-accent hover:text-ink dark:hover:text-accent-light transition-colors"
           >
             {t("cardLargeCta")}
             <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" strokeWidth={2} />
           </a>
-        </motion.div>
+        </Reveal>
 
         {/* 4 cartes compactes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -101,30 +89,27 @@ export function ExpertisesHome() {
             };
             const anchorId = anchorMap[item.id];
             return (
-            <motion.div
+            <Reveal
               key={item.id}
               id={anchorId}
               style={anchorId ? { scrollMarginTop: "88px" } : undefined}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="flex flex-col p-6 bg-charcoal/30 border border-charcoal rounded hover:border-accent/40 transition-all duration-300"
+              delay={i * 80}
+              className="flex flex-col p-6 bg-mist dark:bg-charcoal/30 border border-smoke/30 dark:border-charcoal rounded hover:border-accent/40 transition-all duration-300"
             >
-              <h3 className="font-display font-medium text-xl text-paper mb-3 tracking-[-0.01em] flex-grow-0">
+              <h3 className="font-display font-medium text-xl text-ink dark:text-paper mb-3 tracking-[-0.01em] flex-grow-0">
                 {item.title}
               </h3>
-              <p className="text-smoke text-sm leading-[1.65] flex-grow mb-6">
+              <p className="text-charcoal dark:text-smoke text-sm leading-[1.65] flex-grow mb-6">
                 {item.oneliner}
               </p>
               <a
                 href={ITEM_HREFS[i]}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors mt-auto"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-charcoal dark:text-accent hover:text-ink dark:hover:text-accent-light transition-colors mt-auto"
               >
                 {t("cardDetailCta")}
                 <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" strokeWidth={2} />
               </a>
-            </motion.div>
+            </Reveal>
             );
           })}
         </div>

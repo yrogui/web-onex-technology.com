@@ -23,7 +23,7 @@ export default async function BlogPage() {
   const t = await getTranslations("blog");
 
   return (
-    <main className="min-h-screen bg-paper dark:bg-primary pt-20">
+    <div className="min-h-screen bg-paper dark:bg-primary pt-20">
       {/* Header */}
       <section className="py-20 border-b border-smoke/30 dark:border-charcoal">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
@@ -108,6 +108,6 @@ export default async function BlogPage() {
 
       {/* Newsletter */}
       <Newsletter />
-    </main>
+    </div>
   );
 }

@@ -47,3 +47,6 @@ next-env.d.ts
 
 # Captures Claude Code (sessions audit)
 /*.png
+
+# impeccable design skill (local tooling)
+.impeccable/

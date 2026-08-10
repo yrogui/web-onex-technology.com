@@ -25,25 +25,34 @@ h1, h2, h3 {
   line-height: 1.1;
 }
 
-/* Transitions */
+/* Transitions — scoped to paint-only properties, never layout */
 a {
   transition: color 0.3s ease;
 }
 
 button {
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 }
 
 input,
 textarea,
 select {
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
+/* Accessible focus: visible keyboard ring from the palette, never a bare outline:none.
+   Mouse/touch users don't see it (:focus-visible), keyboard users always do. */
+:focus-visible {
+  outline: 2px solid #D4803B;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #D4803B;
+  outline-offset: 1px;
 }
 
 /* Animations */
@@ -73,6 +82,30 @@ select:focus {
 
 .smooth-scroll {
   scroll-behavior: smooth;
+}
+
+/* Scroll reveal — used by <Reveal> (replaces framer-motion whileInView fade-ups) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal][data-shown="true"] {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* Dark mode */

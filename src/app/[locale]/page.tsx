@@ -1,5 +1,3 @@
-"use client";
-
 import { Hero } from "@/components/sections/hero";
 import { SectorMarquee } from "@/components/sections/sector-marquee";
 import { ExpertisesHome } from "@/components/sections/expertises-home";
@@ -10,7 +8,7 @@ import { Newsletter } from "@/components/sections/newsletter";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col">
       {/* 1 — Hero (titre + sous-titre + 2 CTA + 4 KPIs + badge ExpertiaX) */}
       <Hero />
 
@@ -31,6 +29,6 @@ export default function Home() {
 
       {/* 7 — Lead magnet unique (checklist 25 points) */}
       <Newsletter />
-    </main>
+    </div>
   );
 }
